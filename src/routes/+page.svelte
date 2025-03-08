@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 
-	let { data } = $props();
+	export let data;
 </script>
 
 <div class="flex space-x-4">
