@@ -7,11 +7,11 @@
 <div class="flex space-x-4">
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
 		{#each data.aircraft as plane}
-			<Button info={plane} color="blue" mainBtns="true" />
+			<Button info={plane} mainBtns="true" type="aircraft" />
 		{/each}
 
 		{#each data.globalPages as page}
-			<Button info={page} color="green" mainBtns="true" />
+			<Button info={page} mainBtns="true" type="globalPage" />
 		{/each}
 	</div>
 </div>
