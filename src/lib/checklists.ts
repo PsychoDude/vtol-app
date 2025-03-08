@@ -1,497 +1,438 @@
-export const checklists = [
+export const checklistStruct = [
 	{
-		aircraft: 'F-45A',
+		aircraft: 'f45a',
 		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
 				name: 'Startup',
-				file: 'f45-startup.md',
-				related: [
-					'f45-takeoff-runway.md',
-					'f45-takeoff-CATOBAR.md',
-					'f45-takeoff-short.md',
-					'f45-vcap.md',
-				],
+				file: 'startup',
+				related: ['takeoff-runway', 'takeoff-CATOBAR', 'takeoff-short', 'vcap'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (RWY)',
-				file: 'f45-takeoff-runway.md',
-				related: [
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-					'f45-vcap.md',
-				],
+				file: 'takeoff-runway',
+				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Landing (RWY)',
-				file: 'f45-landing-runway.md',
+				file: 'landing-runway',
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (CARRIER)',
-				file: 'f45-takeoff-CATOBAR.md',
+				file: 'takeoff-CATOBAR',
 				related: [
-					'carrier-departure.md',
-					'carrier-flightdeck-overview.md',
-					'carrier-case-1.md',
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-					'f45-vcap.md',
+					'departure',
+					'flightdeck-overview',
+					'case-1',
+					'landing-runway',
+					'landing-CATOBAR-preface',
+					'landing-vtol',
+					'vcap'
 				],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'page',
 				name: 'Landing (CARRIER)',
-				file: 'f45-landing-CATOBAR-preface.md',
-				related: [
-					'f45-landing-CATOBAR.md',
-					'carrier-marshal.md',
-					'carrier-case-1-final.md',
-					'carrier-case-1.md',
-				],
+				file: 'landing-CATOBAR-preface',
+				related: ['landing-CATOBAR', 'marshal', 'final', 'case-1'],
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Carrier Landing - CASE I',
-				file: 'f45-landing-CATOBAR.md',
+				file: 'landing-CATOBAR',
 				hidden: true,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'page',
 				name: 'V/STOL',
-				file: 'f45-svtol.md',
-				related: ['f45-takeoff-short.md', 'f45-landing-vtol.md'],
+				file: 'svtol',
+				related: ['takeoff-short', 'landing-vtol'],
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Short Takeoff',
-				file: 'f45-takeoff-short.md',
-				related: [
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-					'f45-vcap.md',
-				],
+				file: 'takeoff-short',
+				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'],
 				hidden: true,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Vertical Landing',
-				file: 'f45-landing-vtol.md',
+				file: 'landing-vtol',
 				hidden: true,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'VCAP',
-				file: 'f45-vcap.md',
-				related: [
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-				],
+				file: 'vcap',
+				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Weapons',
-				file: 'f45-weapons.md',
+				file: 'weapons',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
-			},
-		],
+				showEmergencies: true
+			}
+		]
 	},
 	{
-		aircraft: 'F/A-26B',
+		aircraft: 'fa26b',
 		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
 				name: 'Startup',
-				file: 'f26-startup.md',
-				related: ['f26-takeoff-runway.md', 'f26-takeoff-CATOBAR.md'],
+				file: 'startup',
+				related: ['takeoff-runway', 'takeoff-CATOBAR'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (RWY)',
-				file: 'f26-takeoff-runway.md',
-				related: [
-					'f26-landing-runway.md',
-					'f26-landing-CATOBAR-preface.md',
-				],
+				file: 'takeoff-runway',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Landing (RWY)',
-				file: 'f26-landing-runway.md',
+				file: 'landing-runway',
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (CARRIER)',
-				file: 'f26-takeoff-CATOBAR.md',
+				file: 'takeoff-CATOBAR',
 				related: [
-					'carrier-departure.md',
-					'carrier-flightdeck-overview.md',
-					'carrier-case-1.md',
-					'f26-landing-runway.md',
-					'f26-landing-CATOBAR-preface.md',
+					'departure',
+					'flightdeck-overview',
+					'case-1',
+					'landing-runway',
+					'landing-CATOBAR-preface'
 				],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'page',
 				name: 'Landing (CARRIER)',
-				file: 'f26-landing-CATOBAR-preface.md',
-				related: [
-					'f26-landing-CATOBAR.md',
-					'carrier-marshal.md',
-					'carrier-case-1-final.md',
-					'carrier-case-1.md',
-				],
+				file: 'landing-CATOBAR-preface',
+				related: ['landing-CATOBAR', 'marshal', 'final', 'case-1'],
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Carrier Landing - CASE I',
-				file: 'f26-landing-CATOBAR.md',
+				file: 'landing-CATOBAR',
 				hidden: true,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Weapons',
-				file: 'f26-weapons.md',
+				file: 'weapons',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
-			},
-		],
+				showEmergencies: true
+			}
+		]
 	},
 	{
-		aircraft: 'EF-24G',
+		aircraft: 'ef24g',
 		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
 				name: 'Startup',
-				file: 'ef24-startup.md',
-				related: [
-					'ef24-wings.md',
-					'ef24-takeoff-runway.md',
-					'ef24-takeoff-CATOBAR.md',
-				],
+				file: 'startup',
+				related: ['wings', 'takeoff-runway', 'takeoff-CATOBAR'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (RWY)',
-				file: 'ef24-takeoff-runway.md',
-				related: [
-					'ef24-wings.md',
-					'ef24-landing-runway.md',
-					'ef24-landing-CATOBAR-preface.md',
-				],
+				file: 'takeoff-runway',
+				related: ['wings', 'landing-runway', 'landing-CATOBAR-preface'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Landing (RWY)',
-				file: 'ef24-landing-runway.md',
-				related: ['ef24-wings.md'],
+				file: 'landing-runway',
+				related: ['wings'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (CARRIER)',
-				file: 'ef24-takeoff-CATOBAR.md',
+				file: 'takeoff-CATOBAR',
 				related: [
-					'carrier-departure.md',
-					'carrier-flightdeck-overview.md',
-					'ef24-wings.md',
-					'carrier-case-1.md',
-					'ef24-landing-runway.md',
-					'ef24-landing-CATOBAR-preface.md',
+					'departure',
+					'flightdeck-overview',
+					'wings',
+					'case-1',
+					'landing-runway',
+					'landing-CATOBAR-preface'
 				],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'page',
 				name: 'Landing (CARRIER)',
-				file: 'ef24-landing-CATOBAR-preface.md',
-				related: [
-					'ef24-wings.md',
-					'ef24-landing-CATOBAR.md',
-					'carrier-marshal.md',
-					'carrier-case-1-final.md',
-					'carrier-case-1.md',
-				],
+				file: 'landing-CATOBAR-preface',
+				related: ['wings', 'landing-CATOBAR', 'marshal', 'final', 'case-1'],
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Carrier Landing - CASE I',
-				file: 'ef24-landing-CATOBAR.md',
-				related: ['ef24-wings.md'],
+				file: 'landing-CATOBAR',
+				related: ['wings'],
 				hidden: true,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Swept Wings',
-				file: 'ef24-wings.md',
-				related: [
-					'ef24-takeoff-runway.md',
-					'ef24-landing-runway.md',
-					'ef24-takeoff-CATOBAR.md',
-					'ef24-landing-CATOBAR.md',
-				],
+				file: 'wings',
+				related: ['takeoff-runway', 'landing-runway', 'takeoff-CATOBAR', 'landing-CATOBAR'],
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Weapons',
-				file: 'ef24-weapons.md',
+				file: 'weapons',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
-			},
-		],
+				showEmergencies: true
+			}
+		]
 	},
 	{
-		aircraft: 'AH-94',
+		aircraft: 'ah94',
 		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
 				name: 'Startup (PIC)',
-				file: 'ah94-startup-pic.md',
-				related: ['ah94-startup-cpg.md'],
+				file: 'startup-pic',
+				related: ['startup-cpg'],
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Startup (CPG)',
-				file: 'ah94-startup-cpg.md',
-				related: ['ah94-startup-pic.md'],
+				file: 'startup-cpg',
+				related: ['startup-pic'],
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (VERTICAL)',
-				file: 'ah94-takeoff-vert.md',
-				related: ['ah94-landing-vert.md', 'ah94-landing-rollhov.md'],
+				file: 'takeoff-vert',
+				related: ['landing-vert', 'landing-rollhov'],
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Landing (VERTICAL)',
-				file: 'ah94-landing-vert.md',
+				file: 'landing-vert',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (ROLL/HOV)',
-				file: 'ah94-takeoff-rollhov.md',
-				related: ['ah94-landing-vert.md', 'ah94-landing-rollhov.md'],
+				file: 'takeoff-rollhov',
+				related: ['landing-vert', 'landing-rollhov'],
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Landing (ROLL/HOV)',
-				file: 'ah94-landing-rollhov.md',
+				file: 'landing-rollhov',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Weapons',
-				file: 'ah94-weapons.md',
+				file: 'weapons',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
-			},
-		],
+				showEmergencies: true
+			}
+		]
 	},
 	{
-		aircraft: 'T-55',
+		aircraft: 't55',
 		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
 				name: 'Startup',
-				file: 't55-startup.md',
-				related: ['t55-takeoff-runway.md', 't55-takeoff-CATOBAR.md'],
+				file: 'startup',
+				related: ['takeoff-runway', 'takeoff-CATOBAR'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (RWY)',
-				file: 't55-takeoff-runway.md',
-				related: [
-					't55-landing-runway.md',
-					't55-landing-CATOBAR-preface.md',
-				],
+				file: 'takeoff-runway',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Landing (RWY)',
-				file: 't55-landing-runway.md',
+				file: 'landing-runway',
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'aircraft',
 				name: 'Takeoff (CARRIER)',
-				file: 't55-takeoff-CATOBAR.md',
+				file: 'takeoff-CATOBAR',
 				related: [
-					'carrier-departure.md',
-					'carrier-flightdeck-overview.md',
-					'carrier-case-1.md',
-					't55-landing-runway.md',
-					't55-landing-CATOBAR-preface.md',
+					'departure',
+					'flightdeck-overview',
+					'case-1',
+					'landing-runway',
+					'landing-CATOBAR-preface'
 				],
 				hidden: false,
 				showGlobal: false,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'page',
 				name: 'Landing (CARRIER)',
-				file: 't55-landing-CATOBAR-preface.md',
-				related: [
-					't55-landing-CATOBAR.md',
-					'carrier-marshal.md',
-					'carrier-case-1-final.md',
-					'carrier-case-1.md',
-				],
+				file: 'landing-CATOBAR-preface',
+				related: ['landing-CATOBAR', 'marshal', 'final', 'case-1'],
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Carrier Landing - CASE I',
-				file: 't55-landing-CATOBAR.md',
+				file: 'landing-CATOBAR',
 				hidden: true,
 				showGlobal: true,
-				showEmergencies: true,
+				showEmergencies: true
 			},
 			{
 				type: 'page',
 				name: 'Basic Ops',
-				file: 't55-basic-page.md',
-				related: ['t55-basic-resp.md', 't55-basic-ops.md'],
+				file: 'basic-page',
+				related: ['basic-resp', 'basic-ops'],
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Reponsabilities',
-				file: 't55-basic-resp.md',
-				related: ['t55-basic-ops.md'],
+				file: 'basic-resp',
+				related: ['basic-ops'],
 				hidden: true,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Controls',
-				file: 't55-basic-ops.md',
-				related: ['t55-basic-resp.md'],
+				file: 'basic-ops',
+				related: ['basic-resp'],
 				hidden: true,
 				showGlobal: true,
-				showEmergencies: false,
+				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
 				name: 'Weapons',
-				file: 't55-weapons.md',
+				file: 'weapons',
 				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
-			},
-		],
+				showEmergencies: true
+			}
+		]
 	},
 	{
 		aircraft: 'carrier',
@@ -500,79 +441,75 @@ export const checklists = [
 			{
 				type: 'global',
 				name: 'Flight Deck Overview',
-				file: 'carrier-flightdeck-overview.md',
+				file: 'flightdeck-overview',
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'global',
 				name: 'Departure',
-				file: 'carrier-departure.md',
-				related: ['carrier-case-1.md'],
+				file: 'departure',
+				related: ['case-1'],
 				showGlobal: false,
-				hidden: true,
+				hidden: true
 			},
 			{
 				type: 'page',
 				for: 'carrier',
 				name: 'Carrier Operations',
-				file: 'carrier-ops.md',
+				file: 'ops',
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'global',
 				name: 'Wave Off',
-				file: 'carrier-waveoff.md',
-				related: ['carrier-case-1.md'],
+				file: 'waveoff',
+				related: ['case-1'],
 				showGlobal: true,
 				showEmergencies: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'global',
 				name: 'LSO Guidance',
-				file: 'carrier-lso-guidance.md',
-				related: ['carrier-waveoff.md'],
+				file: 'lso-guidance',
+				related: ['waveoff'],
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'page',
 				name: 'Case 1 Ops',
-				file: 'carrier-case-1.md',
-				related: [
-					'carrier-departure.md',
-					'carrier-marshal.md',
-					'carrier-case-1-final.md',
-				],
-				for: 'carrier-ops.md',
+				file: 'case-1',
+				related: ['departure', 'marshal', 'final'],
+				for: 'ops',
 				showGlobal: true,
-				hidden: true,
+				hidden: true
 			},
 			{
 				type: 'global',
 				name: 'Marshal Stack Pattern',
-				file: 'carrier-marshal.md',
-				related: ['carrier-case-1-final.md'],
+				file: 'marshal',
+				related: ['final'],
 				showGlobal: false,
-				hidden: true,
+				hidden: true
 			},
 			{
 				type: 'global',
 				name: 'Final Approach',
-				file: 'carrier-case-1-final.md',
+				file: 'final',
 				showGlobal: false,
-				hidden: true,
+				hidden: true
 			},
 			{
 				type: 'global',
 				name: 'Carrier Lights (Meatball) Img',
-				file: 'carrier-meatball.md',
+				file: 'meatball',
 				showGlobal: true,
-				hidden: false,
-			},
-		],
+				hidden: false
+			}
+		]
 	},
 	{
 		aircraft: 'global',
@@ -581,229 +518,190 @@ export const checklists = [
 			{
 				type: 'page',
 				name: 'Global',
-				file: 'global.md',
-				related: ['global-audio-cues.md', 'global-rwr.md'],
+				file: 'global',
+				related: ['global-audio-cues', 'global-rwr'],
 				for: 'global',
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'info',
 				name: 'Audio Cues',
-				file: 'global-audio-cues.md',
-				related: ['global-rwr.md'],
+				file: 'global-audio-cues',
+				related: ['global-rwr'],
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'info',
 				name: 'RWR',
-				file: 'global-rwr.md',
-				related: ['global-audio-cues.md'],
+				file: 'global-rwr',
+				related: ['global-audio-cues'],
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'important',
 				name: 'Credits',
-				file: 'credits.md',
-				related: ['licenses.md'],
+				file: 'credits',
+				related: ['licenses'],
 				showGlobal: true,
-				hidden: false,
+				hidden: false
 			},
 			{
 				type: 'important',
 				name: 'Licenses',
-				file: 'licenses.md',
-				related: ['credits.md'],
+				file: 'licenses',
+				related: ['credits'],
 				showGlobal: true,
-				hidden: false,
-			},
-		],
-	},
-]
+				hidden: false
+			}
+		]
+	}
+];
 
-export const emergencyChecklists = [
+export const emergencyChecklistsStruct = [
 	{
-		aircraft: 'F-45A',
+		aircraft: 'f45a',
 		checklists: [
 			{
 				type: 'emergency',
 				name: 'Engine Failure',
-				file: 'f45-emerg-enginefailure.md',
+				file: 'enginefailure',
 				hidden: false,
-				related: [
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-				],
+				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
-				file: 'f45-emerg-missileimpact.md',
+				file: 'missileimpact',
 				hidden: false,
-				related: [
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-				],
+				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
-				file: 'f45-emerg-flightcontrol.md',
+				file: 'flightcontrolfailure',
 				hidden: false,
-				related: [
-					'f45-landing-runway.md',
-					'f45-landing-CATOBAR-preface.md',
-					'f45-landing-vtol.md',
-				],
-			},
-		],
+				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
+			}
+		]
 	},
 	{
-		aircraft: 'F/A-26B',
+		aircraft: 'fa26b',
 		checklists: [
 			{
 				type: 'emergency',
 				name: 'Engine Failure',
-				file: 'f26-emerg-enginefailure.md',
-				related: [
-					'f26-landing-runway.md',
-					'f26-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
+				file: 'enginefailure',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
-				file: 'f26-emerg-missileimpact.md',
-				related: [
-					'f26-landing-runway.md',
-					'f26-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
+				file: 'missileimpact',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
-				file: 'f26-emerg-flightcontrol.md',
-				related: [
-					'f26-landing-runway.md',
-					'f26-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
-			},
-		],
+				file: 'flightcontrolfailure',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
+			}
+		]
 	},
 	{
-		aircraft: 'EF-24G',
+		aircraft: 'ef24g',
 		checklists: [
 			{
 				type: 'emergency',
 				name: 'Engine Failure',
-				file: 'ef24-emerg-enginefailure.md',
-				related: [
-					'ef24-landing-runway.md',
-					'ef24-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
+				file: 'enginefailure',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
-				file: 'ef24-emerg-missileimpact.md',
-				related: [
-					'ef24-landing-runway.md',
-					'ef24-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
+				file: 'missileimpact',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
-				file: 'ef24-emerg-flightcontrol.md',
-				related: [
-					'ef24-landing-runway.md',
-					'ef24-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
-			},
-		],
+				file: 'flightcontrolfailure',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
+			}
+		]
 	},
 	{
-		aircraft: 'AH-94',
+		aircraft: 'ah94',
 		checklists: [
 			{
 				type: 'emergency-page',
 				name: 'Emergency Checklists',
-				file: 'ah94-emerg.md',
-				hidden: false,
+				file: 'emerg',
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Single Engine Failure',
-				file: 'ah94-emerg-singleengine.md',
-				related: ['ah94-landing-vert.md', 'ah94-landing-rollhov.md'],
-				hidden: true,
+				file: 'singleengine',
+				related: ['landing-vert', 'landing-rollhov'],
+				hidden: true
 			},
 			{
 				type: 'emergency',
 				name: 'Dual Engine Failure',
-				file: 'ah94-emerg-dualengine.md',
-				related: ['ah94-landing-vert.md', 'ah94-landing-rollhov.md'],
-				hidden: true,
+				file: 'dualengine',
+				related: ['landing-vert', 'landing-rollhov'],
+				hidden: true
 			},
 			{
 				type: 'emergency',
 				name: 'Anti-Torque Failure',
-				file: 'ah94-emerg-antitorque.md',
-				related: ['ah94-landing-vert.md', 'ah94-landing-rollhov.md'],
-				hidden: true,
+				file: 'antitorque',
+				related: ['landing-vert', 'landing-rollhov'],
+				hidden: true
 			},
 			{
 				type: 'emergency',
 				name: 'Auto-Rotation',
-				file: 'ah94-emerg-autorotation.md',
-				related: ['ah94-landing-vert.md', 'ah94-landing-rollhov.md'],
-				hidden: true,
-			},
-		],
+				file: 'autorotation',
+				related: ['landing-vert', 'landing-rollhov'],
+				hidden: true
+			}
+		]
 	},
 	{
-		aircraft: 'T-55',
+		aircraft: 't55',
 		checklists: [
 			{
 				type: 'emergency',
 				name: 'Engine Failure',
-				file: 't55-emerg-enginefailure.md',
-				related: [
-					't55-landing-runway.md',
-					't55-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
+				file: 'enginefailure',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
-				file: 't55-emerg-missileimpact.md',
-				related: [
-					't55-landing-runway.md',
-					't55-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
+				file: 'missileimpact',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
-				file: 't55-emerg-flightcontrol.md',
-				related: [
-					't55-landing-runway.md',
-					't55-landing-CATOBAR-preface.md',
-				],
-				hidden: false,
-			},
-		],
-	},
-]
+				file: 'flightcontrolfailure',
+				related: ['landing-runway', 'landing-CATOBAR-preface'],
+				hidden: false
+			}
+		]
+	}
+];
