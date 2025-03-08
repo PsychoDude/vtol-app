@@ -6,7 +6,7 @@ export const prerender = true;
 export async function load({ params, fetch }) {
 	// Fetch the markdown content based on the route parameters
 
-	const response = await fetch(`/checklists/${params.aircraft}/${params.file}.md`);
+	const response = await fetch(`/checklists/${params.aircraft}/emergency/${params.file}.md`);
 	console.log(response);
 	if (response.status !== 200) return error(404, 'LOSER');
 	const markdownContent = await response.text();
