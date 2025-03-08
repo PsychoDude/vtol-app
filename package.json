@@ -42,6 +42,7 @@
 		"vitest": "^3.0.0"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.8",
 		"marked": "^15.0.7"
 	}
 }
