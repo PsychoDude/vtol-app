@@ -1,5 +1,7 @@
 # EF-24G Startup Checklist
 
+<br>
+
 1. Start BATTERY
 2. Close CANOPY
 3. Set Lights AS REQUIRED
@@ -16,6 +18,8 @@
 <br>
 
 > **CAUTION:**
+>
+> <br>
 
 <div class="border-s-4 border-red-700 ps-4 mb-5">
     Nominal engine performance is 16% RPM, ~100°C TEMP, 400lb Fuel Flow Pounds Per Hour (FFPPH). Starting either engine before APU is THREE LIGHTS will lead to ignition failure.

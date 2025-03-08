@@ -1,16 +1,18 @@
 # F/A-26B Emergency Engine Failure Checklist
 
+<br>
+
 1.  Start APU
 2.  Jettison ALL
 3.  Switch malfunctioning engine(s) OFF
 4.  If altitude below 5000ft AGL:
     1. If road or airfield available within range:
-        1. Attempt to land (See Related Checklists)
+       1. Attempt to land (See Related Checklists)
     2. If no road or airfield available:
-        1. Check master arm OFF
-        2. Confirm no civilian area within 2NM
-        3. Set aircraft on crash course that minimizes airframe damage
-        4. Eject
+       1. Check master arm OFF
+       2. Confirm no civilian area within 2NM
+       3. Set aircraft on crash course that minimizes airframe damage
+       4. Eject
 5.  If altitude above 5000ft AGL:
 
     1. Start APU immediately
@@ -21,6 +23,8 @@
     <br>
 
     > **CAUTION:**
+    >
+    > <br>
 
     <div class="border-s-4 border-red-700 ps-4 mb-5">
       If critical damage has been inflicted to the engine(s), restart may not be successful. Keep the APU on and attempt to land the aircraft or see &lt; 5000ft procedures (Step 4).

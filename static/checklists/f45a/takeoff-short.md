@@ -1,5 +1,7 @@
 # F-45A Short Takeoff Checklist
 
+<br>
+
 1. Set engine TILT to 35 degrees.
 2. Brakes HOLD.
 3. MIL POWER.
@@ -12,6 +14,8 @@
 <br>
 
 > **CAUTION:**
+>
+> <br>
 
 <div class="border-s-4 border-red-700 ps-4 mb-5">
     For all V/STOVL operations, a <u>TWR above 0.95</u> is necessary.

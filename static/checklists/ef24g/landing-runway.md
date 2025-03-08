@@ -1,5 +1,7 @@
 # EF-24G Runway Landing Checklist
 
+<br>
+
 1. Contact Tower For Permission to Land
 2. Line Up with Runway (Note: Runway Number Indicates its Heading in Tens of Degrees)
 3. Set Wings FORWARD
@@ -17,6 +19,8 @@
 <br>
 
 > **NOTE:**
+>
+> <br>
 
 <div class="border-s-4 border-green-500 ps-4 mb-5">
     The carrier-capable landing gear is designed to withstand the harder landing forces involved, and due to the low clearance attempts to flare too aggressively may result in a tail strike.

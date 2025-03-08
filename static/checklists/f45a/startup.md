@@ -1,5 +1,7 @@
 # F-45A Startup Checklist
 
+<br>
+
 1. Start BATTERY.
 2. Close CANOPY.
 3. Set Lights AS REQUIRED.
@@ -15,6 +17,8 @@
 <br>
 
 > **CAUTION:**
+>
+> <br>
 
 <div class="border-s-4 border-red-700 ps-4 mb-5">
     Nominal refers to the RPM being in the green zone of the dial. Starting the engine before the APU is fully spun up will lead to ignition failure. 

@@ -1,5 +1,7 @@
 # **RWR Symbology**
 
+<br>
+
 <table class="table-auto border border-neutral-700 border-collapse">
 <thead>    
 <tr>      
@@ -59,16 +61,22 @@ The <b>ARH Guidance Indicator.</b> Indicates that an <b>Active Radar Homing</b> 
 </tbody>
 </table>
 
-<br>
+<br><br>
 
 # **RWR Acronyms**
 
+<br>
+
 Threat Levels:
+
+<br>
 
 1. Very High
 2. High
 3. Medium
 4. Low
+
+<br>
 
 <table class="table-auto border border-collapse border-neutral-700">
 <thead>    

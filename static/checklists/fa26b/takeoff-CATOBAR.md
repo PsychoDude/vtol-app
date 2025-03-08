@@ -1,5 +1,7 @@
 # F/A-26B CATOBAR Takeoff Checklist
 
+<br>
+
 1. Contact Tower For Taxi To Catapult
 2. Check Launch Bar DOWN
 3. Check CATO Trim ON

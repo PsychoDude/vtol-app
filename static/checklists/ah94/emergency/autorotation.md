@@ -1,5 +1,7 @@
 # AH-94 Emergency Auto-Rotation Checklist
 
+<br>
+
 1. Immediately reduce Collective Input
 2. Apply Left Pedal
 3. Maintain 50kn-90kn Airspeed
@@ -9,6 +11,8 @@
 7. Manage Rate of Descent and Airspeed with Cyclic
 8. Increase Collective Input AS REQUIRED
 9. Perform Landing
+
+<br><br>
 
 # **Overview:**
 

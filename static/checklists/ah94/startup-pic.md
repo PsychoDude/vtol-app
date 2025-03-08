@@ -1,19 +1,21 @@
 # AH-94 Startup Checklist (PIC)
 
+<br>
+
 1. Start BATTERY
 2. Start APU
 3. Set Int. Lighting AS REQUIRED
 4. Power EUFD ON
-    - Stat Page
+   - Stat Page
 5. Power HSI ON
 6. Power RWR ON
 7. Set MPDs AS REQUIRED
-    - Set Navigation AS REQUIRED
-    - Set Vehicle Options AS REQUIRED
+   - Set Navigation AS REQUIRED
+   - Set Vehicle Options AS REQUIRED
 8. Set Helmet Mounted Display ON
-    - Set HMD AS REQUIRED
+   - Set HMD AS REQUIRED
 9. Set Communications Panel
-    - MIC Check
+   - MIC Check
 10. Set SAS AS REQUIRED
 11. Set Rotor Brake OFF
 12. Set Ext. Lighting AS REQUIRED

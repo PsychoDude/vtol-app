@@ -1,5 +1,7 @@
 # F-45A Runway Takeoff Checklist
 
+<br>
+
 1. Hold BRAKES.
 2. Advance throttle to AFTERBURNER.
 3. Wait 5 seconds.

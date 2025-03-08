@@ -1,5 +1,7 @@
 # T-55 Carrier Takeoff Checklist
 
+<br>
+
 1. Contact Tower for taxi to Catapult
 2. Extend Launch Bar
 3. Turn ON CATO Trim

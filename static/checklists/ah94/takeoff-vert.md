@@ -1,5 +1,7 @@
 # AH-94 Vertical Takeoff Checklist
 
+<br>
+
 1. Pre-Trim Aircraft
 2. Contact Tower for Vertical T/O Clearance
 3. Advance Collective to T/O Power

@@ -1,5 +1,7 @@
 # F/A-26B Emergency Missile Impact Checklist
 
+<br>
+
 1. Turn cold from bandit(s)
 2. Confirm both engines RPM nominal
 3. (If engine(s) has/have failed) See ENGINE FAILURE in Related Checklists

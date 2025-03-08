@@ -1,5 +1,7 @@
 # F/A-26B Startup Checklist
 
+<br>
+
 1. Start BATTERY
 2. Set Lights AS REQUIRED
 3. Start APU and confirm RPM NOMINAL
@@ -17,6 +19,8 @@
 <br>
 
 > **CAUTION:**
+>
+> <br>
 
 <div class="border-s-4 border-red-700 ps-4 mb-5">
     Nominal refers to the RPM being in the green zone of the dial. Starting engines before the APU is fully spun up will lead to ignition failure. 
