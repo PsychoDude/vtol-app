@@ -5,7 +5,10 @@
 
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
-		globalPage: 'green'
+		globalPage: 'green',
+		checklist: 'green',
+		emergency: 'red',
+		back: 'gray'
 	};
 
 	const color: string = colorForTypes[data.type];
@@ -13,7 +16,8 @@
 	const colorVariants: Record<string, string> = {
 		green: 'bg-green-500 hover:bg-green-700',
 		blue: 'bg-blue-500 hover:bg-blue-700',
-		red: 'bg-red-500 hover:bg-red-700'
+		red: 'bg-red-500 hover:bg-red-700',
+		gray: 'bg-gray-500 hover:bg-gray-700'
 	};
 	const mainBtns: Record<string, string> = {
 		true: 'rounded h-70',
@@ -22,6 +26,18 @@
 
 	function aircraftRedirect(plane: string) {
 		goto(`/${plane}`);
+	}
+
+	function globalPageRedirect(plane: string, file: string) {
+		goto(`/${plane}/${file}`);
+	}
+
+	function checklistRedirect(plane: string, file: string) {
+		goto(`/${plane}/${file}`);
+	}
+
+	function emergencyRedirect(plane: string, file: string) {
+		goto(`/${plane}/emergency/${file}`);
 	}
 </script>
 
@@ -33,7 +49,16 @@
 				aircraftRedirect(data.info.aircraft);
 				break;
 			case data.type === 'globalPage':
-				aircraftRedirect(data.info.aircraft);
+				globalPageRedirect(data.info.aircraft, data.info.page);
+				break;
+			case data.type === 'checklist':
+				checklistRedirect(data.aircraft, data.info.file);
+				break;
+			case data.type === 'emergency':
+				emergencyRedirect(data.aircraft, data.info.file);
+				break;
+			case data.type === 'back':
+				history.back();
 				break;
 		}
 	}}
