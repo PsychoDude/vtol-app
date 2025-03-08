@@ -441,7 +441,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'carrier',
-		name: 'carrier',
+		name: 'Carrier',
 		hidden: true,
 		checklists: [
 			{
@@ -519,7 +519,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'global',
-		name: 'global',
+		name: 'Global',
 		hidden: true,
 		checklists: [
 			{
