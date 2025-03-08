@@ -1,5 +1,12 @@
 <script lang="ts">
-	let { aircraft, file, markdown } = $props();
+	import Button from '$lib/components/Button.svelte';
+
+	let { markdown } = $props();
+	const backBtnName: { name: string } = { name: 'Back' };
 </script>
 
-{@html markdown}
+<Button type="back" info={backBtnName} mainBtns="false" />
+
+<div class="my-4">
+	{@html markdown}
+</div>
