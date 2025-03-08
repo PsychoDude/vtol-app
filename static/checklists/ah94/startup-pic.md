@@ -40,7 +40,11 @@
     - Roles/Responsibilities
     - Mission Task
 
+<br>
+
 Begin Taxi, Hover Taxi, or Vertical Take Off. Trim AS REQUIRED
+
+<br>
 
 **IF NO CPG REFER TO STARTUP (CPG)**
 
