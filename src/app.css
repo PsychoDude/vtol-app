@@ -33,3 +33,7 @@ ol > li > ol > li > ol {
 a {
 	text-decoration: underline;
 }
+
+.h-70 {
+	height: 70px;
+}
