@@ -7,4 +7,8 @@
 	let { children }: Props = $props();
 </script>
 
-{@render children?.()}
+<div class="container mx-auto p-4">
+	<div class="mt-4">
+		{@render children?.()}
+	</div>
+</div>

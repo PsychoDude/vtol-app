@@ -15,8 +15,4 @@
 	}
 </script>
 
-<h1>{aircraft} yo!</h1>
-
-<div class="">
-	{@html markdown}
-</div>
+{@html markdown}
