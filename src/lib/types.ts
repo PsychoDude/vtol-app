@@ -35,7 +35,7 @@ export interface ChecklistItem {
 
 export interface AircraftChecklists {
 	aircraft: string;
-	hidden: boolean;
+	name: string;
 	checklists: ChecklistItem[];
 }
 

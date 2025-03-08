@@ -2,7 +2,6 @@ export const checklistStruct = [
 	{
 		aircraft: 'f45a',
 		name: 'F-45A',
-		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
@@ -114,7 +113,6 @@ export const checklistStruct = [
 	{
 		aircraft: 'fa26b',
 		name: 'F/A-26B',
-		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
@@ -188,7 +186,6 @@ export const checklistStruct = [
 	{
 		aircraft: 'ef24g',
 		name: 'EF-24G',
-		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
@@ -274,7 +271,6 @@ export const checklistStruct = [
 	{
 		aircraft: 'ah94',
 		name: 'AH-94',
-		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
@@ -341,7 +337,6 @@ export const checklistStruct = [
 	{
 		aircraft: 't55',
 		name: 'T-55',
-		hidden: false,
 		checklists: [
 			{
 				type: 'aircraft',
@@ -441,8 +436,8 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'carrier',
-		name: 'Carrier',
-		hidden: true,
+		name: 'Carrier Operations',
+		page: 'ops',
 		checklists: [
 			{
 				type: 'global',
@@ -465,7 +460,7 @@ export const checklistStruct = [
 				name: 'Carrier Operations',
 				file: 'ops',
 				showGlobal: true,
-				hidden: false
+				hidden: true
 			},
 			{
 				type: 'global',
@@ -491,7 +486,7 @@ export const checklistStruct = [
 				related: ['departure', 'marshal', 'final'],
 				for: 'ops',
 				showGlobal: true,
-				hidden: true
+				hidden: false
 			},
 			{
 				type: 'global',
@@ -520,7 +515,7 @@ export const checklistStruct = [
 	{
 		aircraft: 'global',
 		name: 'Global',
-		hidden: true,
+		page: 'global',
 		checklists: [
 			{
 				type: 'page',
@@ -652,7 +647,7 @@ export const emergencyChecklistsStruct = [
 			{
 				type: 'emergency-page',
 				name: 'Emergency Checklists',
-				file: 'emerg',
+				file: 'emergencies',
 				hidden: false
 			},
 			{
