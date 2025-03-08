@@ -1,6 +1,7 @@
 export const checklistStruct = [
 	{
 		aircraft: 'f45a',
+		name: 'F-45A',
 		hidden: false,
 		checklists: [
 			{
@@ -112,6 +113,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'fa26b',
+		name: 'F/A-26B',
 		hidden: false,
 		checklists: [
 			{
@@ -185,6 +187,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'ef24g',
+		name: 'EF-24G',
 		hidden: false,
 		checklists: [
 			{
@@ -270,6 +273,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'ah94',
+		name: 'AH-94',
 		hidden: false,
 		checklists: [
 			{
@@ -336,6 +340,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 't55',
+		name: 'T-55',
 		hidden: false,
 		checklists: [
 			{
@@ -436,6 +441,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'carrier',
+		name: 'carrier',
 		hidden: true,
 		checklists: [
 			{
@@ -513,6 +519,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'global',
+		name: 'global',
 		hidden: true,
 		checklists: [
 			{
