@@ -1,14 +1,3 @@
-export interface Checklist {
-	type: string;
-	name: string;
-	file: string;
-	for?: string;
-	hidden?: boolean;
-	related?: Record<string, Array<string> | undefined | Array<string>>;
-	showGlobal?: boolean;
-	showEmergencies?: boolean;
-}
-
 export interface EmergencyChecklist {
 	type: string;
 	name: string;
@@ -38,16 +27,8 @@ export interface AircraftChecklists {
 	name: string;
 	checklists: ChecklistItem[];
 }
-
-export interface PageProps {
-	aircraft: string;
-	checklist: string;
-}
 export interface Related {
-	type: string;
+	aircraft: string;
 	name: string;
-	file: string;
-	hidden: boolean;
-	showGlobal: boolean;
-	showEmergencies: boolean;
+	checklists: ChecklistItem[];
 }
