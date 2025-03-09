@@ -1,5 +1,5 @@
 import { marked } from 'marked';
-import { checklists, emergencyChecklists } from '$lib/checklists';
+import { checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
 
 const fetchMarkdown = async (file: string): Promise<string> => {
 	try {
@@ -23,7 +23,7 @@ function getAircraftLists() {
 	let masterList: Array<{ aircraft: string; lists: Array<{ name: string; markdown: string }> }> =
 		[];
 	let lists: Array<{ name: string; markdown: string }> = [];
-	checklists.forEach(async (aircraft) => {
+	checklistStruct.forEach(async (aircraft) => {
 		aircraft.checklists.forEach(async (checklist) => {
 			try {
 				const html = await fetchMarkdown(checklist.file);
@@ -44,7 +44,7 @@ function getEmergencyLists() {
 	let masterList: Array<{ aircraft: string; lists: Array<{ name: string; markdown: string }> }> =
 		[];
 	let lists: Array<{ name: string; markdown: string }> = [];
-	emergencyChecklists.forEach(async (aircraft) => {
+	emergencyChecklistsStruct.forEach(async (aircraft) => {
 		aircraft.checklists.forEach(async (checklist) => {
 			try {
 				const html = await fetchMarkdown(checklist.file);
