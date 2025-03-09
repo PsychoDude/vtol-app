@@ -570,25 +570,25 @@ export const checklistStruct = [
 				name: 'Global',
 				file: 'global',
 				for: 'global',
-				related: ['global-audio-cues', 'global-rwr'],
+				related: { global: ['audio-cues', 'rwr'] },
 				showGlobal: true,
 				hidden: false
 			},
 			{
 				type: 'info',
 				name: 'Audio Cues',
-				file: 'global-audio-cues',
+				file: 'audio-cues',
 				for: 'global',
-				related: ['global-rwr'],
+				related: { global: ['rwr'] },
 				showGlobal: true,
 				hidden: false
 			},
 			{
 				type: 'info',
 				name: 'RWR',
-				file: 'global-rwr',
+				file: 'rwr',
 				for: 'global',
-				related: ['global-audio-cues'],
+				related: { global: ['audio-cues'] },
 				showGlobal: true,
 				hidden: false
 			},
@@ -597,7 +597,7 @@ export const checklistStruct = [
 				name: 'Credits',
 				file: 'credits',
 				for: 'site',
-				related: ['licenses'],
+				related: { site: ['licenses'] },
 				showGlobal: true,
 				hidden: false
 			},
@@ -606,7 +606,7 @@ export const checklistStruct = [
 				name: 'Licenses',
 				file: 'licenses',
 				for: 'site',
-				related: ['credits'],
+				related: { site: ['credits'] },
 				showGlobal: true,
 				hidden: false
 			}
