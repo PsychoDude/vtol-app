@@ -31,6 +31,10 @@
 	}
 
 	function globalPageRedirect(plane: string, file: string) {
+		goto(`/${[plane]}/${file}`);
+	}
+
+	function globalRedirect(plane: string, file: string) {
 		goto(`/${plane}/${file}`);
 	}
 
@@ -42,16 +46,15 @@
 		goto(`/${plane}/emergency/${file}`);
 	}
 
-	let aircraftNameForBtn;
+	function siteRedirect(file: string) {
+		goto(`/site/${file}`);
+	}
 
-	console.log(data.aircraftLabel);
-	if (
-		data.info.for !== 'carrier' &&
-		data.info.for !== 'global' &&
-		data.info.for !== 'site' &&
-		data.aircraftLabel
-	)
+	let aircraftNameForBtn = '';
+
+	if (data.info.for !== 'carrier' && data.info.for !== 'global' && data.info.for !== 'site')
 		aircraftNameForBtn = data.aircraftLabel ? data.info.for : '';
+
 	const btnText = aircraftNameForBtn ? `${data.info.name} (${aircraftNameForBtn})` : data.info.name;
 </script>
 
@@ -59,6 +62,9 @@
 	class={`rounded ${colorVariants[color]} px-4 py-2 text-white ${mainBtns[data.mainBtns]}`}
 	onclick={() => {
 		switch (true) {
+			case data.siteBtn:
+				siteRedirect(data.info.file);
+				break;
 			case data.type === 'aircraft':
 				aircraftRedirect(data.info.aircraft);
 				break;
@@ -72,11 +78,11 @@
 				emergencyRedirect(data.aircraft, data.info.file);
 				break;
 			case data.type === 'back':
-				history.back();
+				window.history.back();
 				break;
 			case data.type === 'related':
-				if (data.info.aircraft === 'globalPages') {
-					globalPageRedirect(data.aircraft, data.info.file);
+				if (data.aircraft === 'global') {
+					globalRedirect(data.aircraft, data.info.file);
 					break;
 				}
 				if (data.info.aircraft === 'emergency') {
@@ -89,6 +95,7 @@
 			case data.type === 'relatedEmergency':
 				emergencyRedirect(data.aircraft, data.info.file);
 				break;
+
 			default:
 				break;
 		}
