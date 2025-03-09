@@ -4,8 +4,4 @@
 	export let data;
 </script>
 
-{#if data.relatedChecklists}
-	<Checklist {data} />
-{:else}
-	<Checklist {data} />
-{/if}
+<Checklist {data} />
