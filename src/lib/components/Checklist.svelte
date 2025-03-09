@@ -21,25 +21,31 @@
 		{#if data.relatedChecklists}
 			{#each data.relatedChecklists as checklist}
 				{#each checklist.checklists as list}
-					<Button
-						type="related"
-						mainBtns="false"
-						info={list}
-						aircraft={checklist.aircraft}
-						aircraftLabel={data.aircraftLabel}
-					/>
+					{#key list.file}
+						<Button
+							type="related"
+							mainBtns="false"
+							info={list}
+							aircraft={checklist.aircraft}
+							aircraftLabel={data.aircraftLabel}
+							siteBtn={data.siteBtn}
+						/>
+					{/key}
 				{/each}
 			{/each}
 		{/if}
 		{#if data.relatedEmergencyChecklists}
 			{#each data.relatedEmergencyChecklists.checklists as checklist}
-				<Button
-					type="relatedEmergency"
-					mainBtns="false"
-					info={checklist}
-					aircraft={data.aircraft}
-					aircraftLabel={data.aircraftLabel}
-				/>
+				{#key checklist.file}
+					<Button
+						type="relatedEmergency"
+						mainBtns="false"
+						info={checklist}
+						aircraft={data.aircraft}
+						aircraftLabel={data.aircraftLabel}
+						siteBtn={data.siteBtn}
+					/>
+				{/key}
 			{/each}
 		{/if}
 	</div>
