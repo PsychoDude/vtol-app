@@ -8,7 +8,8 @@
 		globalPage: 'green',
 		checklist: 'green',
 		emergency: 'red',
-		back: 'gray'
+		back: 'gray',
+		related: 'green'
 	};
 
 	const color: string = colorForTypes[data.type];
@@ -59,6 +60,18 @@
 				break;
 			case data.type === 'back':
 				history.back();
+				break;
+			case data.type === 'related':
+				if (data.related.aircraft === 'globalPages') {
+					globalPageRedirect(data.aircraft, data.page);
+					break;
+				}
+				if (data.related.aircraft === 'emergency') {
+					emergencyRedirect(data.aircraft, data.page);
+					break;
+				}
+
+				checklistRedirect(data.aircraft, data.page);
 				break;
 		}
 	}}

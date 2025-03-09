@@ -7,7 +7,7 @@ export const checklistStruct = [
 				type: 'aircraft',
 				name: 'Startup',
 				file: 'startup',
-				related: ['takeoff-runway', 'takeoff-CATOBAR', 'takeoff-short', 'vcap'],
+				related: { f45a: ['takeoff-runway', 'takeoff-CATOBAR', 'takeoff-short', 'vcap'] },
 				hidden: false,
 				showGlobal: false,
 				showEmergencies: false
@@ -16,7 +16,7 @@ export const checklistStruct = [
 				type: 'aircraft',
 				name: 'Takeoff (RWY)',
 				file: 'takeoff-runway',
-				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'],
+				related: { f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'] },
 				hidden: false,
 				showGlobal: false,
 				showEmergencies: true
@@ -33,15 +33,17 @@ export const checklistStruct = [
 				type: 'aircraft',
 				name: 'Takeoff (CARRIER)',
 				file: 'takeoff-CATOBAR',
-				related: [
-					'departure',
-					'flightdeck-overview',
-					'case-1',
-					'landing-runway',
-					'landing-CATOBAR-preface',
-					'landing-vtol',
-					'vcap'
-				],
+				related: {
+					f45a: [
+						'departure',
+						'flightdeck-overview',
+						'case-1',
+						'landing-runway',
+						'landing-CATOBAR-preface',
+						'landing-vtol',
+						'vcap'
+					]
+				},
 				hidden: false,
 				showGlobal: false,
 				showEmergencies: true
@@ -50,7 +52,7 @@ export const checklistStruct = [
 				type: 'page',
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
-				related: ['landing-CATOBAR', 'marshal', 'final', 'case-1'],
+				related: { f45a: ['landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
@@ -59,7 +61,7 @@ export const checklistStruct = [
 			{
 				type: 'aircraft',
 				name: 'Carrier Landing - CASE I',
-				file: 'landing-CATOBAR',
+				file: { f45a: ['landing-CATOBAR'] },
 				hidden: true,
 				showGlobal: true,
 				showEmergencies: true
@@ -68,7 +70,7 @@ export const checklistStruct = [
 				type: 'page',
 				name: 'V/STOL',
 				file: 'svtol',
-				related: ['takeoff-short', 'landing-vtol'],
+				related: { f45a: ['takeoff-short', 'landing-vtol'] },
 				for: 'aircraft',
 				hidden: false,
 				showGlobal: true,
@@ -78,7 +80,7 @@ export const checklistStruct = [
 				type: 'aircraft',
 				name: 'Short Takeoff',
 				file: 'takeoff-short',
-				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'],
+				related: { f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'] },
 				hidden: true,
 				showGlobal: false,
 				showEmergencies: true
@@ -95,7 +97,7 @@ export const checklistStruct = [
 				type: 'aircraft',
 				name: 'VCAP',
 				file: 'vcap',
-				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol'],
+				related: { f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol'] },
 				hidden: false,
 				showGlobal: false,
 				showEmergencies: true
@@ -707,3 +709,17 @@ export const emergencyChecklistsStruct = [
 		]
 	}
 ];
+
+export function getRelatedChecklistsByAircraftAndFile(aircraft: string, file: string) {
+	const checklist = checklistStruct.find(
+		(aircraftEntry) =>
+			aircraftEntry.aircraft === aircraft &&
+			aircraftEntry.checklists.some((checklist) => checklist.file === file)
+	);
+
+	if (!checklist?.checklists) return {};
+
+	const relatedChecklist = checklist.checklists.find((chk) => chk.file === file);
+
+	return relatedChecklist ? relatedChecklist.related : {};
+}
