@@ -9,7 +9,8 @@
 		checklist: 'green',
 		emergency: 'red',
 		back: 'gray',
-		related: 'green'
+		related: 'green',
+		relatedEmergency: 'red'
 	};
 
 	const color: string = colorForTypes[data.type];
@@ -40,6 +41,18 @@
 	function emergencyRedirect(plane: string, file: string) {
 		goto(`/${plane}/emergency/${file}`);
 	}
+
+	let aircraftNameForBtn;
+
+	console.log(data.aircraftLabel);
+	if (
+		data.info.for !== 'carrier' &&
+		data.info.for !== 'global' &&
+		data.info.for !== 'site' &&
+		data.aircraftLabel
+	)
+		aircraftNameForBtn = data.aircraftLabel ? data.info.for : '';
+	const btnText = aircraftNameForBtn ? `${data.info.name} (${aircraftNameForBtn})` : data.info.name;
 </script>
 
 <button
@@ -62,19 +75,24 @@
 				history.back();
 				break;
 			case data.type === 'related':
-				if (data.related.aircraft === 'globalPages') {
-					globalPageRedirect(data.aircraft, data.page);
+				if (data.info.aircraft === 'globalPages') {
+					globalPageRedirect(data.aircraft, data.info.file);
 					break;
 				}
-				if (data.related.aircraft === 'emergency') {
-					emergencyRedirect(data.aircraft, data.page);
+				if (data.info.aircraft === 'emergency') {
+					emergencyRedirect(data.aircraft, data.info.file);
 					break;
 				}
 
-				checklistRedirect(data.aircraft, data.page);
+				checklistRedirect(data.aircraft, data.info.file);
+				break;
+			case data.type === 'relatedEmergency':
+				emergencyRedirect(data.aircraft, data.info.file);
+				break;
+			default:
 				break;
 		}
 	}}
 >
-	{`${data.info.name}`}
+	{`${btnText}`}
 </button>

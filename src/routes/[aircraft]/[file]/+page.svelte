@@ -2,23 +2,10 @@
 	import Checklist from '$lib/components/Checklist.svelte';
 
 	export let data;
-
-	console.log(data.relatedEmergencyChecklists, data.relatedChecklists);
 </script>
 
 {#if data.relatedChecklists}
-	<Checklist
-		content={data.content}
-		aircraft={data.aircraft}
-		file={data.file}
-		relatedChecklists={data.relatedChecklists}
-		relatedEmergencyChecklists={data.relatedEmergencyChecklists}
-	/>
+	<Checklist {data} />
 {:else}
-	<Checklist
-		content={data.content}
-		aircraft={data.aircraft}
-		file={data.file}
-		relatedEmergencyChecklists={data.relatedEmergencyChecklists}
-	/>
+	<Checklist {data} />
 {/if}

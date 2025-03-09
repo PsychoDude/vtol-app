@@ -34,11 +34,11 @@ export async function load({ params, fetch }) {
 	const emergencyLists: EmergencyChecklists | undefined = allAircraftEmergChecklists;
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
-		console.log('simple return');
 		return {
 			content: html,
 			aircraft: params.aircraft,
-			file: params.file
+			file: params.file,
+			aircraftLabel: true
 		};
 	}
 
@@ -77,12 +77,12 @@ export async function load({ params, fetch }) {
 			});
 		});
 	}
-	console.log('advanced return');
 
 	return {
 		content: html,
 		aircraft: params.aircraft,
 		file: params.file,
+		aircraftLabel: true,
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: emergencyLists
 	};

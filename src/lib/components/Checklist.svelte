@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 
-	let data = $props();
+	let { data } = $props();
 
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
@@ -17,17 +17,30 @@
 		<h2 class="mb-2 font-bold uppercase">Related Checklists:</h2>
 	</div>
 
-	{#each data.relatedChecklists as checklist}
-		{console.log(checklist)}
-		{#each checklist.lists as list}
-			{console.log(list)}
-			<Button
-				type="related"
-				mainBtns="false"
-				btnName={list.name}
-				page={list}
-				aircraft={list.aircraft}
-			/>
-		{/each}
-	{/each}
+	<div class="flex flex-col space-y-2">
+		{#if data.relatedChecklists}
+			{#each data.relatedChecklists as checklist}
+				{#each checklist.checklists as list}
+					<Button
+						type="related"
+						mainBtns="false"
+						info={list}
+						aircraft={checklist.aircraft}
+						aircraftLabel={data.aircraftLabel}
+					/>
+				{/each}
+			{/each}
+		{/if}
+		{#if data.relatedEmergencyChecklists}
+			{#each data.relatedEmergencyChecklists.checklists as checklist}
+				<Button
+					type="relatedEmergency"
+					mainBtns="false"
+					info={checklist}
+					aircraft={data.aircraft}
+					aircraftLabel={data.aircraftLabel}
+				/>
+			{/each}
+		{/if}
+	</div>
 {/if}
