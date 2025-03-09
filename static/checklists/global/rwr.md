@@ -12,7 +12,7 @@
 <tbody>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Basic_Primary.png" alt="RWR Primary Threat" class="h-full w-auto">
+<img src="/images/RWR_Basic_Primary.png" alt="RWR Primary Threat" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The threat that the RWR has identified as the <b>primary threat.</b> This is dependent on several factors and may not always be your current top priority; generally, airborne and long-range radars that are close to you are considered more dangerous. 
@@ -20,7 +20,7 @@ The threat that the RWR has identified as the <b>primary threat.</b> This is dep
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Basic_Newest.png" alt="RWR Newest Threat" class="h-full w-auto">
+<img src="/images/RWR_Basic_Newest.png" alt="RWR Newest Threat" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The marking for the <b>most recently detected</b> radar threat. This may also help with target prioritization. 
@@ -28,7 +28,7 @@ The marking for the <b>most recently detected</b> radar threat. This may also he
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Basic_Airborn.png" alt="RWR Threat airborne" class="h-full w-auto">
+<img src="/images/RWR_Basic_Airborn.png" alt="RWR Threat airborne" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The radar threat is  <b>airborne.</b>
@@ -36,7 +36,7 @@ The radar threat is  <b>airborne.</b>
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Basic_Locked.png" alt="RWR Threat Locked And Tracking" class="h-full w-auto">
+<img src="/images/RWR_Basic_Locked.png" alt="RWR Threat Locked And Tracking" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The radar threat is <b>locked on AND tracking you.</b> Listen for a radar spike (lock-on) warning tone. A lock-on by itself does not instantly indicate a missile launch, but rather that one may be imminent. 
@@ -44,7 +44,7 @@ The radar threat is <b>locked on AND tracking you.</b> Listen for a radar spike 
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Basic_Guiding_(Revised).png" alt="RWR Semi-Active Radar Homing" class="h-full w-auto">
+<img src="/images/RWR_Basic_Guiding_(Revised).png" alt="RWR Semi-Active Radar Homing" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The <b>SARH Guidance Indicator.</b> Indicates that a <b>Semi-Active Radar Homing</b> missile such as an AIM-7 has been fired and is guiding towards you.
@@ -52,7 +52,7 @@ The <b>SARH Guidance Indicator.</b> Indicates that a <b>Semi-Active Radar Homing
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Missile.png" alt="RWR Active Radar Homing" class="h-full w-auto">
+<img src="/images/RWR_Missile.png" alt="RWR Active Radar Homing" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The <b>ARH Guidance Indicator.</b> Indicates that an <b>Active Radar Homing</b> missile such as an AIM-120C has aquired you with its own radar seeker and is guiding towards you.
@@ -90,7 +90,7 @@ Threat Levels:
 <tbody>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/Missile_NoCircle_RWR.png" alt="Active radar-guided missile" class="h-full w-auto">
+<img src="/images/Missile_NoCircle_RWR.png" alt="Active radar-guided missile" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 Any active radar-guided missile.
@@ -104,7 +104,7 @@ Imminent Threat
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Missile_ASM.png" alt="Radar seeker of air launched ASM" class="h-full w-auto">
+<img src="/images/RWR_Missile_ASM.png" alt="Radar seeker of air launched ASM" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The radar seeker of an air launched Anti-Ship Missile.
@@ -118,7 +118,7 @@ Imminent Threat
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_MAD-4.png" alt="MAD-4 Radar" class="h-full w-auto">
+<img src="/images/RWR_MAD-4.png" alt="MAD-4 Radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The MAD-4 Radar.
@@ -132,7 +132,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_NMSS_LongRange_Radar.png" alt="NMSS Cruiser long-range radar" class="h-full w-auto">
+<img src="/images/RWR_NMSS_LongRange_Radar.png" alt="NMSS Cruiser long-range radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 Located underneath the Aft <b>MC</b> Radar on the NMSS Cruiser. Coordinates long-range missiles.
@@ -146,7 +146,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_ASF_58.png" alt="ASF-58" class="h-full w-auto">
+<img src="/images/RWR_ASF_58.png" alt="ASF-58" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The ASF-58 Advanced Stealth Fighter.
@@ -160,7 +160,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_ASF_30-33.png" alt="ASF-33 and ASF-30" class="h-full w-auto">
+<img src="/images/RWR_ASF_30-33.png" alt="ASF-33 and ASF-30" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The ASF-30 singe-engine Air Superiority Fighter or ASF-33 Air Superiority and Stealth Fighter.
@@ -174,7 +174,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_SAM_SA.png" alt="SAM S/A Radar (Enemy)" class="h-full w-auto">
+<img src="/images/RWR_SAM_SA.png" alt="SAM S/A Radar (Enemy)" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The SAM S/A Radar (Enemy).
@@ -188,7 +188,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_FCR.png" alt="Fire Control Radar" class="h-full w-auto">
+<img src="/images/RWR_FCR.png" alt="Fire Control Radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The Fire Control Radar.
@@ -202,7 +202,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Redfor_SL-MRM.png" alt="SL-MRM Radar" class="h-full w-auto">
+<img src="/images/RWR_Redfor_SL-MRM.png" alt="SL-MRM Radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The SL-MRM Radar.
@@ -216,7 +216,7 @@ medium-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_NMSS_Cruiser_Second_Radar.png" alt="NMSS Cruiser Air and Sea radars" class="h-full w-auto">
+<img src="/images/RWR_NMSS_Cruiser_Second_Radar.png" alt="NMSS Cruiser Air and Sea radars" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The NMSS Cruiser's Air and Sea radars, coordinating its Vertical Launch System. Used for both the Aft Sea-to-Air and Fore Sea-to-Sea radar.
@@ -230,7 +230,7 @@ medium-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_SAAW.png" alt="SAAW (Self-propelled Anti-Air Weapon)" class="h-full w-auto">
+<img src="/images/RWR_SAAW.png" alt="SAAW (Self-propelled Anti-Air Weapon)" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The SAAW (Self-propelled Anti-Air Weapon)
@@ -244,7 +244,7 @@ The SAAW (Self-propelled Anti-Air Weapon)
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_DroneCarrier.png" alt="Drone Carrier or DMS Cruiser" class="h-full w-auto">
+<img src="/images/RWR_DroneCarrier.png" alt="Drone Carrier or DMS Cruiser" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The Drone Carrier or DMS Cruiser.
@@ -258,7 +258,7 @@ medium
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/MantaUCAV.png" alt="Manta UCAV" class="h-full w-auto">
+<img src="/images/MantaUCAV.png" alt="Manta UCAV" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The Manta UCAV.
@@ -272,7 +272,7 @@ short-range (gun)
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_NFP_Carrier.png" alt="NFP Carrier" class="h-full w-auto">
+<img src="/images/RWR_NFP_Carrier.png" alt="NFP Carrier" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The NFP Aircraft Carrier (enemy)</td>
@@ -285,7 +285,7 @@ short-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_CIWS.png" alt="AAA Radar" class="h-full w-auto">
+<img src="/images/RWR_CIWS.png" alt="AAA Radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 Short-range Anti-Air Artillery targeting radars. Used by Z20x2 AAA, CIWS Turret and C-RAM Truck
@@ -299,7 +299,7 @@ Short-range Anti-Air Artillery targeting radars. Used by Z20x2 AAA, CIWS Turret 
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Redfor_MissileWarnRad.png" alt="Missile Warning Radar" class="h-full w-auto">
+<img src="/images/RWR_Redfor_MissileWarnRad.png" alt="Missile Warning Radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The Missile Warning Radar. A purely defensive emplacement that will target incoming missiles.
@@ -313,7 +313,7 @@ short-medium
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Blufor_AWACS.png" alt="Blufor E-4 Overlord AWACS" class="h-full w-auto">
+<img src="/images/RWR_Blufor_AWACS.png" alt="Blufor E-4 Overlord AWACS" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The BLUFOR E-4 Overlord AWACS.
@@ -327,7 +327,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Redfor_AWACS.png" alt="REDFOR AEW-50 Bulwark AWACS" class="h-full w-auto">
+<img src="/images/RWR_Redfor_AWACS.png" alt="REDFOR AEW-50 Bulwark AWACS" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The REDFOR AEW-50 Bulwark AWACS.
@@ -341,7 +341,7 @@ long-range
 </tr>
 <tr>
 <td class="border border-neutral-700 p-2">
-<img src="images/RWR_Redfor_Early-WarningRDR.png" alt="REDFOR Early Warning Radar" class="h-full w-auto">
+<img src="/images/RWR_Redfor_Early-WarningRDR.png" alt="REDFOR Early Warning Radar" class="h-full w-auto">
 </td>
 <td class="border border-neutral-700 p-2">
 The REDFOR Early Warning Radar.

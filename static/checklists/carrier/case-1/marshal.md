@@ -2,7 +2,7 @@
 
 <br>
 
-![Carrier Marshal](images/marshal.webp)
+![Carrier Marshal](/images/marshal.webp)
 
 <br>
 
