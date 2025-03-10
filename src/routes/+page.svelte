@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
 
 	export let data;
@@ -20,3 +21,5 @@
 		{/each}
 	</div>
 </div>
+
+<BackToTop />

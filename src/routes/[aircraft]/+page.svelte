@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
 	let { data } = $props();
 	const backBtnName: { name: string } = { name: 'Back' };
@@ -24,3 +25,5 @@
 		{/each}
 	{/if}
 </div>
+
+<BackToTop />

@@ -63,7 +63,7 @@
 </script>
 
 <button
-	class={`rounded ${colorVariants[color]} px-4 py-2 text-white ${mainBtns[data.mainBtns]}`}
+	class={`rounded ${colorVariants[color]} px-4 py-2 text-white ${mainBtns[data.mainBtns]} cursor-pointer`}
 	onclick={() => {
 		switch (true) {
 			case data.siteBtn:

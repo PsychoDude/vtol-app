@@ -54,7 +54,10 @@
 		<div class="flex justify-center gap-3">
 			{#each data.sitePages as sitePage}
 				<p>
-					<button class="text-sm" onclick={() => aircraftImportant(sitePage.file)}>
+					<button
+						class="cursor-pointer text-sm underline"
+						onclick={() => aircraftImportant(sitePage.file)}
+					>
 						{sitePage.name}
 					</button>
 				</p>
