@@ -3,8 +3,6 @@
 
 	let data = $props();
 
-	console.log(data.info);
-
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
 		global: 'green',
@@ -92,7 +90,6 @@
 					break;
 				}
 				if (data.aircraft === 'carrier' && data.info.type === 'case-1') {
-					console.log('wtf');
 					caseOneRedirect(data.aircraft, data.info.file);
 					break;
 				}

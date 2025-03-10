@@ -2,13 +2,10 @@
 	import Button from '$lib/components/Button.svelte';
 
 	let { data } = $props();
-
 	const relatedParams = data.relatedParams || null;
-
 	const showGlobal = relatedParams ? relatedParams.showGlobal : false;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
 	const hidden = relatedParams ? relatedParams : false;
-
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
 

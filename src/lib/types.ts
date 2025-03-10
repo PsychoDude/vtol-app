@@ -14,7 +14,7 @@ export interface ChecklistItem {
 	type: string;
 	name: string;
 	file: string;
-	for?: string;
+	for: string;
 	hidden: boolean;
 	related?: Record<string, Array<string> | undefined>;
 	showGlobal: boolean;
