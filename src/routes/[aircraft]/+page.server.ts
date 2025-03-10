@@ -8,26 +8,21 @@ export async function load({ params }) {
 	const checklists: AircraftChecklists = checklistStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
 	)[0];
-
-	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
-		(checklist) => checklist.aircraft === params.aircraft
-	);
-
-	const emergencyLists: EmergencyChecklists | undefined = allAircraftEmergChecklists;
+	const emergencyChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
+		(aircraft) => aircraft.aircraft === params.aircraft
+	)[0];
 
 	if (!checklists) error(404, 'Dumbass');
 
-	if (!emergencyLists)
+	if (!emergencyChecklists)
 		return {
 			aircraft: params.aircraft,
-			checklists: checklists,
-			aircraftLabel: false
+			checklists: checklists
 		};
 
 	return {
 		aircraft: params.aircraft,
 		checklists: checklists,
-		emergencyLists: emergencyLists,
-		aircraftLabel: false
+		emergencyLists: emergencyChecklists
 	};
 }

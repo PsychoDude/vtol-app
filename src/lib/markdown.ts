@@ -1,71 +1,57 @@
 import { marked } from 'marked';
 import { checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
-const fetchMarkdown = async (file: string): Promise<string> => {
-	try {
-		const response = await fetch(`/checklists/${file}`);
-		if (!response.ok) {
-			throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
+export async function getAircraftSlugs() {
+	const aircraftSlugArr: { aircraft: string; file: string }[] = [];
+	const caseOneSlugArr: { aircraft: string; file: string }[] = [];
+	checklistStruct.forEach((aircraft) => {
+		for (const list in aircraft.checklists) {
+			if (aircraft.checklists[list].type === 'case-1') {
+				caseOneSlugArr.push({
+					aircraft: aircraft.aircraft,
+					file: aircraft.checklists[list].file
+				});
+			} else {
+				aircraftSlugArr.push({
+					aircraft: aircraft.aircraft,
+					file: aircraft.checklists[list].file
+				});
+			}
 		}
-		const text = await response.text();
-		let html = await marked(text);
+	});
+
+	return [aircraftSlugArr, caseOneSlugArr];
+}
+
+export async function getEmergencySlugs() {
+	const emergencySlugArr: { aircraft: string; file: string }[] = [];
+	emergencyChecklistsStruct.forEach((aircraft) => {
+		for (const list in aircraft.checklists) {
+			emergencySlugArr.push({
+				aircraft: aircraft.aircraft,
+				file: aircraft.checklists[list].file
+			});
+		}
+	});
+
+	return emergencySlugArr;
+}
+export async function getMarkdown(urlPath: string) {
+	const pathname = path.resolve(`src/checklists/${urlPath}.md`);
+	try {
+		let html = await fs.readFile(pathname, 'utf-8');
+
 		html = html.replace(/<img([^>]*?)>/g, (match, attributes) => {
 			return `<img ${attributes} class="w-full h-auto" />`;
 		});
-		return html;
-	} catch (error) {
-		console.error('Error fetching markdown:', error);
-		return '<p>Failed to load checklist.</p>';
+
+		const markdown = marked(html);
+
+		return markdown;
+	} catch (err) {
+		console.error('Error reading file:', err);
+		return null;
 	}
-};
-
-function getAircraftLists() {
-	let masterList: Array<{ aircraft: string; lists: Array<{ name: string; markdown: string }> }> =
-		[];
-	let lists: Array<{ name: string; markdown: string }> = [];
-	checklistStruct.forEach(async (aircraft) => {
-		aircraft.checklists.forEach(async (checklist) => {
-			try {
-				const html = await fetchMarkdown(checklist.file);
-				lists.push({ name: checklist.file, markdown: html });
-			} catch (error) {
-				console.error('Error fetching markdown:', error);
-			}
-		});
-
-		masterList.push({ aircraft: aircraft.aircraft, lists: lists });
-		lists = [];
-	});
-
-	return masterList;
 }
-
-function getEmergencyLists() {
-	let masterList: Array<{ aircraft: string; lists: Array<{ name: string; markdown: string }> }> =
-		[];
-	let lists: Array<{ name: string; markdown: string }> = [];
-	emergencyChecklistsStruct.forEach(async (aircraft) => {
-		aircraft.checklists.forEach(async (checklist) => {
-			try {
-				const html = await fetchMarkdown(checklist.file);
-				lists.push({ name: checklist.file, markdown: html });
-			} catch (error) {
-				console.error('Error fetching markdown:', error);
-			}
-		});
-
-		masterList.push({ aircraft: aircraft.aircraft, lists: lists });
-		lists = [];
-	});
-
-	return masterList;
-}
-
-export let checklistsMD: Array<{
-	aircraft: string;
-	lists: Array<{ name: string; markdown: string }>;
-}> = getAircraftLists();
-export let emerChecklistsMD: Array<{
-	aircraft: string;
-	lists: Array<{ name: string; markdown: string }>;
-}> = getEmergencyLists();

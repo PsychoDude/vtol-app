@@ -1,23 +1,87 @@
-import { error } from '@sveltejs/kit';
-import { marked } from 'marked';
+import { getRelatedChecklistsByAircraftAndFile } from '$lib/checklists';
+import { emergencyChecklistsStruct } from '$lib/checklists';
+import { checklistStruct } from '$lib/checklists';
+import { getMarkdown } from '$lib/markdown';
+import { getAircraftSlugs } from '$lib/markdown';
+import type { Related } from '$lib/types';
+import type { EmergencyChecklists } from '$lib/types';
+import type { ChecklistItem } from '$lib/types';
 
 export const prerender = true;
 
-export async function load({ params, fetch }) {
-	const response = await fetch(`/checklists/${params.aircraft}/case-1/${params.file}.md`);
+export async function entries() {
+	const list = await getAircraftSlugs();
 
-	if (response.status !== 200) return error(404, 'Dumbass');
+	return list[1];
+}
 
-	const markdownContent = await response.text();
-	let html = await marked(markdownContent);
+export async function load({ params, url }) {
+	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
+		params.aircraft,
+		params.file
+	);
 
-	html = html.replace(/<img([^>]*?)>/g, (match, attributes) => {
-		return `<img ${attributes} class="w-full h-auto" />`;
-	});
+	const markdown = await getMarkdown(url.pathname);
+
+	const relatedChecklists: Array<Related> = [];
+
+	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
+		(checklist) => checklist.aircraft === params.aircraft
+	);
+
+	const emergencyLists: EmergencyChecklists | undefined = allAircraftEmergChecklists;
+
+	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
+		return {
+			content: markdown,
+			aircraft: params.aircraft,
+			file: params.file,
+			aircraftLabel: true
+		};
+	}
+
+	if (relatedChecklistsNames) {
+		Object.entries(relatedChecklistsNames).forEach((aircraft) => {
+			const relatedLists: Array<ChecklistItem> = [];
+			const aircraftAircraft = aircraft[0];
+			const relatedNameArr = aircraft[1] as Array<string>;
+			const aircraftName = checklistStruct.find(
+				(aircraft) => aircraft.aircraft === aircraftAircraft
+			)!.name;
+
+			if (!relatedNameArr) return;
+
+			for (let i = 0; i < relatedNameArr.length; i++) {
+				const relatedFileName = relatedNameArr[i];
+				const allAircraftChecklists = checklistStruct.find(
+					(aircraft) => aircraft.aircraft === aircraftAircraft
+				);
+
+				if (allAircraftChecklists !== undefined) {
+					const relatedList = allAircraftChecklists.checklists.find(
+						(checklist) => checklist.file === relatedFileName
+					);
+
+					if (relatedList !== undefined) {
+						relatedLists.push(relatedList);
+					}
+				}
+			}
+
+			relatedChecklists.push({
+				aircraft: aircraftAircraft,
+				name: aircraftName,
+				checklists: relatedLists
+			});
+		});
+	}
 
 	return {
-		content: html,
+		content: markdown,
 		aircraft: params.aircraft,
-		file: params.file
+		file: params.file,
+		aircraftLabel: true,
+		relatedChecklists: relatedChecklists,
+		relatedEmergencyChecklists: emergencyLists
 	};
 }

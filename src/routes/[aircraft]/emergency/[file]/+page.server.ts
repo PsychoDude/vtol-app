@@ -1,30 +1,28 @@
 import { checklistStruct, getRelatedChecklistsByAircraftAndFile } from '$lib/checklists.js';
 import { emergencyChecklistsStruct } from '$lib/checklists.js';
+import { getMarkdown } from '$lib/markdown';
+import { getEmergencySlugs } from '$lib/markdown';
 import type { ChecklistItem, Related } from '$lib/types';
 import type { EmergencyChecklists } from '$lib/types';
-import { error } from '@sveltejs/kit';
-import { marked } from 'marked';
 
 export const prerender = true;
 
-export async function load({ params, fetch }) {
+export async function entries() {
+	const list = await getEmergencySlugs();
+
+	return list;
+}
+
+export async function load({ params, url }) {
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
 		params.aircraft,
 		params.file
 	);
 
-	const response = await fetch(`/checklists/${params.aircraft}/emergency/${params.file}.md`);
-
-	if (response.status !== 200) return error(404, 'Dumbass');
-
-	const markdownContent = await response.text();
-	let html = await marked(markdownContent);
-
-	html = html.replace(/<img([^>]*?)>/g, (match, attributes) => {
-		return `<img ${attributes} class="w-full h-auto" />`;
-	});
+	const markdown = await getMarkdown(url.pathname);
 
 	const relatedChecklists: Array<Related> = [];
+
 	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
 		(checklist) => checklist.aircraft === params.aircraft
 	);
@@ -33,10 +31,10 @@ export async function load({ params, fetch }) {
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
-			content: html,
+			content: markdown,
 			aircraft: params.aircraft,
 			file: params.file,
-			aircraftLabel: false
+			aircraftLabel: true
 		};
 	}
 
@@ -77,10 +75,10 @@ export async function load({ params, fetch }) {
 	}
 
 	return {
-		content: html,
+		content: markdown,
 		aircraft: params.aircraft,
 		file: params.file,
-		aircraftLabel: false,
+		aircraftLabel: true,
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: emergencyLists
 	};
