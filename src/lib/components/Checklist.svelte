@@ -8,16 +8,16 @@
 
 <Button type="back" info={backBtnName} mainBtns="false" />
 
-<div class="my-4">
+<div class="my-4 flex flex-col gap-3">
 	{@html data.content}
 </div>
 
 {#if data.relatedChecklists}
 	<div class="mt-4">
-		<h2 class="mb-2 font-bold uppercase">Related Checklists:</h2>
+		<h2 class="mb-4 font-bold uppercase">Related Checklists:</h2>
 	</div>
 
-	<div class="flex flex-col space-y-2">
+	<div class="flex flex-col space-y-3">
 		{#if data.relatedChecklists}
 			{#each data.relatedChecklists as checklist}
 				{#each checklist.checklists as list}
