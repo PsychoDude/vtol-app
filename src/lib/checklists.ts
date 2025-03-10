@@ -10,7 +10,7 @@ export const checklistStruct = [
 				for: 'F-45A',
 				related: { f45a: ['takeoff-runway', 'takeoff-CATOBAR', 'takeoff-short', 'vcap'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: false
 			},
 			{
@@ -20,7 +20,7 @@ export const checklistStruct = [
 				for: 'F-45A',
 				related: { f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -29,7 +29,7 @@ export const checklistStruct = [
 				file: 'landing-runway',
 				for: 'F-45A',
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -42,7 +42,7 @@ export const checklistStruct = [
 					carrier: ['departure', 'flightdeck-overview', 'case-1']
 				},
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -61,7 +61,7 @@ export const checklistStruct = [
 				file: 'landing-CATOBAR',
 				for: 'F-45A',
 				hidden: true,
-				showGlobal: true,
+				showGlobal: false,
 				showEmergencies: true
 			},
 			{
@@ -100,7 +100,7 @@ export const checklistStruct = [
 				for: 'F-45A',
 				related: { f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -125,7 +125,7 @@ export const checklistStruct = [
 				for: 'F/A-26B',
 				related: { fa26b: ['takeoff-runway', 'takeoff-CATOBAR'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: false
 			},
 			{
@@ -135,7 +135,7 @@ export const checklistStruct = [
 				for: 'F/A-26B',
 				related: { fa26b: ['landing-runway', 'landing-CATOBAR-preface'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -144,7 +144,7 @@ export const checklistStruct = [
 				file: 'landing-runway',
 				for: 'F/A-26B',
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -162,7 +162,7 @@ export const checklistStruct = [
 					]
 				},
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -181,7 +181,7 @@ export const checklistStruct = [
 				file: 'landing-CATOBAR',
 				for: 'F/A-26B',
 				hidden: true,
-				showGlobal: true,
+				showGlobal: false,
 				showEmergencies: true
 			},
 			{
@@ -206,7 +206,7 @@ export const checklistStruct = [
 				for: 'EF-24G',
 				related: { ef24g: ['wings', 'takeoff-runway', 'takeoff-CATOBAR'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: false
 			},
 			{
@@ -216,7 +216,7 @@ export const checklistStruct = [
 				for: 'EF-24G',
 				related: { ef24g: ['wings', 'landing-runway', 'landing-CATOBAR-preface'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -226,7 +226,7 @@ export const checklistStruct = [
 				for: 'EF-24G',
 				related: { ef24g: ['wings'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -245,7 +245,7 @@ export const checklistStruct = [
 					]
 				},
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -265,7 +265,7 @@ export const checklistStruct = [
 				for: 'EF-24G',
 				related: { ef24g: ['wings'] },
 				hidden: true,
-				showGlobal: true,
+				showGlobal: false,
 				showEmergencies: true
 			},
 			{
@@ -375,7 +375,7 @@ export const checklistStruct = [
 				for: 'T-55',
 				related: { t55: ['takeoff-runway', 'takeoff-CATOBAR'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: false
 			},
 			{
@@ -385,7 +385,7 @@ export const checklistStruct = [
 				for: 'T-55',
 				related: { t55: ['landing-runway', 'landing-CATOBAR-preface'] },
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -394,7 +394,7 @@ export const checklistStruct = [
 				file: 'landing-runway',
 				for: 'T-55',
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -412,7 +412,7 @@ export const checklistStruct = [
 					]
 				},
 				hidden: false,
-				showGlobal: false,
+				showGlobal: true,
 				showEmergencies: true
 			},
 			{
@@ -431,7 +431,7 @@ export const checklistStruct = [
 				file: 'landing-CATOBAR',
 				for: 'T-55',
 				hidden: true,
-				showGlobal: true,
+				showGlobal: false,
 				showEmergencies: true
 			},
 			{
@@ -451,7 +451,7 @@ export const checklistStruct = [
 				for: 'T-55',
 				related: { t55: ['basic-ops'] },
 				hidden: true,
-				showGlobal: true,
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
@@ -461,7 +461,7 @@ export const checklistStruct = [
 				for: 'T-55',
 				related: { t55: ['basic-resp'] },
 				hidden: true,
-				showGlobal: true,
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
@@ -485,8 +485,8 @@ export const checklistStruct = [
 				name: 'Flight Deck Overview',
 				file: 'flightdeck-overview',
 				for: 'carrier',
+				hidden: true,
 				showGlobal: true,
-				hidden: false,
 				showEmergencies: false
 			},
 			{
@@ -495,8 +495,8 @@ export const checklistStruct = [
 				file: 'departure',
 				for: 'carrier',
 				related: { carrier: ['case-1'] },
-				showGlobal: false,
 				hidden: true,
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
@@ -504,9 +504,11 @@ export const checklistStruct = [
 				name: 'Carrier Operations',
 				file: 'ops',
 				for: 'carrier',
-				related: { carrier: ['flightdeck-overview', 'departure', 'case-1'] },
-				showGlobal: true,
+				related: {
+					carrier: ['flightdeck-overview', 'waveoff', 'lso-guidance', 'case-1', 'meatball']
+				},
 				hidden: true,
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
@@ -515,9 +517,9 @@ export const checklistStruct = [
 				file: 'waveoff',
 				for: 'carrier',
 				related: { carrier: ['case-1'] },
+				hidden: false,
 				showGlobal: true,
-				showEmergencies: true,
-				hidden: false
+				showEmergencies: true
 			},
 			{
 				type: 'global',
@@ -525,8 +527,8 @@ export const checklistStruct = [
 				file: 'lso-guidance',
 				for: 'carrier',
 				related: { carrier: ['waveoff'] },
-				showGlobal: true,
 				hidden: false,
+				showGlobal: true,
 				showEmergencies: false
 			},
 			{
@@ -535,8 +537,8 @@ export const checklistStruct = [
 				file: 'case-1',
 				for: 'carrier',
 				related: { carrier: ['departure', 'marshal', 'final'] },
-				showGlobal: true,
 				hidden: false,
+				showGlobal: true,
 				showEmergencies: false
 			},
 			{
@@ -545,8 +547,8 @@ export const checklistStruct = [
 				file: 'marshal',
 				for: 'carrier',
 				related: { carrier: ['final'] },
-				showGlobal: false,
 				hidden: true,
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
@@ -554,8 +556,8 @@ export const checklistStruct = [
 				name: 'Final Approach',
 				file: 'final',
 				for: 'carrier',
-				showGlobal: false,
 				hidden: true,
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
@@ -563,8 +565,8 @@ export const checklistStruct = [
 				name: 'Carrier Lights (Meatball) Img',
 				file: 'meatball',
 				for: 'carrier',
-				showGlobal: true,
 				hidden: false,
+				showGlobal: true,
 				showEmergencies: false
 			}
 		]

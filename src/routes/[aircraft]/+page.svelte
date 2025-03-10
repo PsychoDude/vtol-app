@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
+
 	let { data } = $props();
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
@@ -16,7 +17,9 @@
 
 <div class="mt-4 flex flex-col space-y-2">
 	{#each data.checklists.checklists as checklist}
-		<Button info={checklist} mainBtns="false" type="checklist" aircraft={data.aircraft} />
+		{#if checklist.showGlobal}
+			<Button info={checklist} mainBtns="false" type="checklist" aircraft={data.aircraft} />
+		{/if}
 	{/each}
 
 	{#if data.emergencyLists}

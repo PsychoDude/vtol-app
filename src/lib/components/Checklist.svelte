@@ -3,7 +3,11 @@
 
 	let { data } = $props();
 
-	console.log(data);
+	const relatedParams = data.relatedParams || null;
+
+	const showGlobal = relatedParams ? relatedParams.showGlobal : false;
+	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
+	const hidden = relatedParams ? relatedParams : false;
 
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
@@ -53,7 +57,7 @@
 		{/if}
 		{#if data.relatedEmergencyChecklists}
 			{#each data.relatedEmergencyChecklists.checklists as checklist}
-				{#if data.file !== checklist.file}
+				{#if data.file !== checklist.file && showEmergencies}
 					{#key checklist.file}
 						<Button
 							type="relatedEmergency"
