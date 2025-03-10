@@ -1,3 +1,0 @@
-# Global Information
-
-<br>
