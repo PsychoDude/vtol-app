@@ -4,6 +4,11 @@
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
 
+<svelte:head>
+	<title>{data.aircraftName} Menu - VTOL VR App</title>
+	<meta name="description" content={`VTOL VR Checklists App ${data.aircraftName} menu.`} />
+</svelte:head>
+
 <Button type="back" info={backBtnName} mainBtns="false" />
 
 <h2 class="my-4 text-2xl font-bold">{data.checklists.name} Checklists</h2>

@@ -1,3 +1,4 @@
+import { getAircraftName } from '$lib/checklists';
 import { checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
@@ -5,6 +6,8 @@ import { error } from '@sveltejs/kit';
 export const prerender = true;
 
 export async function load({ params }) {
+	const aircraftName = getAircraftName(params.aircraft);
+
 	const checklists: AircraftChecklists = checklistStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
 	)[0];
@@ -17,12 +20,14 @@ export async function load({ params }) {
 	if (!emergencyChecklists)
 		return {
 			aircraft: params.aircraft,
-			checklists: checklists
+			checklists: checklists,
+			aircraftName: aircraftName
 		};
 
 	return {
 		aircraft: params.aircraft,
 		checklists: checklists,
-		emergencyLists: emergencyChecklists
+		emergencyLists: emergencyChecklists,
+		aircraftName: aircraftName
 	};
 }

@@ -4,6 +4,11 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>VTOL VR App</title>
+	<meta name="description" content="VTOL VR Checklists App. " />
+</svelte:head>
+
 <div class="flex space-x-4">
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
 		{#each data.aircraft as plane}

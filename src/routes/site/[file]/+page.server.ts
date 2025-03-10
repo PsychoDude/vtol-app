@@ -1,4 +1,4 @@
-import { getRelatedChecklistsByFile, siteChecklistStruct } from '$lib/checklists';
+import { getPageName, getRelatedChecklistsByFile, siteChecklistStruct } from '$lib/checklists';
 import { getMarkdown, getSiteSlugs } from '$lib/markdown';
 import type { SiteItem } from '$lib/types';
 
@@ -11,6 +11,7 @@ export async function entries() {
 }
 
 export async function load({ params, url }) {
+	const pageName = getPageName('site', params.file);
 	const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
 
 	const relatedChecklists: Array<SiteItem> = [];
@@ -28,6 +29,7 @@ export async function load({ params, url }) {
 		type: 'site',
 		content: markdown,
 		relatedChecklists: relatedChecklists,
-		siteBtn: true
+		siteBtn: true,
+		pageName: pageName
 	};
 }

@@ -1,3 +1,5 @@
+import type { ChecklistItem, EmergencyChecklist, SiteItem } from './types';
+
 export const checklistStruct = [
 	{
 		aircraft: 'f45a',
@@ -759,4 +761,33 @@ export function getRelatedChecklistsByFile(file: string) {
 	const related = checklist?.related;
 
 	return related ? related : {};
+}
+
+export function getPageName(type: string, file: string, aircraft?: string) {
+	switch (true) {
+		case type === 'site':
+			const siteList = siteChecklistStruct.find((checklist) => checklist.file === file);
+
+			if (siteList) return siteList.name;
+			break;
+		case type === 'aircraft':
+			const aircraftList = checklistStruct
+				.find((checklist) => checklist.aircraft === aircraft)
+				?.checklists.find((checklist) => checklist.file === file);
+
+			if (aircraftList) return aircraftList.name;
+			break;
+		case type === 'emergency':
+			const emergencyList = emergencyChecklistsStruct
+				.find((checklist) => checklist.aircraft === aircraft)
+				?.checklists.find((checklist) => checklist.file === file);
+
+			if (emergencyList) return emergencyList.name;
+			break;
+	}
+}
+
+export function getAircraftName(aircraft: string) {
+	const aircraftList = checklistStruct.find((checklist) => checklist.aircraft === aircraft);
+	return aircraftList?.name;
 }
