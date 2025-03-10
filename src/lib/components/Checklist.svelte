@@ -19,20 +19,35 @@
 
 	<div class="flex flex-col space-y-3">
 		{#if data.relatedChecklists}
-			{#each data.relatedChecklists as checklist}
-				{#each checklist.checklists as list}
-					{#key list.file}
+			{#if data.type === 'site'}
+				{#each data.relatedChecklists as checklist}
+					{#key checklist.file}
 						<Button
 							type="related"
 							mainBtns="false"
-							info={list}
+							info={checklist}
 							aircraft={checklist.aircraft}
 							aircraftLabel={data.aircraftLabel}
 							siteBtn={data.siteBtn}
 						/>
 					{/key}
 				{/each}
-			{/each}
+			{:else}
+				{#each data.relatedChecklists as checklist}
+					{#each checklist.checklists as list}
+						{#key list.file}
+							<Button
+								type="related"
+								mainBtns="false"
+								info={list}
+								aircraft={checklist.aircraft}
+								aircraftLabel={data.aircraftLabel}
+								siteBtn={data.siteBtn}
+							/>
+						{/key}
+					{/each}
+				{/each}
+			{/if}
 		{/if}
 		{#if data.relatedEmergencyChecklists}
 			{#each data.relatedEmergencyChecklists.checklists as checklist}

@@ -489,7 +489,7 @@ export const checklistStruct = [
 				hidden: false
 			},
 			{
-				type: 'global',
+				type: 'case-1',
 				name: 'Departure',
 				file: 'departure',
 				for: 'carrier',
@@ -502,6 +502,7 @@ export const checklistStruct = [
 				name: 'Carrier Operations',
 				file: 'ops',
 				for: 'carrier',
+				related: { carrier: ['flightdeck-overview', 'departure', 'case-1'] },
 				showGlobal: true,
 				hidden: true
 			},
@@ -534,7 +535,7 @@ export const checklistStruct = [
 				hidden: false
 			},
 			{
-				type: 'global',
+				type: 'case-1',
 				name: 'Marshal Stack Pattern',
 				file: 'marshal',
 				for: 'carrier',
@@ -543,7 +544,7 @@ export const checklistStruct = [
 				hidden: true
 			},
 			{
-				type: 'global',
+				type: 'case-1',
 				name: 'Final Approach',
 				file: 'final',
 				for: 'carrier',
@@ -591,26 +592,27 @@ export const checklistStruct = [
 				related: { global: ['audio-cues'] },
 				showGlobal: true,
 				hidden: false
-			},
-			{
-				type: 'important',
-				name: 'Credits',
-				file: 'credits',
-				for: 'site',
-				related: { site: ['licenses'] },
-				showGlobal: true,
-				hidden: false
-			},
-			{
-				type: 'important',
-				name: 'Licenses',
-				file: 'licenses',
-				for: 'site',
-				related: { site: ['credits'] },
-				showGlobal: true,
-				hidden: false
 			}
 		]
+	}
+];
+
+export const siteChecklistStruct = [
+	{
+		name: 'Credits',
+		file: 'credits',
+		for: 'site',
+		related: ['licenses'],
+		showGlobal: true,
+		hidden: false
+	},
+	{
+		name: 'Licenses',
+		file: 'licenses',
+		for: 'site',
+		related: ['credits'],
+		showGlobal: true,
+		hidden: false
 	}
 ];
 
@@ -622,21 +624,18 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
-				hidden: false,
 				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
-				hidden: false,
 				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
-				hidden: false,
 				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			}
 		]
@@ -648,22 +647,19 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
 	},
@@ -674,22 +670,19 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
 	},
@@ -697,38 +690,28 @@ export const emergencyChecklistsStruct = [
 		aircraft: 'ah94',
 		checklists: [
 			{
-				type: 'emergency-page',
-				name: 'Emergency Checklists',
-				file: 'emergencies',
-				hidden: false
-			},
-			{
 				type: 'emergency',
 				name: 'Single Engine Failure',
-				file: 'singleengine',
-				related: ['landing-vert', 'landing-rollhov'],
-				hidden: true
+				file: 'singleenginefailure',
+				related: ['landing-vert', 'landing-rollhov']
 			},
 			{
 				type: 'emergency',
 				name: 'Dual Engine Failure',
-				file: 'dualengine',
-				related: ['landing-vert', 'landing-rollhov'],
-				hidden: true
+				file: 'dualenginefailure',
+				related: ['landing-vert', 'landing-rollhov']
 			},
 			{
 				type: 'emergency',
 				name: 'Anti-Torque Failure',
 				file: 'antitorque',
-				related: ['landing-vert', 'landing-rollhov'],
-				hidden: true
+				related: ['landing-vert', 'landing-rollhov']
 			},
 			{
 				type: 'emergency',
 				name: 'Auto-Rotation',
 				file: 'autorotation',
-				related: ['landing-vert', 'landing-rollhov'],
-				hidden: true
+				related: ['landing-vert', 'landing-rollhov']
 			}
 		]
 	},
@@ -739,22 +722,19 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
-				related: ['landing-runway', 'landing-CATOBAR-preface'],
-				hidden: false
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
 	}
@@ -772,4 +752,11 @@ export function getRelatedChecklistsByAircraftAndFile(aircraft: string, file: st
 	const relatedChecklist = checklist.checklists.find((chk) => chk.file === file);
 
 	return relatedChecklist ? relatedChecklist.related : {};
+}
+
+export function getRelatedChecklistsByFile(file: string) {
+	const checklist = siteChecklistStruct.find((list) => list.file === file);
+	const related = checklist?.related;
+
+	return related ? related : {};
 }

@@ -1,5 +1,5 @@
 import { marked } from 'marked';
-import { checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
+import { checklistStruct, emergencyChecklistsStruct, siteChecklistStruct } from '$lib/checklists';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
@@ -38,6 +38,18 @@ export async function getEmergencySlugs() {
 
 	return emergencySlugArr;
 }
+
+export async function getSiteSlugs() {
+	const siteSlugArr: { file: string }[] = [];
+	siteChecklistStruct.forEach((checklist) => {
+		siteSlugArr.push({
+			file: checklist.file
+		});
+	});
+
+	return siteSlugArr;
+}
+
 export async function getMarkdown(urlPath: string) {
 	const pathname = path.resolve(`src/checklists/${urlPath}.md`);
 	try {

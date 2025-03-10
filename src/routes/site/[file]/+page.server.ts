@@ -1,64 +1,32 @@
-import { checklistStruct } from '$lib/checklists';
-import { getRelatedChecklistsByAircraftAndFile } from '$lib/checklists';
-import type { ChecklistItem } from '$lib/types';
-import type { Related } from '$lib/types';
-import { error } from '@sveltejs/kit';
-import { marked } from 'marked';
+import { getRelatedChecklistsByFile, siteChecklistStruct } from '$lib/checklists';
+import { getMarkdown, getSiteSlugs } from '$lib/markdown';
+import type { SiteItem } from '$lib/types';
 
 export const prerender = true;
 
-export async function load({ params, fetch }) {
-	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile('global', params.file);
+export async function entries() {
+	const list = await getSiteSlugs();
 
-	const response = await fetch(`/checklists/site/${params.file}.md`);
+	return list;
+}
 
-	if (response.status !== 200) return error(404, 'Dumbass');
+export async function load({ params, url }) {
+	const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
 
-	const markdownContent = await response.text();
-	let html = await marked(markdownContent);
+	const relatedChecklists: Array<SiteItem> = [];
 
-	html = html.replace(/<img([^>]*?)>/g, (match, attributes) => {
-		return `<img ${attributes} class="w-full h-auto" />`;
+	Object.entries(relatedChecklistsNames).forEach((checklist) => {
+		const name = checklist[1];
+		const siteList = siteChecklistStruct.find((list) => list.file === name);
+
+		if (siteList) relatedChecklists.push(siteList);
 	});
 
-	const relatedChecklists: Array<Related> = [];
-
-	if (relatedChecklistsNames) {
-		Object.entries(relatedChecklistsNames).forEach((aircraft) => {
-			const relatedLists: Array<ChecklistItem> = [];
-			const relatedNameArr = aircraft[1] as Array<string>;
-			const aircraftName = 'global';
-
-			if (!relatedNameArr) return;
-
-			for (let i = 0; i < relatedNameArr.length; i++) {
-				const relatedFileName = relatedNameArr[i];
-				const allAircraftChecklists = checklistStruct.find(
-					(aircraft) => aircraft.aircraft === aircraftName
-				);
-
-				if (allAircraftChecklists !== undefined) {
-					const relatedList = allAircraftChecklists.checklists.find(
-						(checklist) => checklist.file === relatedFileName
-					);
-
-					if (relatedList !== undefined) {
-						relatedLists.push(relatedList);
-					}
-				}
-			}
-
-			relatedChecklists.push({
-				aircraft: aircraftName,
-				name: 'important',
-				checklists: relatedLists
-			});
-		});
-	}
+	const markdown = await getMarkdown(url.pathname);
 
 	return {
 		type: 'site',
-		content: html,
+		content: markdown,
 		relatedChecklists: relatedChecklists,
 		siteBtn: true
 	};

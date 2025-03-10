@@ -1,17 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { checklistStruct } from '$lib/checklists';
-	import type { ChecklistItem } from '$lib/types';
 	import '../app.css';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
-	let { children }: Props = $props();
-
-	const importantPages: Array<ChecklistItem> = checklistStruct
-		.filter((checklists) => checklists.aircraft === 'global')[0]
-		.checklists.filter((checklist) => checklist.type === 'important');
+	let { data, children } = $props();
 
 	function aircraftImportant(page: string) {
 		goto(`/site/${page}`);
@@ -56,12 +50,12 @@
 			/>
 		</a>
 	</p>
-	{#if importantPages}
+	{#if data.sitePages}
 		<div class="flex justify-center gap-3">
-			{#each importantPages as importantPage}
+			{#each data.sitePages as sitePage}
 				<p>
-					<button class="text-sm" onclick={() => aircraftImportant(importantPage.file)}>
-						{importantPage.name}
+					<button class="text-sm" onclick={() => aircraftImportant(sitePage.file)}>
+						{sitePage.name}
 					</button>
 				</p>
 			{/each}

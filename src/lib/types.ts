@@ -2,7 +2,6 @@ export interface EmergencyChecklist {
 	type: string;
 	name: string;
 	file: string;
-	hidden: boolean;
 	related?: string[];
 }
 
@@ -22,6 +21,13 @@ export interface ChecklistItem {
 	showEmergencies?: boolean;
 }
 
+export interface SiteItem {
+	name: string;
+	file: string;
+	for?: string;
+	hidden?: boolean;
+}
+
 export interface AircraftChecklists {
 	aircraft: string;
 	name: string;
@@ -29,6 +35,11 @@ export interface AircraftChecklists {
 }
 export interface Related {
 	aircraft: string;
+	name: string;
+	checklists: ChecklistItem[];
+}
+
+export interface RelatedSite {
 	name: string;
 	checklists: ChecklistItem[];
 }
