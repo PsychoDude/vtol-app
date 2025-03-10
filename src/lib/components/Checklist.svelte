@@ -36,16 +36,18 @@
 		{/if}
 		{#if data.relatedEmergencyChecklists}
 			{#each data.relatedEmergencyChecklists.checklists as checklist}
-				{#key checklist.file}
-					<Button
-						type="relatedEmergency"
-						mainBtns="false"
-						info={checklist}
-						aircraft={data.aircraft}
-						aircraftLabel={data.aircraftLabel}
-						siteBtn={data.siteBtn}
-					/>
-				{/key}
+				{#if data.file !== checklist.file}
+					{#key checklist.file}
+						<Button
+							type="relatedEmergency"
+							mainBtns="false"
+							info={checklist}
+							aircraft={data.aircraft}
+							aircraftLabel={data.aircraftLabel}
+							siteBtn={data.siteBtn}
+						/>
+					{/key}
+				{/if}
 			{/each}
 		{/if}
 	</div>
