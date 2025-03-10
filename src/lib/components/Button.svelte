@@ -8,7 +8,7 @@
 		globalPage: 'green',
 		checklist: 'green',
 		emergency: 'red',
-		back: 'gray',
+		back: 'neutral',
 		related: 'green',
 		relatedEmergency: 'red'
 	};
@@ -19,7 +19,7 @@
 		green: 'bg-green-500 hover:bg-green-700',
 		blue: 'bg-blue-500 hover:bg-blue-700',
 		red: 'bg-red-500 hover:bg-red-700',
-		gray: 'bg-gray-500 hover:bg-gray-700'
+		neutral: 'bg-neutral-500 hover:bg-neutral-700'
 	};
 	const mainBtns: Record<string, string> = {
 		true: 'rounded h-70',
