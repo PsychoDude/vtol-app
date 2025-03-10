@@ -3,6 +3,8 @@
 
 	let { data } = $props();
 
+	console.log(data);
+
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
 

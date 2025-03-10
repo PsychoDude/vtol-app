@@ -1,5 +1,3 @@
-import type { ChecklistItem, EmergencyChecklist, SiteItem } from './types';
-
 export const checklistStruct = [
 	{
 		aircraft: 'f45a',
@@ -488,7 +486,8 @@ export const checklistStruct = [
 				file: 'flightdeck-overview',
 				for: 'carrier',
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			},
 			{
 				type: 'case-1',
@@ -497,7 +496,8 @@ export const checklistStruct = [
 				for: 'carrier',
 				related: { carrier: ['case-1'] },
 				showGlobal: false,
-				hidden: true
+				hidden: true,
+				showEmergencies: false
 			},
 			{
 				type: 'page',
@@ -506,7 +506,8 @@ export const checklistStruct = [
 				for: 'carrier',
 				related: { carrier: ['flightdeck-overview', 'departure', 'case-1'] },
 				showGlobal: true,
-				hidden: true
+				hidden: true,
+				showEmergencies: false
 			},
 			{
 				type: 'global',
@@ -525,7 +526,8 @@ export const checklistStruct = [
 				for: 'carrier',
 				related: { carrier: ['waveoff'] },
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			},
 			{
 				type: 'page',
@@ -534,7 +536,8 @@ export const checklistStruct = [
 				for: 'carrier',
 				related: { carrier: ['departure', 'marshal', 'final'] },
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			},
 			{
 				type: 'case-1',
@@ -543,7 +546,8 @@ export const checklistStruct = [
 				for: 'carrier',
 				related: { carrier: ['final'] },
 				showGlobal: false,
-				hidden: true
+				hidden: true,
+				showEmergencies: false
 			},
 			{
 				type: 'case-1',
@@ -551,7 +555,8 @@ export const checklistStruct = [
 				file: 'final',
 				for: 'carrier',
 				showGlobal: false,
-				hidden: true
+				hidden: true,
+				showEmergencies: false
 			},
 			{
 				type: 'global',
@@ -559,7 +564,8 @@ export const checklistStruct = [
 				file: 'meatball',
 				for: 'carrier',
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			}
 		]
 	},
@@ -575,7 +581,8 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['audio-cues', 'rwr'] },
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			},
 			{
 				type: 'info',
@@ -584,7 +591,8 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['rwr'] },
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			},
 			{
 				type: 'info',
@@ -593,7 +601,8 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['audio-cues'] },
 				showGlobal: true,
-				hidden: false
+				hidden: false,
+				showEmergencies: false
 			}
 		]
 	}
@@ -790,4 +799,17 @@ export function getPageName(type: string, file: string, aircraft?: string) {
 export function getAircraftName(aircraft: string) {
 	const aircraftList = checklistStruct.find((checklist) => checklist.aircraft === aircraft);
 	return aircraftList?.name;
+}
+
+export function getChecklistParams(file: string, aircraft: string) {
+	const data = checklistStruct
+		.find((planeData) => planeData.aircraft === aircraft)
+		?.checklists.find((list) => list.file === file);
+
+	if (data)
+		return {
+			hidden: data.hidden,
+			showGlobal: data.showGlobal,
+			showEmergencies: data.showEmergencies
+		};
 }

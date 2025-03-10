@@ -1,6 +1,7 @@
 import {
 	checklistStruct,
 	emergencyChecklistsStruct,
+	getChecklistParams,
 	getRelatedChecklistsByAircraftAndFile
 } from '$lib/checklists';
 import type { ChecklistItem, EmergencyChecklists, Related } from '$lib/types';
@@ -17,6 +18,7 @@ export async function entries() {
 }
 
 export async function load({ params, url }) {
+	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('aircraft', params.file, params.aircraft);
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
@@ -41,7 +43,8 @@ export async function load({ params, url }) {
 			file: params.file,
 			aircraftLabel: true,
 			pageName: pageName,
-			aircraftName: aircraftName
+			aircraftName: aircraftName,
+			relatedParams: RelatedParams
 		};
 	}
 
@@ -89,6 +92,7 @@ export async function load({ params, url }) {
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: emergencyLists,
 		pageName: pageName,
-		aircraftName: aircraftName
+		aircraftName: aircraftName,
+		relatedParams: RelatedParams
 	};
 }

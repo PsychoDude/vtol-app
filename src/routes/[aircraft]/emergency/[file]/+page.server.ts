@@ -1,4 +1,5 @@
 import { getAircraftName, getPageName } from '$lib/checklists.js';
+import { getChecklistParams } from '$lib/checklists.js';
 import { checklistStruct, getRelatedChecklistsByAircraftAndFile } from '$lib/checklists.js';
 import { emergencyChecklistsStruct } from '$lib/checklists.js';
 import { getMarkdown } from '$lib/markdown';
@@ -15,6 +16,7 @@ export async function entries() {
 }
 
 export async function load({ params, url }) {
+	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('emergency', params.file, params.aircraft);
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
@@ -39,7 +41,8 @@ export async function load({ params, url }) {
 			file: params.file,
 			aircraftLabel: true,
 			pageName: pageName,
-			aircraftName: aircraftName
+			aircraftName: aircraftName,
+			relatedParams: RelatedParams
 		};
 	}
 
@@ -87,6 +90,7 @@ export async function load({ params, url }) {
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: emergencyLists,
 		pageName: pageName,
-		aircraftName: aircraftName
+		aircraftName: aircraftName,
+		relatedParams: RelatedParams
 	};
 }
