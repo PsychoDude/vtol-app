@@ -2,6 +2,8 @@
 	import Button from '$lib/components/Button.svelte';
 
 	let { data } = $props();
+
+	console.log(data);
 	const relatedParams = data.relatedParams || null;
 	const showGlobal = relatedParams ? relatedParams.showGlobal : false;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
@@ -65,6 +67,15 @@
 							siteBtn={data.siteBtn}
 						/>
 					{/key}
+				{:else if data.file !== checklist.file && checklist.type === 'emergency'}
+					<Button
+						type="relatedEmergency"
+						mainBtns="false"
+						info={checklist}
+						aircraft={data.aircraft}
+						aircraftLabel={data.aircraftLabel}
+						siteBtn={data.siteBtn}
+					/>
 				{/if}
 			{/each}
 		{/if}
