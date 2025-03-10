@@ -25,10 +25,10 @@
 
 <svelte:window on:scroll={handleOnScroll} />
 
-<div
+<button
 	class="back-to-top fixed right-8 bottom-24 cursor-pointer rounded bg-neutral-700 px-6 py-4 text-2xl font-black text-white transition-all select-none hover:bg-neutral-600"
 	on:click={goTop}
 	class:hidden
 >
 	&uarr;
-</div>
+</button>
