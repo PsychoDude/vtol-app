@@ -1,15 +1,8 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import Button from '$lib/components/Button.svelte';
 	import '../app.css';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
 
 	let { data, children } = $props();
-
-	function aircraftImportant(page: string) {
-		goto(`/site/${page}`);
-	}
 </script>
 
 <div class="container mx-auto p-4">
@@ -53,14 +46,15 @@
 	{#if data.sitePages}
 		<div class="flex justify-center gap-3">
 			{#each data.sitePages as sitePage}
-				<p>
-					<button
-						class="cursor-pointer text-sm underline"
-						onclick={() => aircraftImportant(sitePage.file)}
-					>
-						{sitePage.name}
-					</button>
-				</p>
+				{#key sitePage.file}
+					<Button
+						siteBtn={true}
+						sitePage={sitePage.file}
+						type="site"
+						mainBtns={false}
+						aircraftLabel={false}
+					/>
+				{/key}
 			{/each}
 		</div>
 	{/if}

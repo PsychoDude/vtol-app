@@ -16,6 +16,7 @@ export async function entries() {
 }
 
 export async function load({ params, url }) {
+	const curac = url.searchParams.get('curac');
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('emergency', params.file, params.aircraft);
@@ -36,6 +37,7 @@ export async function load({ params, url }) {
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
+			curac: curac,
 			content: markdown,
 			aircraft: params.aircraft,
 			file: params.file,
@@ -83,6 +85,7 @@ export async function load({ params, url }) {
 	}
 
 	return {
+		curac: curac,
 		content: markdown,
 		aircraft: params.aircraft,
 		file: params.file,

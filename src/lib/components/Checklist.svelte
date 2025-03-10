@@ -3,15 +3,13 @@
 
 	let { data } = $props();
 	const relatedParams = data.relatedParams || null;
-	const showGlobal = relatedParams ? relatedParams.showGlobal : false;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
-	const hidden = relatedParams ? relatedParams : false;
 	const backBtnName: { name: string } = { name: 'Back' };
 </script>
 
-<Button type="back" info={backBtnName} mainBtns="false" />
+<Button type="back" info={backBtnName} mainBtns="false" curac={data.curac} />
 
-<div class="my-4 flex flex-col gap-3">
+<div class="my-4 flex flex-col gap-5">
 	{@html data.content}
 </div>
 
@@ -25,14 +23,7 @@
 			{#if data.type === 'site'}
 				{#each data.relatedChecklists as checklist}
 					{#key checklist.file}
-						<Button
-							type="related"
-							mainBtns="false"
-							info={checklist}
-							aircraft={checklist.aircraft}
-							aircraftLabel={data.aircraftLabel}
-							siteBtn={data.siteBtn}
-						/>
+						<Button type="related" sitePage={checklist.file} siteBtn={data.siteBtn} />
 					{/key}
 				{/each}
 			{:else}
@@ -41,7 +32,6 @@
 						{#key list.file}
 							<Button
 								type="related"
-								mainBtns="false"
 								info={list}
 								aircraft={checklist.aircraft}
 								aircraftLabel={data.aircraftLabel}
@@ -58,21 +48,21 @@
 					{#key checklist.file}
 						<Button
 							type="relatedEmergency"
-							mainBtns="false"
 							info={checklist}
 							aircraft={data.aircraft}
-							aircraftLabel={data.aircraftLabel}
+							aircraftLabel={checklist.for}
 							siteBtn={data.siteBtn}
+							curac={data.curac}
 						/>
 					{/key}
 				{:else if data.file !== checklist.file && checklist.type === 'emergency'}
 					<Button
 						type="relatedEmergency"
-						mainBtns="false"
 						info={checklist}
 						aircraft={data.aircraft}
-						aircraftLabel={data.aircraftLabel}
+						aircraftLabel={checklist.for}
 						siteBtn={data.siteBtn}
+						curac={data.curac}
 					/>
 				{/if}
 			{/each}

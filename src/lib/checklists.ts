@@ -620,18 +620,21 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
+				for: 'F-45A',
 				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
+				for: 'F-45A',
 				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
+				for: 'F-45A',
 				related: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol']
 			}
 		]
@@ -643,18 +646,21 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
+				for: 'F/A-26B',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
+				for: 'F/A-26B',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
+				for: 'F/A-26B',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
@@ -666,18 +672,21 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
+				for: 'EF-24G',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
+				for: 'EF-24G',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
+				for: 'EF-24G',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
@@ -689,24 +698,28 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Single Engine Failure',
 				file: 'singleenginefailure',
+				for: 'AH-94',
 				related: ['landing-vert', 'landing-rollhov']
 			},
 			{
 				type: 'emergency',
 				name: 'Dual Engine Failure',
 				file: 'dualenginefailure',
+				for: 'AH-94',
 				related: ['landing-vert', 'landing-rollhov']
 			},
 			{
 				type: 'emergency',
 				name: 'Anti-Torque Failure',
 				file: 'antitorque',
+				for: 'AH-94',
 				related: ['landing-vert', 'landing-rollhov']
 			},
 			{
 				type: 'emergency',
 				name: 'Auto-Rotation',
 				file: 'autorotation',
+				for: 'AH-94',
 				related: ['landing-vert', 'landing-rollhov']
 			}
 		]
@@ -718,18 +731,21 @@ export const emergencyChecklistsStruct = [
 				type: 'emergency',
 				name: 'Engine Failure',
 				file: 'enginefailure',
+				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
+				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
+				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
@@ -786,6 +802,11 @@ export function getAircraftName(aircraft: string) {
 	return aircraftList?.name;
 }
 
+export function getAircraftType(aircraft: string) {
+	const aircraftList = checklistStruct.find((checklist) => checklist.aircraft === aircraft);
+	return aircraftList?.type;
+}
+
 export function getChecklistParams(file: string, aircraft: string) {
 	const data = checklistStruct
 		.find((planeData) => planeData.aircraft === aircraft)
@@ -797,4 +818,9 @@ export function getChecklistParams(file: string, aircraft: string) {
 			showGlobal: data.showGlobal,
 			showEmergencies: data.showEmergencies
 		};
+}
+
+export function getSitePageName(file: string) {
+	const pageName = siteChecklistStruct.find((page) => page.file === file)?.name;
+	return pageName;
 }

@@ -2,6 +2,7 @@ export interface EmergencyChecklist {
 	type: string;
 	name: string;
 	file: string;
+	for: string;
 	related?: string[];
 }
 

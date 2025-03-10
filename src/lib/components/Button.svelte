@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { getSitePageName } from '$lib/checklists';
 
 	let data = $props();
+	const curac = data.curac;
 
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
@@ -10,16 +12,18 @@
 		emergency: 'red',
 		back: 'neutral',
 		related: 'green',
-		relatedEmergency: 'red'
+		relatedEmergency: 'red',
+		site: 'site'
 	};
 
 	const color: string = colorForTypes[data.type];
 
 	const colorVariants: Record<string, string> = {
-		green: 'bg-green-500 hover:bg-green-700',
-		blue: 'bg-blue-500 hover:bg-blue-700',
-		red: 'bg-red-500 hover:bg-red-700',
-		neutral: 'bg-neutral-500 hover:bg-neutral-700'
+		green: 'bg-green-500 hover:bg-green-700 px-4 py-2',
+		blue: 'bg-blue-500 hover:bg-blue-700 px-4 py-2',
+		red: 'bg-red-500 hover:bg-red-700 px-4 py-2',
+		neutral: 'bg-neutral-500 hover:bg-neutral-700 px-4 py-2',
+		site: 'text-sm underline p-1'
 	};
 	const mainBtns: Record<string, string> = {
 		true: 'rounded h-70',
@@ -27,19 +31,27 @@
 	};
 
 	function aircraftRedirect(plane: string) {
-		goto(`/${plane}`);
-	}
-
-	function globalRedirect(plane: string, file: string) {
-		goto(`/${plane}/${file}`);
+		goto(`/${plane}?curac=${plane}`);
 	}
 
 	function checklistRedirect(plane: string, file: string) {
-		goto(`/${plane}/${file}`);
+		if (plane !== 'carrier' && plane !== 'global') {
+			goto(`/${plane}/${file}?curac=${plane}`);
+		} else if (curac) {
+			goto(`/${plane}/${file}?curac=${curac}`);
+		} else {
+			goto(`/${plane}/${file}`);
+		}
 	}
 
 	function emergencyRedirect(plane: string, file: string) {
-		goto(`/${plane}/emergency/${file}`);
+		if (plane !== 'carrier' && plane !== 'global') {
+			goto(`/${plane}/emergency/${file}?curac=${plane}`);
+		} else if (curac) {
+			goto(`/${plane}/emergency/${file}?curac=${curac}`);
+		} else {
+			goto(`/${plane}/emergency/${file}`);
+		}
 	}
 
 	function siteRedirect(file: string) {
@@ -47,23 +59,42 @@
 	}
 
 	function caseOneRedirect(plane: string, file: string) {
-		goto(`/${plane}/case-1/${file}`);
+		if (plane !== 'carrier' && plane !== 'global') {
+			goto(`/${plane}/case-1/${file}?curac=${plane}`);
+		} else if (curac) {
+			goto(`/${plane}/case-1/${file}?curac=${curac}`);
+		} else {
+			goto(`/${plane}/case-1/${file}`);
+		}
 	}
 
 	let aircraftNameForBtn = '';
 
-	if (data.info.for !== 'carrier' && data.info.for !== 'global' && data.info.for !== 'site')
+	if (
+		data.info &&
+		data.info.for !== 'carrier' &&
+		data.info.for !== 'global' &&
+		data.info.for !== 'site'
+	)
 		aircraftNameForBtn = data.aircraftLabel ? data.info.for : '';
 
-	const btnText = aircraftNameForBtn ? `${data.info.name} (${aircraftNameForBtn})` : data.info.name;
+	const sitePageName = data.sitePage ? getSitePageName(data.sitePage) : '';
+
+	const btnText = sitePageName
+		? sitePageName
+		: aircraftNameForBtn !== ''
+			? `${data.info.name} (${aircraftNameForBtn})`
+			: `${data.info.name}`;
+
+	console.log(btnText, data);
 </script>
 
 <button
-	class={`rounded ${colorVariants[color]} px-4 py-2 text-white ${mainBtns[data.mainBtns]} cursor-pointer`}
+	class={`rounded ${colorVariants[color]} text-white ${mainBtns[data.mainBtns]} cursor-pointer`}
 	onclick={() => {
 		switch (true) {
 			case data.siteBtn:
-				siteRedirect(data.info.file);
+				siteRedirect(data.sitePage);
 				break;
 			case data.type === 'aircraft':
 				aircraftRedirect(data.info.aircraft);
@@ -81,10 +112,6 @@
 				window.history.back();
 				break;
 			case data.type === 'related':
-				if (data.aircraft === 'global') {
-					globalRedirect(data.aircraft, data.info.file);
-					break;
-				}
 				if (data.info.aircraft === 'emergency') {
 					emergencyRedirect(data.aircraft, data.info.file);
 					break;
