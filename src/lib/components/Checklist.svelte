@@ -2,8 +2,6 @@
 	import Button from '$lib/components/Button.svelte';
 
 	let { data } = $props();
-
-	console.log(data);
 	const relatedParams = data.relatedParams || null;
 	const showGlobal = relatedParams ? relatedParams.showGlobal : false;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
