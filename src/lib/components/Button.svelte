@@ -50,6 +50,10 @@
 		goto(`/site/${file}`);
 	}
 
+	function caseOneRedirect(plane: string, file: string) {
+		goto(`/${plane}/case-1/${file}`);
+	}
+
 	let aircraftNameForBtn = '';
 
 	if (data.info.for !== 'carrier' && data.info.for !== 'global' && data.info.for !== 'site')
@@ -87,6 +91,11 @@
 				}
 				if (data.info.aircraft === 'emergency') {
 					emergencyRedirect(data.aircraft, data.info.file);
+					break;
+				}
+				if (data.aircraft === 'carrier' && data.info.type === 'case-1') {
+					console.log('wtf');
+					caseOneRedirect(data.aircraft, data.info.file);
 					break;
 				}
 
