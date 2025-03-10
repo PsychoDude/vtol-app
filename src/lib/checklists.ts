@@ -2,6 +2,7 @@ export const checklistStruct = [
 	{
 		aircraft: 'f45a',
 		name: 'F-45A',
+		type: 'aircraft',
 		checklists: [
 			{
 				type: 'aircraft',
@@ -117,6 +118,7 @@ export const checklistStruct = [
 	{
 		aircraft: 'fa26b',
 		name: 'F/A-26B',
+		type: 'aircraft',
 		checklists: [
 			{
 				type: 'aircraft',
@@ -198,6 +200,7 @@ export const checklistStruct = [
 	{
 		aircraft: 'ef24g',
 		name: 'EF-24G',
+		type: 'aircraft',
 		checklists: [
 			{
 				type: 'aircraft',
@@ -294,6 +297,7 @@ export const checklistStruct = [
 	{
 		aircraft: 'ah94',
 		name: 'AH-94',
+		type: 'aircraft',
 		checklists: [
 			{
 				type: 'aircraft',
@@ -367,6 +371,7 @@ export const checklistStruct = [
 	{
 		aircraft: 't55',
 		name: 'T-55',
+		type: 'aircraft',
 		checklists: [
 			{
 				type: 'aircraft',
@@ -478,7 +483,7 @@ export const checklistStruct = [
 	{
 		aircraft: 'carrier',
 		name: 'Carrier Operations',
-		page: 'ops',
+		type: 'global',
 		checklists: [
 			{
 				type: 'global',
@@ -495,18 +500,6 @@ export const checklistStruct = [
 				file: 'departure',
 				for: 'carrier',
 				related: { carrier: ['case-1'] },
-				hidden: true,
-				showGlobal: false,
-				showEmergencies: false
-			},
-			{
-				type: 'page',
-				name: 'Carrier Operations',
-				file: 'ops',
-				for: 'carrier',
-				related: {
-					carrier: ['flightdeck-overview', 'waveoff', 'lso-guidance', 'case-1', 'meatball']
-				},
 				hidden: true,
 				showGlobal: false,
 				showEmergencies: false
@@ -574,18 +567,8 @@ export const checklistStruct = [
 	{
 		aircraft: 'global',
 		name: 'Global',
-		page: 'global',
+		type: 'global',
 		checklists: [
-			{
-				type: 'page',
-				name: 'Global',
-				file: 'global',
-				for: 'global',
-				related: { global: ['audio-cues', 'rwr'] },
-				showGlobal: true,
-				hidden: false,
-				showEmergencies: false
-			},
 			{
 				type: 'info',
 				name: 'Audio Cues',

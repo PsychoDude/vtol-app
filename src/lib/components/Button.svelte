@@ -3,9 +3,11 @@
 
 	let data = $props();
 
+	console.log(data.info);
+
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
-		globalPage: 'green',
+		global: 'green',
 		checklist: 'green',
 		emergency: 'red',
 		back: 'neutral',
@@ -28,10 +30,6 @@
 
 	function aircraftRedirect(plane: string) {
 		goto(`/${plane}`);
-	}
-
-	function globalPageRedirect(plane: string, file: string) {
-		goto(`/${[plane]}/${file}`);
 	}
 
 	function globalRedirect(plane: string, file: string) {
@@ -72,8 +70,8 @@
 			case data.type === 'aircraft':
 				aircraftRedirect(data.info.aircraft);
 				break;
-			case data.type === 'globalPage':
-				globalPageRedirect(data.info.aircraft, data.info.page);
+			case data.type === 'global':
+				aircraftRedirect(data.info.aircraft);
 				break;
 			case data.type === 'checklist':
 				checklistRedirect(data.aircraft, data.info.file);

@@ -12,12 +12,12 @@
 
 <div class="flex space-x-4">
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
-		{#each data.aircraft as plane}
-			<Button info={plane} mainBtns="true" type="aircraft" />
-		{/each}
-
-		{#each data.globalPages as page}
-			<Button info={page} mainBtns="true" type="globalPage" />
+		{#each data.pages as page}
+			{#if page.type === 'aircraft'}
+				<Button info={page} mainBtns="true" type="aircraft" />
+			{:else if page.type === 'global'}
+				<Button info={page} mainBtns="true" type="global" />
+			{/if}
 		{/each}
 	</div>
 </div>

@@ -31,6 +31,7 @@ export interface SiteItem {
 export interface AircraftChecklists {
 	aircraft: string;
 	name: string;
+	type: string;
 	checklists: ChecklistItem[];
 }
 export interface Related {
