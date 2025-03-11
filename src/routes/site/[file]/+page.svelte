@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>{data.pageName} - VTOL VR App</title>
-	<meta name="description" content="VTOL VR Checklists Companion App. " />
+	<meta name="description" content="VTOL VR Checklist Companion App. " />
 </svelte:head>
 
 <Checklist {data} />
