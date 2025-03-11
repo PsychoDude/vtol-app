@@ -85,8 +85,6 @@
 		: aircraftNameForBtn !== ''
 			? `${data.info.name} (${aircraftNameForBtn})`
 			: `${data.info.name}`;
-
-	console.log(btnText, data);
 </script>
 
 <button
