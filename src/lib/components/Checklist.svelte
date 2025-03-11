@@ -13,7 +13,7 @@
 	{@html data.content}
 </div>
 
-{#if data.relatedChecklists}
+{#if data.relatedChecklists || data.relatedEmergencyChecklists}
 	<div class="mt-4">
 		<h2 class="mb-4 font-bold uppercase">Related Checklists:</h2>
 	</div>
@@ -36,6 +36,7 @@
 								aircraft={checklist.aircraft}
 								aircraftLabel={data.aircraftLabel}
 								siteBtn={data.siteBtn}
+								curac={data.curac}
 							/>
 						{/key}
 					{/each}
@@ -43,7 +44,7 @@
 			{/if}
 		{/if}
 		{#if data.relatedEmergencyChecklists}
-			{#each data.relatedEmergencyChecklists.checklists as checklist}
+			{#each data.relatedEmergencyChecklists as checklist}
 				{#if data.file !== checklist.file && showEmergencies}
 					{#key checklist.file}
 						<Button
