@@ -4,10 +4,17 @@ import {
 	checklistStruct,
 	emergencyChecklistsStruct
 } from '$lib/checklists';
+import { getAircraftOnlySlugs } from '$lib/markdown.js';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
 
 export const prerender = true;
+
+export async function entries() {
+	const list = await getAircraftOnlySlugs();
+
+	return list;
+}
 
 export async function load({ params, url }) {
 	const aircraftName = getAircraftName(params.aircraft);

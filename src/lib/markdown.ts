@@ -6,17 +6,18 @@ import path from 'node:path';
 export async function getAircraftSlugs() {
 	const aircraftSlugArr: { aircraft: string; file: string }[] = [];
 	const caseOneSlugArr: { aircraft: string; file: string }[] = [];
+
 	checklistStruct.forEach((aircraft) => {
-		for (const list in aircraft.checklists) {
-			if (aircraft.checklists[list].type === 'case-1') {
+		for (let i = 0; i < aircraft.checklists.length; i++) {
+			if (aircraft.checklists[i].type === 'case-1') {
 				caseOneSlugArr.push({
 					aircraft: aircraft.aircraft,
-					file: aircraft.checklists[list].file
+					file: aircraft.checklists[i].file
 				});
 			} else {
 				aircraftSlugArr.push({
 					aircraft: aircraft.aircraft,
-					file: aircraft.checklists[list].file
+					file: aircraft.checklists[i].file
 				});
 			}
 		}
@@ -25,13 +26,23 @@ export async function getAircraftSlugs() {
 	return [aircraftSlugArr, caseOneSlugArr];
 }
 
+export async function getAircraftOnlySlugs() {
+	const aircraftSlugArr: { aircraft: string }[] = [];
+
+	checklistStruct.forEach((aircraft) => {
+		aircraftSlugArr.push({ aircraft: aircraft.aircraft });
+	});
+
+	return aircraftSlugArr;
+}
+
 export async function getEmergencySlugs() {
 	const emergencySlugArr: { aircraft: string; file: string }[] = [];
 	emergencyChecklistsStruct.forEach((aircraft) => {
-		for (const list in aircraft.checklists) {
+		for (let i = 0; i < aircraft.checklists.length; i++) {
 			emergencySlugArr.push({
 				aircraft: aircraft.aircraft,
-				file: aircraft.checklists[list].file
+				file: aircraft.checklists[i].file
 			});
 		}
 	});
