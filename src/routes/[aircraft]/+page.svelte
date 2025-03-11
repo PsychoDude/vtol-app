@@ -9,7 +9,10 @@
 
 <svelte:head>
 	<title>{data.aircraftName} Menu - VTOL VR App</title>
-	<meta name="description" content={`VTOL VR Checklists App ${data.aircraftName} menu.`} />
+	<meta
+		name="description"
+		content={`VTOL VR Checklists Companion App ${data.aircraftName} menu.`}
+	/>
 </svelte:head>
 
 <Button type="back" info={backBtnName} mainBtns="false" {curac} />

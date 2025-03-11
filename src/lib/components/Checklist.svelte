@@ -5,10 +5,7 @@
 	const relatedParams = data.relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
 	const backBtnName: { name: string } = { name: 'Back' };
-
 	const curac = data.curac.name;
-
-	console.log(data.curac.name);
 	const backAcBtnName = { name: `Back To ${curac}` };
 </script>
 

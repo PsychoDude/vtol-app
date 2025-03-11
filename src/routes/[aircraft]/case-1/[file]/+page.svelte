@@ -9,7 +9,7 @@
 	<title>{data.aircraftName} / Case-1 / {data.pageName} - VTOL VR App</title>
 	<meta
 		name="description"
-		content={`VTOL VR Checklists App ${data.aircraftName} case-1 ${data.pageName} checklist.`}
+		content={`VTOL VR Checklists Companion App ${data.aircraftName} case-1 ${data.pageName} checklist.`}
 	/>
 </svelte:head>
 

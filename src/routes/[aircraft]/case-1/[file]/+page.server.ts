@@ -7,7 +7,7 @@ import {
 	checklistStruct
 } from '$lib/checklists';
 import { getMarkdown, getAircraftSlugs } from '$lib/markdown';
-import type { Related, EmergencyChecklists, ChecklistItem } from '$lib/types';
+import type { Related, ChecklistItem } from '$lib/types';
 
 export const prerender = true;
 
