@@ -10,10 +10,16 @@
 </script>
 
 <div class="flex gap-3">
-	<Button type="back" info={backBtnName} mainBtns="false" curac={data.curac} />
+	<Button
+		type="back"
+		info={backBtnName}
+		mainBtns="false"
+		curac={data.curac}
+		aircraft={data.aircraft}
+	/>
 
 	{#if curac}
-		<Button type="backAircraft" info={backAcBtnName} mainBtns="false" {curac} />
+		<Button type="backAircraft" info={backAcBtnName} mainBtns="false" curac={data.curac} />
 	{/if}
 </div>
 

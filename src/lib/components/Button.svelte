@@ -13,7 +13,8 @@
 		back: 'neutral',
 		related: 'green',
 		relatedEmergency: 'red',
-		site: 'site'
+		site: 'site',
+		backAircraft: 'blue'
 	};
 
 	const color: string = colorForTypes[data.type];
@@ -57,6 +58,10 @@
 
 	function siteRedirect(file: string) {
 		goto(`/site/${file}`);
+	}
+
+	function backAcRedirect(plane: string) {
+		goto(`/${plane}?curac=${curac.aircraft}`);
 	}
 
 	function caseOneRedirect(plane: string, file: string) {
@@ -108,6 +113,9 @@
 				break;
 			case data.type === 'back':
 				window.history.back();
+				break;
+			case data.type === 'backAircraft':
+				backAcRedirect(curac.aircraft);
 				break;
 			case data.type === 'related':
 				if (data.info.aircraft === 'emergency') {
