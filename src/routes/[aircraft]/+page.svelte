@@ -23,9 +23,16 @@
 		{/if}
 	{/each}
 
-	{#if data.emergencyLists}
-		{#each data.emergencyLists.checklists as checklist}
-			<Button info={checklist} mainBtns="false" type="emergency" aircraft={data.aircraft} {curac} />
+	{#if data.relatedEmergencyChecklists}
+		{#each data.relatedEmergencyChecklists.checklists as checklist}
+			<Button
+				mainBtns="false"
+				type="emergency"
+				{curac}
+				name={checklist.name}
+				info={checklist}
+				aircraft={data.aircraft}
+			/>
 		{/each}
 	{/if}
 </div>

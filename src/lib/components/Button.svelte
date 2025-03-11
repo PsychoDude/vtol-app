@@ -80,11 +80,12 @@
 
 	const sitePageName = data.sitePage ? getSitePageName(data.sitePage) : '';
 
-	const btnText = sitePageName
-		? sitePageName
-		: aircraftNameForBtn !== ''
-			? `${data.info.name} (${aircraftNameForBtn})`
-			: `${data.info.name}`;
+	const btnText =
+		sitePageName !== ''
+			? sitePageName
+			: aircraftNameForBtn !== ''
+				? `${data.info.name} (${aircraftNameForBtn})`
+				: `${data.info.name}`;
 </script>
 
 <button

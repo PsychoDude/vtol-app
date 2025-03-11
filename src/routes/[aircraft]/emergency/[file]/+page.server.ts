@@ -35,8 +35,6 @@ export async function load({ params, url }) {
 		(checklist) => checklist.aircraft === params.aircraft
 	);
 
-	const emergencyLists: EmergencyChecklists | undefined = allAircraftEmergChecklists;
-
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
 			curac: curac,
@@ -87,7 +85,7 @@ export async function load({ params, url }) {
 		file: params.file,
 		aircraftLabel: true,
 		relatedChecklists: relatedChecklists,
-		relatedEmergencyChecklists: emergencyLists,
+		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
 		relatedParams: RelatedParams

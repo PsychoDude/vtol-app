@@ -48,7 +48,7 @@ export async function load({ params, url }) {
 		};
 	}
 
-	if (!relatedChecklistsNames && allAircraftEmergChecklists?.checklists) {
+	if (!relatedChecklistsNames && allAircraftEmergChecklists) {
 		return {
 			curac: curac,
 			content: markdown,
@@ -58,7 +58,7 @@ export async function load({ params, url }) {
 			pageName: pageName,
 			aircraftName: aircraftName,
 			relatedParams: RelatedParams,
-			relatedEmergencyChecklists: allAircraftEmergChecklists.checklists
+			relatedEmergencyChecklists: allAircraftEmergChecklists
 		};
 	}
 
@@ -98,6 +98,8 @@ export async function load({ params, url }) {
 		});
 	}
 
+	console.log(typeof allAircraftEmergChecklists);
+
 	return {
 		curac: curac,
 		content: markdown,
@@ -105,7 +107,7 @@ export async function load({ params, url }) {
 		file: params.file,
 		aircraftLabel: true,
 		relatedChecklists: relatedChecklists,
-		relatedEmergencyChecklists: allAircraftEmergChecklists!.checklists,
+		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
 		relatedParams: RelatedParams

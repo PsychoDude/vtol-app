@@ -44,7 +44,7 @@
 			{/if}
 		{/if}
 		{#if data.relatedEmergencyChecklists}
-			{#each data.relatedEmergencyChecklists as checklist}
+			{#each data.relatedEmergencyChecklists.checklists as checklist}
 				{#if data.file !== checklist.file && showEmergencies}
 					{#key checklist.file}
 						<Button

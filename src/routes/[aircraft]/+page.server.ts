@@ -17,13 +17,13 @@ export async function load({ params, url }) {
 	const checklists: AircraftChecklists = checklistStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
 	)[0];
-	const emergencyChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
+	const allAircraftEmergChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
 	)[0];
 
 	if (!checklists) error(404, 'Dumbass');
 
-	if (!emergencyChecklists)
+	if (!allAircraftEmergChecklists)
 		return {
 			curac: curac,
 			aircraft: params.aircraft,
@@ -36,7 +36,7 @@ export async function load({ params, url }) {
 		curac: curac,
 		aircraft: params.aircraft,
 		checklists: checklists,
-		emergencyLists: emergencyChecklists,
+		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		aircraftName: aircraftName,
 		aircraftType: aircraftType
 	};

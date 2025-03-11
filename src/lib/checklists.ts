@@ -478,6 +478,14 @@ export const checklistStruct = [
 				showEmergencies: false
 			},
 			{
+				type: 'global',
+				name: 'Carrier Lights (Meatball) Img',
+				file: 'meatball',
+				for: 'carrier',
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
 				type: 'page',
 				name: 'Case 1 Ops',
 				file: 'case-1',
@@ -501,14 +509,6 @@ export const checklistStruct = [
 				file: 'final',
 				for: 'carrier',
 				showGlobal: false,
-				showEmergencies: false
-			},
-			{
-				type: 'global',
-				name: 'Carrier Lights (Meatball) Img',
-				file: 'meatball',
-				for: 'carrier',
-				showGlobal: true,
 				showEmergencies: false
 			}
 		]
