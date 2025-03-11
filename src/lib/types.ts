@@ -16,7 +16,6 @@ export interface ChecklistItem {
 	name: string;
 	file: string;
 	for: string;
-	hidden: boolean;
 	related?: Record<string, Array<string> | undefined>;
 	showGlobal: boolean;
 	showEmergencies: boolean;
@@ -25,8 +24,6 @@ export interface ChecklistItem {
 export interface SiteItem {
 	name: string;
 	file: string;
-	for?: string;
-	hidden?: boolean;
 }
 
 export interface AircraftChecklists {
