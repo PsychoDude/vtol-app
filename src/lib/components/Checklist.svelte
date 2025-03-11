@@ -5,9 +5,20 @@
 	const relatedParams = data.relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
 	const backBtnName: { name: string } = { name: 'Back' };
+
+	const curac = data.curac.name;
+
+	console.log(data.curac.name);
+	const backAcBtnName = { name: `Back To ${curac}` };
 </script>
 
-<Button type="back" info={backBtnName} mainBtns="false" curac={data.curac} />
+<div class="flex gap-3">
+	<Button type="back" info={backBtnName} mainBtns="false" curac={data.curac} />
+
+	{#if curac}
+		<Button type="backAircraft" info={backAcBtnName} mainBtns="false" {curac} />
+	{/if}
+</div>
 
 <div class="my-4 flex flex-col gap-5">
 	{@html data.content}
@@ -56,15 +67,17 @@
 							curac={data.curac}
 						/>
 					{/key}
-				{:else if data.file !== checklist.file && checklist.type === 'emergency'}
-					<Button
-						type="relatedEmergency"
-						info={checklist}
-						aircraft={data.aircraft}
-						aircraftLabel={checklist.for}
-						siteBtn={data.siteBtn}
-						curac={data.curac}
-					/>
+				{:else if data.file !== checklist.file && !data.relatedParams}
+					{#key checklist.file}
+						<Button
+							type="relatedEmergency"
+							info={checklist}
+							aircraft={data.aircraft}
+							aircraftLabel={checklist.for}
+							siteBtn={data.siteBtn}
+							curac={data.curac}
+						/>
+					{/key}
 				{/if}
 			{/each}
 		{/if}
