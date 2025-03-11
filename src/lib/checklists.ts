@@ -36,8 +36,8 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'F-45A',
 				related: {
-					f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap'],
-					carrier: ['departure', 'flightdeck-overview', 'case-1']
+					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap']
 				},
 				showGlobal: true,
 				showEmergencies: true
@@ -141,13 +141,8 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'F/A-26B',
 				related: {
-					fa26b: [
-						'departure',
-						'flightdeck-overview',
-						'case-1',
-						'landing-runway',
-						'landing-CATOBAR-preface'
-					]
+					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					fa26b: ['landing-runway', 'landing-CATOBAR-preface']
 				},
 				showGlobal: true,
 				showEmergencies: true
@@ -157,7 +152,7 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'F/A-26B',
-				related: { fa26b: ['landing-CATOBAR', 'marshal', 'final', 'case-1'] },
+				related: { fa26b: ['landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -217,14 +212,8 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'EF-24G',
 				related: {
-					ef24g: [
-						'departure',
-						'flightdeck-overview',
-						'wings',
-						'case-1',
-						'landing-runway',
-						'landing-CATOBAR-preface'
-					]
+					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					ef24g: ['wings', 'landing-runway', 'landing-CATOBAR-preface']
 				},
 				showGlobal: true,
 				showEmergencies: true
@@ -234,7 +223,7 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'EF-24G',
-				related: { ef24g: ['wings', 'landing-CATOBAR', 'marshal', 'final', 'case-1'] },
+				related: { ef24g: ['wings', 'landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -278,7 +267,7 @@ export const checklistStruct = [
 				name: 'Startup (PIC)',
 				file: 'startup-pic',
 				for: 'AH-94',
-				related: { ah94: ['startup-cpg'] },
+				related: { ah94: ['startup-cpg', 'takeoff-vert', 'takeoff-rollhov'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -287,7 +276,7 @@ export const checklistStruct = [
 				name: 'Startup (CPG)',
 				file: 'startup-cpg',
 				for: 'AH-94',
-				related: { ah94: ['startup-pic'] },
+				related: { ah94: ['startup-pic', 'takeoff-vert', 'takeoff-rollhov'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -372,13 +361,8 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'T-55',
 				related: {
-					t55: [
-						'departure',
-						'flightdeck-overview',
-						'case-1',
-						'landing-runway',
-						'landing-CATOBAR-preface'
-					]
+					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					t55: ['landing-runway', 'landing-CATOBAR-preface']
 				},
 				showGlobal: true,
 				showEmergencies: true
@@ -388,7 +372,7 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'T-55',
-				related: { t55: ['landing-CATOBAR', 'marshal', 'final', 'case-1'] },
+				related: { t55: ['landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -451,15 +435,6 @@ export const checklistStruct = [
 				showEmergencies: false
 			},
 			{
-				type: 'case-1',
-				name: 'Departure',
-				file: 'departure',
-				for: 'carrier',
-				related: { carrier: ['case-1'] },
-				showGlobal: false,
-				showEmergencies: false
-			},
-			{
 				type: 'global',
 				name: 'Wave Off',
 				file: 'waveoff',
@@ -492,6 +467,15 @@ export const checklistStruct = [
 				for: 'carrier',
 				related: { carrier: ['departure', 'marshal', 'final'] },
 				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'case-1',
+				name: 'Departure',
+				file: 'departure',
+				for: 'carrier',
+				related: { carrier: ['case-1'] },
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
