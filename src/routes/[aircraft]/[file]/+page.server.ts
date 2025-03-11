@@ -98,8 +98,6 @@ export async function load({ params, url }) {
 		});
 	}
 
-	console.log(typeof allAircraftEmergChecklists);
-
 	return {
 		curac: curac,
 		content: markdown,
