@@ -1,6 +1,10 @@
-import { getAircraftName, getPageName } from '$lib/checklists.js';
+import {
+	getAircraftName,
+	getPageName,
+	getRelatedEmergencyChecklistsByAircraftAndFile,
+	checklistStruct
+} from '$lib/checklists.js';
 import { getChecklistParams } from '$lib/checklists.js';
-import { checklistStruct, getRelatedChecklistsByAircraftAndFile } from '$lib/checklists.js';
 import { emergencyChecklistsStruct } from '$lib/checklists.js';
 import { getMarkdown } from '$lib/markdown';
 import { getEmergencySlugs } from '$lib/markdown';
@@ -20,7 +24,7 @@ export async function load({ params, url }) {
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('emergency', params.file, params.aircraft);
-	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
+	const relatedChecklistsNames = getRelatedEmergencyChecklistsByAircraftAndFile(
 		params.aircraft,
 		params.file
 	);
@@ -49,41 +53,35 @@ export async function load({ params, url }) {
 	}
 
 	if (relatedChecklistsNames) {
+		const relatedLists: Array<ChecklistItem> = [];
+
 		Object.entries(relatedChecklistsNames).forEach((aircraft) => {
-			const relatedLists: Array<ChecklistItem> = [];
-			const aircraftAircraft = aircraft[0];
-			const relatedNameArr = aircraft[1] as Array<string>;
-			const aircraftName = checklistStruct.find(
-				(aircraft) => aircraft.aircraft === aircraftAircraft
-			)!.name;
+			const relatedFile = aircraft[1];
+			console.log(relatedFile);
+			if (!relatedFile || !aircraftName) return;
 
-			if (!relatedNameArr) return;
+			const allAircraftChecklists = checklistStruct.find(
+				(aircraft) => aircraft.aircraft === params.aircraft
+			);
 
-			for (let i = 0; i < relatedNameArr.length; i++) {
-				const relatedFileName = relatedNameArr[i];
-				const allAircraftChecklists = checklistStruct.find(
-					(aircraft) => aircraft.aircraft === aircraftAircraft
+			if (allAircraftChecklists) {
+				const relatedList = allAircraftChecklists.checklists.find(
+					(list) => list.file === relatedFile
 				);
 
-				if (allAircraftChecklists !== undefined) {
-					const relatedList = allAircraftChecklists.checklists.find(
-						(checklist) => checklist.file === relatedFileName
-					);
-
-					if (relatedList !== undefined) {
-						relatedLists.push(relatedList);
-					}
-				}
+				if (relatedList) relatedLists.push(relatedList);
 			}
+		});
 
-			relatedChecklists.push({
-				aircraft: aircraftAircraft,
-				name: aircraftName,
-				checklists: relatedLists
-			});
+		if (!aircraftName) return;
+
+		relatedChecklists.push({
+			aircraft: params.aircraft,
+			name: aircraftName,
+			checklists: relatedLists
 		});
 	}
-
+	// console.log(relatedChecklists);
 	return {
 		curac: curac,
 		content: markdown,
