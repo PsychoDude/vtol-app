@@ -2,14 +2,12 @@ import {
 	getAircraftName,
 	getPageName,
 	getRelatedEmergencyChecklistsByAircraftAndFile,
-	checklistStruct
+	checklistStruct,
+	getChecklistParams,
+	emergencyChecklistsStruct
 } from '$lib/checklists.js';
-import { getChecklistParams } from '$lib/checklists.js';
-import { emergencyChecklistsStruct } from '$lib/checklists.js';
-import { getMarkdown } from '$lib/markdown';
-import { getEmergencySlugs } from '$lib/markdown';
-import type { ChecklistItem, Related } from '$lib/types';
-import type { EmergencyChecklists } from '$lib/types';
+import { getMarkdown, getEmergencySlugs } from '$lib/markdown';
+import type { ChecklistItem, Related, EmergencyChecklists } from '$lib/types';
 
 export const prerender = true;
 
@@ -57,7 +55,7 @@ export async function load({ params, url }) {
 
 		Object.entries(relatedChecklistsNames).forEach((aircraft) => {
 			const relatedFile = aircraft[1];
-			console.log(relatedFile);
+
 			if (!relatedFile || !aircraftName) return;
 
 			const allAircraftChecklists = checklistStruct.find(

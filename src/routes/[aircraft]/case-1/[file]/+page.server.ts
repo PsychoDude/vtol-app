@@ -1,14 +1,13 @@
-import { getRelatedChecklistsByAircraftAndFile } from '$lib/checklists';
-import { getPageName } from '$lib/checklists';
-import { getAircraftName } from '$lib/checklists';
-import { emergencyChecklistsStruct } from '$lib/checklists';
-import { getChecklistParams } from '$lib/checklists';
-import { checklistStruct } from '$lib/checklists';
-import { getMarkdown } from '$lib/markdown';
-import { getAircraftSlugs } from '$lib/markdown';
-import type { Related } from '$lib/types';
-import type { EmergencyChecklists } from '$lib/types';
-import type { ChecklistItem } from '$lib/types';
+import {
+	getRelatedChecklistsByAircraftAndFile,
+	getPageName,
+	getAircraftName,
+	emergencyChecklistsStruct,
+	getChecklistParams,
+	checklistStruct
+} from '$lib/checklists';
+import { getMarkdown, getAircraftSlugs } from '$lib/markdown';
+import type { Related, EmergencyChecklists, ChecklistItem } from '$lib/types';
 
 export const prerender = true;
 

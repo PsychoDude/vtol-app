@@ -2,12 +2,12 @@ import {
 	checklistStruct,
 	emergencyChecklistsStruct,
 	getChecklistParams,
-	getRelatedChecklistsByAircraftAndFile
+	getRelatedChecklistsByAircraftAndFile,
+	getAircraftName,
+	getPageName
 } from '$lib/checklists';
-import type { ChecklistItem, EmergencyChecklists, Related } from '$lib/types';
+import type { ChecklistItem, Related } from '$lib/types';
 import { getAircraftSlugs, getMarkdown } from '$lib/markdown';
-import { getAircraftName } from '$lib/checklists';
-import { getPageName } from '$lib/checklists';
 
 export const prerender = true;
 
@@ -35,8 +35,6 @@ export async function load({ params, url }) {
 		(checklist) => checklist.aircraft === params.aircraft
 	);
 
-	const emergencyLists: EmergencyChecklists | undefined = allAircraftEmergChecklists;
-
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
 			curac: curac,
@@ -47,6 +45,20 @@ export async function load({ params, url }) {
 			pageName: pageName,
 			aircraftName: aircraftName,
 			relatedParams: RelatedParams
+		};
+	}
+
+	if (!relatedChecklistsNames && allAircraftEmergChecklists?.checklists) {
+		return {
+			curac: curac,
+			content: markdown,
+			aircraft: params.aircraft,
+			file: params.file,
+			aircraftLabel: true,
+			pageName: pageName,
+			aircraftName: aircraftName,
+			relatedParams: RelatedParams,
+			relatedEmergencyChecklists: allAircraftEmergChecklists.checklists
 		};
 	}
 
@@ -93,7 +105,7 @@ export async function load({ params, url }) {
 		file: params.file,
 		aircraftLabel: true,
 		relatedChecklists: relatedChecklists,
-		relatedEmergencyChecklists: emergencyLists,
+		relatedEmergencyChecklists: allAircraftEmergChecklists!.checklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
 		relatedParams: RelatedParams

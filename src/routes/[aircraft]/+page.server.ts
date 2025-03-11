@@ -1,5 +1,9 @@
-import { getAircraftName, getAircraftType } from '$lib/checklists';
-import { checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
+import {
+	getAircraftName,
+	getAircraftType,
+	checklistStruct,
+	emergencyChecklistsStruct
+} from '$lib/checklists';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
 
