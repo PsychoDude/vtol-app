@@ -10,8 +10,10 @@ import { error } from '@sveltejs/kit';
 export const prerender = true;
 
 export async function load({ params, url }) {
-	const curac = url.searchParams.get('curac');
 	const aircraftName = getAircraftName(params.aircraft);
+	const curacAc = url.searchParams.get('curac');
+	const curacName = curacAc ? getAircraftName(curacAc) : '';
+	const curac = { aircraft: curacAc, name: curacName };
 	const aircraftType = getAircraftType(params.aircraft);
 
 	const checklists: AircraftChecklists = checklistStruct.filter(

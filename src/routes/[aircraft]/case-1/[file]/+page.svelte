@@ -13,6 +13,8 @@
 	/>
 </svelte:head>
 
-<Checklist {data} />
+{#key data.file}
+	<Checklist {data} />
+{/key}
 
 <BackToTop />

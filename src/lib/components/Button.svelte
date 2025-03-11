@@ -25,30 +25,31 @@
 		neutral: 'bg-neutral-500 hover:bg-neutral-700 px-4 py-2',
 		site: 'text-sm underline p-1'
 	};
+
 	const mainBtns: Record<string, string> = {
 		true: 'rounded h-70',
 		false: ''
 	};
 
 	function aircraftRedirect(plane: string) {
-		goto(`/${plane}?curac=${plane}`);
+		if (plane !== 'carrier' && plane !== 'global') {
+			goto(`/${plane}?curac=${plane}`);
+		} else {
+			goto(`/${plane}`);
+		}
 	}
 
 	function checklistRedirect(plane: string, file: string) {
-		if (plane !== 'carrier' && plane !== 'global') {
-			goto(`/${plane}/${file}?curac=${plane}`);
-		} else if (curac) {
-			goto(`/${plane}/${file}?curac=${curac}`);
+		if (curac.name) {
+			goto(`/${plane}/${file}?curac=${curac.aircraft}`);
 		} else {
 			goto(`/${plane}/${file}`);
 		}
 	}
 
 	function emergencyRedirect(plane: string, file: string) {
-		if (plane !== 'carrier' && plane !== 'global') {
-			goto(`/${plane}/emergency/${file}?curac=${plane}`);
-		} else if (curac) {
-			goto(`/${plane}/emergency/${file}?curac=${curac}`);
+		if (curac) {
+			goto(`/${plane}/emergency/${file}?curac=${curac.aircraft}`);
 		} else {
 			goto(`/${plane}/emergency/${file}`);
 		}
@@ -59,10 +60,8 @@
 	}
 
 	function caseOneRedirect(plane: string, file: string) {
-		if (plane !== 'carrier' && plane !== 'global') {
-			goto(`/${plane}/case-1/${file}?curac=${plane}`);
-		} else if (curac) {
-			goto(`/${plane}/case-1/${file}?curac=${curac}`);
+		if (curac) {
+			goto(`/${plane}/case-1/${file}?curac=${curac.aircraft}`);
 		} else {
 			goto(`/${plane}/case-1/${file}`);
 		}
