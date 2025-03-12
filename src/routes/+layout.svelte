@@ -47,13 +47,7 @@
 		<div class="flex justify-center gap-3">
 			{#each data.sitePages as sitePage}
 				{#key sitePage.file}
-					<Button
-						siteBtn={true}
-						sitePage={sitePage.file}
-						type="site"
-						mainBtns={false}
-						aircraftLabel={false}
-					/>
+					<Button name={sitePage.name} siteBtn={true} sitePage={sitePage.file} type="site" />
 				{/key}
 			{/each}
 		</div>

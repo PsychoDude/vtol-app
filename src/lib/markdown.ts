@@ -3,7 +3,7 @@ import { checklistStruct, emergencyChecklistsStruct, siteChecklistStruct } from 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-export async function getAircraftSlugs() {
+export function getAircraftSlugs() {
 	const aircraftSlugArr: { aircraft: string; file: string }[] = [];
 	const caseOneSlugArr: { aircraft: string; file: string }[] = [];
 
@@ -26,7 +26,7 @@ export async function getAircraftSlugs() {
 	return [aircraftSlugArr, caseOneSlugArr];
 }
 
-export async function getAircraftOnlySlugs() {
+export function getAircraftOnlySlugs() {
 	const aircraftSlugArr: { aircraft: string }[] = [];
 
 	checklistStruct.forEach((aircraft) => {
@@ -36,7 +36,7 @@ export async function getAircraftOnlySlugs() {
 	return aircraftSlugArr;
 }
 
-export async function getEmergencySlugs() {
+export function getEmergencySlugs() {
 	const emergencySlugArr: { aircraft: string; file: string }[] = [];
 	emergencyChecklistsStruct.forEach((aircraft) => {
 		for (let i = 0; i < aircraft.checklists.length; i++) {
@@ -50,7 +50,7 @@ export async function getEmergencySlugs() {
 	return emergencySlugArr;
 }
 
-export async function getSiteSlugs() {
+export function getSiteSlugs() {
 	const siteSlugArr: { file: string }[] = [];
 	siteChecklistStruct.forEach((checklist) => {
 		siteSlugArr.push({

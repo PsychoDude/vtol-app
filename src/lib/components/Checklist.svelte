@@ -4,23 +4,24 @@
 	let { data } = $props();
 	const relatedParams = data.relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
-	const backBtnName: { name: string } = { name: 'Back' };
-	const curac = data.curac.name;
-	const backAcBtnName = { name: `Back To ${curac}` };
+
+	let curac = $state(data.curac);
+	let isCurac = $derived(data.curac !== undefined && data.curac.name ? true : false);
+	let backAcBtnName = $derived(`Back To ${data.curac.name}`);
+
+	$effect(() => {
+		curac = data.curac;
+	});
 </script>
 
 <div class="flex gap-3">
-	<Button
-		type="back"
-		info={backBtnName}
-		mainBtns="false"
-		curac={data.curac}
-		aircraft={data.aircraft}
-	/>
+	<Button type="back" name="Back" />
 
-	{#if curac}
-		<Button type="backAircraft" info={backAcBtnName} mainBtns="false" curac={data.curac} />
+	{#if isCurac}
+		<Button type="backAircraft" name={backAcBtnName} {curac} />
 	{/if}
+
+	<Button type="home" name="Home" />
 </div>
 
 <div class="my-4 flex flex-col gap-5">
@@ -37,23 +38,38 @@
 			{#if data.type === 'site'}
 				{#each data.relatedChecklists as checklist}
 					{#key checklist.file}
-						<Button type="related" sitePage={checklist.file} siteBtn={data.siteBtn} />
+						<Button type="related" name={checklist.name} sitePage={checklist.file} siteBtn={true} />
 					{/key}
 				{/each}
 			{:else}
 				{#each data.relatedChecklists as checklist}
-					{#each checklist.checklists as list}
-						{#key list.file}
-							<Button
-								type="related"
-								info={list}
-								aircraft={checklist.aircraft}
-								aircraftLabel={data.aircraftLabel}
-								siteBtn={data.siteBtn}
-								curac={data.curac}
-							/>
-						{/key}
-					{/each}
+					{#if checklist.aircraft === 'carrier'}
+						{#each checklist.checklists as list}
+							{#key list.file}
+								<Button
+									type="relatedCarrier"
+									name={list.name}
+									file={list.file}
+									aircraft={checklist.aircraft}
+									{curac}
+									showCurac={false}
+								/>
+							{/key}
+						{/each}
+					{:else}
+						{#each checklist.checklists as list}
+							{#key list.file}
+								<Button
+									type="related"
+									name={list.name}
+									file={list.file}
+									aircraft={data.aircraft}
+									{curac}
+									showCurac={true}
+								/>
+							{/key}
+						{/each}
+					{/if}
 				{/each}
 			{/if}
 		{/if}
@@ -63,22 +79,22 @@
 					{#key checklist.file}
 						<Button
 							type="relatedEmergency"
-							info={checklist}
+							name={checklist.name}
+							file={checklist.file}
 							aircraft={data.aircraft}
-							aircraftLabel={checklist.for}
-							siteBtn={data.siteBtn}
-							curac={data.curac}
+							{curac}
+							showCurac={true}
 						/>
 					{/key}
 				{:else if data.file !== checklist.file && !data.relatedParams}
 					{#key checklist.file}
 						<Button
 							type="relatedEmergency"
-							info={checklist}
+							name={checklist.name}
+							file={checklist.file}
 							aircraft={data.aircraft}
-							aircraftLabel={checklist.for}
-							siteBtn={data.siteBtn}
-							curac={data.curac}
+							{curac}
+							showCurac={true}
 						/>
 					{/key}
 				{/if}

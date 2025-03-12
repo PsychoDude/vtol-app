@@ -14,9 +14,9 @@
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
 		{#each data.pages as page}
 			{#if page.type === 'aircraft'}
-				<Button info={page} mainBtns="true" type="aircraft" aircraftLabel={false} />
+				<Button name={page.name} aircraft={page.aircraft} homeBtn={true} type="aircraft" />
 			{:else if page.type === 'global'}
-				<Button info={page} mainBtns="true" type="global" aircraftLabel={false} />
+				<Button name={page.name} aircraft={page.aircraft} homeBtn={true} type="global" />
 			{/if}
 		{/each}
 	</div>

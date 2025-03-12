@@ -8,11 +8,12 @@ import {
 } from '$lib/checklists';
 import { getMarkdown, getAircraftSlugs } from '$lib/markdown';
 import type { Related, ChecklistItem } from '$lib/types';
+import { error } from '@sveltejs/kit';
 
 export const prerender = true;
 
 export async function entries() {
-	const list = await getAircraftSlugs();
+	const list = getAircraftSlugs();
 
 	return list[1];
 }
@@ -20,10 +21,14 @@ export async function entries() {
 export async function load({ params, url }) {
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
+	const pageName = getPageName('aircraft', params.file, params.aircraft);
+
+	if (!aircraftName) error(404, 'Aircraft not found.');
+	if (!pageName) error(404, 'Page name not found.');
+
 	const curacAc = url.searchParams.get('curac');
 	const curacName = curacAc ? getAircraftName(curacAc) : '';
 	const curac = { aircraft: curacAc, name: curacName };
-	const pageName = getPageName('aircraft', params.file, params.aircraft);
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
 		params.aircraft,
 		params.file

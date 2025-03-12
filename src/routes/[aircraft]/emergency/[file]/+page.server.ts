@@ -4,15 +4,17 @@ import {
 	getRelatedEmergencyChecklistsByAircraftAndFile,
 	checklistStruct,
 	getChecklistParams,
-	emergencyChecklistsStruct
+	emergencyChecklistsStruct,
+	getAircraftType
 } from '$lib/checklists.js';
 import { getMarkdown, getEmergencySlugs } from '$lib/markdown';
 import type { ChecklistItem, Related } from '$lib/types';
+import { error } from '@sveltejs/kit';
 
 export const prerender = true;
 
 export async function entries() {
-	const list = await getEmergencySlugs();
+	const list = getEmergencySlugs();
 
 	return list;
 }
@@ -20,10 +22,16 @@ export async function entries() {
 export async function load({ params, url }) {
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
+	const aircraftType = getAircraftType(params.aircraft);
+	const pageName = getPageName('emergency', params.file, params.aircraft);
+
+	if (!aircraftName || !aircraftType) error(404, 'Aircraft not found.');
+	if (!pageName) error(404, 'Page name not found.');
+
 	const curacAc = url.searchParams.get('curac');
 	const curacName = curacAc ? getAircraftName(curacAc) : '';
 	const curac = { aircraft: curacAc, name: curacName };
-	const pageName = getPageName('emergency', params.file, params.aircraft);
+
 	const relatedChecklistsNames = getRelatedEmergencyChecklistsByAircraftAndFile(
 		params.aircraft,
 		params.file
@@ -46,7 +54,8 @@ export async function load({ params, url }) {
 			aircraftLabel: true,
 			pageName: pageName,
 			aircraftName: aircraftName,
-			relatedParams: RelatedParams
+			relatedParams: RelatedParams,
+			aircraftType: aircraftType
 		};
 	}
 
@@ -79,7 +88,7 @@ export async function load({ params, url }) {
 			checklists: relatedLists
 		});
 	}
-	// console.log(relatedChecklists);
+
 	return {
 		curac: curac,
 		content: markdown,
@@ -90,6 +99,7 @@ export async function load({ params, url }) {
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
-		relatedParams: RelatedParams
+		relatedParams: RelatedParams,
+		aircraftType: aircraftType
 	};
 }

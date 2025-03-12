@@ -3,5 +3,5 @@
 </script>
 
 {#if page.error !== null}
-	<h1>{page.error.message}</h1>
+	<h1 class="text-center text-5xl text-white">{page.error.message}</h1>
 {/if}

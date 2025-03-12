@@ -1,19 +1,22 @@
 import { getPageName, getRelatedChecklistsByFile, siteChecklistStruct } from '$lib/checklists';
 import { getMarkdown, getSiteSlugs } from '$lib/markdown';
 import type { SiteItem } from '$lib/types';
+import { error } from '@sveltejs/kit';
 
 export const prerender = true;
 
 export async function entries() {
-	const list = await getSiteSlugs();
+	const list = getSiteSlugs();
 
 	return list;
 }
 
 export async function load({ params, url }) {
 	const pageName = getPageName('site', params.file);
-	const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
 
+	if (!pageName) error(404, 'No page name found.');
+
+	const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
 	const relatedChecklists: Array<SiteItem> = [];
 
 	Object.entries(relatedChecklistsNames).forEach((checklist) => {
