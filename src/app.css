@@ -37,3 +37,7 @@ a {
 .h-70 {
 	height: 70px;
 }
+
+h1 {
+	font-size: 2rem;
+}
