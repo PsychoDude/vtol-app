@@ -1,7 +1,5 @@
 # T-55 Runway Takeoff Checklist
 
-<br>
-
 1. Set Flaps 1
 2. Engage Wheel Brake
 3. If TWR is under 0.8:
@@ -13,5 +11,3 @@
 7. Verify Positive Climb Rate
 8. Raise Landing Gear
 9. Set Flaps 0
-
-<br>

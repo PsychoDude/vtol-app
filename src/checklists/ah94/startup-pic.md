@@ -1,7 +1,5 @@
 # AH-94 Startup Checklist (PIC)
 
-<br>
-
 1. Start BATTERY
 2. Start APU
 3. Set Int. Lighting AS REQUIRED
@@ -40,12 +38,6 @@
     - Roles/Responsibilities
     - Mission Task
 
-<br>
-
 Begin Taxi, Hover Taxi, or Vertical Take Off. Trim AS REQUIRED
 
-<br>
-
 **IF NO CPG REFER TO STARTUP (CPG)**
-
-<br>

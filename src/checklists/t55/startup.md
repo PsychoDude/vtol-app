@@ -1,7 +1,5 @@
 # T-55 Startup Checklist
 
-<br>
-
 1. Start BATTERY
 2. Set Lights AS REQUIRED
 3. Start APU and confirm RPM NOMINAL
@@ -22,28 +20,18 @@
 18. Extend Launch Bar AS REQUIRED
 19. Contact Tower for taxi and T/O
 
-<br>
-
 > **NOTE:**
->
-> <br>
 
 <div class="border-s-4 border-green-500 ps-4 mb-5">
     Adequate RPM is required before starting the engine.  Attempting to ignite the engine before the APU is at RUN RPM up will lead to flame out and possible engine damage.
-    <br><br>
+    
     In the event of ignition failure, shut down the engine, and confirm APU RPM NOMINAL. Once NOMINAL, repeat steps 5 and 6.
 </div>
 
-<br>
-
 > **CAUTION:**
->
-> <br>
 
 <div class="border-s-4 border-red-700 ps-4 mb-5">
     Nominal refers to the RPM being in the green zone of the dial. Starting engines before the APU is fully spun up will lead to ignition failure. 
-    <br><br>
+    
     In the event of ignition failure, shut down both engines, and confirm APU RPM NOMINAL. Once NOMINAL, repeat steps 4 and 5.
 </div>
-
-<br>

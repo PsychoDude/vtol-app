@@ -1,7 +1,5 @@
 # EF-24G CATOBAR Takeoff Checklist
 
-<br>
-
 1. Contact Tower For Taxi To Catapult
 2. Check Launch Bar DOWN
 3. Check CATO Trim ON
@@ -16,5 +14,3 @@
 12. Set Flaps UP
 13. Set Landing Gear UP
 14. Set CATO Trim OFF
-
-<br>

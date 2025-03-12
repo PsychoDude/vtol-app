@@ -1,7 +1,5 @@
 # **RWR Symbology**
 
-<br>
-
 <table class="table-auto border border-neutral-700 border-collapse">
 <thead>    
 <tr>      
@@ -61,22 +59,14 @@ The <b>ARH Guidance Indicator.</b> Indicates that an <b>Active Radar Homing</b> 
 </tbody>
 </table>
 
-<br><br>
-
 # **RWR Acronyms**
 
-<br>
-
 Threat Levels:
-
-<br>
 
 1. Very High
 2. High
 3. Medium
 4. Low
-
-<br>
 
 <table class="table-auto border border-collapse border-neutral-700">
 <thead>    
@@ -97,8 +87,9 @@ Any active radar-guided missile.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>1</b>
-<br>
+
 Imminent Threat
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -111,8 +102,9 @@ The radar seeker of an air launched Anti-Ship Missile.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>1</b>
-<br>
+
 Imminent Threat
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -125,8 +117,9 @@ The MAD-4 Radar.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>1</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -139,8 +132,9 @@ Located underneath the Aft <b>MC</b> Radar on the NMSS Cruiser. Coordinates long
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>1</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Naval</td>
 </tr>
@@ -153,8 +147,9 @@ The ASF-58 Advanced Stealth Fighter.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>1</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -167,8 +162,9 @@ The ASF-30 singe-engine Air Superiority Fighter or ASF-33 Air Superiority and St
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>2</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -181,8 +177,9 @@ The SAM S/A Radar (Enemy).
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>2</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -195,8 +192,9 @@ The Fire Control Radar.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>2</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -209,8 +207,9 @@ The SL-MRM Radar.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>2</b>
-<br>
+
 medium-range
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -223,8 +222,9 @@ The NMSS Cruiser's Air and Sea radars, coordinating its Vertical Launch System. 
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>3</b>
-<br>
+
 medium-range
+
 </td>
 <td class="border border-neutral-700 p-2">Naval</td>
 </tr>
@@ -237,8 +237,9 @@ The SAAW (Self-propelled Anti-Air Weapon)
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>3</b>
-<br>
+
 4.3nm
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -251,8 +252,9 @@ The Drone Carrier or DMS Cruiser.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>3 (VLS)</b>
-<br>
+
 medium
+
 </td>
 <td class="border border-neutral-700 p-2">Naval</td>
 </tr>
@@ -265,8 +267,9 @@ The Manta UCAV.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>4</b>
-<br>
+
 short-range (gun)
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -278,8 +281,9 @@ short-range (gun)
 The NFP Aircraft Carrier (enemy)</td>
 <td class="text-center border border-neutral-700 p-2">
 <b>4 (CIWS turret)</b>
-<br>
+
 short-range
+
 </td>
 <td class="border border-neutral-700 p-2">Naval</td>
 </tr>
@@ -292,8 +296,9 @@ Short-range Anti-Air Artillery targeting radars. Used by Z20x2 AAA, CIWS Turret 
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>4</b>
-<br>
+
 1.7nm
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -306,8 +311,9 @@ The Missile Warning Radar. A purely defensive emplacement that will target incom
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>n/a</b>
-<br>
+
 short-medium
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
@@ -320,8 +326,9 @@ The BLUFOR E-4 Overlord AWACS.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>n/a</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -334,8 +341,9 @@ The REDFOR AEW-50 Bulwark AWACS.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>n/a</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Airborne</td>
 </tr>
@@ -348,12 +356,11 @@ The REDFOR Early Warning Radar.
 </td>
 <td class="text-center border border-neutral-700 p-2">
 <b>n/a</b>
-<br>
+
 long-range
+
 </td>
 <td class="border border-neutral-700 p-2">Ground</td>
 </tr>
 </tbody>
 </table>
-
-<br>

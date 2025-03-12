@@ -1,7 +1,5 @@
 # LSO Guidance
 
-<br>
-
 After calling the ball, the LSO will give guidance down from ¾ miles. If Clara Ball has been called, it will begin immediately.
 
 The commands are as follows:
@@ -14,5 +12,3 @@ The commands are as follows:
 - You’re Slow - Speed Up. Increase throttle to compensate for lack of speed
 - Wave Off! - WAVE OFF IMMEDIATELY, RE-ENTER A HOLDING PATTERN TO THE LEFT. SEE WAVE OFF IN RELATED CHECKLISTS
 - Bolter! - You’ve touched the deck but missed the wires - go around! SEE WAVE OFF IN RELATED CHECKLISTS
-
-<br>

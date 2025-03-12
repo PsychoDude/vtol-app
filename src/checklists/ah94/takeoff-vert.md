@@ -1,7 +1,5 @@
 # AH-94 Vertical Takeoff Checklist
 
-<br>
-
 1. Pre-Trim Aircraft
 2. Contact Tower for Vertical T/O Clearance
 3. Advance Collective to T/O Power
@@ -9,5 +7,3 @@
 5. Transition into Forward Flight OGE (ETL 45kn)
 6. Aero-Trim Aircraft
 7. Retract Landing Gear
-
-<br>

@@ -1,10 +1,6 @@
 # Case 1 Carrier Ops Final Approach Global Checklist
 
-<br>
-
 ![Carrier Landing Diagram](/images/carrier-case1.webp)
-
-<br>
 
 1. Begin descent from 800ft to 350ft before wings level transition.
 2. Make sure to notify the LSO that you have entered the final by calling "Callsign, in the groove." Make this call when you are leveled out and established on the final approach.

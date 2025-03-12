@@ -1,7 +1,5 @@
 # T-55 Emergency Engine Failure Checklist
 
-<br>
-
 1. Start APU
 2. Jettison ALL
 3. Power OFF Engine
@@ -23,5 +21,3 @@
    5. Contact nearest airbase for Emergency Landing
    6. Perform Emergency Landing
    7. If no airfield available, consult below 5000ft checklist (Step 4)
-
-<br>

@@ -1,7 +1,5 @@
 # AH-94 Rolling/Hover Takeoff Checklist
 
-<br>
-
 1. Contact Tower for Taxi/Hover Taxi Clearance
 2. Pre-Trim Aircraft
 3. IF Rolling: Begin Rolling Taxi
@@ -12,5 +10,3 @@
 8. Transition into Forward Flight and OGE
 9. Retract Landing Gear
 10. Aero-Trim Aircraft
-
-<br>

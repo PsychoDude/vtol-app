@@ -1,7 +1,5 @@
 # F-45A Carrier Landing Checklist
 
-<br>
-
 1. At 800ft, set tailhook DOWN.
 2. Once under 250KT, set landing gear DOWN.
 3. Turn to intercept glideslope.
@@ -19,5 +17,3 @@
 10. (If Wire Caught) Hold Afterburner for 4 seconds. Set Throttle IDLE. Set Hook UP, Set Wings UP, Taxi to Parking Area.
 11. (If Wire Missed) Bolter! (SEE WAVE OFF IN RELATED CHECKLISTS.)
 12. Monitor Fuel Levels.
-
-<br>

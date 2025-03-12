@@ -1,10 +1,6 @@
 # Credits
 
-<br>
-
 The information found in this app was gathered from multiple sources
-
-<br>
 
 ## [F-45A Manual](https://docs.google.com/document/d/1Zrw58fDb3uGjZQlJF0dpX-7Z8UbnXHhvI87TuKZNT7s/edit?usp=sharing)
 
@@ -78,5 +74,3 @@ The information found in this app was gathered from multiple sources
 - [CAW - Case 3 Operations](https://docs.google.com/document/d/11gUgshqHGJKlRgmRFDWvU2P5tymrY0gbheKaAdNFehU/edit?usp=sharing)
 - [VTOL VR Wiki](https://vtolvr.wiki.gg/wiki/VTOL_VR_Wiki)
 - PsychoDude - Missing EF-24G Emergency Checklists
-
-<br>

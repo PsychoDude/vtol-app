@@ -1,7 +1,5 @@
 # EF-24G Carrier Landing Checklist
 
-<br>
-
 1. At 800ft, Set Tailhook DOWN
 2. Engage Speedbrake
 3. Lower Landing Gear, Slow to 220KIAS.
@@ -24,5 +22,3 @@
 15. (If Wire Caught) Hold Afterburner for 4 seconds. Set Throttle IDLE. Set Hook UP, Set Wings BACK, Set Flaps 0, Taxi to Parking Area
 16. (If Wire Missed) Bolter! (SEE WAVE OFF IN RELATED CHECKLISTS)
 17. Monitor Fuel Levels.
-
-<br>

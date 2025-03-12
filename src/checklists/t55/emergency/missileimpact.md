@@ -1,7 +1,5 @@
 # F-45A Emergency Missile Impact Checklist
 
-<br>
-
 1. Turn cold from bandit(s)
 2. Confirm engine RPM nominal
 3. (If engine has failed) see RELATED CHECKLISTS BELOW - ENGINE FAILURE

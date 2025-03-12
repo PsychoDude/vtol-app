@@ -1,7 +1,5 @@
 # EF-24G Runway Takeoff Checklist
 
-<br>
-
 1. Set Flaps 2
 2. Set Wings AUTO
 3. Set Parking Brake ON
@@ -13,5 +11,3 @@
 7. Rotate to 5 degrees at 170KIAS
 8. Set Flaps 0
 9. Set Landing Gear UP
-
-<br>

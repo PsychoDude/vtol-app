@@ -1,7 +1,5 @@
 # F-45A Emergency Engine Failure Checklist
 
-<br>
-
 1. Start APU.
 2. Switch malfunctioning engine(s) OFF.
 3. If altitude below 5000ft AGL:
@@ -21,5 +19,3 @@
    6. Climb to 10000ft.
    7. Contact nearest airbase for emergency landing.
    8. Land (See Related Checklists).
-
-<br>

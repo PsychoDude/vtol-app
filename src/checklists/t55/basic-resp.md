@@ -1,10 +1,6 @@
 # T-55 Basic Responsability Checklist
 
-<br>
-
 > **PIC:**
->
-> <br>
 
 1. Maintaining Stable Aerodynamic Flight
 2. Maintaining Altitude Clearance from Ground Obstacles
@@ -14,11 +10,7 @@
 6. Deconfliction and Coordination with Friendly Aircraft
 7. Communications with WSO, Clearance to Engage Targets
 
-<br>
-
 > **WSO:**
->
-> <br>
 
 1. Maintaining Situational Awareness
 2. Navigating and Operating EQUIP Page
@@ -30,5 +22,3 @@
 8. Managing Mission Objectives and Data
 9. Directing Aircraft Location, Heading, and Altitude
 10. Communications with PIC
-
-<br>

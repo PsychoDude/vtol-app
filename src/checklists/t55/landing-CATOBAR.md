@@ -1,7 +1,5 @@
 # T-55 Carrier Landing Checklist
 
-<br>
-
 1. On Upwind Leg; 800ft ASL @250kn, Set Tailhook DOWN, Flaps 2
 2. Perform Break
 3. On Downwind Leg; OnSpeed at 800ft ASL and maintain 8° AOA; ≈170kn
@@ -22,5 +20,3 @@
 13. (If Wire Caught) Hold Afterburner for 4 seconds. Set Throttle IDLE. Set Hook UP, Set Wings UP, Set Flaps 0, Taxi to Parking Area
 
 14. (If Wire Missed) Bolter! (SEE WAVE OFF PROCEDURES ON NEXT PAGE.) Monitor Fuel Levels.
-
-<br>

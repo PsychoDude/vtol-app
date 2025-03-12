@@ -1,7 +1,5 @@
 # F-45A Runway Landing Checklist
 
-<br>
-
 1. Contact Tower For Permission to Land.
 2. Line Up with Runway (Note: Runway Number Indicates its Heading in Tens of Degrees).
 3. Under 250KTAS, set landing gear DOWN.
@@ -11,14 +9,8 @@
 7. At touchdown, reduce throttle.
 8. Set speedbrake to FULL.
 
-<br>
-
 > **NOTE:**
->
-> <br>
 
 <div class="border-s-4 border-green-500 ps-4 mb-5">
     Unlike with USAF aircraft, flaring is not strictly required, as the F-45A features strong landing gear designed for high-stress carrier landings.
 </div>
-
-<br>

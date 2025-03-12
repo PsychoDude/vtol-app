@@ -1,7 +1,5 @@
 # T-55 Runway Landing Checklist
 
-<br>
-
 1. Tower - Contact For Permission to Land
 2. Flaps - Set for NOTCH 2
 3. Gear - DOWN
@@ -16,13 +14,9 @@
 12. Set Throttle IDLE
 13. Engage Wheel Brake
 
-<br>
-
 > **NOTE:**
 
 <div class="border-s-4 border-green-500 ps-4 mb-5">
     Unlike USAF aircraft, flaring is not strictly required, as the T-55 features strong landing gear designed for high-load carrier recoveries.
 
 </div>
-
-<br>

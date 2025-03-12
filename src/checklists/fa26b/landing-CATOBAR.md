@@ -1,7 +1,5 @@
 # F/A-26B Carrier Landing Checklist
 
-<br>
-
 1. At 800ft, Set Tailhook DOWN
 2. Turn left for the break (aka crosswind)
 3. Lower Landing Gear, Slow to 8 AoA.
@@ -23,5 +21,3 @@
 14. (If Wire Caught) Hold Afterburner for 4 seconds. Set Throttle IDLE. Set Hook UP, Set Wings UP, Set Flaps 0, Taxi to Parking Area
 15. (If Wire Missed) Bolter! (SEE WAVE OFF IN RELATED CHECKLISTS.)
 16. Monitor Fuel Levels.
-
-<br>
