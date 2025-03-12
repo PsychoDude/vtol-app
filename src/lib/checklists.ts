@@ -717,23 +717,29 @@ export function getRelatedChecklistsByFile(file: string) {
 export function getPageName(type: string, file: string, aircraft?: string) {
 	switch (true) {
 		case type === 'site':
-			const siteList = siteChecklistStruct.find((checklist) => checklist.file === file);
+			{
+				const siteList = siteChecklistStruct.find((checklist) => checklist.file === file);
 
-			if (siteList) return siteList.name;
+				if (siteList) return siteList.name;
+			}
 			break;
 		case type === 'aircraft':
-			const aircraftList = checklistStruct
-				.find((checklist) => checklist.aircraft === aircraft)
-				?.checklists.find((checklist) => checklist.file === file);
+			{
+				const aircraftList = checklistStruct
+					.find((checklist) => checklist.aircraft === aircraft)
+					?.checklists.find((checklist) => checklist.file === file);
 
-			if (aircraftList) return aircraftList.name;
+				if (aircraftList) return aircraftList.name;
+			}
 			break;
 		case type === 'emergency':
-			const emergencyList = emergencyChecklistsStruct
-				.find((checklist) => checklist.aircraft === aircraft)
-				?.checklists.find((checklist) => checklist.file === file);
+			{
+				const emergencyList = emergencyChecklistsStruct
+					.find((checklist) => checklist.aircraft === aircraft)
+					?.checklists.find((checklist) => checklist.file === file);
 
-			if (emergencyList) return emergencyList.name;
+				if (emergencyList) return emergencyList.name;
+			}
 			break;
 	}
 }

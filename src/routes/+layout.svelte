@@ -45,10 +45,8 @@
 	</p>
 	{#if data.sitePages}
 		<div class="flex justify-center gap-3">
-			{#each data.sitePages as sitePage}
-				{#key sitePage.file}
-					<Button type="site" name={sitePage.name} siteBtn={true} sitePage={sitePage.file} />
-				{/key}
+			{#each data.sitePages as sitePage (sitePage.file)}
+				<Button type="site" name={sitePage.name} siteBtn={true} sitePage={sitePage.file} />
 			{/each}
 		</div>
 	{/if}

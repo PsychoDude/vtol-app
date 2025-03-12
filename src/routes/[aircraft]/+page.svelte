@@ -19,7 +19,7 @@
 <h2 class="my-4 text-2xl font-bold">{data.checklists.name} Checklists</h2>
 
 <div class="mt-4 flex flex-col space-y-2">
-	{#each data.checklists.checklists as checklist}
+	{#each data.checklists.checklists as checklist (checklist.file)}
 		{#if checklist.showGlobal}
 			<Button
 				type="checklist"
@@ -33,7 +33,7 @@
 	{/each}
 
 	{#if data.relatedEmergencyChecklists}
-		{#each data.relatedEmergencyChecklists.checklists as checklist}
+		{#each data.relatedEmergencyChecklists.checklists as checklist (checklist.file)}
 			<Button
 				type="emergency"
 				name={checklist.name}

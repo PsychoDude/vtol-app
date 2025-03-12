@@ -106,16 +106,14 @@
 			case type === 'related':
 				if (aircraft === 'emergency' && file) {
 					emergencyRedirect(aircraft, file);
-					break;
 				} else if (aircraft === 'carrier' && file) {
 					caseOneRedirect(aircraft, file);
-					break;
 				} else if (siteBtn && sitePage) {
 					siteRedirect(sitePage);
 				} else {
 					if (aircraft && file) checklistRedirect(aircraft, file);
-					break;
 				}
+				break;
 			case type === 'relatedEmergency':
 				if (aircraft && file) emergencyRedirect(aircraft, file);
 				break;

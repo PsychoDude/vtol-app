@@ -13,7 +13,7 @@
 
 <div class="flex space-x-4">
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
-		{#each data.pages as page}
+		{#each data.pages as page (page.aircraft)}
 			{#if page.type === 'aircraft'}
 				<Button type="aircraft" name={page.name} aircraft={page.aircraft} homeBtn={true} />
 			{:else if page.type === 'global'}

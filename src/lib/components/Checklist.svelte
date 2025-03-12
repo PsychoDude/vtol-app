@@ -43,69 +43,59 @@
 	<div class="flex flex-col space-y-3">
 		{#if data.relatedChecklists}
 			{#if data.type === 'site'}
-				{#each data.relatedChecklists as checklist}
-					{#key checklist.file}
-						<Button type="related" name={checklist.name} sitePage={checklist.file} siteBtn={true} />
-					{/key}
+				{#each data.relatedChecklists as checklist (checklist.file)}
+					<Button type="related" name={checklist.name} sitePage={checklist.file} siteBtn={true} />
 				{/each}
 			{:else}
-				{#each data.relatedChecklists as checklist}
+				{#each data.relatedChecklists as checklist (checklist.file)}
 					{#if checklist.aircraft === 'carrier'}
 						{#if checklist.checklists}
-							{#each checklist.checklists as list}
-								{#key list.file}
-									<Button
-										type="relatedCarrier"
-										name={list.name}
-										file={list.file}
-										aircraft={checklist.aircraft}
-										{curac}
-										showCurac={false}
-									/>
-								{/key}
+							{#each checklist.checklists as list (list.file)}
+								<Button
+									type="relatedCarrier"
+									name={list.name}
+									file={list.file}
+									aircraft={checklist.aircraft}
+									{curac}
+									showCurac={false}
+								/>
 							{/each}
 						{/if}
 					{:else if checklist.checklists}
-						{#each checklist.checklists as list}
-							{#key list.file}
-								<Button
-									type="related"
-									name={list.name}
-									file={list.file}
-									aircraft={data.aircraft}
-									{curac}
-									showCurac={true}
-								/>
-							{/key}
+						{#each checklist.checklists as list (list.file)}
+							<Button
+								type="related"
+								name={list.name}
+								file={list.file}
+								aircraft={data.aircraft}
+								{curac}
+								showCurac={true}
+							/>
 						{/each}
 					{/if}
 				{/each}
 			{/if}
 		{/if}
 		{#if data.relatedEmergencyChecklists}
-			{#each data.relatedEmergencyChecklists.checklists as checklist}
+			{#each data.relatedEmergencyChecklists.checklists as checklist (checklist.file)}
 				{#if data.file !== checklist.file && showEmergencies}
-					{#key checklist.file}
-						<Button
-							type="relatedEmergency"
-							name={checklist.name}
-							file={checklist.file}
-							aircraft={data.aircraft}
-							{curac}
-							showCurac={true}
-						/>
-					{/key}
+					<Button
+						type="relatedEmergency"
+						name={checklist.name}
+						file={checklist.file}
+						aircraft={data.aircraft}
+						{curac}
+						showCurac={true}
+					/>
 				{:else if data.file !== checklist.file && !data.relatedParams}
-					{#key checklist.file}
-						<Button
-							type="relatedEmergency"
-							name={checklist.name}
-							file={checklist.file}
-							aircraft={data.aircraft}
-							{curac}
-							showCurac={true}
-						/>
-					{/key}
+					<Button
+						type="relatedEmergency"
+						name={checklist.name}
+						file={checklist.file}
+						aircraft={data.aircraft}
+						{curac}
+						showCurac={true}
+					/>
 				{/if}
 			{/each}
 		{/if}
