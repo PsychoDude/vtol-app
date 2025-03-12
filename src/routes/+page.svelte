@@ -1,2 +1,26 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import BackToTop from '$lib/components/BackToTop.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import type { ChecklistData } from '$lib/types';
+
+	let { data }: { data: ChecklistData } = $props();
+</script>
+
+<svelte:head>
+	<title>VTOL VR App</title>
+	<meta name="description" content="VTOL VR Checklist Companion App. " />
+</svelte:head>
+
+<div class="flex space-x-4">
+	<div class="mx-auto grid grow grid-cols-3 gap-4">
+		{#each data.pages as page (page.aircraft)}
+			{#if page.type === 'aircraft'}
+				<Button type="aircraft" name={page.name} aircraft={page.aircraft} homeBtn={true} />
+			{:else if page.type === 'global'}
+				<Button type="global" name={page.name} aircraft={page.aircraft} homeBtn={true} />
+			{/if}
+		{/each}
+	</div>
+</div>
+
+<BackToTop />
