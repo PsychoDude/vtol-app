@@ -32,7 +32,6 @@ export async function load({ params, url }) {
 		type: 'site',
 		content: markdown,
 		relatedChecklists: relatedChecklists,
-		siteBtn: true,
 		pageName: pageName
 	};
 }

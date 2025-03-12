@@ -47,7 +47,7 @@
 		<div class="flex justify-center gap-3">
 			{#each data.sitePages as sitePage}
 				{#key sitePage.file}
-					<Button name={sitePage.name} siteBtn={true} sitePage={sitePage.file} type="site" />
+					<Button type="site" name={sitePage.name} siteBtn={true} sitePage={sitePage.file} />
 				{/key}
 			{/each}
 		</div>

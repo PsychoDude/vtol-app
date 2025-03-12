@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import type { BtnData } from '$lib/types';
 
-	let data = $props();
+	let { type, name, file, aircraft, curac, showCurac, siteBtn, sitePage, homeBtn }: BtnData =
+		$props();
 
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
@@ -17,7 +19,7 @@
 		home: 'home'
 	};
 
-	const color: string = colorForTypes[data.type];
+	const color: string = colorForTypes[type];
 
 	const colorVariants: Record<string, string> = {
 		green: 'bg-green-500 hover:bg-green-700 px-4 py-2',
@@ -28,32 +30,25 @@
 		home: 'bg-amber-500 hover:bg-amber-700 px-4 py-2'
 	};
 
-	const mainBtns: Record<string, string> = {
-		true: 'rounded h-70',
-		false: ''
-	};
+	const mainBtns = homeBtn ? 'rounded h-70' : '';
 
 	function aircraftRedirect(plane: string) {
 		goto(`/${plane}?curac=${plane}`);
 	}
 
 	function checklistRedirect(plane: string, file: string) {
-		if (data.curac.name) {
-			goto(`/${plane}/${file}?curac=${data.curac.aircraft}`);
-		} else if (plane !== 'carrier' && plane !== 'global') {
-			goto(`/${plane}/${file}?curac=${plane}`);
+		if (curac?.aircraft) {
+			goto(`/${plane}/${file}?curac=${curac.aircraft}`);
 		} else {
-			goto(`/${plane}/${file}`);
+			goto(`/${plane}/${file}?curac=${plane}`);
 		}
 	}
 
 	function emergencyRedirect(plane: string, file: string) {
-		if (data.curac.name) {
-			goto(`/${plane}/emergency/${file}?curac=${data.curac.aircraft}`);
-		} else if (plane !== 'carrier' && plane !== 'global') {
-			goto(`/${plane}/emergency/${file}?curac=${plane}`);
+		if (curac?.aircraft) {
+			goto(`/${plane}/emergency/${file}?curac=${curac.aircraft}`);
 		} else {
-			goto(`/${plane}/emergency/${file}`);
+			goto(`/${plane}/emergency/${file}?curac=${plane}`);
 		}
 	}
 
@@ -62,12 +57,12 @@
 	}
 
 	function backAcRedirect(plane: string) {
-		goto(`/${plane}?curac=${data.curac.aircraft}`);
+		if (curac?.aircraft) goto(`/${plane}?curac=${curac.aircraft}`);
 	}
 
 	function caseOneRedirect(plane: string, file: string) {
-		if (data.curac) {
-			goto(`/${plane}/case-1/${file}?curac=${data.curac.aircraft}`);
+		if (curac?.aircraft) {
+			goto(`/${plane}/case-1/${file}?curac=${curac.aircraft}`);
 		} else if (plane !== 'carrier' && plane !== 'global') {
 			goto(`/${plane}/case-1/${file}?curac=${plane}`);
 		} else {
@@ -81,54 +76,54 @@
 </script>
 
 <button
-	class={`rounded ${colorVariants[color]} text-white ${mainBtns[data.homeBtn]} cursor-pointer`}
+	class={`rounded ${colorVariants[color]} text-white ${mainBtns} cursor-pointer`}
 	onclick={() => {
 		switch (true) {
-			case data.siteBtn:
-				siteRedirect(data.sitePage);
+			case siteBtn:
+				if (sitePage) siteRedirect(sitePage);
 				break;
-			case data.type === 'home':
+			case type === 'home':
 				homeRedirect();
 				break;
-			case data.type === 'aircraft':
-				aircraftRedirect(data.aircraft);
+			case type === 'aircraft':
+				if (aircraft) aircraftRedirect(aircraft);
 				break;
-			case data.type === 'global':
-				aircraftRedirect(data.aircraft);
+			case type === 'global':
+				if (aircraft) aircraftRedirect(aircraft);
 				break;
-			case data.type === 'checklist':
-				checklistRedirect(data.aircraft, data.file);
+			case type === 'checklist':
+				if (aircraft && file) checklistRedirect(aircraft, file);
 				break;
-			case data.type === 'emergency':
-				emergencyRedirect(data.aircraft, data.file);
+			case type === 'emergency':
+				if (aircraft && file) emergencyRedirect(aircraft, file);
 				break;
-			case data.type === 'back':
+			case type === 'back':
 				window.history.back();
 				break;
-			case data.type === 'backAircraft':
-				backAcRedirect(data.curac.aircraft);
+			case type === 'backAircraft':
+				if (curac && curac.aircraft) backAcRedirect(curac.aircraft);
 				break;
-			case data.type === 'related':
-				if (data.aircraft === 'emergency') {
-					emergencyRedirect(data.aircraft, data.file);
+			case type === 'related':
+				if (aircraft === 'emergency' && file) {
+					emergencyRedirect(aircraft, file);
 					break;
-				} else if (data.aircraft === 'carrier' && data.type === 'case-1') {
-					caseOneRedirect(data.aircraft, data.file);
+				} else if (aircraft === 'carrier' && file) {
+					caseOneRedirect(aircraft, file);
 					break;
-				} else if (data.siteBtn) {
-					siteRedirect(data.sitePage);
+				} else if (siteBtn && sitePage) {
+					siteRedirect(sitePage);
 				} else {
-					checklistRedirect(data.aircraft, data.file);
+					if (aircraft && file) checklistRedirect(aircraft, file);
 					break;
 				}
-			case data.type === 'relatedEmergency':
-				emergencyRedirect(data.aircraft, data.file);
+			case type === 'relatedEmergency':
+				if (aircraft && file) emergencyRedirect(aircraft, file);
 				break;
-			case data.type === 'relatedCarrier':
-				if (data.file === 'case-1') {
-					checklistRedirect(data.aircraft, data.file);
+			case type === 'relatedCarrier':
+				if (aircraft && file === 'case-1') {
+					checklistRedirect(aircraft, file);
 				} else {
-					caseOneRedirect(data.aircraft, data.file);
+					if (aircraft && file) caseOneRedirect(aircraft, file);
 				}
 				break;
 
@@ -137,9 +132,9 @@
 		}
 	}}
 >
-	{#if data.curac && data.aircraft === data.curac.aircraft && data.showCurac}
-		{data.name} ({data.curac.name})
+	{#if curac && aircraft === curac.aircraft && showCurac}
+		{name} ({curac.name})
 	{:else}
-		{data.name}
+		{name}
 	{/if}
 </button>

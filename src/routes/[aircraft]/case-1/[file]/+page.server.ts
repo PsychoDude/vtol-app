@@ -7,7 +7,7 @@ import {
 	checklistStruct
 } from '$lib/checklists';
 import { getMarkdown, getAircraftSlugs } from '$lib/markdown';
-import type { Related, ChecklistItem } from '$lib/types';
+import type { ChecklistItem, Related } from '$lib/types';
 import { error } from '@sveltejs/kit';
 
 export const prerender = true;
@@ -26,7 +26,7 @@ export async function load({ params, url }) {
 	if (!aircraftName) error(404, 'Aircraft not found.');
 	if (!pageName) error(404, 'Page name not found.');
 
-	const curacAc = url.searchParams.get('curac');
+	const curacAc = url.searchParams.get('curac') || undefined;
 	const curacName = curacAc ? getAircraftName(curacAc) : '';
 	const curac = { aircraft: curacAc, name: curacName };
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
@@ -36,19 +36,17 @@ export async function load({ params, url }) {
 
 	const markdown = await getMarkdown(url.pathname);
 
-	const relatedChecklists: Array<Related> = [];
+	const relatedChecklists: Related[] = [];
 
-	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
-		(checklist) => checklist.aircraft === params.aircraft
-	);
+	const allAircraftEmergChecklists =
+		emergencyChecklistsStruct.find((checklist) => checklist.aircraft === params.aircraft) || [];
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
 			curac: curac,
 			content: markdown,
-			aircraft: params.aircraft,
 			file: params.file,
-			aircraftLabel: true,
+			aircraft: params.aircraft,
 			pageName: pageName,
 			aircraftName: aircraftName,
 			relatedParams: RelatedParams
@@ -57,7 +55,7 @@ export async function load({ params, url }) {
 
 	if (relatedChecklistsNames) {
 		Object.entries(relatedChecklistsNames).forEach((aircraft) => {
-			const relatedLists: Array<ChecklistItem> = [];
+			const relatedLists: ChecklistItem[] = [];
 			const aircraftAircraft = aircraft[0];
 			const relatedNameArr = aircraft[1] as Array<string>;
 			const aircraftName = checklistStruct.find(
@@ -94,9 +92,8 @@ export async function load({ params, url }) {
 	return {
 		curac: curac,
 		content: markdown,
-		aircraft: params.aircraft,
 		file: params.file,
-		aircraftLabel: true,
+		aircraft: params.aircraft,
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,

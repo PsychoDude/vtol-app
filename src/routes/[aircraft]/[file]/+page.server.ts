@@ -26,7 +26,7 @@ export async function load({ params, url }) {
 	if (!aircraftName) error(404, 'Aircraft not found.');
 	if (!pageName) error(404, 'Page name not found.');
 
-	const curacAc = url.searchParams.get('curac');
+	const curacAc = url.searchParams.get('curac') || undefined;
 	const curacName = curacAc ? getAircraftName(curacAc) : '';
 	const curac = { aircraft: curacAc, name: curacName };
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
@@ -38,9 +38,8 @@ export async function load({ params, url }) {
 
 	const relatedChecklists: Array<Related> = [];
 
-	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
-		(checklist) => checklist.aircraft === params.aircraft
-	);
+	const allAircraftEmergChecklists =
+		emergencyChecklistsStruct.find((checklist) => checklist.aircraft === params.aircraft) || [];
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
@@ -48,7 +47,6 @@ export async function load({ params, url }) {
 			content: markdown,
 			aircraft: params.aircraft,
 			file: params.file,
-			aircraftLabel: true,
 			pageName: pageName,
 			aircraftName: aircraftName,
 			relatedParams: RelatedParams
@@ -61,7 +59,6 @@ export async function load({ params, url }) {
 			content: markdown,
 			aircraft: params.aircraft,
 			file: params.file,
-			aircraftLabel: true,
 			pageName: pageName,
 			aircraftName: aircraftName,
 			relatedParams: RelatedParams,
@@ -108,9 +105,8 @@ export async function load({ params, url }) {
 	return {
 		curac: curac,
 		content: markdown,
-		aircraft: params.aircraft,
 		file: params.file,
-		aircraftLabel: true,
+		aircraft: params.aircraft,
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,

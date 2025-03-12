@@ -1,8 +1,9 @@
 <script lang="ts">
 	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import type { ChecklistData } from '$lib/types';
 
-	export let data;
+	let { data }: { data: ChecklistData } = $props();
 </script>
 
 <svelte:head>
@@ -14,9 +15,9 @@
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
 		{#each data.pages as page}
 			{#if page.type === 'aircraft'}
-				<Button name={page.name} aircraft={page.aircraft} homeBtn={true} type="aircraft" />
+				<Button type="aircraft" name={page.name} aircraft={page.aircraft} homeBtn={true} />
 			{:else if page.type === 'global'}
-				<Button name={page.name} aircraft={page.aircraft} homeBtn={true} type="global" />
+				<Button type="global" name={page.name} aircraft={page.aircraft} homeBtn={true} />
 			{/if}
 		{/each}
 	</div>

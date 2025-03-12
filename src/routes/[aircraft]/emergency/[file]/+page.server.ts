@@ -4,8 +4,7 @@ import {
 	getRelatedEmergencyChecklistsByAircraftAndFile,
 	checklistStruct,
 	getChecklistParams,
-	emergencyChecklistsStruct,
-	getAircraftType
+	emergencyChecklistsStruct
 } from '$lib/checklists.js';
 import { getMarkdown, getEmergencySlugs } from '$lib/markdown';
 import type { ChecklistItem, Related } from '$lib/types';
@@ -22,13 +21,12 @@ export async function entries() {
 export async function load({ params, url }) {
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
-	const aircraftType = getAircraftType(params.aircraft);
 	const pageName = getPageName('emergency', params.file, params.aircraft);
 
-	if (!aircraftName || !aircraftType) error(404, 'Aircraft not found.');
+	if (!aircraftName) error(404, 'Aircraft not found.');
 	if (!pageName) error(404, 'Page name not found.');
 
-	const curacAc = url.searchParams.get('curac');
+	const curacAc = url.searchParams.get('curac') || undefined;
 	const curacName = curacAc ? getAircraftName(curacAc) : '';
 	const curac = { aircraft: curacAc, name: curacName };
 
@@ -39,23 +37,20 @@ export async function load({ params, url }) {
 
 	const markdown = await getMarkdown(url.pathname);
 
-	const relatedChecklists: Array<Related> = [];
+	const relatedChecklists: Related[] = [];
 
-	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
-		(checklist) => checklist.aircraft === params.aircraft
-	);
+	const allAircraftEmergChecklists =
+		emergencyChecklistsStruct.find((checklist) => checklist.aircraft === params.aircraft) || [];
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
 			curac: curac,
 			content: markdown,
-			aircraft: params.aircraft,
 			file: params.file,
-			aircraftLabel: true,
+			aircraft: params.aircraft,
 			pageName: pageName,
 			aircraftName: aircraftName,
-			relatedParams: RelatedParams,
-			aircraftType: aircraftType
+			relatedParams: RelatedParams
 		};
 	}
 
@@ -92,14 +87,12 @@ export async function load({ params, url }) {
 	return {
 		curac: curac,
 		content: markdown,
-		aircraft: params.aircraft,
 		file: params.file,
-		aircraftLabel: true,
+		aircraft: params.aircraft,
 		relatedChecklists: relatedChecklists,
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
-		relatedParams: RelatedParams,
-		aircraftType: aircraftType
+		relatedParams: RelatedParams
 	};
 }

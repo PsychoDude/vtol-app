@@ -1,9 +1,10 @@
 import { siteChecklistStruct } from '$lib/checklists';
-import type { SiteItem } from '$lib/types';
 
 export async function load() {
-	const sitePages: Array<SiteItem> = [];
-	siteChecklistStruct.forEach((checklist) => sitePages.push(checklist));
+	const sitePages: Array<{ name: string; file: string }> = [];
+	siteChecklistStruct.forEach((checklist) =>
+		sitePages.push({ name: checklist.name, file: checklist.file })
+	);
 
 	return {
 		sitePages: sitePages

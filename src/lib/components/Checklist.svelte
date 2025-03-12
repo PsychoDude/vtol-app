@@ -1,13 +1,20 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import type { ChecklistData } from '$lib/types';
 
-	let { data } = $props();
+	let { data }: { data: ChecklistData } = $props();
 	const relatedParams = data.relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
 
 	let curac = $state(data.curac);
 	let isCurac = $derived(data.curac !== undefined && data.curac.name ? true : false);
-	let backAcBtnName = $derived(`Back To ${data.curac.name}`);
+	let backAcBtnName = $derived.by(() => {
+		if (data.curac && data.curac.name) {
+			return `Back To ${data.curac.name}`;
+		} else {
+			return '?';
+		}
+	});
 
 	$effect(() => {
 		curac = data.curac;
@@ -44,19 +51,21 @@
 			{:else}
 				{#each data.relatedChecklists as checklist}
 					{#if checklist.aircraft === 'carrier'}
-						{#each checklist.checklists as list}
-							{#key list.file}
-								<Button
-									type="relatedCarrier"
-									name={list.name}
-									file={list.file}
-									aircraft={checklist.aircraft}
-									{curac}
-									showCurac={false}
-								/>
-							{/key}
-						{/each}
-					{:else}
+						{#if checklist.checklists}
+							{#each checklist.checklists as list}
+								{#key list.file}
+									<Button
+										type="relatedCarrier"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										{curac}
+										showCurac={false}
+									/>
+								{/key}
+							{/each}
+						{/if}
+					{:else if checklist.checklists}
 						{#each checklist.checklists as list}
 							{#key list.file}
 								<Button
