@@ -30,7 +30,7 @@
 	<Checklist {data} {curac} />
 {/key}
 
-{#key `${data.file}-ac-file`}
+{#key `${data.file}-${curac.aircraft || 'none'}-${page.route}`}
 	<Footer {data} {curac} />
 {/key}
 <BackToTop />

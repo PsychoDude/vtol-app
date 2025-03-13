@@ -5,7 +5,8 @@ import {
 	getRelatedChecklistsByAircraftAndFile,
 	getAircraftName,
 	getPageName,
-	getAllAircraftNames
+	getAllAircraftNames,
+	siteChecklistStruct
 } from '$lib/checklists';
 import type { ChecklistItem, Related } from '$lib/types';
 import { getAircraftSlugs, getMarkdown } from '$lib/markdown';
@@ -28,6 +29,10 @@ export async function load({ params, url }) {
 
 	if (!aircraftName) error(404, 'Aircraft not found.');
 	if (!pageName) error(404, 'Page name not found.');
+
+	siteChecklistStruct.forEach((checklist) =>
+		sitePages.push({ name: checklist.name, file: checklist.file })
+	);
 
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
 		params.aircraft,
