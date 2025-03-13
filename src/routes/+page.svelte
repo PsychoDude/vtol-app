@@ -9,8 +9,8 @@
 </script>
 
 <svelte:head>
-	<title>VTOL VR App</title>
-	<meta name="description" content="VTOL VR Checklist Companion App. " />
+	<title>VTOL VR Companion App</title>
+	<meta name="description" content="VTOL VR Checklists Companion App. " />
 </svelte:head>
 
 <div class="flex space-x-4">
