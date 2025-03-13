@@ -1,23 +1,23 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import type { ChecklistData } from '$lib/types';
+	import type { ChecklistData, Curac } from '$lib/types';
 
-	let { data }: { data: ChecklistData } = $props();
+	let { data, curac }: { data: ChecklistData; curac: Curac } = $props();
 	const relatedParams = data.relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
 
-	let curac = $state(data.curac);
-	let isCurac = $derived(data.curac !== undefined && data.curac.name ? true : false);
+	let currentAircraft = $state(curac);
+	let isCurac = $derived(currentAircraft !== undefined && currentAircraft.name ? true : false);
 	let backAcBtnName = $derived.by(() => {
-		if (data.curac && data.curac.name) {
-			return `Back To ${data.curac.name}`;
+		if (currentAircraft && currentAircraft.name) {
+			return `Back To ${currentAircraft.name}`;
 		} else {
 			return '?';
 		}
 	});
 
 	$effect(() => {
-		curac = data.curac;
+		currentAircraft = curac;
 	});
 </script>
 
@@ -25,7 +25,7 @@
 	<Button type="back" name="Back" />
 
 	{#if isCurac}
-		<Button type="backAircraft" name={backAcBtnName} {curac} />
+		<Button type="backAircraft" name={backAcBtnName} {currentAircraft} />
 	{/if}
 
 	<Button type="home" name="Home" />
@@ -44,31 +44,37 @@
 		{#if data.relatedChecklists}
 			{#if data.type === 'site'}
 				{#each data.relatedChecklists as checklist (checklist.file)}
-					<Button type="related" name={checklist.name} sitePage={checklist.file} siteBtn={true} />
+					<Button
+						type="related"
+						name={checklist.name}
+						sitePage={checklist.file}
+						siteBtn={true}
+						{currentAircraft}
+					/>
 				{/each}
 			{:else}
-				{#each data.relatedChecklists as checklist (checklist.file)}
+				{#each data.relatedChecklists as checklist (`${checklist.file}-${checklist.aircraft}-${checklist.aircraft}`)}
 					{#if checklist.aircraft === 'carrier'}
 						{#if checklist.checklists}
-							{#each checklist.checklists as list (list.file)}
+							{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
 								<Button
 									type="relatedCarrier"
 									name={list.name}
 									file={list.file}
 									aircraft={checklist.aircraft}
-									{curac}
+									{currentAircraft}
 									showCurac={false}
 								/>
 							{/each}
 						{/if}
 					{:else if checklist.checklists}
-						{#each checklist.checklists as list (list.file)}
+						{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
 							<Button
 								type="related"
 								name={list.name}
 								file={list.file}
 								aircraft={data.aircraft}
-								{curac}
+								{currentAircraft}
 								showCurac={true}
 							/>
 						{/each}
@@ -77,14 +83,14 @@
 			{/if}
 		{/if}
 		{#if data.relatedEmergencyChecklists}
-			{#each data.relatedEmergencyChecklists.checklists as checklist (checklist.file)}
+			{#each data.relatedEmergencyChecklists.checklists as checklist (`${checklist.file}-${checklist.for}-${checklist.type}`)}
 				{#if data.file !== checklist.file && showEmergencies}
 					<Button
 						type="relatedEmergency"
 						name={checklist.name}
 						file={checklist.file}
 						aircraft={data.aircraft}
-						{curac}
+						{currentAircraft}
 						showCurac={true}
 					/>
 				{:else if data.file !== checklist.file && !data.relatedParams}
@@ -93,7 +99,7 @@
 						name={checklist.name}
 						file={checklist.file}
 						aircraft={data.aircraft}
-						{curac}
+						{currentAircraft}
 						showCurac={true}
 					/>
 				{/if}

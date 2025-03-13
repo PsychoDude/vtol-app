@@ -770,3 +770,16 @@ export function getSitePageName(file: string) {
 	const pageName = siteChecklistStruct.find((page) => page.file === file)?.name;
 	return pageName;
 }
+
+export function getAllAircraftNames() {
+	const aircraftNames: { aircraft: string; name: string }[] = [];
+
+	checklistStruct.forEach((plane) => {
+		aircraftNames.push({
+			aircraft: plane.aircraft,
+			name: plane.name
+		});
+	});
+
+	return aircraftNames;
+}

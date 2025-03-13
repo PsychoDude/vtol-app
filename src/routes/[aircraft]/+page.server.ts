@@ -1,4 +1,10 @@
-import { getAircraftName, checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
+import {
+	getAircraftName,
+	checklistStruct,
+	emergencyChecklistsStruct,
+	getAllAircraftNames,
+	siteChecklistStruct
+} from '$lib/checklists';
 import { getAircraftOnlySlugs } from '$lib/markdown.js';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
@@ -11,14 +17,16 @@ export async function entries() {
 	return list;
 }
 
-export async function load({ params, url }) {
+export async function load({ params }) {
+	const aircraftNamesList = getAllAircraftNames();
+	const sitePages: Array<{ name: string; file: string }> = [];
 	const aircraftName = getAircraftName(params.aircraft);
 
 	if (!aircraftName) error(404, 'Aircraft not found.');
 
-	const curacAc = url.searchParams.get('curac') || undefined;
-	const curacName = curacAc ? getAircraftName(curacAc) : undefined;
-	const curac = { aircraft: curacAc, name: curacName };
+	siteChecklistStruct.forEach((checklist) =>
+		sitePages.push({ name: checklist.name, file: checklist.file })
+	);
 
 	const checklists: AircraftChecklists = checklistStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
@@ -31,17 +39,19 @@ export async function load({ params, url }) {
 
 	if (!allAircraftEmergChecklists)
 		return {
-			curac: curac,
 			aircraft: params.aircraft,
 			checklists: checklists,
-			aircraftName: aircraftName
+			aircraftName: aircraftName,
+			sitePages: sitePages,
+			aircraftNames: aircraftNamesList
 		};
 
 	return {
-		curac: curac,
 		aircraft: params.aircraft,
 		checklists: checklists,
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
-		aircraftName: aircraftName
+		aircraftName: aircraftName,
+		sitePages: sitePages,
+		aircraftNames: aircraftNamesList
 	};
 }

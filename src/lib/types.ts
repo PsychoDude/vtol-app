@@ -51,7 +51,7 @@ export interface BtnData {
 	name: string;
 	file?: string;
 	aircraft?: string;
-	curac?: {
+	currentAircraft?: {
 		aircraft: string | undefined;
 		name: string | undefined;
 	};
@@ -80,10 +80,17 @@ export interface ChecklistData {
 	relatedEmergencyChecklists?: EmergencyChecklists;
 	pageName?: string;
 	pages: Page[];
+	aircraftNames: { aircraft: string | undefined; name: string | undefined }[];
+	sitePages: SiteItem[];
 }
 
 export interface Page {
 	type: string;
 	name: string;
 	aircraft: string;
+}
+
+export interface Curac {
+	aircraft: string | undefined;
+	name: string | undefined;
 }

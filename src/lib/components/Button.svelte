@@ -2,8 +2,17 @@
 	import { goto } from '$app/navigation';
 	import type { BtnData } from '$lib/types';
 
-	let { type, name, file, aircraft, curac, showCurac, siteBtn, sitePage, homeBtn }: BtnData =
-		$props();
+	let {
+		type,
+		name,
+		file,
+		aircraft,
+		showCurac,
+		siteBtn,
+		sitePage,
+		homeBtn,
+		currentAircraft
+	}: BtnData = $props();
 
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
@@ -37,32 +46,36 @@
 	}
 
 	function checklistRedirect(plane: string, file: string) {
-		if (curac?.aircraft) {
-			goto(`/${plane}/${file}?curac=${curac.aircraft}`);
+		if (currentAircraft?.aircraft) {
+			goto(`/${plane}/${file}?curac=${currentAircraft.aircraft}`);
 		} else {
 			goto(`/${plane}/${file}?curac=${plane}`);
 		}
 	}
 
 	function emergencyRedirect(plane: string, file: string) {
-		if (curac?.aircraft) {
-			goto(`/${plane}/emergency/${file}?curac=${curac.aircraft}`);
+		if (currentAircraft?.aircraft) {
+			goto(`/${plane}/emergency/${file}?curac=${currentAircraft.aircraft}`);
 		} else {
 			goto(`/${plane}/emergency/${file}?curac=${plane}`);
 		}
 	}
 
 	function siteRedirect(file: string) {
-		goto(`/site/${file}`);
+		if (currentAircraft?.aircraft) {
+			goto(`/site/${file}?curac=${currentAircraft.aircraft}`);
+		} else {
+			goto(`/site/${file}`);
+		}
 	}
 
 	function backAcRedirect(plane: string) {
-		if (curac?.aircraft) goto(`/${plane}?curac=${curac.aircraft}`);
+		if (currentAircraft?.aircraft) goto(`/${plane}?curac=${currentAircraft.aircraft}`);
 	}
 
 	function caseOneRedirect(plane: string, file: string) {
-		if (curac?.aircraft) {
-			goto(`/${plane}/case-1/${file}?curac=${curac.aircraft}`);
+		if (currentAircraft?.aircraft) {
+			goto(`/${plane}/case-1/${file}?curac=${currentAircraft.aircraft}`);
 		} else if (plane !== 'carrier' && plane !== 'global') {
 			goto(`/${plane}/case-1/${file}?curac=${plane}`);
 		} else {
@@ -101,7 +114,7 @@
 				window.history.back();
 				break;
 			case type === 'backAircraft':
-				if (curac && curac.aircraft) backAcRedirect(curac.aircraft);
+				if (currentAircraft && currentAircraft.aircraft) backAcRedirect(currentAircraft.aircraft);
 				break;
 			case type === 'related':
 				if (aircraft === 'emergency' && file) {
@@ -130,8 +143,8 @@
 		}
 	}}
 >
-	{#if curac && aircraft === curac.aircraft && showCurac}
-		{name} ({curac.name})
+	{#if currentAircraft && aircraft === currentAircraft.aircraft && showCurac}
+		{name} ({currentAircraft.name})
 	{:else}
 		{name}
 	{/if}
