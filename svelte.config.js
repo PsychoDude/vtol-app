@@ -20,7 +20,7 @@ const config = {
 		})
 	},
 	generateSitemap: false,
-	extensions: ['.svelte', '.svx', '.md']
+	extensions: ['.svelte', '.svx']
 };
 
 export default config;

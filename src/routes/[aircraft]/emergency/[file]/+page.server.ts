@@ -4,7 +4,9 @@ import {
 	getRelatedEmergencyChecklistsByAircraftAndFile,
 	checklistStruct,
 	getChecklistParams,
-	emergencyChecklistsStruct
+	emergencyChecklistsStruct,
+	getAllAircraftNames,
+	siteChecklistStruct
 } from '$lib/checklists.js';
 import { getMarkdown, getEmergencySlugs } from '$lib/markdown';
 import type { ChecklistItem, Related } from '$lib/types';
@@ -19,6 +21,8 @@ export async function entries() {
 }
 
 export async function load({ params, url }) {
+	const aircraftNamesList = getAllAircraftNames();
+	const sitePages: Array<{ name: string; file: string }> = [];
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('emergency', params.file, params.aircraft);
@@ -26,9 +30,9 @@ export async function load({ params, url }) {
 	if (!aircraftName) error(404, 'Aircraft not found.');
 	if (!pageName) error(404, 'Page name not found.');
 
-	const curacAc = url.searchParams.get('curac') || undefined;
-	const curacName = curacAc ? getAircraftName(curacAc) : '';
-	const curac = { aircraft: curacAc, name: curacName };
+	siteChecklistStruct.forEach((checklist) =>
+		sitePages.push({ name: checklist.name, file: checklist.file })
+	);
 
 	const relatedChecklistsNames = getRelatedEmergencyChecklistsByAircraftAndFile(
 		params.aircraft,
@@ -44,13 +48,14 @@ export async function load({ params, url }) {
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
-			curac: curac,
 			content: markdown,
 			file: params.file,
 			aircraft: params.aircraft,
 			pageName: pageName,
 			aircraftName: aircraftName,
-			relatedParams: RelatedParams
+			relatedParams: RelatedParams,
+			sitePages: sitePages,
+			aircraftNames: aircraftNamesList
 		};
 	}
 
@@ -85,7 +90,6 @@ export async function load({ params, url }) {
 	}
 
 	return {
-		curac: curac,
 		content: markdown,
 		file: params.file,
 		aircraft: params.aircraft,
@@ -93,6 +97,8 @@ export async function load({ params, url }) {
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
-		relatedParams: RelatedParams
+		relatedParams: RelatedParams,
+		sitePages: sitePages,
+		aircraftNames: aircraftNamesList
 	};
 }
