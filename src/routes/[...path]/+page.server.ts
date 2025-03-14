@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from '../$types';
+import type { PageServerLoad } from '../[aircraft]/$types';
 
-export const prerender = true;
+export const prerender = false;
 
 export const load: PageServerLoad = async () => {
 	return error(404, 'Not Found.');
