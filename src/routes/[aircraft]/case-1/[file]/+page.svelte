@@ -11,6 +11,7 @@
 
 	onMount(() => {
 		const ac = page.url.searchParams.get('curac');
+
 		if (ac) {
 			const plane = data.aircraftNames.find((plane) => plane.aircraft === ac);
 			if (plane) curac = plane;

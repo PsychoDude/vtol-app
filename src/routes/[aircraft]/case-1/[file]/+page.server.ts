@@ -54,6 +54,7 @@ export async function load({ params, url }) {
 			aircraft: params.aircraft,
 			pageName: pageName,
 			aircraftName: aircraftName,
+			aircraftNames: aircraftNamesList,
 			relatedParams: RelatedParams
 		};
 	}

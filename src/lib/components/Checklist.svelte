@@ -57,14 +57,25 @@
 					{#if checklist.aircraft === 'carrier'}
 						{#if checklist.checklists}
 							{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
-								<Button
-									type="relatedCarrier"
-									name={list.name}
-									file={list.file}
-									aircraft={checklist.aircraft}
-									{currentAircraft}
-									showCurac={false}
-								/>
+								{#if list.type === 'case-1'}
+									<Button
+										type="relatedCase1"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										{currentAircraft}
+										showCurac={false}
+									/>
+								{:else}
+									<Button
+										type="relatedCarrier"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										{currentAircraft}
+										showCurac={false}
+									/>
+								{/if}
 							{/each}
 						{/if}
 					{:else if checklist.checklists}
