@@ -3,9 +3,15 @@
 	import Button from '$lib/components/Button.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { ChecklistData, Curac } from '$lib/types';
+	import { error } from '@sveltejs/kit';
+	import { onMount } from 'svelte';
 
 	let { data }: { data: ChecklistData } = $props();
 	let curac: Curac = { aircraft: undefined, name: undefined };
+
+	onMount(() => {
+		if (!data.file) error(404, 'File Not Found.');
+	});
 </script>
 
 <svelte:head>
