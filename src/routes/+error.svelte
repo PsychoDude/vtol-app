@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import Button from '$lib/components/Button.svelte';
+
+	const error = $derived(page.error);
 </script>
 
 {#if page.error !== null}
@@ -11,6 +13,8 @@
 			<Button type="home" name="Home" />
 		</div>
 
-		<h1 class="text-center text-5xl text-white">{page.error.message}</h1>
+		{#if error}
+			<h1 class="text-center text-5xl text-white">{error.message}</h1>
+		{/if}
 	</div>
 {/if}
