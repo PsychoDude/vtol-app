@@ -11,16 +11,17 @@ import {
 import type { ChecklistItem, Related } from '$lib/types';
 import { getAircraftSlugs, getMarkdown } from '$lib/markdown';
 import { error } from '@sveltejs/kit';
+import type { EntryGenerator, PageServerLoad } from './$types.js';
 
-export const prerender = true;
-
-export async function entries() {
+export const entries: EntryGenerator = () => {
 	const list = getAircraftSlugs();
 
 	return list[0];
-}
+};
 
-export async function load({ params, url }) {
+export const prerender = true;
+
+export const load: PageServerLoad = async ({ params, url }) => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
@@ -122,4 +123,4 @@ export async function load({ params, url }) {
 		sitePages: sitePages,
 		aircraftNames: aircraftNamesList
 	};
-}
+};

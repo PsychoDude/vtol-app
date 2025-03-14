@@ -1,10 +1,11 @@
 import { siteChecklistStruct, getAllAircraftNames, checklistStruct } from '$lib/checklists';
 import type { Page } from '$lib/types';
 import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
 export const prerender = true;
 
-export async function load() {
+export const load: PageServerLoad = async () => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const pages: Page[] = [];
@@ -24,4 +25,4 @@ export async function load() {
 		sitePages: sitePages,
 		aircraftNames: aircraftNamesList
 	};
-}
+};

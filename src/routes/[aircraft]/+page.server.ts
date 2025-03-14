@@ -8,16 +8,17 @@ import {
 import { getAircraftOnlySlugs } from '$lib/markdown.js';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
+import type { EntryGenerator, PageServerLoad } from './$types.js';
 
-export const prerender = true;
-
-export async function entries() {
+export const entries: EntryGenerator = () => {
 	const list = getAircraftOnlySlugs();
 
 	return list;
-}
+};
 
-export async function load({ params }) {
+export const prerender = true;
+
+export const load: PageServerLoad = async ({ params }) => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const aircraftName = getAircraftName(params.aircraft);
@@ -55,4 +56,4 @@ export async function load({ params }) {
 		sitePages: sitePages,
 		aircraftNames: aircraftNamesList
 	};
-}
+};
