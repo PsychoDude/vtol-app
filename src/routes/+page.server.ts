@@ -1,5 +1,6 @@
 import { siteChecklistStruct, getAllAircraftNames, checklistStruct } from '$lib/checklists';
 import type { Page } from '$lib/types';
+import { error } from '@sveltejs/kit';
 
 export const prerender = true;
 
@@ -15,6 +16,8 @@ export async function load() {
 	checklistStruct.forEach((checklist) => {
 		pages.push({ type: checklist.type, name: checklist.name, aircraft: checklist.aircraft });
 	});
+
+	if (pages.length <= 0) error(404, 'Data Not Found.');
 
 	return {
 		pages: pages,

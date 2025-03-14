@@ -22,7 +22,7 @@ export async function load({ params }) {
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const aircraftName = getAircraftName(params.aircraft);
 
-	if (!aircraftName) error(404, 'Aircraft not found.');
+	if (!aircraftName) error(404, 'Aircraft Not Found.');
 
 	siteChecklistStruct.forEach((checklist) =>
 		sitePages.push({ name: checklist.name, file: checklist.file })
@@ -32,7 +32,7 @@ export async function load({ params }) {
 		(aircraft) => aircraft.aircraft === params.aircraft
 	)[0];
 
-	if (!checklists) error(404, 'No list found.');
+	if (!checklists) error(404, 'Lists Not Found.');
 
 	const allAircraftEmergChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
