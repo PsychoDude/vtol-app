@@ -4,13 +4,17 @@
 	import Button from '$lib/components/Button.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { ChecklistData, Curac } from '$lib/types';
+	import { error } from '@sveltejs/kit';
 	import { onMount } from 'svelte';
 
 	let { data }: { data: ChecklistData } = $props();
 	let curac: Curac = $state({ aircraft: undefined, name: undefined });
 
 	onMount(() => {
+		if (!data.checklists) error(404, 'Aircraft Not Found.');
+
 		const ac = page.url.searchParams.get('curac');
+
 		if (ac) {
 			const plane = data.aircraftNames.find((plane) => plane.aircraft === ac);
 			if (plane) curac = plane;
