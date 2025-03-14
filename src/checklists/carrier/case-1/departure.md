@@ -1,4 +1,4 @@
-# Carrier Departure Global Checklist
+# CASE 1 Departure Global Checklist
 
 ![Carrier Departure](/images/carrier-departure.webp)
 
