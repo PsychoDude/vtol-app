@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.pageName} - VTOL VR Companion App</title>
+	<title>{data.pageName} - VTOL VR Checklists Companion App</title>
 	<meta name="description" content="VTOL VR Checklists Companion App. " />
 </svelte:head>
 
