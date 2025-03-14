@@ -1,6 +1,6 @@
 # F-45A Emergency Flight Controls Failure Checklist
 
-# **Alternate Control Methods:**
+## **Alternate Control Methods:**
 
 1. Yaw:
    1. Utilize slight engine tilt to allow the 3D Reaction Control System (RCS) to activate.

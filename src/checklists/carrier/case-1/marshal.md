@@ -1,4 +1,4 @@
-# Carrier Marshal Case 1 Global Checklist
+# CASE 1 Marshal Global Checklist
 
 ![Carrier Marshal](/images/marshal.webp)
 

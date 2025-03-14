@@ -23,6 +23,7 @@
 		related: 'green',
 		relatedEmergency: 'red',
 		relatedCarrier: 'green',
+		relatedCase1: 'green',
 		site: 'site',
 		backAircraft: 'blue',
 		home: 'home'
@@ -131,13 +132,11 @@
 				if (aircraft && file) emergencyRedirect(aircraft, file);
 				break;
 			case type === 'relatedCarrier':
-				if (aircraft && file === 'case-1') {
-					checklistRedirect(aircraft, file);
-				} else {
-					if (aircraft && file) caseOneRedirect(aircraft, file);
-				}
+				if (aircraft && file) checklistRedirect(aircraft, file);
 				break;
-
+			case type === 'relatedCase1':
+				if (aircraft && file) caseOneRedirect(aircraft, file);
+				break;
 			default:
 				break;
 		}

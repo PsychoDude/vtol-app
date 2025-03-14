@@ -15,8 +15,8 @@
 
 > **CAUTION:**
 
-<div class="border-s-4 border-red-700 ps-4 mb-5">
-    Nominal engine performance is 16% RPM, ~100°C TEMP, 400lb Fuel Flow Pounds Per Hour (FFPPH). Starting either engine before APU is THREE LIGHTS will lead to ignition failure.
+<div class="border-s-4 border-red-700 ps-4 my-5 flex flex-col gap-5">
+<p>Nominal engine performance is 16% RPM, ~100°C TEMP, 400lb Fuel Flow Pounds Per Hour (FFPPH). Starting either engine before APU is THREE LIGHTS will lead to ignition failure.</p>
     
-    In the event of ignition failure, shut down the failed engine, and confirm APU THREE LIGHTS ILLUMINATED. Once NOMINAL, repeat steps 6 or 7 as applicable.
+<p>In the event of ignition failure, shut down the failed engine, and confirm APU THREE LIGHTS ILLUMINATED. Once NOMINAL, repeat steps 6 or 7 as applicable.</p>
 </div>

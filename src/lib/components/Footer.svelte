@@ -44,8 +44,8 @@
 		</a>
 	</p>
 	{#if data.sitePages}
-		<div class="flex justify-center gap-3">
-			{#each data.sitePages as sitePage (`${sitePage.file}`)}
+		<div class="mt-2 flex justify-center gap-3">
+			{#each data.sitePages as sitePage (`${sitePage.file}-${sitePage.name}`)}
 				<Button
 					type="site"
 					name={sitePage.name}
@@ -54,6 +54,20 @@
 					{currentAircraft}
 				/>
 			{/each}
+
+			<a
+				href="https://github.com/PsychoDude/vtol-app"
+				target="_blank"
+				class="flex items-center justify-center"
+			>
+				<img
+					src="/images/github-mark-white.svg"
+					alt="Github Repo"
+					height="20"
+					width="20"
+					class="img-fluid"
+				/>
+			</a>
 		</div>
 	{/if}
 </div>

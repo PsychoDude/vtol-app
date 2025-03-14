@@ -19,8 +19,11 @@
 </script>
 
 <svelte:head>
-	<title>{data.aircraftName} Menu - VTOL VR App</title>
-	<meta name="description" content={`VTOL VR Checklist Companion App ${data.aircraftName} menu.`} />
+	<title>{data.aircraftName} Menu - VTOL VR Checklists Companion App</title>
+	<meta
+		name="description"
+		content={`VTOL VR Checklists Companion App ${data.aircraftName} menu.`}
+	/>
 </svelte:head>
 
 <div class="flex gap-3">

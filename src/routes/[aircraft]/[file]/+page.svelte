@@ -19,10 +19,10 @@
 </script>
 
 <svelte:head>
-	<title>{data.aircraftName} / {data.pageName} - VTOL VR App</title>
+	<title>{data.aircraftName} / {data.pageName} - VTOL VR Checklists Companion App</title>
 	<meta
 		name="description"
-		content={`VTOL VR Checklist Companion App ${data.aircraftName} ${data.pageName} checklist.`}
+		content={`VTOL VR Checklists Companion App ${data.aircraftName} ${data.pageName} checklist.`}
 	/>
 </svelte:head>
 
@@ -30,7 +30,7 @@
 	<Checklist {data} {curac} />
 {/key}
 
-{#key `${data.file}-ac-file`}
+{#key `${data.file}-${curac.aircraft || 'none'}-${page.route}`}
 	<Footer {data} {curac} />
 {/key}
 <BackToTop />

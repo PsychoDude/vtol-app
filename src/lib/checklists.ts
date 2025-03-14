@@ -47,15 +47,19 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'F-45A',
-				related: { f45a: ['landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
+				related: {
+					f45a: ['landing-CATOBAR'],
+					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
-				name: 'Carrier Landing - CASE I',
+				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'F-45A',
+				related: { carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -152,15 +156,19 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'F/A-26B',
-				related: { fa26b: ['landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
+				related: {
+					fa26b: ['landing-CATOBAR'],
+					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
-				name: 'Carrier Landing - CASE I',
+				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'F/A-26B',
+				related: { carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -223,16 +231,19 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'EF-24G',
-				related: { ef24g: ['wings', 'landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
+				related: {
+					ef24g: ['wings', 'landing-CATOBAR'],
+					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
-				name: 'Carrier Landing - CASE I',
+				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'EF-24G',
-				related: { ef24g: ['wings'] },
+				related: { ef24g: ['wings'], carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -372,15 +383,19 @@ export const checklistStruct = [
 				name: 'Landing (CARRIER)',
 				file: 'landing-CATOBAR-preface',
 				for: 'T-55',
-				related: { t55: ['landing-CATOBAR'], carrier: ['marshal', 'final', 'case-1'] },
+				related: {
+					t55: ['landing-CATOBAR'],
+					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'aircraft',
-				name: 'Carrier Landing - CASE I',
+				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'T-55',
+				related: { carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -462,7 +477,7 @@ export const checklistStruct = [
 			},
 			{
 				type: 'page',
-				name: 'Case 1 Ops',
+				name: 'CASE 1 Ops',
 				file: 'case-1',
 				for: 'carrier',
 				related: { carrier: ['departure', 'marshal', 'final'] },

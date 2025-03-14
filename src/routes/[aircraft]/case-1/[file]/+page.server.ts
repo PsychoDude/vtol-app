@@ -27,8 +27,8 @@ export async function load({ params, url }) {
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('aircraft', params.file, params.aircraft);
 
-	if (!aircraftName) error(404, 'Aircraft not found.');
-	if (!pageName) error(404, 'Page name not found.');
+	if (!aircraftName) error(404, 'Aircraft Not Found.');
+	if (!pageName) error(404, 'Page Not Found.');
 
 	siteChecklistStruct.forEach((checklist) =>
 		sitePages.push({ name: checklist.name, file: checklist.file })
@@ -43,8 +43,9 @@ export async function load({ params, url }) {
 
 	const relatedChecklists: Related[] = [];
 
-	const allAircraftEmergChecklists =
-		emergencyChecklistsStruct.find((checklist) => checklist.aircraft === params.aircraft) || [];
+	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
+		(checklist) => checklist.aircraft === params.aircraft
+	);
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
@@ -53,6 +54,7 @@ export async function load({ params, url }) {
 			aircraft: params.aircraft,
 			pageName: pageName,
 			aircraftName: aircraftName,
+			aircraftNames: aircraftNamesList,
 			relatedParams: RelatedParams
 		};
 	}

@@ -1,6 +1,6 @@
 # F/A-26B Emergency Flight Controls Failure Checklist
 
-# **Alternate Control Methods:**
+## **Alternate Control Methods:**
 
 1. Yaw:
    1. (If split throttle available) Cut power for the engine corresponding with the turn direction. Compensate roll.

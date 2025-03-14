@@ -20,18 +20,10 @@
 18. Extend Launch Bar AS REQUIRED
 19. Contact Tower for taxi and T/O
 
-> **NOTE:**
-
-<div class="border-s-4 border-green-500 ps-4 mb-5">
-    Adequate RPM is required before starting the engine.  Attempting to ignite the engine before the APU is at RUN RPM up will lead to flame out and possible engine damage.
-    
-    In the event of ignition failure, shut down the engine, and confirm APU RPM NOMINAL. Once NOMINAL, repeat steps 5 and 6.
-</div>
-
 > **CAUTION:**
 
-<div class="border-s-4 border-red-700 ps-4 mb-5">
-    Nominal refers to the RPM being in the green zone of the dial. Starting engines before the APU is fully spun up will lead to ignition failure. 
+<div class="border-s-4 border-red-700 ps-4 my-5 flex flex-col gap-5">
+<p>Nominal refers to the RPM being in the green zone of the dial. Starting the engine before the APU is fully spun up will lead to ignition failure. </p>
     
-    In the event of ignition failure, shut down both engines, and confirm APU RPM NOMINAL. Once NOMINAL, repeat steps 4 and 5.
+<p>In the event of ignition failure, shut down the engine, and confirm APU RPM NOMINAL. Once NOMINAL, repeat step 5.</p>
 </div>

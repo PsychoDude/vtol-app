@@ -21,7 +21,7 @@ export async function load({ params, url }) {
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const pageName = getPageName('site', params.file);
 
-	if (!pageName) error(404, 'No page name found.');
+	if (!pageName) error(404, 'Page Not Found.');
 
 	siteChecklistStruct.forEach((checklist) =>
 		sitePages.push({ name: checklist.name, file: checklist.file })

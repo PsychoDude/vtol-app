@@ -1,5 +1,7 @@
 # T-55 Flight Controls Failure Checklist
 
+## **Alternate Control Methods:**
+
 1. Yaw:
    1. Guide the aircraft to a safe ditching location. Once the airframe is on a safe trajectory away from the civilian population, eject.
 2. Roll:
