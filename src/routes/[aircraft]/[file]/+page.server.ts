@@ -43,8 +43,9 @@ export async function load({ params, url }) {
 
 	const relatedChecklists: Array<Related> = [];
 
-	const allAircraftEmergChecklists =
-		emergencyChecklistsStruct.find((checklist) => checklist.aircraft === params.aircraft) || [];
+	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
+		(checklist) => checklist.aircraft === params.aircraft
+	);
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {

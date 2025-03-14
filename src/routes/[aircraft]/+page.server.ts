@@ -34,8 +34,9 @@ export async function load({ params }) {
 
 	if (!checklists) error(404, 'No list found.');
 
-	const allAircraftEmergChecklists: EmergencyChecklists =
-		emergencyChecklistsStruct.filter((aircraft) => aircraft.aircraft === params.aircraft)[0] || [];
+	const allAircraftEmergChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
+		(aircraft) => aircraft.aircraft === params.aircraft
+	)[0];
 
 	if (!allAircraftEmergChecklists)
 		return {
