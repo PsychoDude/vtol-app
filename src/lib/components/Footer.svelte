@@ -64,7 +64,7 @@
 					src="/images/github-mark-white.svg"
 					alt="Github Repo"
 					height="20"
-					width="20px"
+					width="20"
 					class="img-fluid"
 				/>
 			</a>
