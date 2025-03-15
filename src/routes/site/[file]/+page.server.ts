@@ -4,10 +4,11 @@ import {
 	siteChecklistStruct,
 	getAllAircraftNames
 } from '$lib/checklists';
-import { getMarkdown, getSiteSlugs } from '$lib/markdown';
+import { getSiteSlugs } from '$lib/markdown';
 import type { SiteItem } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
+import { marked } from 'marked';
 
 export const entries: EntryGenerator = () => {
 	const list = getSiteSlugs();
@@ -17,12 +18,12 @@ export const entries: EntryGenerator = () => {
 
 export const prerender = true;
 
-export const load: PageServerLoad = async ({ params, url }) => {
+export const load: PageServerLoad = async ({ params, url, fetch }) => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const pageName = getPageName('site', params.file);
 
-	if (!pageName) throw error(404, 'Page Not Found.');
+	// if (!pageName) throw error(404, 'Page Not Found.');
 
 	siteChecklistStruct.forEach((checklist) =>
 		sitePages.push({ name: checklist.name, file: checklist.file })
@@ -38,9 +39,16 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		if (siteList) relatedChecklists.push(siteList);
 	});
 
-	const markdown = await getMarkdown(url.pathname).catch(() => {
-		throw error(404, 'Page Not Found.');
+	let res = await fetch(`/src/checklists${url.pathname}.md`);
+
+	if (res.status === 404) error(404, 'Page Not Found');
+
+	let html = await res.text();
+	html = html.replace(/<img([^>]*?)>/g, (match: any, attributes: any) => {
+		return `<img ${attributes} class="w-full h-auto" />`;
 	});
+
+	const markdown = await marked(html);
 
 	return {
 		type: 'site',
