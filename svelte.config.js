@@ -17,12 +17,7 @@ const config = {
 			fallback: 'index.html',
 			precompress: false,
 			strict: true
-		}),
-		error: {
-			// Make sure errors are caught and passed to the global error handler
-			404: '/+error',
-			500: '/+error'
-		}
+		})
 	},
 	generateSitemap: false,
 	extensions: ['.svelte', '.svx']

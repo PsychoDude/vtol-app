@@ -20,41 +20,45 @@ export const prerender = true;
 export const ssr = false;
 
 export const load: PageServerLoad = async ({ params }) => {
-	const aircraftNamesList = getAllAircraftNames();
-	const sitePages: Array<{ name: string; file: string }> = [];
-	const aircraftName = getAircraftName(params.aircraft);
+	try {
+		const aircraftNamesList = getAllAircraftNames();
+		const sitePages: Array<{ name: string; file: string }> = [];
+		const aircraftName = getAircraftName(params.aircraft);
 
-	if (!aircraftName) throw error(404, 'Aircraft Not Found.');
+		if (!aircraftName) throw error(404, 'Aircraft Not Found.');
 
-	siteChecklistStruct.forEach((checklist) =>
-		sitePages.push({ name: checklist.name, file: checklist.file })
-	);
+		siteChecklistStruct.forEach((checklist) =>
+			sitePages.push({ name: checklist.name, file: checklist.file })
+		);
 
-	const checklists: AircraftChecklists = checklistStruct.filter(
-		(aircraft) => aircraft.aircraft === params.aircraft
-	)[0];
+		const checklists: AircraftChecklists = checklistStruct.filter(
+			(aircraft) => aircraft.aircraft === params.aircraft
+		)[0];
 
-	if (!checklists) throw error(404, 'Lists Not Found.');
+		if (!checklists) throw error(404, 'Lists Not Found.');
 
-	const allAircraftEmergChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
-		(aircraft) => aircraft.aircraft === params.aircraft
-	)[0];
+		const allAircraftEmergChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
+			(aircraft) => aircraft.aircraft === params.aircraft
+		)[0];
 
-	if (!allAircraftEmergChecklists)
+		if (!allAircraftEmergChecklists)
+			return {
+				aircraft: params.aircraft,
+				checklists: checklists,
+				aircraftName: aircraftName,
+				sitePages: sitePages,
+				aircraftNames: aircraftNamesList
+			};
+
 		return {
 			aircraft: params.aircraft,
 			checklists: checklists,
+			relatedEmergencyChecklists: allAircraftEmergChecklists,
 			aircraftName: aircraftName,
 			sitePages: sitePages,
 			aircraftNames: aircraftNamesList
 		};
-
-	return {
-		aircraft: params.aircraft,
-		checklists: checklists,
-		relatedEmergencyChecklists: allAircraftEmergChecklists,
-		aircraftName: aircraftName,
-		sitePages: sitePages,
-		aircraftNames: aircraftNamesList
-	};
+	} catch (err) {
+		throw err;
+	}
 };
