@@ -6,5 +6,5 @@ export const load = ({ params }) => {
 
 	const slugs = getAircraftOnlySlugs();
 	if (!slugs.find((aircraft) => aircraft.aircraft === params.aircraft))
-		error(404, 'Page Not Found.');
+		throw error(404, 'Page Not Found.');
 };
