@@ -1,16 +1,9 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
 	import { page } from '$app/state';
-	import { onMount } from 'svelte';
-
-	let error = $state(page.error);
-
-	onMount(() => {
-		error = page.error;
-	});
 </script>
 
-{#await error?.message}
+{#await page.error?.message}
 	loading...
 {:then message}
 	<div class="flex flex-col items-center gap-5">
