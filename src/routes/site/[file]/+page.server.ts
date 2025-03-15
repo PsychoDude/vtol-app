@@ -23,6 +23,8 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		const sitePages: Array<{ name: string; file: string }> = [];
 		const pageName = getPageName('site', params.file);
 
+		console.log('test');
+
 		if (!pageName) throw error(404, 'Page Not Found.');
 
 		siteChecklistStruct.forEach((checklist) =>
