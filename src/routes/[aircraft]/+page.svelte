@@ -11,8 +11,6 @@
 	let curac: Curac = $state({ aircraft: undefined, name: undefined });
 
 	onMount(() => {
-		if (!data.checklists) error(404, 'Aircraft Not Found.');
-
 		const ac = page.url.searchParams.get('curac');
 
 		if (ac) {
