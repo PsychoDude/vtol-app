@@ -3,11 +3,16 @@
 	import Button from '$lib/components/Button.svelte';
 	import { onMount } from 'svelte';
 
-	let message: string | undefined;
+	let message = $state('');
 
 	onMount(() => {
-		message = page.error?.message;
-		console.log(message);
+		try {
+			message = page.error?.message || '';
+		} catch (err) {
+			console.error('Error handling:', err);
+			// Re-throw to ensure the error is properly handled by svelteKit
+			throw err;
+		}
 	});
 </script>
 
@@ -18,7 +23,7 @@
 		<Button type="home" name="Home" />
 	</div>
 
-	{#if message}
+	{#if message !== ''}
 		<h1 class="text-center text-5xl text-white">{message}</h1>
 	{/if}
 </div>
