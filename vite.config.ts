@@ -5,7 +5,6 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit(), tailwindcss()],
-	base: 'https://test.psychoservers.ovh/',
 	test: {
 		workspace: [
 			{
