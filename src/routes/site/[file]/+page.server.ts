@@ -19,11 +19,11 @@ export const prerender = true;
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	try {
+		const ok_manual = Promise.reject();
+		ok_manual.catch(() => {});
 		const aircraftNamesList = getAllAircraftNames();
 		const sitePages: Array<{ name: string; file: string }> = [];
 		const pageName = getPageName('site', params.file);
-
-		console.log('test');
 
 		if (!pageName) throw error(404, 'Page Not Found.');
 

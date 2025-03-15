@@ -17,6 +17,8 @@
 			if (plane) curac = plane;
 		}
 	});
+
+	console.log(page.error);
 </script>
 
 <svelte:head>
