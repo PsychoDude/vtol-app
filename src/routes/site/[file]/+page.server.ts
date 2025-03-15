@@ -18,34 +18,38 @@ export const entries: EntryGenerator = () => {
 export const prerender = true;
 
 export const load: PageServerLoad = async ({ params, url }) => {
-	const aircraftNamesList = getAllAircraftNames();
-	const sitePages: Array<{ name: string; file: string }> = [];
-	const pageName = getPageName('site', params.file);
+	try {
+		const aircraftNamesList = getAllAircraftNames();
+		const sitePages: Array<{ name: string; file: string }> = [];
+		const pageName = getPageName('site', params.file);
 
-	if (!pageName) throw error(404, 'Page Not Found.');
+		if (!pageName) throw error(404, 'Page Not Found.');
 
-	siteChecklistStruct.forEach((checklist) =>
-		sitePages.push({ name: checklist.name, file: checklist.file })
-	);
+		siteChecklistStruct.forEach((checklist) =>
+			sitePages.push({ name: checklist.name, file: checklist.file })
+		);
 
-	const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
-	const relatedChecklists: Array<SiteItem> = [];
+		const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
+		const relatedChecklists: Array<SiteItem> = [];
 
-	Object.entries(relatedChecklistsNames).forEach((checklist) => {
-		const name = checklist[1];
-		const siteList = siteChecklistStruct.find((list) => list.file === name);
+		Object.entries(relatedChecklistsNames).forEach((checklist) => {
+			const name = checklist[1];
+			const siteList = siteChecklistStruct.find((list) => list.file === name);
 
-		if (siteList) relatedChecklists.push(siteList);
-	});
+			if (siteList) relatedChecklists.push(siteList);
+		});
 
-	const markdown = await getMarkdown(url.pathname);
+		const markdown = await getMarkdown(url.pathname);
 
-	return {
-		type: 'site',
-		content: markdown,
-		relatedChecklists: relatedChecklists,
-		pageName: pageName,
-		sitePages: sitePages,
-		aircraftNames: aircraftNamesList
-	};
+		return {
+			type: 'site',
+			content: markdown,
+			relatedChecklists: relatedChecklists,
+			pageName: pageName,
+			sitePages: sitePages,
+			aircraftNames: aircraftNamesList
+		};
+	} catch (err) {
+		throw err;
+	}
 };
