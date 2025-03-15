@@ -52,6 +52,6 @@ export const load: PageServerLoad = async ({ params, url }) => {
 			aircraftNames: aircraftNamesList
 		};
 	} catch (err) {
-		throw err;
+		throw error(404, 'Dang');
 	}
 };
