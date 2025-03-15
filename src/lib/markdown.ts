@@ -63,6 +63,7 @@ export function getSiteSlugs() {
 }
 
 export async function getMarkdown(urlPath: string) {
+	if (!urlPath) throw error(404, 'Page Not Found.');
 	const pathname = path.resolve(`src/checklists/${urlPath}.md`);
 
 	if (!pathname) throw error(404, 'Page Not Found.');
