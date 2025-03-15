@@ -1,13 +1,8 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import Button from '$lib/components/Button.svelte';
-	import { onMount } from 'svelte';
+	import { page } from '$app/state';
 
-	let message: string = '';
-
-	if (page.error) {
-		message = page.error?.message || 'An unexpected error occurred.';
-	}
+	const errorMessage = page.error?.message || 'An unexpected error occurred.';
 </script>
 
 <div class="flex flex-col items-center gap-5">
@@ -17,5 +12,5 @@
 		<Button type="home" name="Home" />
 	</div>
 
-	<h1 class="text-center text-5xl text-white">{message}</h1>
+	<h1 class="text-center text-5xl text-white">{errorMessage}</h1>
 </div>
