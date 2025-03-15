@@ -25,7 +25,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
-	const aircraftName = await getAircraftName(params.aircraft);
+	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('emergency', params.file, params.aircraft);
 
 	if (!aircraftName) error(404, 'Aircraft Not Found.');
@@ -40,6 +40,8 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		params.file
 	);
 
+	const markdown = await getMarkdown(url.pathname);
+
 	const relatedChecklists: Related[] = [];
 
 	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
@@ -48,7 +50,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
-			content: await getMarkdown(url.pathname),
+			content: markdown,
 			file: params.file,
 			aircraft: params.aircraft,
 			pageName: pageName,
@@ -88,7 +90,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	}
 
 	return {
-		content: await getMarkdown(url.pathname),
+		content: markdown,
 		file: params.file,
 		aircraft: params.aircraft,
 		relatedChecklists: relatedChecklists,

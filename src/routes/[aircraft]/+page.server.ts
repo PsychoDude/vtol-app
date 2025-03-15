@@ -21,6 +21,9 @@ export const prerender = true;
 export const load: PageServerLoad = async ({ params }) => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
+	const aircraftName = getAircraftName(params.aircraft);
+
+	if (!aircraftName) throw error(404, 'Aircraft Not Found.');
 
 	siteChecklistStruct.forEach((checklist) =>
 		sitePages.push({ name: checklist.name, file: checklist.file })
@@ -40,7 +43,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		return {
 			aircraft: params.aircraft,
 			checklists: checklists,
-			aircraftName: await getAircraftName(params.aircraft),
+			aircraftName: aircraftName,
 			sitePages: sitePages,
 			aircraftNames: aircraftNamesList
 		};
@@ -49,7 +52,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		aircraft: params.aircraft,
 		checklists: checklists,
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
-		aircraftName: await getAircraftName(params.aircraft),
+		aircraftName: aircraftName,
 		sitePages: sitePages,
 		aircraftNames: aircraftNamesList
 	};
