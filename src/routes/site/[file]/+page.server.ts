@@ -41,7 +41,9 @@ export const load: PageServerLoad = async ({ params, url }) => {
 			if (siteList) relatedChecklists.push(siteList);
 		});
 
-		const markdown = await getMarkdown(url.pathname);
+		const markdown = await getMarkdown(url.pathname).catch(() => {
+			throw error(404, 'Page Not Found.');
+		});
 
 		return {
 			type: 'site',
