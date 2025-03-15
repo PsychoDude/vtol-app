@@ -17,7 +17,6 @@ export const entries: EntryGenerator = () => {
 };
 
 export const prerender = true;
-export const ssr = false;
 
 export const load: PageServerLoad = async ({ params }) => {
 	try {

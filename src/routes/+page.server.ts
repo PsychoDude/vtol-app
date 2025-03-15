@@ -4,7 +4,6 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const prerender = true;
-export const ssr = false;
 
 export const load: PageServerLoad = async () => {
 	try {
