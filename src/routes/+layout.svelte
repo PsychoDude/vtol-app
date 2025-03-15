@@ -1,11 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/state';
-	import Button from '$lib/components/Button.svelte';
 
 	let { children } = $props();
-
-	console.log(page.status);
 </script>
 
 <main class="container mx-auto p-4">
