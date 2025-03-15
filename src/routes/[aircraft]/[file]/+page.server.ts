@@ -40,8 +40,6 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		params.file
 	);
 
-	const markdown = await getMarkdown(url.pathname);
-
 	const relatedChecklists: Array<Related> = [];
 
 	const allAircraftEmergChecklists = emergencyChecklistsStruct.find(
@@ -50,7 +48,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
 	if (!relatedChecklistsNames && !allAircraftEmergChecklists) {
 		return {
-			content: markdown,
+			content: await getMarkdown(url.pathname),
 			aircraft: params.aircraft,
 			file: params.file,
 			pageName: pageName,
@@ -63,7 +61,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
 	if (!relatedChecklistsNames && allAircraftEmergChecklists) {
 		return {
-			content: markdown,
+			content: await getMarkdown(url.pathname),
 			aircraft: params.aircraft,
 			file: params.file,
 			pageName: pageName,
@@ -112,7 +110,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
 	}
 
 	return {
-		content: markdown,
+		content: await getMarkdown(url.pathname),
 		file: params.file,
 		aircraft: params.aircraft,
 		relatedChecklists: relatedChecklists,

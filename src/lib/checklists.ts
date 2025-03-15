@@ -759,7 +759,7 @@ export function getPageName(type: string, file: string, aircraft?: string) {
 	}
 }
 
-export function getAircraftName(aircraft: string) {
+export async function getAircraftName(aircraft: string) {
 	const aircraftList = checklistStruct.find((checklist) => checklist.aircraft === aircraft);
 	return aircraftList?.name;
 }
