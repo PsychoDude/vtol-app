@@ -17,10 +17,7 @@ const config = {
 			fallback: '404.html',
 			precompress: false,
 			strict: true
-		}),
-		paths: {
-			relative: false
-		}
+		})
 	},
 	generateSitemap: false,
 	extensions: ['.svelte', '.svx']
