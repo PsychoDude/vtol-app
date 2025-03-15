@@ -4,7 +4,6 @@
 	import Checklist from '$lib/components/Checklist.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { ChecklistData, Curac } from '$lib/types';
-	import { error } from '@sveltejs/kit';
 	import { onMount } from 'svelte';
 
 	let { data }: { data: ChecklistData } = $props();

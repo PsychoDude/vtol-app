@@ -51,7 +51,6 @@ export const load: PageServerLoad = async ({ params, url }) => {
 			aircraftNames: aircraftNamesList
 		};
 	} catch (err) {
-		console.log(err);
 		throw err;
 	}
 };
