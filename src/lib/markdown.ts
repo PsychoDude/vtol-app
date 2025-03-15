@@ -63,6 +63,8 @@ export function getSiteSlugs() {
 
 export async function getMarkdown(urlPath: string) {
 	const pathname = path.resolve(`src/checklists/${urlPath}.md`);
+
+	console.log(pathname);
 	try {
 		let html = await fs.readFile(pathname, 'utf-8');
 
