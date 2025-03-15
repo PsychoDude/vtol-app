@@ -11,7 +11,7 @@
 	let curac: Curac = $state({ aircraft: undefined, name: undefined });
 
 	onMount(() => {
-		if (!data.file) error(404, 'Page Not Found.');
+		// if (!data.file) error(404, 'Page Not Found.');
 
 		const ac = page.url.searchParams.get('curac');
 
