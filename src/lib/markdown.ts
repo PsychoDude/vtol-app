@@ -70,7 +70,7 @@ export async function getMarkdown(urlPath: string) {
 			return `<img ${attributes} class="w-full h-auto" />`;
 		});
 
-		const markdown = marked(html);
+		const markdown = await marked(html);
 
 		return markdown;
 	} catch (err) {
