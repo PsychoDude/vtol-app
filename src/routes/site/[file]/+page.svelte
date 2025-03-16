@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import Checklist from '$lib/components/Checklist.svelte';
-	import Footer from '$lib/components/Footer.svelte';
 	import type { ChecklistData, Curac } from '$lib/types';
 	import { onMount } from 'svelte';
 
@@ -27,8 +26,4 @@
 
 {#key `${data.file}-site`}
 	<Checklist {data} {curac} />
-{/key}
-
-{#key `${data.file}-site`}
-	<Footer {data} {curac} />
 {/key}

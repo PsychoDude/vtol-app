@@ -1,10 +1,8 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import type { ChecklistData, Curac } from '$lib/types';
+	import type { ChecklistData } from '$lib/types';
 
 	let { data }: { data: ChecklistData } = $props();
-	let curac: Curac = { aircraft: undefined, name: undefined };
 </script>
 
 <svelte:head>
@@ -23,5 +21,3 @@
 		{/each}
 	</div>
 </div>
-
-<Footer {data} {curac} />

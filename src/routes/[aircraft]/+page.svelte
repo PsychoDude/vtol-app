@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import Button from '$lib/components/Button.svelte';
-	import Footer from '$lib/components/Footer.svelte';
 	import type { ChecklistData, Curac } from '$lib/types';
 	import { onMount } from 'svelte';
 
@@ -63,7 +62,3 @@
 		{/if}
 	</div>
 {/if}
-
-{#key `${data.file}-ac`}
-	<Footer {data} {curac} />
-{/key}
