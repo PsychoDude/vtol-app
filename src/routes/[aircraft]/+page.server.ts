@@ -1,10 +1,4 @@
-import {
-	getAircraftName,
-	checklistStruct,
-	emergencyChecklistsStruct,
-	getAllAircraftNames,
-	siteChecklistStruct
-} from '$lib/checklists';
+import { getAircraftName, checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
 import { getAircraftOnlySlugs } from '$lib/markdown.js';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
@@ -19,15 +13,9 @@ export const entries: EntryGenerator = () => {
 export const prerender = true;
 
 export const load: PageServerLoad = async ({ params }) => {
-	const aircraftNamesList = getAllAircraftNames();
-	const sitePages: Array<{ name: string; file: string }> = [];
 	const aircraftName = getAircraftName(params.aircraft);
 
 	if (!aircraftName) throw error(404, 'Aircraft Not Found.');
-
-	siteChecklistStruct.forEach((checklist) =>
-		sitePages.push({ name: checklist.name, file: checklist.file })
-	);
 
 	const checklists: AircraftChecklists = checklistStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
@@ -43,17 +31,13 @@ export const load: PageServerLoad = async ({ params }) => {
 		return {
 			aircraft: params.aircraft,
 			checklists: checklists,
-			aircraftName: aircraftName,
-			sitePages: sitePages,
-			aircraftNames: aircraftNamesList
+			aircraftName: aircraftName
 		};
 
 	return {
 		aircraft: params.aircraft,
 		checklists: checklists,
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
-		aircraftName: aircraftName,
-		sitePages: sitePages,
-		aircraftNames: aircraftNamesList
+		aircraftName: aircraftName
 	};
 };

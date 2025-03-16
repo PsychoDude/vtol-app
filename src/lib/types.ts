@@ -48,25 +48,18 @@ export interface RelatedSite {
 
 export interface BtnData {
 	type: string;
-	name: string;
+	name?: string;
 	file?: string;
 	aircraft?: string;
-	currentAircraft?: {
-		aircraft: string | undefined;
-		name: string | undefined;
-	};
 	showCurac?: boolean;
 	siteBtn?: boolean;
 	sitePage?: string;
 	homeBtn?: boolean;
+	curac: Curac;
 }
 
 export interface ChecklistData {
 	content: string | null;
-	curac: {
-		aircraft: string | undefined;
-		name: string | undefined;
-	};
 	relatedParams?: {
 		showGlobal: boolean;
 		showEmergencies: boolean;
@@ -80,8 +73,9 @@ export interface ChecklistData {
 	relatedEmergencyChecklists?: EmergencyChecklists;
 	pageName?: string;
 	pages: Page[];
-	aircraftNames: { aircraft: string | undefined; name: string | undefined }[];
+	aircraftNames: Curac[];
 	sitePages: SiteItem[];
+	curac: Curac;
 }
 
 export interface Page {

@@ -4,9 +4,7 @@ import {
 	getAircraftName,
 	emergencyChecklistsStruct,
 	getChecklistParams,
-	checklistStruct,
-	siteChecklistStruct,
-	getAllAircraftNames
+	checklistStruct
 } from '$lib/checklists';
 import { getMarkdown, getAircraftSlugs } from '$lib/markdown';
 import type { ChecklistItem, Related } from '$lib/types';
@@ -22,18 +20,12 @@ export const entries: EntryGenerator = () => {
 export const prerender = true;
 
 export const load: PageServerLoad = async ({ params, url }) => {
-	const aircraftNamesList = getAllAircraftNames();
-	const sitePages: Array<{ name: string; file: string }> = [];
 	const RelatedParams = getChecklistParams(params.file, params.aircraft);
 	const aircraftName = getAircraftName(params.aircraft);
 	const pageName = getPageName('aircraft', params.file, params.aircraft);
 
 	if (!aircraftName) throw error(404, 'Aircraft Not Found.');
 	if (!pageName) throw error(404, 'Page Not Found.');
-
-	siteChecklistStruct.forEach((checklist) =>
-		sitePages.push({ name: checklist.name, file: checklist.file })
-	);
 
 	const relatedChecklistsNames = getRelatedChecklistsByAircraftAndFile(
 		params.aircraft,
@@ -55,9 +47,8 @@ export const load: PageServerLoad = async ({ params, url }) => {
 			aircraft: params.aircraft,
 			pageName: pageName,
 			aircraftName: aircraftName,
-			aircraftNames: aircraftNamesList,
-			relatedParams: RelatedParams,
-			sitePages: sitePages
+
+			relatedParams: RelatedParams
 		};
 	}
 
@@ -105,8 +96,6 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		relatedEmergencyChecklists: allAircraftEmergChecklists,
 		pageName: pageName,
 		aircraftName: aircraftName,
-		relatedParams: RelatedParams,
-		sitePages: sitePages,
-		aircraftNames: aircraftNamesList
+		relatedParams: RelatedParams
 	};
 };

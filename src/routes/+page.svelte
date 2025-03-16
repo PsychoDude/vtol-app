@@ -1,11 +1,8 @@
 <script lang="ts">
-	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import type { ChecklistData, Curac } from '$lib/types';
+	import type { ChecklistData } from '$lib/types';
 
 	let { data }: { data: ChecklistData } = $props();
-	let curac: Curac = { aircraft: undefined, name: undefined };
 </script>
 
 <svelte:head>
@@ -17,14 +14,22 @@
 	<div class="mx-auto grid grow grid-cols-3 gap-4">
 		{#each data.pages as page (page.aircraft)}
 			{#if page.type === 'aircraft'}
-				<Button type="aircraft" name={page.name} aircraft={page.aircraft} homeBtn={true} />
+				<Button
+					type="aircraft"
+					name={page.name}
+					aircraft={page.aircraft}
+					homeBtn={true}
+					curac={data.curac}
+				/>
 			{:else if page.type === 'global'}
-				<Button type="global" name={page.name} aircraft={page.aircraft} homeBtn={true} />
+				<Button
+					type="global"
+					name={page.name}
+					aircraft={page.aircraft}
+					homeBtn={true}
+					curac={data.curac}
+				/>
 			{/if}
 		{/each}
 	</div>
 </div>
-
-<Footer {data} {curac} />
-
-<BackToTop />

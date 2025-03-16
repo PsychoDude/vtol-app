@@ -1,22 +1,8 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import type { ChecklistData, Curac } from '$lib/types';
-	import { onMount } from 'svelte';
+	import type { ChecklistData } from '$lib/types';
 
 	let { data }: { data: ChecklistData } = $props();
-	let curac: Curac = $state({ aircraft: undefined, name: undefined });
-
-	onMount(() => {
-		const ac = page.url.searchParams.get('curac');
-
-		if (ac) {
-			const plane = data.aircraftNames.find((plane) => plane.aircraft === ac);
-			if (plane) curac = plane;
-		}
-	});
 </script>
 
 <svelte:head>
@@ -28,9 +14,9 @@
 </svelte:head>
 
 <div class="flex gap-3">
-	<Button type="back" name="Back" />
+	<Button type="back" name="Back" curac={data.curac} />
 
-	<Button type="home" name="Home" />
+	<Button type="home" name="Home" curac={data.curac} />
 </div>
 
 {#if data.checklists}
@@ -44,8 +30,8 @@
 					name={checklist.name}
 					file={checklist.file}
 					aircraft={data.aircraft}
-					currentAircraft={curac}
 					showCurac={false}
+					curac={data.curac}
 				/>
 			{/if}
 		{/each}
@@ -57,18 +43,10 @@
 					name={checklist.name}
 					file={checklist.file}
 					aircraft={data.aircraft}
-					currentAircraft={curac}
 					showCurac={false}
+					curac={data.curac}
 				/>
 			{/each}
 		{/if}
 	</div>
 {/if}
-
-{#key `${data.file}-ac`}
-	<Footer {data} {curac} />
-{/key}
-
-{#key `${data.file}-ac`}
-	<BackToTop />
-{/key}
