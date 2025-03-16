@@ -1,35 +1,14 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import type { ChecklistData, Curac } from '$lib/types';
+	import type { ChecklistData } from '$lib/types';
+	import Nav from './Nav.svelte';
 
-	let { data, curac }: { data: ChecklistData; curac: Curac } = $props();
+	let { data }: { data: ChecklistData } = $props();
 	const relatedParams = data.relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
-
-	let currentAircraft = $state(curac);
-	let isCurac = $derived(currentAircraft !== undefined && currentAircraft.name ? true : false);
-	let backAcBtnName = $derived.by(() => {
-		if (currentAircraft && currentAircraft.name) {
-			return `Back To ${currentAircraft.name}`;
-		} else {
-			return '?';
-		}
-	});
-
-	$effect(() => {
-		currentAircraft = curac;
-	});
 </script>
 
-<div class="flex gap-3">
-	<Button type="back" name="Back" />
-
-	{#if isCurac}
-		<Button type="backAircraft" name={backAcBtnName} {currentAircraft} />
-	{/if}
-
-	<Button type="home" name="Home" />
-</div>
+<Nav curac={data.curac} />
 
 <div class="my-5 flex flex-col gap-5">
 	{@html data.content}
@@ -47,7 +26,7 @@
 						name={checklist.name}
 						sitePage={checklist.file}
 						siteBtn={true}
-						{currentAircraft}
+						curac={data.curac}
 					/>
 				{/each}
 			{:else}
@@ -61,8 +40,8 @@
 										name={list.name}
 										file={list.file}
 										aircraft={checklist.aircraft}
-										{currentAircraft}
 										showCurac={false}
+										curac={data.curac}
 									/>
 								{:else}
 									<Button
@@ -70,8 +49,8 @@
 										name={list.name}
 										file={list.file}
 										aircraft={checklist.aircraft}
-										{currentAircraft}
 										showCurac={false}
+										curac={data.curac}
 									/>
 								{/if}
 							{/each}
@@ -83,8 +62,8 @@
 								name={list.name}
 								file={list.file}
 								aircraft={data.aircraft}
-								{currentAircraft}
 								showCurac={true}
+								curac={data.curac}
 							/>
 						{/each}
 					{/if}
@@ -99,8 +78,8 @@
 						name={checklist.name}
 						file={checklist.file}
 						aircraft={data.aircraft}
-						{currentAircraft}
 						showCurac={true}
+						curac={data.curac}
 					/>
 				{:else if data.file !== checklist.file && !data.relatedParams}
 					<Button
@@ -108,8 +87,8 @@
 						name={checklist.name}
 						file={checklist.file}
 						aircraft={data.aircraft}
-						{currentAircraft}
 						showCurac={true}
+						curac={data.curac}
 					/>
 				{/if}
 			{/each}

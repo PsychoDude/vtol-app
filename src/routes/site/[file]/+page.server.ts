@@ -1,9 +1,4 @@
-import {
-	getPageName,
-	getRelatedChecklistsByFile,
-	siteChecklistStruct,
-	getAllAircraftNames
-} from '$lib/checklists';
+import { getPageName, getRelatedChecklistsByFile, siteChecklistStruct } from '$lib/checklists';
 import { getSiteSlugs } from '$lib/markdown';
 import type { SiteItem } from '$lib/types';
 import { error } from '@sveltejs/kit';
@@ -19,15 +14,9 @@ export const entries: EntryGenerator = () => {
 export const prerender = true;
 
 export const load: PageServerLoad = async ({ params, url }) => {
-	const aircraftNamesList = getAllAircraftNames();
-	const sitePages: Array<{ name: string; file: string }> = [];
 	const pageName = getPageName('site', params.file);
 
 	if (!pageName) throw error(404, 'Page Not Found.');
-
-	siteChecklistStruct.forEach((checklist) =>
-		sitePages.push({ name: checklist.name, file: checklist.file })
-	);
 
 	const relatedChecklistsNames = getRelatedChecklistsByFile(params.file);
 	const relatedChecklists: Array<SiteItem> = [];
@@ -45,8 +34,6 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		type: 'site',
 		content: markdown,
 		relatedChecklists: relatedChecklists,
-		pageName: pageName,
-		sitePages: sitePages,
-		aircraftNames: aircraftNamesList
+		pageName: pageName
 	};
 };

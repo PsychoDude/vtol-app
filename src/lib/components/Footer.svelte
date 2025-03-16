@@ -1,14 +1,9 @@
 <script lang="ts">
-	import type { ChecklistData, Curac } from '$lib/types';
+	import type { Curac } from '$lib/types';
 	import Button from './Button.svelte';
 
-	let { data, curac }: { data: ChecklistData; curac: Curac } = $props();
-
-	let currentAircraft = $state(curac);
-
-	$effect(() => {
-		currentAircraft = curac;
-	});
+	let { sitePages, curac }: { sitePages: Array<{ name: string; file: string }>; curac: Curac } =
+		$props();
 </script>
 
 <div>
@@ -43,16 +38,10 @@
 			/>
 		</a>
 	</p>
-	{#if data.sitePages}
+	{#if sitePages}
 		<div class="mt-2 flex justify-center gap-3">
-			{#each data.sitePages as sitePage (`${sitePage.file}-${sitePage.name}`)}
-				<Button
-					type="site"
-					name={sitePage.name}
-					siteBtn={true}
-					sitePage={sitePage.file}
-					{currentAircraft}
-				/>
+			{#each sitePages as sitePage (`${sitePage.file}-${sitePage.name}`)}
+				<Button type="site" name={sitePage.name} siteBtn={true} sitePage={sitePage.file} {curac} />
 			{/each}
 
 			<a

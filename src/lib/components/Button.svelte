@@ -2,17 +2,8 @@
 	import { goto } from '$app/navigation';
 	import type { BtnData } from '$lib/types';
 
-	let {
-		type,
-		name,
-		file,
-		aircraft,
-		showCurac,
-		siteBtn,
-		sitePage,
-		homeBtn,
-		currentAircraft
-	}: BtnData = $props();
+	let { type, name, file, aircraft, showCurac, siteBtn, sitePage, homeBtn, curac }: BtnData =
+		$props();
 
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
@@ -47,36 +38,36 @@
 	}
 
 	function checklistRedirect(plane: string, file: string) {
-		if (currentAircraft?.aircraft) {
-			goto(`/${plane}/${file}?curac=${currentAircraft.aircraft}`);
+		if (curac?.aircraft) {
+			goto(`/${plane}/${file}?curac=${curac.aircraft}`);
 		} else {
 			goto(`/${plane}/${file}?curac=${plane}`);
 		}
 	}
 
 	function emergencyRedirect(plane: string, file: string) {
-		if (currentAircraft?.aircraft) {
-			goto(`/${plane}/emergency/${file}?curac=${currentAircraft.aircraft}`);
+		if (curac?.aircraft) {
+			goto(`/${plane}/emergency/${file}?curac=${curac.aircraft}`);
 		} else {
 			goto(`/${plane}/emergency/${file}?curac=${plane}`);
 		}
 	}
 
 	function siteRedirect(file: string) {
-		if (currentAircraft?.aircraft) {
-			goto(`/site/${file}?curac=${currentAircraft.aircraft}`);
+		if (curac?.aircraft) {
+			goto(`/site/${file}?curac=${curac.aircraft}`);
 		} else {
 			goto(`/site/${file}`);
 		}
 	}
 
-	function backAcRedirect(plane: string) {
-		if (currentAircraft?.aircraft) goto(`/${plane}?curac=${currentAircraft.aircraft}`);
+	function backAcRedirect() {
+		if (curac?.aircraft) goto(`/${curac.aircraft}?curac=${curac.aircraft}`);
 	}
 
 	function caseOneRedirect(plane: string, file: string) {
-		if (currentAircraft?.aircraft) {
-			goto(`/${plane}/case-1/${file}?curac=${currentAircraft.aircraft}`);
+		if (curac?.aircraft) {
+			goto(`/${plane}/case-1/${file}?curac=${curac.aircraft}`);
 		} else if (plane !== 'carrier' && plane !== 'global') {
 			goto(`/${plane}/case-1/${file}?curac=${plane}`);
 		} else {
@@ -89,62 +80,70 @@
 	}
 </script>
 
-<button
-	class={`rounded ${colorVariants[color]} text-white ${mainBtns} cursor-pointer`}
-	onclick={() => {
-		switch (true) {
-			case siteBtn:
-				if (sitePage) siteRedirect(sitePage);
-				break;
-			case type === 'home':
-				homeRedirect();
-				break;
-			case type === 'aircraft':
-				if (aircraft) aircraftRedirect(aircraft);
-				break;
-			case type === 'global':
-				if (aircraft) aircraftRedirect(aircraft);
-				break;
-			case type === 'checklist':
-				if (aircraft && file) checklistRedirect(aircraft, file);
-				break;
-			case type === 'emergency':
-				if (aircraft && file) emergencyRedirect(aircraft, file);
-				break;
-			case type === 'back':
-				window.history.back();
-				break;
-			case type === 'backAircraft':
-				if (currentAircraft && currentAircraft.aircraft) backAcRedirect(currentAircraft.aircraft);
-				break;
-			case type === 'related':
-				if (aircraft === 'emergency' && file) {
-					emergencyRedirect(aircraft, file);
-				} else if (aircraft === 'carrier' && file) {
-					caseOneRedirect(aircraft, file);
-				} else if (siteBtn && sitePage) {
-					siteRedirect(sitePage);
-				} else {
-					if (aircraft && file) checklistRedirect(aircraft, file);
-				}
-				break;
-			case type === 'relatedEmergency':
-				if (aircraft && file) emergencyRedirect(aircraft, file);
-				break;
-			case type === 'relatedCarrier':
-				if (aircraft && file) checklistRedirect(aircraft, file);
-				break;
-			case type === 'relatedCase1':
-				if (aircraft && file) caseOneRedirect(aircraft, file);
-				break;
-			default:
-				break;
-		}
-	}}
->
-	{#if currentAircraft && aircraft === currentAircraft.aircraft && showCurac}
-		{name} ({currentAircraft.name})
-	{:else}
-		{name}
+{#if type === 'backAircraft'}
+	{#if curac?.aircraft}
+		<button
+			class={`rounded ${colorVariants[color]} text-white ${mainBtns} cursor-pointer`}
+			onclick={backAcRedirect}
+		>
+			{`Back To ${curac.name}`}
+		</button>
 	{/if}
-</button>
+{:else}
+	<button
+		class={`rounded ${colorVariants[color]} text-white ${mainBtns} cursor-pointer`}
+		onclick={() => {
+			switch (true) {
+				case siteBtn:
+					if (sitePage) siteRedirect(sitePage);
+					break;
+				case type === 'home':
+					homeRedirect();
+					break;
+				case type === 'aircraft':
+					if (aircraft) aircraftRedirect(aircraft);
+					break;
+				case type === 'global':
+					if (aircraft) aircraftRedirect(aircraft);
+					break;
+				case type === 'checklist':
+					if (aircraft && file) checklistRedirect(aircraft, file);
+					break;
+				case type === 'emergency':
+					if (aircraft && file) emergencyRedirect(aircraft, file);
+					break;
+				case type === 'back':
+					window.history.back();
+					break;
+				case type === 'related':
+					if (aircraft === 'emergency' && file) {
+						emergencyRedirect(aircraft, file);
+					} else if (aircraft === 'carrier' && file) {
+						caseOneRedirect(aircraft, file);
+					} else if (siteBtn && sitePage) {
+						siteRedirect(sitePage);
+					} else {
+						if (aircraft && file) checklistRedirect(aircraft, file);
+					}
+					break;
+				case type === 'relatedEmergency':
+					if (aircraft && file) emergencyRedirect(aircraft, file);
+					break;
+				case type === 'relatedCarrier':
+					if (aircraft && file) checklistRedirect(aircraft, file);
+					break;
+				case type === 'relatedCase1':
+					if (aircraft && file) caseOneRedirect(aircraft, file);
+					break;
+				default:
+					break;
+			}
+		}}
+	>
+		{#if curac && aircraft === curac.aircraft && showCurac}
+			{name} ({curac.name})
+		{:else}
+			{name}
+		{/if}
+	</button>
+{/if}

@@ -1,20 +1,15 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
 	import { page } from '$app/state';
+	import Nav from '$lib/components/Nav.svelte';
+	import type { ChecklistData, BtnData } from '$lib/types';
+
+	let { data }: { data: ChecklistData | BtnData } = $props();
 </script>
 
-{#await page.error?.message}
-	loading...
-{:then message}
-	<div class="flex flex-col items-center gap-5">
-		<div class="flex w-100 justify-start gap-3">
-			<Button type="back" name="Back" />
+<Nav curac={data.curac} />
 
-			<Button type="home" name="Home" />
-		</div>
-
-		<h1 class="text-center text-5xl text-white">
-			{message === 'Not Found' ? 'Page Not Found.' : message}
-		</h1>
-	</div>
-{/await}
+<div class="flex flex-col items-center gap-5">
+	<p class="flex h-[400px] items-center text-center text-5xl text-white">
+		{page.error?.message === 'Not Found' ? 'Page Not Found.' : page.error?.message}
+	</p>
+</div>
