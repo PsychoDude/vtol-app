@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BackToTop from '$lib/components/BackToTop.svelte';
 	import '../app.css';
 
 	let { children } = $props();
@@ -9,3 +10,5 @@
 		{@render children?.()}
 	</div>
 </main>
+
+<BackToTop />

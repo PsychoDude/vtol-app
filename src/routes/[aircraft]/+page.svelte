@@ -68,7 +68,3 @@
 {#key `${data.file}-ac`}
 	<Footer {data} {curac} />
 {/key}
-
-{#key `${data.file}-ac`}
-	<BackToTop />
-{/key}

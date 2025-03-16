@@ -26,12 +26,10 @@
 	<meta name="description" content="VTOL VR Checklists Companion App. " />
 </svelte:head>
 
-<Checklist {data} {curac} />
-
 {#key `${data.file}-site`}
-	<Footer {data} {curac} />
+	<Checklist {data} {curac} />
 {/key}
 
 {#key `${data.file}-site`}
-	<BackToTop />
+	<Footer {data} {curac} />
 {/key}

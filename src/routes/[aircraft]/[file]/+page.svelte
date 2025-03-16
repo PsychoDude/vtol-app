@@ -34,7 +34,3 @@
 {#key `${data.file}-${curac.aircraft || 'none'}-${page.route}`}
 	<Footer {data} {curac} />
 {/key}
-
-{#key `${data.file}-${curac.aircraft || 'none'}-${page.route}`}
-	<BackToTop />
-{/key}

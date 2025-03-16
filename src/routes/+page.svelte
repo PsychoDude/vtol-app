@@ -26,5 +26,3 @@
 </div>
 
 <Footer {data} {curac} />
-
-<BackToTop />

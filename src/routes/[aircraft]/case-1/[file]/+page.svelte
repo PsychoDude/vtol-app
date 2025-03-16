@@ -34,7 +34,3 @@
 {#key `${data.file}-ac-case1-file`}
 	<Footer {data} {curac} />
 {/key}
-
-{#key `${data.file}-ac-case1-file`}
-	<BackToTop />
-{/key}
