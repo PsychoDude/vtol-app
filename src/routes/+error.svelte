@@ -13,6 +13,8 @@
 			<Button type="home" name="Home" />
 		</div>
 
-		<h1 class="text-center text-5xl text-white">{message}</h1>
+		<h1 class="text-center text-5xl text-white">
+			{message === 'Not Found' ? 'Page Not Found.' : message}
+		</h1>
 	</div>
 {/await}
