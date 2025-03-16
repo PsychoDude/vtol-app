@@ -1,6 +1,7 @@
 <script>
-	export let showOnPx = 150;
-	let hidden = true;
+	const showOnPx = 150;
+
+	let hidden = $state(true);
 
 	function goTop() {
 		document.body.scrollIntoView();
@@ -23,11 +24,11 @@
 	}
 </script>
 
-<svelte:window on:scroll={handleOnScroll} />
+<svelte:document onscroll={handleOnScroll} />
 
 <button
 	class="back-to-top fixed right-8 bottom-24 z-[100] cursor-pointer rounded bg-neutral-700 px-6 py-4 text-xl font-black text-white transition-all select-none hover:bg-neutral-600"
-	on:click={goTop}
+	onclick={goTop}
 	class:hidden
 >
 	&#9757;
