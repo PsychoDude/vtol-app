@@ -1,5 +1,4 @@
 <script lang="ts">
-	import BackToTop from '$lib/components/BackToTop.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { ChecklistData, Curac } from '$lib/types';
