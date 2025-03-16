@@ -2,13 +2,13 @@
 
 > Missile launched nearby:
 
-<audio controls>
-<source src="/audio/Ttsw_missileLaunch.ogg" type="audio/ogg">
+<audio controls preload="auto">
+<source src="/audio/TtswmissileLaunch.ogg" type="audio/ogg">
 </audio>
 
 > Incoming missile on intercept trajectory:
 
-<audio controls>
+<audio controls preload="auto">
 <source src="/audio/MwsTone.ogg" type="audio/ogg">
 </audio>
 
@@ -16,7 +16,7 @@
 
 > New radar source appearing:
 
-<audio controls>
+<audio controls preload="auto">
 <source src="/audio/RwrNewContact2.ogg" type="audio/ogg">
 </audio>
 
@@ -24,24 +24,24 @@
 >
 > Plays at a faster rate when being tracked:
 
-<audio controls>
+<audio controls preload="auto">
 <source src="/audio/RwrPing2.ogg" type="audio/ogg">
 </audio>
 
 > Incoming hard radar lock:
 
-<audio controls>
+<audio controls preload="auto">
 <source src="/audio/RadarLockLoop.ogg" type="audio/ogg">
 </audio>
 
 > Incoming hard radar lock that is supporting a SARH missile:
 
-<audio controls>
+<audio controls preload="auto">
 <source src="/audio/SARHLockLoop.ogg" type="audio/ogg">
 </audio>
 
 > Incoming radar lock from an ARH missile.
 
-<audio controls>
-<source src="/audio/MissileLockLoop_x7.ogg" type="audio/ogg">
+<audio controls preload="auto">
+<source src="/audio/MissileLockLoopx7.ogg" type="audio/ogg">
 </audio>
