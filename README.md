@@ -1,4 +1,4 @@
-# **VTOL VR Checklist Companion App**
+# **VTOL VR Checklists Companion App**
 
 Free VTOL VR Companion App built with SvelteKit.
 
