@@ -4,10 +4,12 @@ import {
 	siteChecklistStruct,
 	getAllAircraftNames
 } from '$lib/checklists';
-import { getMarkdown, getSiteSlugs } from '$lib/markdown';
+import { getSiteSlugs } from '$lib/markdown';
 import type { SiteItem } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
+import { marked } from 'marked';
+import { getMarkdown } from '$lib/markdown';
 
 export const entries: EntryGenerator = () => {
 	const list = getSiteSlugs();
@@ -16,7 +18,6 @@ export const entries: EntryGenerator = () => {
 };
 
 export const prerender = true;
-export const ssr = false;
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const aircraftNamesList = getAllAircraftNames();

@@ -17,14 +17,13 @@ export const entries: EntryGenerator = () => {
 };
 
 export const prerender = true;
-export const ssr = false;
 
 export const load: PageServerLoad = async ({ params }) => {
 	const aircraftNamesList = getAllAircraftNames();
 	const sitePages: Array<{ name: string; file: string }> = [];
 	const aircraftName = getAircraftName(params.aircraft);
 
-	if (!aircraftName) error(404, 'Aircraft Not Found.');
+	if (!aircraftName) throw error(404, 'Aircraft Not Found.');
 
 	siteChecklistStruct.forEach((checklist) =>
 		sitePages.push({ name: checklist.name, file: checklist.file })
@@ -34,7 +33,7 @@ export const load: PageServerLoad = async ({ params }) => {
 		(aircraft) => aircraft.aircraft === params.aircraft
 	)[0];
 
-	if (!checklists) error(404, 'Lists Not Found.');
+	if (!checklists) throw error(404, 'Lists Not Found.');
 
 	const allAircraftEmergChecklists: EmergencyChecklists = emergencyChecklistsStruct.filter(
 		(aircraft) => aircraft.aircraft === params.aircraft
