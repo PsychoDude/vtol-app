@@ -32,4 +32,6 @@
 	<Footer {data} {curac} />
 {/key}
 
-<BackToTop />
+{#key `${data.file}-site`}
+	<BackToTop />
+{/key}

@@ -21,6 +21,8 @@
 			hidden = true;
 		}
 	}
+
+	console.log('hello?');
 </script>
 
 <svelte:window on:scroll={handleOnScroll} />

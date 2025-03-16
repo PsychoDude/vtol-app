@@ -35,4 +35,6 @@
 	<Footer {data} {curac} />
 {/key}
 
-<BackToTop />
+{#key `${data.file}-ac-case1-file`}
+	<BackToTop />
+{/key}

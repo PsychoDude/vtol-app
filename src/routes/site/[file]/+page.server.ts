@@ -8,7 +8,6 @@ import { getSiteSlugs } from '$lib/markdown';
 import type { SiteItem } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
-import { marked } from 'marked';
 import { getMarkdown } from '$lib/markdown';
 
 export const entries: EntryGenerator = () => {

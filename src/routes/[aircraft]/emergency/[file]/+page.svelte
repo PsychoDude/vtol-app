@@ -36,4 +36,6 @@
 	<Footer {data} {curac} />
 {/key}
 
-<BackToTop />
+{#key `${data.file}-ac-emerg-file`}
+	<BackToTop />
+{/key}
