@@ -1,9 +1,9 @@
 # T-55 Startup Checklist
 
 1. Start BATTERY
-2. Set Lights AS REQUIRED
-3. Start APU and confirm RPM NOMINAL
-4. Lower Canopy
+2. Lower CANOPY
+3. Set Lights AS REQUIRED
+4. Start APU and confirm RPM NOMINAL
 5. Start ENGINE and confirm RPM NOMINAL
 6. Shut down APU
 7. Turn ON and Set HUD and HMCS AS REQUIRED
