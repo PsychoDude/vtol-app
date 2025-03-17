@@ -17,7 +17,7 @@
 > New radar source appearing:
 
 <audio controls preload="auto">
-<source src="/audio/RwrNewContact2.mp3" type="audio/mp3">
+<source src="/audio/RwrNewContact3.ogg" type="audio/ogg">
 </audio>
 
 > Incoming radar search ping.
@@ -25,7 +25,7 @@
 > Plays at a faster rate when being tracked:
 
 <audio controls preload="auto">
-<source src="/audio/RwrPing2.mp3" type="audio/mp3">
+<source src="/audio/RwrPing3.ogg" type="audio/ogg">
 </audio>
 
 > Incoming hard radar lock:
