@@ -20,7 +20,7 @@
 
       <br />
 
-    > **CAUTION:**
+    > **CRITICAL:**
 
       <div class="border-s-4 border-red-700 ps-4 my-5">
         If critical damage has been inflicted to the engine(s), restart may not be successful. Keep the APU on and attempt to land the aircraft or see &lt; 5000ft procedures (Step 4) or ENGINE/APU FIRE in related checklists.
