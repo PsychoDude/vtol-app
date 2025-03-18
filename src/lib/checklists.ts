@@ -579,6 +579,47 @@ export const checklistStruct = [
 				showEmergencies: true
 			}
 		]
+	},
+	{
+		aircraft: 'a10d',
+		name: 'A-10D',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'A-10D',
+				related: { f16c: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'A-10D',
+				related: { f16c: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'A-10D',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'A-10D',
+				showGlobal: true,
+				showEmergencies: true
+			}
+		]
 	}
 ];
 
@@ -730,6 +771,58 @@ export const emergencyChecklistsStruct = [
 				file: 'flightcontrolfailure',
 				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
+			}
+		]
+	},
+	{
+		aircraft: 'f16c',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'F-16C',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'F-16C',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'F-16C',
+				related: ['landing-runway']
+			}
+		]
+	},
+	{
+		aircraft: 'a10d',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'A-10D',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'A-10D',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'A-10D',
+				related: ['landing-runway']
 			}
 		]
 	}
