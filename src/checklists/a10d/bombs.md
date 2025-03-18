@@ -1,4 +1,4 @@
-# F/A-26B Bombs
+# A-10D Bombs
 
 _LOAL: Lock-on-After-Launch_
 
