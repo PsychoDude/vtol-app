@@ -29,6 +29,14 @@
 					homeBtn={true}
 					curac={data.curac}
 				/>
+			{:else if page.type === 'moddedac'}
+				<Button
+					type="moddedac"
+					name={page.name}
+					aircraft={page.aircraft}
+					homeBtn={true}
+					curac={data.curac}
+				/>
 			{/if}
 		{/each}
 	</div>
