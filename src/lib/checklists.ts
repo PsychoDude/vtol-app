@@ -103,7 +103,26 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'F-45A',
+				related: { f45a: ['missiles', 'bombs'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F-45A',
+				related: { f45a: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F-45A',
+				related: { f45a: ['missiles', 'weapons'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
@@ -186,6 +205,7 @@ export const checklistStruct = [
 				name: 'Missiles',
 				file: 'missiles',
 				for: 'F/A-26B',
+				related: { fa26b: ['bombs', 'weapons'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -194,6 +214,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'F/A-26B',
+				related: { fa26b: ['missiles', 'weapons'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
