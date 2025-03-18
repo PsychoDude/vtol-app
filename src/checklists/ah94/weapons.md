@@ -1,11 +1,14 @@
 # AH-94 Weapons
 
+LOAL: Lock-on-After-Launch
+SACLOS: Semi-Automatic Command to Line Of Sight (wired)
+
 ## **Targeting Pod (TGP)**
 
 ### **Air-to-Ground:**
 
-- AGM-27: 0-6nm - Laser Guided
-- AGM-114: 2-8nm - Laser Guidance & LOAL
+- AGM-27: 0-6nm - Laser
+- AGM-114: 2-8nm - Laser & LOAL
 - AGM-145: 1-8nm - Optical/Laser & LOAL
 - Hydra 70: 0-2.5nm - Dumb Rockets
 

@@ -1,4 +1,4 @@
-# F/A-26B Bombs
+# F-45A Bombs
 
 LOAL: Lock-on-After-Launch
 I: Internal
