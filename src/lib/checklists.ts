@@ -812,6 +812,13 @@ export const emergencyChecklistsStruct = [
 			},
 			{
 				type: 'emergency',
+				name: 'Engine/APU Fire',
+				file: 'fire',
+				for: 'A-10D',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
 				for: 'A-10D',
