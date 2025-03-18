@@ -173,11 +173,28 @@ export const checklistStruct = [
 				showEmergencies: true
 			},
 			{
-				type: 'aircraft',
+				type: 'page',
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'F/A-26B',
+				related: { fa26b: ['missiles', 'bombs'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F/A-26B',
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F/A-26B',
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
