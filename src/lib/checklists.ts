@@ -121,7 +121,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'F-45A',
-				related: { f45a: ['missiles', 'weapons'] },
+				related: { f45a: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
@@ -214,7 +214,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'F/A-26B',
-				related: { fa26b: ['missiles', 'weapons'] },
+				related: { fa26b: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
@@ -319,7 +319,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'EF-24G',
-				related: { ef24g: ['missiles', 'weapons'] },
+				related: { ef24g: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
@@ -506,7 +506,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'T-55',
-				related: { t55: ['missiles', 'weapons'] },
+				related: { t55: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
@@ -522,6 +522,7 @@ export const checklistStruct = [
 				name: 'Flight Deck Overview',
 				file: 'flightdeck-overview',
 				for: 'carrier',
+				related: { carrier: ['case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -539,7 +540,7 @@ export const checklistStruct = [
 				name: 'LSO Guidance',
 				file: 'lso-guidance',
 				for: 'carrier',
-				related: { carrier: ['waveoff'] },
+				related: { carrier: ['waveoff', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -548,6 +549,7 @@ export const checklistStruct = [
 				name: 'Carrier Lights (Meatball) Img',
 				file: 'meatball',
 				for: 'carrier',
+				related: { carrier: ['case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -574,7 +576,7 @@ export const checklistStruct = [
 				name: 'Marshal Stack Pattern',
 				file: 'marshal',
 				for: 'carrier',
-				related: { carrier: ['final'] },
+				related: { carrier: ['final', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -583,6 +585,7 @@ export const checklistStruct = [
 				name: 'Final Approach',
 				file: 'final',
 				for: 'carrier',
+				related: { carrier: ['case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			}
@@ -600,7 +603,6 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['rwr'] },
 				showGlobal: true,
-				hidden: false,
 				showEmergencies: false
 			},
 			{
@@ -610,7 +612,53 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['audio-cues'] },
 				showGlobal: true,
-				hidden: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Bombing',
+				file: 'bombing',
+				for: 'global',
+				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'gbu-53'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Unguided Bombs',
+				file: 'unguided-bombs',
+				for: 'global',
+				related: { global: ['gps-guided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'GPS Guided Bombs',
+				file: 'gps-guided-bombs',
+				for: 'global',
+				related: { global: ['unguided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Laser Guided Bombs',
+				file: 'laser-guided-bombs',
+				for: 'global',
+				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'gbu-53', 'bombing'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'GBU-53 Bomb',
+				file: 'gbu-53',
+				for: 'global',
+				related: {
+					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'bombing']
+				},
+				showGlobal: false,
 				showEmergencies: false
 			}
 		]
