@@ -538,6 +538,47 @@ export const checklistStruct = [
 				showEmergencies: false
 			}
 		]
+	},
+	{
+		aircraft: 'f16c',
+		name: 'F-16C',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'F-16C',
+				related: { f16c: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'F-16C',
+				related: { f16c: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'F-16C',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'F-16C',
+				showGlobal: true,
+				showEmergencies: true
+			}
+		]
 	}
 ];
 
