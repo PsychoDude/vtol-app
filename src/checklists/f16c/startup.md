@@ -2,9 +2,9 @@
 
 1. Start BATTERY
 2. Set Lights AS REQUIRED
-3. Lower Canopy
-4. (APU) Set Jet Fuel Starter(JFS) switch to the START 2 position. APU and confirm RPM NOMINAL
-5. Start ENGINE and confirm RPM NOMINAL. JFS switch will reset itself to off
+3. Lower CANOPY
+4. (APU) Set Jet Fuel Starter(JFS) switch to the START 2 position and confirm RPM NOMINAL
+5. Start ENGINE and confirm RPM NOMINAL. JFS switch will reset itself to OFF
 6. Set AVIONICS POWER switches to ON (MFD, TGP, DED, RWR)
 7. Set CHAFF and FLARE switches to ON
 8. Turn ON HUD and HMCS AS REQUIRED (rollers)
