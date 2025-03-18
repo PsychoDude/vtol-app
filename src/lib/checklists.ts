@@ -451,7 +451,7 @@ export const checklistStruct = [
 				name: 'Reponsabilities',
 				file: 'basic-resp',
 				for: 'T-55',
-				related: { t55: ['basic-ops'] },
+				related: { t55: ['basic-ops', 'basic-page'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -460,7 +460,7 @@ export const checklistStruct = [
 				name: 'Controls',
 				file: 'basic-ops',
 				for: 'T-55',
-				related: { t55: ['basic-resp'] },
+				related: { t55: ['basic-resp', 'basic-page'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -469,7 +469,26 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'T-55',
+				related: { t55: ['missiles', 'bombs', 'basic-resp'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'T-55',
+				related: { fa26b: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'T-55',
+				related: { fa26b: ['missiles', 'weapons'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
