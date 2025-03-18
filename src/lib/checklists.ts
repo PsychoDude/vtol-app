@@ -652,6 +652,25 @@ export const checklistStruct = [
 				file: 'weapons',
 				for: 'F-16C',
 				showGlobal: true,
+				related: { f16c: ['missiles', 'bombs'] },
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F-16C',
+				related: { f16c: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F-16C',
+				related: { f16c: ['missiles', 'weapons'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
@@ -692,7 +711,26 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'A-10D',
+				related: { a10d: ['missiles', 'bombs'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'A-10D',
+				related: { a10d: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'A-10D',
+				related: { a10d: ['missiles', 'weapons'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
