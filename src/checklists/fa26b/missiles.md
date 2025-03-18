@@ -1,10 +1,10 @@
 # F/A-26B Missiles
 
-HOJ: Home-on-jam
-MADDOG: Free-for-all
-ARH: Active Radar Homing
-SARH: Semi-Active Radar Homing
-B/B: Blue-on-Blue (Friendly Fire)
+_HOJ: Home-on-jam  
+MADDOG: Free-for-all  
+ARH: Active Radar Homing  
+SARH: Semi-Active Radar Homing  
+B/B: Blue-on-Blue (Friendly Fire)_
 
 ## **Targeting Pod (TGP)**
 

@@ -1,9 +1,9 @@
 # F-45A Missiles
 
-HOJ: Home-on-jam
-MADDOG: Free-for-all
-ARH: Active Radar Homing
-LOAL: Lock-on-After-Launch
+_HOJ: Home-on-jam  
+MADDOG: Free-for-all  
+ARH: Active Radar Homing  
+LOAL: Lock-on-After-Launch_
 
 ## **Targeting Pod (EOTS)**
 

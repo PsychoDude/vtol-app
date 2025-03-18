@@ -301,6 +301,7 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'EF-24G',
+				related: { ef24g: ['missiles', 'bombs'] },
 				showGlobal: true,
 				showEmergencies: true
 			},

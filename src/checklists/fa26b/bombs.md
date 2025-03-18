@@ -1,6 +1,6 @@
 # F/A-26B Bombs
 
-LOAL: Lock-on-After-Launch
+_LOAL: Lock-on-After-Launch_
 
 ## **Unguided**
 

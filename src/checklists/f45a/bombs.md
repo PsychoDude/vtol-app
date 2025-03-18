@@ -1,7 +1,7 @@
 # F-45A Bombs
 
-LOAL: Lock-on-After-Launch
-I: Internal
+_LOAL: Lock-on-After-Launch  
+I: Internal_
 
 ## **Unguided**
 
