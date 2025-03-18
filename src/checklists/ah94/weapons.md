@@ -1,7 +1,7 @@
 # AH-94 Weapons
 
-LOAL: Lock-on-After-Launch
-SACLOS: Semi-Automatic Command to Line Of Sight (wired)
+_LOAL: Lock-on-After-Launch  
+SACLOS: Semi-Automatic Command to Line Of Sight (wired)_
 
 ## **Targeting Pod (TGP)**
 
