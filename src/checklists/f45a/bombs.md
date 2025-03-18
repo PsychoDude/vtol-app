@@ -1,11 +1,11 @@
 # F/A-26B Bombs
 
 LOAL: Lock-on-After-Launch
+I: Internal
 
 ## **Unguided**
 
 - Mk-82 - 500lb
-- Mk-82AIR - 500lb (Low Altitude)\*
 - Mk-83 - 1000lb
 
 ## **Laser/Optical Guided (TGP)**
@@ -17,7 +17,3 @@ LOAL: Lock-on-After-Launch
 
 - GBU-38 - 500lb
 - GBU-39 - 206lb
-
-## **Cluster Bombs**
-
-- CBU-97 - 40 submunitions
