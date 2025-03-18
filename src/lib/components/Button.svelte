@@ -15,6 +15,7 @@
 		relatedEmergency: 'red',
 		relatedCarrier: 'green',
 		relatedCase1: 'green',
+		relatedInfo: 'green',
 		site: 'site',
 		backAircraft: 'blue',
 		home: 'home',
@@ -139,6 +140,9 @@
 					break;
 				case type === 'relatedCase1':
 					if (aircraft && file) caseOneRedirect(aircraft, file);
+					break;
+				case type === 'relatedInfo':
+					if (aircraft && file) checklistRedirect(aircraft, file);
 					break;
 				default:
 					break;
