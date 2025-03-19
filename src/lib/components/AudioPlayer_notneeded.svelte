@@ -33,7 +33,7 @@
 	onDestroy(() => stopAudio());
 </script>
 
-{#each audioFiles as file}
+{#each audioFiles as file (file)}
 	<div class="flex justify-center">
 		<button
 			on:click={() => handlePlayPause(file)}

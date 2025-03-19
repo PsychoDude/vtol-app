@@ -36,7 +36,7 @@ export function playAudio(src: string) {
 
 		// When audio ends, reset playingFile
 		audioElement.addEventListener('ended', () => {
-			playingFile.set(null);
+			stopAudio();
 		});
 
 		audioElement.play();

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Checklist from '$lib/components/Checklist.svelte';
-	// @ts-ignore: .svx files not recognized
+	// @ts-expect-error: .svx files not recognized
 	import AudioCues from '$lib/components/AudioCues.svx';
 	import type { ChecklistData } from '$lib/types';
 

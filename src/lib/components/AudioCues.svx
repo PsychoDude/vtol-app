@@ -1,0 +1,153 @@
+<script lang="ts">
+	// @ts-ignore: $lib does indeed get imported
+	import type { ChecklistData } from '$lib/types';
+	import AudioBtn from './AudioBtn.svelte'
+	import Nav from './Nav.svelte';
+	import Button from './Button.svelte';
+
+	let { data }: { data: ChecklistData } = $props();
+</script>
+
+<Nav curac={data.curac} />
+
+# **Missiles**
+
+> Missile launched nearby:
+
+<AudioBtn file={"/audio/TtswmissileLaunch.ogg"} />
+
+> Incoming missile on intercept trajectory:
+
+<AudioBtn file={"/audio/MwsTone.ogg"} />
+
+# **RWR**
+
+> New radar source appearing:
+
+<AudioBtn file={"/audio/RwrNewContact2.ogg"} />
+
+> Incoming radar search ping.
+>
+> Plays at a faster rate when being tracked:
+
+<AudioBtn file={"/audio/RwrPing2.ogg"} />
+
+> Incoming hard radar lock:
+
+<AudioBtn file={"/audio/RadarLockLoop.ogg"} />
+
+> Incoming hard radar lock that is supporting a SARH missile:
+
+<AudioBtn file={"/audio/SARHLockLoop.ogg"} />
+
+> Incoming radar lock from an ARH missile.
+
+<AudioBtn file={"/audio/MissileLockLoopx7.ogg"} />
+
+{#if data.relatedChecklists}
+	<h2 class="my-5 font-bold uppercase">Related Checklists:</h2>
+
+	<div class="flex flex-col space-y-3">
+		{#if data.relatedChecklists}
+			{#if data.type === 'site'}
+				{#each data.relatedChecklists as checklist (checklist.file)}
+					<Button
+						type="related"
+						name={checklist.name}
+						sitePage={checklist.file}
+						siteBtn={true}
+						curac={data.curac}
+					/>
+				{/each}
+			{:else}
+				{#each data.relatedChecklists as checklist (`${checklist.file}-${checklist.aircraft}-${checklist.aircraft}`)}
+					{#if checklist.aircraft === 'carrier'}
+						{#if checklist.checklists}
+							{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
+								{#if list.type === 'case-1'}
+									<Button
+										type="relatedCase1"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else if list.type === 'carrier'}
+									<Button
+										type="relatedCarrier"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else}
+									<Button
+										type="relatedInfo"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{/if}
+							{/each}
+						{/if}
+					{:else if checklist.aircraft === 'global'}
+						{#if checklist.checklists}
+							{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
+								{#if list.type === 'case-1'}
+									<Button
+										type="relatedCase1"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else if list.type === 'carrier'}
+									<Button
+										type="relatedCarrier"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else}
+									<Button
+										type="relatedInfo"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{/if}
+							{/each}
+						{/if}
+					{:else if checklist.checklists}
+						{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
+							<Button
+								type="related"
+								name={list.name}
+								file={list.file}
+								aircraft={data.aircraft}
+								showCurac={true}
+								curac={data.curac}
+							/>
+						{/each}
+					{/if}
+				{/each}
+			{/if}
+		{/if}
+	</div>
+{/if}
+
+
+<style>
+	p {
+		text-align: center;
+	}
+</style>
