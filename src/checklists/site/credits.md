@@ -1,7 +1,10 @@
 # Credits
 
-The information found in this app was gathered from multiple sources  
-_Last Updated: 3/18/2025_
+<p class="text-balance">The information found in this app was gathered from multiple sources</p>
+
+_Last Updated: 3/19/2025_
+
+## [BahamutoD The Great (Solo Dev)](https://vtolvr.bdynamicsstudio.com/)
 
 ## [F-45A Manual](https://docs.google.com/document/d/1Zrw58fDb3uGjZQlJF0dpX-7Z8UbnXHhvI87TuKZNT7s/edit?usp=sharing)
 
