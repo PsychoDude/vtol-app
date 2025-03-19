@@ -1,10 +1,10 @@
 # Licenses
 
-- The [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license only applies to the web app and the EF-24G emergency checklists.
+- The [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license only applies to the web app and the EF-24G emergency checklists, weapons lists for all aircraft and the modded aircraft checklists.
 - Content from aircraft manuals is originally licensed under Creative Commons (unknown license options)
 - VTOL VR Wiki content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-<i class="text-sm">License Updated: 2/2/2025</i>
+<i class="text-sm">License Updated: 3/19/2025</i>
 
 > ---
 
