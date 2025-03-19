@@ -6,7 +6,7 @@
 		$props();
 </script>
 
-<div>
+<div class="p-4">
 	<p class="mt-8 flex justify-center text-sm">
 		This app is licensed under &nbsp;
 		<a

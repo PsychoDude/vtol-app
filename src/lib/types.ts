@@ -88,3 +88,8 @@ export interface Curac {
 	aircraft: string | undefined;
 	name: string | undefined;
 }
+
+export interface AudioState {
+	element: HTMLAudioElement;
+	source: MediaElementAudioSourceNode;
+}

@@ -1,8 +1,8 @@
 # AH-94 Startup Checklist (CPG)
 
-1. Wait for APU RPM Nominal
-2. Set Int. Lighting AS REQUIRED
-3. Close Cockpit Door
+1. Close Cockpit Door
+2. Wait for APU RPM Nominal
+3. Set Int. Lighting AS REQUIRED
 4. Set MPDs AS REQUIRED
    - Set EQUIP AS REQUIRED
    - Set CMDS AS REQUIRED

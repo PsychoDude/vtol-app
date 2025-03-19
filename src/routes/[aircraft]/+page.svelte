@@ -20,7 +20,7 @@
 </div>
 
 {#if data.checklists}
-	<h2 class="my-4 text-2xl font-bold">{data.checklists.name} Checklists</h2>
+	<h2 class="my-4 text-center text-3xl font-bold">{data.checklists.name} Checklists</h2>
 
 	<div class="mt-4 flex flex-col space-y-2">
 		{#each data.checklists.checklists as checklist (checklist.file)}

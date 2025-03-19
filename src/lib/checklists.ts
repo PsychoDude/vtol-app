@@ -103,7 +103,26 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'F-45A',
+				related: { f45a: ['missiles', 'bombs'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F-45A',
+				related: { f45a: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F-45A',
+				related: { f45a: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
@@ -173,11 +192,30 @@ export const checklistStruct = [
 				showEmergencies: true
 			},
 			{
-				type: 'aircraft',
+				type: 'page',
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'F/A-26B',
+				related: { fa26b: ['missiles', 'bombs'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F/A-26B',
+				related: { fa26b: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F/A-26B',
+				related: { fa26b: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
@@ -263,7 +301,26 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'EF-24G',
+				related: { ef24g: ['missiles', 'bombs'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'EF-24G',
+				related: { ef24g: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'EF-24G',
+				related: { ef24g: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
@@ -413,7 +470,7 @@ export const checklistStruct = [
 				name: 'Reponsabilities',
 				file: 'basic-resp',
 				for: 'T-55',
-				related: { t55: ['basic-ops'] },
+				related: { t55: ['basic-ops', 'basic-page'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -422,7 +479,7 @@ export const checklistStruct = [
 				name: 'Controls',
 				file: 'basic-ops',
 				for: 'T-55',
-				related: { t55: ['basic-resp'] },
+				related: { t55: ['basic-resp', 'basic-page'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -431,7 +488,26 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'T-55',
+				related: { t55: ['missiles', 'bombs', 'basic-resp'] },
 				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'T-55',
+				related: { t55: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'T-55',
+				related: { t55: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
 				showEmergencies: true
 			}
 		]
@@ -446,6 +522,7 @@ export const checklistStruct = [
 				name: 'Flight Deck Overview',
 				file: 'flightdeck-overview',
 				for: 'carrier',
+				related: { carrier: ['case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -463,7 +540,7 @@ export const checklistStruct = [
 				name: 'LSO Guidance',
 				file: 'lso-guidance',
 				for: 'carrier',
-				related: { carrier: ['waveoff'] },
+				related: { carrier: ['waveoff', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -472,6 +549,7 @@ export const checklistStruct = [
 				name: 'Carrier Lights (Meatball) Img',
 				file: 'meatball',
 				for: 'carrier',
+				related: { carrier: ['case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -498,7 +576,7 @@ export const checklistStruct = [
 				name: 'Marshal Stack Pattern',
 				file: 'marshal',
 				for: 'carrier',
-				related: { carrier: ['final'] },
+				related: { carrier: ['final', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -507,6 +585,7 @@ export const checklistStruct = [
 				name: 'Final Approach',
 				file: 'final',
 				for: 'carrier',
+				related: { carrier: ['case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			}
@@ -524,7 +603,6 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['rwr'] },
 				showGlobal: true,
-				hidden: false,
 				showEmergencies: false
 			},
 			{
@@ -534,8 +612,174 @@ export const checklistStruct = [
 				for: 'global',
 				related: { global: ['audio-cues'] },
 				showGlobal: true,
-				hidden: false,
 				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Bombing',
+				file: 'bombing',
+				for: 'global',
+				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'gbu-53'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Unguided Bombs',
+				file: 'unguided-bombs',
+				for: 'global',
+				related: { global: ['gps-guided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'GPS Guided Bombs',
+				file: 'gps-guided-bombs',
+				for: 'global',
+				related: { global: ['unguided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Laser Guided Bombs',
+				file: 'laser-guided-bombs',
+				for: 'global',
+				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'gbu-53', 'bombing'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'GBU-53 Bomb',
+				file: 'gbu-53',
+				for: 'global',
+				related: {
+					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'bombing']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			}
+		]
+	},
+	{
+		aircraft: 'f16c',
+		name: 'F-16C',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'F-16C',
+				related: { f16c: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'F-16C',
+				related: { f16c: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'F-16C',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'F-16C',
+				showGlobal: true,
+				related: { f16c: ['missiles', 'bombs'] },
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F-16C',
+				related: { f16c: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F-16C',
+				related: { f16c: ['missiles', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			}
+		]
+	},
+	{
+		aircraft: 'a10d',
+		name: 'A-10D',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'A-10D',
+				related: { f16c: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'A-10D',
+				related: { f16c: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'A-10D',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'A-10D',
+				related: { a10d: ['missiles', 'bombs'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'A-10D',
+				related: { a10d: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'A-10D',
+				related: { a10d: ['missiles', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
 			}
 		]
 	}
@@ -689,6 +933,65 @@ export const emergencyChecklistsStruct = [
 				file: 'flightcontrolfailure',
 				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
+			}
+		]
+	},
+	{
+		aircraft: 'f16c',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'F-16C',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'F-16C',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'F-16C',
+				related: ['landing-runway']
+			}
+		]
+	},
+	{
+		aircraft: 'a10d',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'A-10D',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Engine/APU Fire',
+				file: 'fire',
+				for: 'A-10D',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'A-10D',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'A-10D',
+				related: ['landing-runway']
 			}
 		]
 	}

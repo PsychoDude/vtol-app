@@ -1,6 +1,7 @@
 # Credits
 
-The information found in this app was gathered from multiple sources
+The information found in this app was gathered from multiple sources  
+_Last Updated: 3/18/2025_
 
 ## [F-45A Manual](https://docs.google.com/document/d/1Zrw58fDb3uGjZQlJF0dpX-7Z8UbnXHhvI87TuKZNT7s/edit?usp=sharing)
 
@@ -73,4 +74,10 @@ The information found in this app was gathered from multiple sources
 - [CAW - Case 1 Operations](https://docs.google.com/document/d/1kfQmxAPwma7dGBfaoXf2ximF2hLuhIVkQ9D5V7cSclQ/edit?usp=sharing)
 - [CAW - Case 3 Operations](https://docs.google.com/document/d/11gUgshqHGJKlRgmRFDWvU2P5tymrY0gbheKaAdNFehU/edit?usp=sharing)
 - [VTOL VR Wiki](https://vtolvr.wiki.gg/wiki/VTOL_VR_Wiki)
-- PsychoDude - Missing EF-24G Emergency Checklists
+
+## [PsychoDude](https://liparistudios.com)
+
+- Missing EF-24G Emergency Checklists
+- Weapons Pages for All Aircraft
+- F-16C Checklists
+- A-10D Checklists

@@ -1,0 +1,3 @@
+# GBU-53 STORMBREAKER OPTICALLY-GUIDED GLIDE BOMB
+
+Much like the GBU-12, GBU-53 is preferable for its ability to fire at moving vehicles whilst maintaining bunker-busting capabilities. Additionally, GBU-53 has one major advantage: it is fire-and-forget. This means that multiple weapons can be employed against multiple targets at a time before the first one hits, whereas GBU-12 can only target one enemy at a time. GBU-53, much like GBU-39, can glide for long distances, and unlike GBU-39, can hit moving targets. These aspects also make GBU-53 a preferable weapon during anti-shipping operations, as the high damage, ability to hit moving targets, and large payload count tend to be effective against large ships and even Aircraft Carriers.

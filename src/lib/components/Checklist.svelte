@@ -43,9 +43,51 @@
 										showCurac={false}
 										curac={data.curac}
 									/>
-								{:else}
+								{:else if list.type === 'carrier'}
 									<Button
 										type="relatedCarrier"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else}
+									<Button
+										type="relatedInfo"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{/if}
+							{/each}
+						{/if}
+					{:else if checklist.aircraft === 'global'}
+						{#if checklist.checklists}
+							{#each checklist.checklists as list (`${list.file}-${list.aircraft}-${list.type}`)}
+								{#if list.type === 'case-1'}
+									<Button
+										type="relatedCase1"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else if list.type === 'carrier'}
+									<Button
+										type="relatedCarrier"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else}
+									<Button
+										type="relatedInfo"
 										name={list.name}
 										file={list.file}
 										aircraft={checklist.aircraft}
