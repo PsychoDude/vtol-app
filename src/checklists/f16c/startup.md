@@ -6,16 +6,14 @@
 4. (APU) Set Jet Fuel Starter(JFS) switch to the START 2 position and confirm RPM NOMINAL
 5. Start ENGINE and confirm RPM NOMINAL. JFS switch will reset itself to OFF
 6. Set AVIONICS POWER switches to ON (MFD, TGP, DED, RWR)
-7. Set CHAFF and FLARE switches to ON
-8. Turn ON HUD and HMCS AS REQUIRED (rollers)
-9. Check Microphone ON
-10. Check Brake Lock OFF
-11. Check Master Arm OFF
-12. Set Jettison AS REQUIRED
-13. Set CMDS AS REQUIRED
-14. Set EQUIP AS REQUIRED
-15. Extend Launch Bar AS REQUIRED
-16. Contact Tower for taxi and T/O
+7. Turn ON HUD and HMCS AS REQUIRED (rollers)
+8. Check Microphone ON
+9. Check Brake Lock OFF
+10. Check Master Arm OFF
+11. Set Jettison AS REQUIRED
+12. Set CMDS (CMS) AS REQUIRED
+13. Set EQUIP AS REQUIRED
+14. Contact Tower for taxi and T/O
 
 > **CAUTION:**
 

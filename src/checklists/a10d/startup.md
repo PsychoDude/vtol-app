@@ -11,11 +11,10 @@
 9. Set switches to CENTER POSITION on MWS, JMR, RWR and DISP
 10. Set CMS MODE
 11. Shut down APU
-12. Check Flight Assist ON
-13. Check Microphone ON
-14. Check Wings DOWN
-15. Check Master Arm OFF
-16. Contact Tower for takeoff
+12. Check Microphone ON
+13. Check Master Arm OFF
+14. Set Jettison AS REQUIRED
+15. Contact Tower for takeoff
 
 > **CAUTION:**
 
