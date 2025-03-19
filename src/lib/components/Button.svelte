@@ -29,9 +29,9 @@
 		blue: 'bg-blue-500 hover:bg-blue-700 px-4 py-2 text-white',
 		red: 'bg-red-500 hover:bg-red-700 px-4 py-2 text-white',
 		neutral: 'bg-neutral-500 hover:bg-neutral-700 px-4 py-2 text-white',
-		yellow: 'bg-yellow-500 hover:bg-yellow-700 px-4 py-2 text-black',
+		yellow: 'bg-amber-500 hover:bg-amber-700 px-4 py-2 text-black',
 		site: 'text-sm underline p-1 text-white',
-		home: 'bg-amber-500 hover:bg-amber-700 px-4 py-2 text-white'
+		home: 'bg-amber-500 hover:bg-amber-700 px-4 py-2 text-black'
 	};
 
 	const mainBtns = homeBtn ? 'rounded h-70' : '';
