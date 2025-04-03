@@ -6,6 +6,11 @@
 	let { data }: { data: ChecklistData | BtnData } = $props();
 </script>
 
+<svelte:head>
+	<title>Error - VTOL VR Checklists Companion App</title>
+	<meta name="description" content="VTOL VR Checklists Companion App. " />
+</svelte:head>
+
 <Nav curac={data.curac} />
 
 <div class="flex flex-col items-center gap-5">
