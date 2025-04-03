@@ -11,7 +11,7 @@ const config = {
 	kit: {
 		adapter: adapter()
 	},
-	generateSitemap: false,
+	generateSitemap: true,
 	extensions: ['.svelte', '.svx']
 };
 
