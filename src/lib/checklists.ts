@@ -717,7 +717,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'F-16C',
-				related: { f16c: ['missiles', 'weapons'] },
+				related: { f16c: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
@@ -777,7 +777,7 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'A-10D',
-				related: { a10d: ['missiles', 'weapons'] },
+				related: { a10d: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
