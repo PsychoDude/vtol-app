@@ -6,7 +6,8 @@ import {
 	getChecklistParams,
 	checklistStruct
 } from '$lib/checklists';
-import { getMarkdown, getAircraftSlugs } from '$lib/markdown';
+import { getMarkdown } from '$lib/markdown';
+import { getAircraftSlugs } from '$lib/checklists';
 import type { ChecklistItem, Related } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';

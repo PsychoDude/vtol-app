@@ -1,5 +1,9 @@
-import { getPageName, getRelatedChecklistsByFile, siteChecklistStruct } from '$lib/checklists';
-import { getSiteSlugs } from '$lib/markdown';
+import {
+	getPageName,
+	getRelatedChecklistsByFile,
+	siteChecklistStruct,
+	getSiteSlugs
+} from '$lib/checklists';
 import type { SiteItem } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';

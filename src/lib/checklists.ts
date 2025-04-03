@@ -1101,3 +1101,104 @@ export function getAllAircraftNames() {
 
 	return aircraftNames;
 }
+
+export function getSitemapInfo() {
+	const acOnlySlugs = getAircraftOnlySlugs();
+	const acSlugs = getAircraftSlugs();
+	const emergSlugs = getEmergencySlugs();
+	const siteSlugs = getSiteSlugs();
+	const pages: string[] = [];
+
+	acOnlySlugs.forEach((slug) => {
+		const ac = slug.aircraft;
+
+		pages.push(`${ac}`);
+	});
+
+	acSlugs[0].forEach((slug) => {
+		const ac = slug.aircraft;
+		const file = slug.file;
+
+		pages.push(`${ac}/${file}`);
+	});
+
+	acSlugs[1].forEach((slug) => {
+		const ac = slug.aircraft;
+		const file = slug.file;
+
+		pages.push(`${ac}/case-1/${file}`);
+	});
+
+	emergSlugs.forEach((slug) => {
+		const ac = slug.aircraft;
+		const file = slug.file;
+
+		pages.push(`${ac}/emergency/${file}`);
+	});
+
+	siteSlugs.forEach((slug) => {
+		const file = slug.file;
+
+		pages.push(`site/${file}`);
+	});
+
+	return pages;
+}
+
+export function getAircraftSlugs() {
+	const aircraftSlugArr: { aircraft: string; file: string }[] = [];
+	const caseOneSlugArr: { aircraft: string; file: string }[] = [];
+
+	checklistStruct.forEach((aircraft) => {
+		for (let i = 0; i < aircraft.checklists.length; i++) {
+			if (aircraft.checklists[i].type === 'case-1') {
+				caseOneSlugArr.push({
+					aircraft: aircraft.aircraft,
+					file: aircraft.checklists[i].file
+				});
+			} else {
+				aircraftSlugArr.push({
+					aircraft: aircraft.aircraft,
+					file: aircraft.checklists[i].file
+				});
+			}
+		}
+	});
+
+	return [aircraftSlugArr, caseOneSlugArr];
+}
+
+export function getAircraftOnlySlugs() {
+	const aircraftSlugArr: { aircraft: string }[] = [];
+
+	checklistStruct.forEach((aircraft) => {
+		aircraftSlugArr.push({ aircraft: aircraft.aircraft });
+	});
+
+	return aircraftSlugArr;
+}
+
+export function getEmergencySlugs() {
+	const emergencySlugArr: { aircraft: string; file: string }[] = [];
+	emergencyChecklistsStruct.forEach((aircraft) => {
+		for (let i = 0; i < aircraft.checklists.length; i++) {
+			emergencySlugArr.push({
+				aircraft: aircraft.aircraft,
+				file: aircraft.checklists[i].file
+			});
+		}
+	});
+
+	return emergencySlugArr;
+}
+
+export function getSiteSlugs() {
+	const siteSlugArr: { file: string }[] = [];
+	siteChecklistStruct.forEach((checklist) => {
+		siteSlugArr.push({
+			file: checklist.file
+		});
+	});
+
+	return siteSlugArr;
+}
