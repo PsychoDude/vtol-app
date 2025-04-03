@@ -1,3 +1,4 @@
+import { siteChecklistStruct } from '$lib/checklists';
 import type { Curac } from '$lib/types.js';
 import type { LayoutLoad } from './$types';
 
@@ -6,6 +7,11 @@ export const load: LayoutLoad = ({ url, data }) => {
 		aircraft: undefined,
 		name: undefined
 	};
+	const sitePages: Array<{ name: string; file: string }> = [];
+
+	siteChecklistStruct.forEach((checklist) =>
+		sitePages.push({ name: checklist.name, file: checklist.file })
+	);
 
 	if (typeof window !== 'undefined') {
 		const currentAc = url.searchParams.get('curac');
@@ -19,6 +25,7 @@ export const load: LayoutLoad = ({ url, data }) => {
 
 	return {
 		...data,
-		curac: curac
+		curac: curac,
+		sitePages: sitePages
 	};
 };
