@@ -2,13 +2,13 @@ import { getSitemapInfo } from '$lib/checklists';
 
 export const prerender = true;
 
-export async function GET({ url }) {
+export async function GET() {
 	const pages = getSitemapInfo();
 	const currDate = new Date().toISOString().split('T')[0];
 	let urlTags = '';
 
 	pages.forEach((page) => {
-		const fullUrl = `${url.protocol}//${url.host}/${page}`;
+		const fullUrl = `${process.env.SITE_URL}/${page}`;
 		urlTags += `
             <url>
                 <loc>${fullUrl}</loc>
