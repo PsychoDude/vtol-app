@@ -1,5 +1,7 @@
 import { getSitemapInfo } from '$lib/checklists';
 
+export const prerender = true;
+
 export async function GET({ url }) {
 	const pages = getSitemapInfo();
 	let urlTags = '';
