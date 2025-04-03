@@ -4,9 +4,9 @@ export const prerender = true;
 
 export async function GET({ url }) {
 	const pages = getSitemapInfo();
+	const currDate = new Date().toISOString().split('T')[0];
 	let urlTags = '';
-	const currDate = new Date().toISOString();
-	// new Date().toISOString().split('T')[0];
+
 	pages.forEach((page) => {
 		const fullUrl = `${url.protocol}//${url.host}/${page}`;
 		urlTags += `
