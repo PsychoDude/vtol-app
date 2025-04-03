@@ -1,5 +1,9 @@
-import { getAircraftName, checklistStruct, emergencyChecklistsStruct } from '$lib/checklists';
-import { getAircraftOnlySlugs } from '$lib/markdown.js';
+import {
+	getAircraftName,
+	checklistStruct,
+	emergencyChecklistsStruct,
+	getAircraftOnlySlugs
+} from '$lib/checklists';
 import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';

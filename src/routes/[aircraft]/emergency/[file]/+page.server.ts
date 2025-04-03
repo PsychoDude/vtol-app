@@ -4,9 +4,10 @@ import {
 	getRelatedEmergencyChecklistsByAircraftAndFile,
 	checklistStruct,
 	getChecklistParams,
-	emergencyChecklistsStruct
+	emergencyChecklistsStruct,
+	getEmergencySlugs
 } from '$lib/checklists.js';
-import { getMarkdown, getEmergencySlugs } from '$lib/markdown';
+import { getMarkdown } from '$lib/markdown';
 import type { ChecklistItem, Related } from '$lib/types';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';

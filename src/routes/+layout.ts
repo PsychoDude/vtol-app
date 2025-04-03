@@ -10,10 +10,11 @@ export const load: LayoutLoad = ({ url, data }) => {
 	if (typeof window !== 'undefined') {
 		const currentAc = url.searchParams.get('curac');
 
-		curac = data.aircraftNames.find((ac: Curac) => ac.aircraft === currentAc) || {
-			aircraft: undefined,
-			name: undefined
-		};
+		if (currentAc)
+			curac = data.aircraftNames.find((ac: Curac) => ac.aircraft === currentAc) || {
+				aircraft: undefined,
+				name: undefined
+			};
 	}
 
 	return {
