@@ -1,14 +1,21 @@
 import { getSitemapInfo } from '$lib/checklists';
+import { SITE_URL } from '$env/static/private';
 
 export const prerender = true;
 
 export async function GET() {
 	const pages = getSitemapInfo();
 	const currDate = new Date().toISOString().split('T')[0];
-	let urlTags = '';
+	let urlTags = `
+		<url>
+			<loc>${SITE_URL}</loc>
+			<lastmod>${currDate}</lastmod>
+		</url>`;
+
+	pages.sort();
 
 	pages.forEach((page) => {
-		const fullUrl = `${process.env.SITE_URL}/${page}`;
+		const fullUrl = `${SITE_URL}/${page}`;
 		urlTags += `
             <url>
                 <loc>${fullUrl}</loc>
