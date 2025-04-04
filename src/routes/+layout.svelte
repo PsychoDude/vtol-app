@@ -6,6 +6,10 @@
 	let { children, data } = $props();
 </script>
 
+<svelte:head>
+	<meta name="robots" content="nofollow" />
+</svelte:head>
+
 <main class="container mx-auto p-4">
 	<div class="mt-4">
 		{@render children?.()}
