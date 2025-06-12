@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-	<title>Error - VTOL VR Checklists Companion App</title>
-	<meta name="description" content="VTOL VR Checklists Companion App. " />
+	<title>Error - VTOL VR Virtual Kneeboard</title>
+	<meta name="description" content="VTOL VR Virtual Kneeboard Companion App" />
 </svelte:head>
 
 <Nav curac={data.curac} />

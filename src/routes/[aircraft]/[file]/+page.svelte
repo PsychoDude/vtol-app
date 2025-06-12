@@ -8,10 +8,10 @@
 </script>
 
 <svelte:head>
-	<title>{data.aircraftName} / {data.pageName} - VTOL VR Checklists Companion App</title>
+	<title>{data.aircraftName} / {data.pageName} - VTOL VR Virtual Kneeboard</title>
 	<meta
 		name="description"
-		content={`VTOL VR Checklists Companion App ${data.aircraftName} ${data.pageName} checklist.`}
+		content={`${data.aircraftName} / ${data.pageName} - VTOL VR Virtual Kneeboard Companion App`}
 	/>
 </svelte:head>
 
