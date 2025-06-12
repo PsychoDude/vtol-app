@@ -1183,6 +1183,13 @@ export function getSitemapInfo() {
 		pages.push(`${ac}/case-1/${file}`);
 	});
 
+	acSlugs[2].forEach((slug) => {
+		const ac = slug.aircraft;
+		const file = slug.file;
+
+		pages.push(`${ac}/case-3/${file}`);
+	});
+
 	emergSlugs.forEach((slug) => {
 		const ac = slug.aircraft;
 		const file = slug.file;
@@ -1202,11 +1209,17 @@ export function getSitemapInfo() {
 export function getAircraftSlugs() {
 	const aircraftSlugArr: { aircraft: string; file: string }[] = [];
 	const caseOneSlugArr: { aircraft: string; file: string }[] = [];
+	const caseThreeSlugArr: { aircraft: string; file: string }[] = [];
 
 	checklistStruct.forEach((aircraft) => {
 		for (let i = 0; i < aircraft.checklists.length; i++) {
 			if (aircraft.checklists[i].type === 'case-1') {
 				caseOneSlugArr.push({
+					aircraft: aircraft.aircraft,
+					file: aircraft.checklists[i].file
+				});
+			} else if (aircraft.checklists[i].type === 'case-3') {
+				caseThreeSlugArr.push({
 					aircraft: aircraft.aircraft,
 					file: aircraft.checklists[i].file
 				});
@@ -1219,7 +1232,7 @@ export function getAircraftSlugs() {
 		}
 	});
 
-	return [aircraftSlugArr, caseOneSlugArr];
+	return [aircraftSlugArr, caseOneSlugArr, caseThreeSlugArr];
 }
 
 export function getAircraftOnlySlugs() {
