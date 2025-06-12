@@ -1,5 +1,5 @@
-# **VTOL VR Checklists Companion App**
+# **VTOL VR Virtual Kneeboard Companion App**
 
-Free VTOL VR Companion App built with SvelteKit.
+Free VTOL VR Virtual Kneeboard Companion App built with SvelteKit.
 
-You can find the proper credits [Here!](/src/checklists/site/credits.md)
+You can find the proper credits in the [credits](/src/checklists/site/credits.md) file

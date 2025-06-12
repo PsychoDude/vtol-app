@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-	<title>{data.pageName} - VTOL VR Checklists Companion App</title>
-	<meta name="description" content="VTOL VR Checklists Companion App. " />
+	<title>{data.pageName} - VTOL VR Virtual Kneeboard</title>
+	<meta name="description" content={`${data.pageName} - VTOL VR Virtual Kneeboard Companion App`} />
 </svelte:head>
 
 {#key `${data.file}-site`}

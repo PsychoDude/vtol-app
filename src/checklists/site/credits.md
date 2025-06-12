@@ -2,7 +2,7 @@
 
 <p class="text-balance">The information found in this app was gathered from multiple sources</p>
 
-_Last Updated: 3/19/2025_
+_Last Updated: 6/12/2025_
 
 ## [BahamutoD The Great (Solo Dev)](https://vtolvr.bdynamicsstudio.com/)
 
@@ -74,9 +74,14 @@ _Last Updated: 3/19/2025_
 
 ## Other Info
 
-- [CAW - Case 1 Operations](https://docs.google.com/document/d/1kfQmxAPwma7dGBfaoXf2ximF2hLuhIVkQ9D5V7cSclQ/edit?usp=sharing)
-- [CAW - Case 3 Operations](https://docs.google.com/document/d/11gUgshqHGJKlRgmRFDWvU2P5tymrY0gbheKaAdNFehU/edit?usp=sharing)
+- [CAW - CASE 1 Operations](https://docs.google.com/document/d/1kfQmxAPwma7dGBfaoXf2ximF2hLuhIVkQ9D5V7cSclQ/edit?usp=sharing)
+- [CAW - CASE 3 Operations](https://docs.google.com/document/d/11gUgshqHGJKlRgmRFDWvU2P5tymrY0gbheKaAdNFehU/edit?usp=sharing)
 - [VTOL VR Wiki](https://vtolvr.wiki.gg/wiki/VTOL_VR_Wiki)
+- RWR Reference Sheet - damsel_deere
+- Carrier Landing Symbology - dubya
+- Carrier Operations Reference Card - TheChemistAstronaut
+- CASE 3 Kneeboard Image - CAW
+- Chaff Images - Smol
 
 ## [PsychoDude](https://liparistudios.com)
 

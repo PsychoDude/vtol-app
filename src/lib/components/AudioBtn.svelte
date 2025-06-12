@@ -30,7 +30,7 @@
 		onclick={() => handlePlayPause(file)}
 		class="cursor-pointer rounded bg-amber-500 px-4 py-2 text-black hover:bg-amber-700"
 	>
-		{$playingFile === file ? 'Pause' : 'Play'}
+		{$playingFile === file ? 'Stop' : 'Play'}
 	</button>
 	<div class="flex items-center justify-center">
 		<label for="volume" class="pe-3">Volume:</label>

@@ -15,6 +15,7 @@
 		relatedEmergency: 'red',
 		relatedCarrier: 'green',
 		relatedCase1: 'green',
+		relatedCase3: 'green',
 		relatedInfo: 'green',
 		site: 'site',
 		backAircraft: 'blue',
@@ -75,6 +76,16 @@
 			goto(`/${plane}/case-1/${file}?curac=${plane}`);
 		} else {
 			goto(`/${plane}/case-1/${file}`);
+		}
+	}
+
+	function caseThreeRedirect(plane: string, file: string) {
+		if (curac?.aircraft) {
+			goto(`/${plane}/case-3/${file}?curac=${curac.aircraft}`);
+		} else if (plane !== 'carrier' && plane !== 'global') {
+			goto(`/${plane}/case-3/${file}?curac=${plane}`);
+		} else {
+			goto(`/${plane}/case-3/${file}`);
 		}
 	}
 
@@ -140,6 +151,9 @@
 					break;
 				case type === 'relatedCase1':
 					if (aircraft && file) caseOneRedirect(aircraft, file);
+					break;
+				case type === 'relatedCase3':
+					if (aircraft && file) caseThreeRedirect(aircraft, file);
 					break;
 				case type === 'relatedInfo':
 					if (aircraft && file) checklistRedirect(aircraft, file);
