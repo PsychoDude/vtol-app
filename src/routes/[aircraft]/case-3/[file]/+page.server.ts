@@ -15,7 +15,7 @@ import type { EntryGenerator, PageServerLoad } from './$types';
 export const entries: EntryGenerator = () => {
 	const list = getAircraftSlugs();
 
-	return list[1];
+	return list[2];
 };
 
 export const prerender = true;
