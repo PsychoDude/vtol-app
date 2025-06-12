@@ -36,7 +36,7 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'F-45A',
 				related: {
-					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					carrier: ['reference-card', 'departure', 'flightdeck-overview', 'case-1'],
 					f45a: ['landing-runway', 'landing-CATOBAR-preface', 'landing-vtol', 'vcap']
 				},
 				showGlobal: true,
@@ -49,7 +49,7 @@ export const checklistStruct = [
 				for: 'F-45A',
 				related: {
 					f45a: ['landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -59,7 +59,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'F-45A',
-				related: { carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
+				related: { carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -164,7 +164,7 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'F/A-26B',
 				related: {
-					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					carrier: ['reference-card', 'departure', 'flightdeck-overview', 'case-1'],
 					fa26b: ['landing-runway', 'landing-CATOBAR-preface']
 				},
 				showGlobal: true,
@@ -177,7 +177,7 @@ export const checklistStruct = [
 				for: 'F/A-26B',
 				related: {
 					fa26b: ['landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -187,7 +187,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'F/A-26B',
-				related: { carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
+				related: { carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -258,7 +258,7 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'EF-24G',
 				related: {
-					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					carrier: ['reference-card', 'departure', 'flightdeck-overview', 'case-1'],
 					ef24g: ['wings', 'landing-runway', 'landing-CATOBAR-preface']
 				},
 				showGlobal: true,
@@ -271,7 +271,7 @@ export const checklistStruct = [
 				for: 'EF-24G',
 				related: {
 					ef24g: ['wings', 'landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -281,7 +281,10 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'EF-24G',
-				related: { ef24g: ['wings'], carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
+				related: {
+					ef24g: ['wings'],
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1']
+				},
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -429,7 +432,7 @@ export const checklistStruct = [
 				file: 'takeoff-CATOBAR',
 				for: 'T-55',
 				related: {
-					carrier: ['departure', 'flightdeck-overview', 'case-1'],
+					carrier: ['reference-card', 'departure', 'flightdeck-overview', 'case-1'],
 					t55: ['landing-runway', 'landing-CATOBAR-preface']
 				},
 				showGlobal: true,
@@ -442,7 +445,7 @@ export const checklistStruct = [
 				for: 'T-55',
 				related: {
 					t55: ['landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -452,7 +455,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'T-55',
-				related: { carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
+				related: { carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -519,10 +522,19 @@ export const checklistStruct = [
 		checklists: [
 			{
 				type: 'global',
+				name: 'Carrier Ops Reference Card',
+				file: 'reference-card',
+				for: 'carrier',
+				related: { carrier: ['case-1'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'global',
 				name: 'Flight Deck Overview',
 				file: 'flightdeck-overview',
 				for: 'carrier',
-				related: { carrier: ['case-1'] },
+				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -531,7 +543,7 @@ export const checklistStruct = [
 				name: 'Wave Off',
 				file: 'waveoff',
 				for: 'carrier',
-				related: { carrier: ['case-1'] },
+				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: true
 			},
@@ -540,7 +552,7 @@ export const checklistStruct = [
 				name: 'LSO Guidance',
 				file: 'lso-guidance',
 				for: 'carrier',
-				related: { carrier: ['waveoff', 'case-1'] },
+				related: { carrier: ['reference-card', 'waveoff', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -549,7 +561,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing Symbology',
 				file: 'symbology',
 				for: 'carrier',
-				related: { carrier: ['case-1'] },
+				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -558,7 +570,7 @@ export const checklistStruct = [
 				name: 'CASE 1 Ops',
 				file: 'case-1',
 				for: 'carrier',
-				related: { carrier: ['departure', 'marshal', 'final'] },
+				related: { carrier: ['reference-card', 'departure', 'marshal', 'final'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -567,7 +579,7 @@ export const checklistStruct = [
 				name: 'Departure',
 				file: 'departure',
 				for: 'carrier',
-				related: { carrier: ['case-1'] },
+				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -576,7 +588,7 @@ export const checklistStruct = [
 				name: 'Marshal Stack Pattern',
 				file: 'marshal',
 				for: 'carrier',
-				related: { carrier: ['final', 'case-1'] },
+				related: { carrier: ['reference-card', 'final', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -585,7 +597,7 @@ export const checklistStruct = [
 				name: 'Final Approach',
 				file: 'final',
 				for: 'carrier',
-				related: { carrier: ['case-1'] },
+				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			}
