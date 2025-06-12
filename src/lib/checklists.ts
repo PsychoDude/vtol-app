@@ -618,7 +618,7 @@ export const checklistStruct = [
 			},
 			{
 				type: 'case-3',
-				name: 'Kneeboard',
+				name: 'CASE 3 Kneeboard',
 				file: 'kneeboard',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-3'] },
@@ -694,6 +694,24 @@ export const checklistStruct = [
 				related: {
 					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'bombing']
 				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Countermeasures',
+				file: 'cm',
+				for: 'global',
+				related: { global: ['chaff'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Chaff',
+				file: 'chaff',
+				for: 'global',
+				related: { global: ['cm'] },
 				showGlobal: false,
 				showEmergencies: false
 			}
