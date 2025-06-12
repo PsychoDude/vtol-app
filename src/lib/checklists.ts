@@ -49,7 +49,7 @@ export const checklistStruct = [
 				for: 'F-45A',
 				related: {
 					f45a: ['landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -59,7 +59,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'F-45A',
-				related: { carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
+				related: { carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -177,7 +177,7 @@ export const checklistStruct = [
 				for: 'F/A-26B',
 				related: {
 					fa26b: ['landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -187,7 +187,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'F/A-26B',
-				related: { carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
+				related: { carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -271,7 +271,7 @@ export const checklistStruct = [
 				for: 'EF-24G',
 				related: {
 					ef24g: ['wings', 'landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -281,7 +281,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'EF-24G',
-				related: { ef24g: ['wings'], carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
+				related: { ef24g: ['wings'], carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -442,7 +442,7 @@ export const checklistStruct = [
 				for: 'T-55',
 				related: {
 					t55: ['landing-CATOBAR'],
-					carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1']
+					carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1']
 				},
 				showGlobal: true,
 				showEmergencies: false
@@ -452,7 +452,7 @@ export const checklistStruct = [
 				name: 'Carrier Landing',
 				file: 'landing-CATOBAR',
 				for: 'T-55',
-				related: { carrier: ['waveoff', 'lso-guidance', 'meatball', 'case-1'] },
+				related: { carrier: ['waveoff', 'lso-guidance', 'symbology', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -546,8 +546,8 @@ export const checklistStruct = [
 			},
 			{
 				type: 'global',
-				name: 'Carrier Lights (Meatball) Img',
-				file: 'meatball',
+				name: 'Carrier Landing Symbology',
+				file: 'symbology',
 				for: 'carrier',
 				related: { carrier: ['case-1'] },
 				showGlobal: true,
