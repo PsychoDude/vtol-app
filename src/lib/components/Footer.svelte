@@ -19,22 +19,22 @@
 			<img
 				class="ms-1 !h-4"
 				src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
-				alt=""
+				alt="Creative Commons"
 			/>
 			<img
 				class="ms-1 !h-4"
 				src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
-				alt=""
+				alt="Attribution"
 			/>
 			<img
 				class="ms-1 !h-4"
 				src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
-				alt=""
+				alt="NonCommercial "
 			/>
 			<img
 				class="ms-1 !h-4"
 				src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
-				alt=""
+				alt="ShareAlike"
 			/>
 		</a>
 	</p>
