@@ -43,6 +43,15 @@
 										showCurac={false}
 										curac={data.curac}
 									/>
+								{:else if list.type === 'case-3'}
+									<Button
+										type="relatedCase3"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
 								{:else if list.type === 'carrier'}
 									<Button
 										type="relatedCarrier"
@@ -70,6 +79,15 @@
 								{#if list.type === 'case-1'}
 									<Button
 										type="relatedCase1"
+										name={list.name}
+										file={list.file}
+										aircraft={checklist.aircraft}
+										showCurac={false}
+										curac={data.curac}
+									/>
+								{:else if list.type === 'case-3'}
+									<Button
+										type="relatedCase3"
 										name={list.name}
 										file={list.file}
 										aircraft={checklist.aircraft}
