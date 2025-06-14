@@ -1,4 +1,4 @@
-# AH-94 Emergency Anti-Torque Checklist
+# AH-6 Emergency Anti-Torque Checklist
 
 1. If altitude below 700ft AGL:
    1. Assess landing zones within immediate proximity

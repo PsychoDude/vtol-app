@@ -836,6 +836,73 @@ export const checklistStruct = [
 				showEmergencies: true
 			}
 		]
+	},
+	{
+		aircraft: 'ah6',
+		name: 'AH-6',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup (PIC)',
+				file: 'startup-pic',
+				for: 'AH-6',
+				related: { ah6: ['startup-cpg', 'takeoff-vert', 'takeoff-hov'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Startup (CPG)',
+				file: 'startup-cpg',
+				for: 'AH-6',
+				related: { ah6: ['startup-pic', 'takeoff-vert', 'takeoff-hov'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (VERTICAL)',
+				file: 'takeoff-vert',
+				for: 'AH-6',
+				related: { ah6: ['landing-vert', 'landing-hov'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (VERTICAL)',
+				file: 'landing-vert',
+				for: 'AH-6',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (HOVER)',
+				file: 'takeoff-hov',
+				for: 'AH-6',
+				related: { ah6: ['landing-vert', 'landing-hov'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (HOVER)',
+				file: 'landing-hov',
+				for: 'AH-6',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'AH-6',
+				showGlobal: true,
+				showEmergencies: true
+			}
+		]
 	}
 ];
 
@@ -1046,6 +1113,32 @@ export const emergencyChecklistsStruct = [
 				file: 'flightcontrolfailure',
 				for: 'A-10D',
 				related: ['landing-runway']
+			}
+		]
+	},
+	{
+		aircraft: 'ah6',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'AH-6',
+				related: ['landing-vert', 'landing-hov']
+			},
+			{
+				type: 'emergency',
+				name: 'Anti-Torque Failure',
+				file: 'antitorque',
+				for: 'AH-6',
+				related: ['landing-vert', 'landing-hov']
+			},
+			{
+				type: 'emergency',
+				name: 'Auto-Rotation',
+				file: 'autorotation',
+				for: 'AH-6',
+				related: ['landing-vert', 'landing-hov']
 			}
 		]
 	}
