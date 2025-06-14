@@ -7,6 +7,6 @@
    4. Disembark (BAIL)
 2. If altitude above 700ft AGL:
    1. Assess landing zones within range
-   2. Begin Auto-Rotation Procedure (4.2.4)
+   2. Begin Auto-Rotation Procedure (Related Checklist)
    3. Shut Down Engines/APU
    4. Disembark (BAIL)
