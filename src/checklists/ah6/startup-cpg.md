@@ -10,4 +10,3 @@
    - APU
    - ENGINE On
    - Rotor Brake Off
-   - Parking Brake Off

@@ -23,13 +23,11 @@
 13. Start ENGINE
 14. Move Power Levers to IDLE
 15. Confirm ENGINE Idle
-16. Set Parking Brake OFF
-17. Engage Toe Brakes
-18. Move Power Levers to Flight
-19. Check Engine Light
+16. Move Power Levers to Flight
+17. Check Engine Light
     - If OFF, Shut Down APU
-20. Begin Pre-Trim
-21. Cross-Check CPG
+18. Begin Pre-Trim
+19. Cross-Check CPG
     - Communications
     - Countermeasures
     - Sensors
