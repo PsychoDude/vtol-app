@@ -1,4 +1,4 @@
-# CASE 1 Final Approach Global Checklist
+# CASE 1 Final Approach Checklist
 
 ![Carrier Landing Diagram](/images/carrier-case1.webp)
 
