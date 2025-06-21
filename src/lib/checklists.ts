@@ -847,7 +847,7 @@ export const checklistStruct = [
 				name: 'Startup (PIC)',
 				file: 'startup-pic',
 				for: 'AH-6',
-				related: { ah6: ['startup-cpg', 'takeoff-vert', 'takeoff-hov'] },
+				related: { ah6: ['startup-cpg', 'takeoff-vert', 'takeoff-hov', 'basic-resp'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -856,7 +856,7 @@ export const checklistStruct = [
 				name: 'Startup (CPG)',
 				file: 'startup-cpg',
 				for: 'AH-6',
-				related: { ah6: ['startup-pic', 'takeoff-vert', 'takeoff-hov'] },
+				related: { ah6: ['startup-pic', 'takeoff-vert', 'takeoff-hov', 'basic-resp'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -899,8 +899,18 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'AH-6',
+				related: { ah6: ['basic-resp'] },
 				showGlobal: true,
 				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Reponsabilities',
+				file: 'basic-resp',
+				for: 'AH-6',
+				related: { ah6: ['weapons'] },
+				showGlobal: true,
+				showEmergencies: false
 			}
 		]
 	}
