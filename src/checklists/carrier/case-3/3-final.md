@@ -1,4 +1,4 @@
-# CASE 2 Final Approach Checklist
+# CASE 3 Final Approach Checklist
 
 1. At 3.5nmi, CATCC calls “Approaching Glidepath.” Slow to onspeed AoA in preparation to intercept the glidepath.
 2. Begin flying the glideslope as soon as you intercept it (around 3nmi).

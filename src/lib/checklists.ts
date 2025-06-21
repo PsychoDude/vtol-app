@@ -537,15 +537,6 @@ export const checklistStruct = [
 			},
 			{
 				type: 'global',
-				name: 'Wave Off',
-				file: 'waveoff',
-				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-1', 'case-3'] },
-				showGlobal: true,
-				showEmergencies: true
-			},
-			{
-				type: 'global',
 				name: 'LSO Guidance',
 				file: 'lso-guidance',
 				for: 'carrier',
@@ -564,6 +555,15 @@ export const checklistStruct = [
 			},
 			{
 				type: 'global',
+				name: 'Wave Off',
+				file: 'waveoff',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-1', 'case-3'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'global',
 				name: 'Carrier Ops Reference Card',
 				file: 'reference-card',
 				for: 'carrier',
@@ -576,14 +576,23 @@ export const checklistStruct = [
 				name: 'CASE 1 Ops',
 				file: 'case-1',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'departure', 'marshal', 'final'] },
+				related: {
+					carrier: [
+						'reference-card',
+						'1-departure',
+						'1-marshal',
+						'1-final',
+						'1-waveoff',
+						'1-touchdown'
+					]
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'case-1',
 				name: 'Departure',
-				file: 'departure',
+				file: '1-departure',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: false,
@@ -592,16 +601,34 @@ export const checklistStruct = [
 			{
 				type: 'case-1',
 				name: 'Marshal Stack Pattern',
-				file: 'marshal',
+				file: '1-marshal',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'final', 'case-1'] },
+				related: { carrier: ['reference-card', '1-final', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
 			{
 				type: 'case-1',
 				name: 'Final Approach',
-				file: 'final',
+				file: '1-final',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-1', '1-waveoff'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-1',
+				name: 'Wave Off',
+				file: '1-waveoff',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-1', 'waveoff'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-1',
+				name: 'Touchdown',
+				file: '1-touchdown',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: false,
@@ -612,14 +639,78 @@ export const checklistStruct = [
 				name: 'CASE 3 Ops',
 				file: 'case-3',
 				for: 'carrier',
-				related: { carrier: ['kneeboard'] },
+				related: {
+					carrier: [
+						'3-kneeboard',
+						'3-marshal',
+						'3-final-standard',
+						'3-final-bullseye',
+						'3-final',
+						'3-waveoff',
+						'3-touchdown'
+					]
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'case-3',
-				name: 'CASE 3 Kneeboard',
-				file: 'kneeboard',
+				name: 'Kneeboard',
+				file: '3-kneeboard',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Marshal Stack Pattern',
+				file: '3-marshal',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Needles/ICLS Approach',
+				file: '3-final-standard',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3', '3-waveoff', '3-final'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'No HSI/ICLS Fail Approach',
+				file: '3-final-bullseye',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3', '3-waveoff', '3-final'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Final Approach',
+				file: '3-final',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3', '3-waveoff'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Wave Off',
+				file: '3-waveoff',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3', 'waveoff'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Touchdown',
+				file: '3-touchdown',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-3'] },
 				showGlobal: false,
