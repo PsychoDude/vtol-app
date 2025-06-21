@@ -19,4 +19,4 @@
 12. Upon Contact with the Deck, Advance Throttle to Afterburner
 13. (If Wire Caught) Hold Afterburner for 4 seconds. Set Throttle IDLE. Set Hook UP, Set Wings UP, Set Flaps 0, Taxi to Parking Area
 
-14. (If Wire Missed) Bolter! (SEE WAVE OFF PROCEDURES ON NEXT PAGE.) Monitor Fuel Levels.
+14. (If Wire Missed) Bolter! (Related Checklists - WAVE OFF ) Monitor Fuel Levels.

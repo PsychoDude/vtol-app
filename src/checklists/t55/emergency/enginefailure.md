@@ -6,7 +6,7 @@
 4. If altitude below 5000ft AGL:
 
    1. Survey for nearby roads, airfields and ditch locations within range:
-      1. Perform Emergency Landing ( SEE RELATED CHECKLISTS BELOW)
+      1. Perform Emergency Landing (Related Checklists)
    2. If no road or airfield available, assess ditch locations:
       1. Confirm Master Arm OFF
       2. Confirm no civilian settlement within 2NM
