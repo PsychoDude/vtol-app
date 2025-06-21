@@ -45,7 +45,7 @@
 <AudioBtn file={"/audio/MissileLockLoopx7.ogg"} />
 
 {#if data.relatedChecklists}
-	<h2 class="my-5 font-bold uppercase">Related Checklists:</h2>
+	<h2 class="my-5 font-bold uppercase">Related:</h2>
 
 	<div class="flex flex-col space-y-3">
 		{#if data.relatedChecklists}

@@ -15,7 +15,7 @@
 </div>
 
 {#if data.relatedChecklists || data.relatedEmergencyChecklists}
-	<h2 class="mb-5 font-bold uppercase">Related Checklists:</h2>
+	<h2 class="mb-5 font-bold uppercase">Related:</h2>
 
 	<div class="flex flex-col space-y-3">
 		{#if data.relatedChecklists}
