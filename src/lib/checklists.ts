@@ -765,7 +765,7 @@ export const checklistStruct = [
 				name: 'Unguided Bombs',
 				file: 'unguided-bombs',
 				for: 'global',
-				related: { global: ['gps-guided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				related: { global: ['gps-guided-bombs', 'laser-guided-bombs', 'gbu-53'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -774,7 +774,7 @@ export const checklistStruct = [
 				name: 'GPS Guided Bombs',
 				file: 'gps-guided-bombs',
 				for: 'global',
-				related: { global: ['unguided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				related: { global: ['unguided-bombs', 'laser-guided-bombs', 'gbu-53'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -783,7 +783,7 @@ export const checklistStruct = [
 				name: 'Laser Guided Bombs',
 				file: 'laser-guided-bombs',
 				for: 'global',
-				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'gbu-53', 'bombing'] },
+				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'gbu-53'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -793,7 +793,7 @@ export const checklistStruct = [
 				file: 'gbu-53',
 				for: 'global',
 				related: {
-					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'bombing']
+					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs']
 				},
 				showGlobal: false,
 				showEmergencies: false
