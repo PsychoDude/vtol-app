@@ -612,7 +612,7 @@ export const checklistStruct = [
 				name: 'Final Approach',
 				file: '1-final',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-1', '1-waveoff'] },
+				related: { carrier: ['reference-card', '1-waveoff', '1-touchdown', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -621,7 +621,7 @@ export const checklistStruct = [
 				name: 'Wave Off',
 				file: '1-waveoff',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-1', 'waveoff'] },
+				related: { carrier: ['reference-card', 'waveoff', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -667,7 +667,17 @@ export const checklistStruct = [
 				name: 'Marshal Stack Pattern',
 				file: '3-marshal',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-3'] },
+				related: {
+					carrier: [
+						'reference-card',
+						'3-final-standard',
+						'3-final-bullseye',
+						'3-final',
+						'3-waveoff',
+						'3-touchdown',
+						'case-3'
+					]
+				},
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -676,7 +686,7 @@ export const checklistStruct = [
 				name: 'Needles/ICLS Approach',
 				file: '3-final-standard',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-3', '3-waveoff', '3-final'] },
+				related: { carrier: ['reference-card', '3-waveoff', '3-final', 'case-3'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -685,7 +695,7 @@ export const checklistStruct = [
 				name: 'No HSI/ICLS Fail Approach',
 				file: '3-final-bullseye',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-3', '3-waveoff', '3-final'] },
+				related: { carrier: ['reference-card', '3-waveoff', '3-final', 'case-3'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -694,7 +704,7 @@ export const checklistStruct = [
 				name: 'Final Approach',
 				file: '3-final',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-3', '3-waveoff'] },
+				related: { carrier: ['reference-card', '3-waveoff', '3-touchdown', 'case-3'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -703,7 +713,7 @@ export const checklistStruct = [
 				name: 'Wave Off',
 				file: '3-waveoff',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-3', 'waveoff'] },
+				related: { carrier: ['reference-card', 'waveoff', 'case-3'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
