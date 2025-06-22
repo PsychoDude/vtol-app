@@ -753,6 +753,42 @@ export const checklistStruct = [
 			},
 			{
 				type: 'page',
+				name: 'Countermeasures',
+				file: 'cm',
+				for: 'global',
+				related: { global: ['chaff', 'flaring', 'pre-flaring'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Chaff',
+				file: 'chaff',
+				for: 'global',
+				related: { global: ['flaring', 'pre-flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Flaring',
+				file: 'flaring',
+				for: 'global',
+				related: { global: ['chaff', 'pre-flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Pre-Flaring',
+				file: 'pre-flaring',
+				for: 'global',
+				related: { global: ['chaff', 'flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
 				name: 'Bombing',
 				file: 'bombing',
 				for: 'global',
@@ -800,37 +836,84 @@ export const checklistStruct = [
 			},
 			{
 				type: 'page',
-				name: 'Countermeasures',
-				file: 'cm',
+				name: 'Jamming',
+				file: 'jamming',
 				for: 'global',
-				related: { global: ['chaff', 'flaring', 'pre-flaring'] },
+				related: { global: ['ea', 'alq-245-effects'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
-				type: 'info',
-				name: 'Chaff',
-				file: 'chaff',
+				type: 'page',
+				name: 'Electronic Attack',
+				file: 'ea',
 				for: 'global',
-				related: { global: ['flaring', 'pre-flaring'] },
+				related: { global: ['noise', 'deception'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
 			{
 				type: 'info',
-				name: 'Flaring',
-				file: 'flaring',
+				name: 'Noise',
+				file: 'noise',
 				for: 'global',
-				related: { global: ['chaff', 'pre-flaring'] },
+				related: { global: ['deception', 'jamming'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
 			{
 				type: 'info',
-				name: 'Pre-Flaring',
-				file: 'pre-flaring',
+				name: 'Deception',
+				file: 'deception',
 				for: 'global',
-				related: { global: ['chaff', 'flaring'] },
+				related: { global: ['noise', 'jamming'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'ALQ-245 Jamming Mode Effects',
+				file: 'alq-245-effects',
+				for: 'global',
+				related: {
+					global: ['noise-effects', 'drfm-effects', 'sas-effects', 'power-management']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Noise',
+				file: 'noise-effects',
+				for: 'global',
+				related: { global: ['drfm-effects', 'sas-effects', 'power-management', 'jamming'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'DRFM',
+				file: 'drfm-effects',
+				for: 'global',
+				related: { global: ['noise-effects', 'sas-effects', 'power-management', 'jamming'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'SAS',
+				file: 'sas-effects',
+				for: 'global',
+				related: { global: ['noise-effects', 'drfm-effects', 'power-management', 'jamming'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Power Management',
+				file: 'power-management',
+				for: 'global',
+				related: { global: ['noise-effects', 'drfm-effects', 'sas-effects', 'jamming'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
