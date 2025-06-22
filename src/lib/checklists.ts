@@ -815,6 +815,24 @@ export const checklistStruct = [
 				related: { global: ['cm'] },
 				showGlobal: false,
 				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Basic Terminology',
+				file: 'terminology',
+				for: 'global',
+				related: { global: ['advanced-terminology'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Advanced Terminology',
+				file: 'advanced-terminology',
+				for: 'global',
+				related: { global: ['terminology'] },
+				showGlobal: true,
+				showEmergencies: false
 			}
 		]
 	},
