@@ -839,7 +839,7 @@ export const checklistStruct = [
 				name: 'Jamming',
 				file: 'jamming',
 				for: 'global',
-				related: { global: ['ea', 'alq-245-effects'] },
+				related: { global: ['ea', 'alq-245', 'adm-160j'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -872,11 +872,28 @@ export const checklistStruct = [
 			},
 			{
 				type: 'page',
-				name: 'ALQ-245 Jamming Mode Effects',
-				file: 'alq-245-effects',
+				name: 'AN/ALQ-245',
+				file: 'alq-245',
 				for: 'global',
 				related: {
-					global: ['noise-effects', 'drfm-effects', 'sas-effects', 'power-management']
+					global: [
+						'noise-effects',
+						'drfm-effects',
+						'sas-effects',
+						'power-management',
+						'alq-245-employment'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Employment',
+				file: 'alq-245-employment',
+				for: 'global',
+				related: {
+					global: ['noise-effects', 'drfm-effects', 'sas-effects', 'power-management', 'jamming']
 				},
 				showGlobal: false,
 				showEmergencies: false
@@ -886,7 +903,15 @@ export const checklistStruct = [
 				name: 'Noise',
 				file: 'noise-effects',
 				for: 'global',
-				related: { global: ['drfm-effects', 'sas-effects', 'power-management', 'jamming'] },
+				related: {
+					global: [
+						'alq-245-employment',
+						'drfm-effects',
+						'sas-effects',
+						'power-management',
+						'jamming'
+					]
+				},
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -895,7 +920,15 @@ export const checklistStruct = [
 				name: 'DRFM',
 				file: 'drfm-effects',
 				for: 'global',
-				related: { global: ['noise-effects', 'sas-effects', 'power-management', 'jamming'] },
+				related: {
+					global: [
+						'alq-245-employment',
+						'noise-effects',
+						'sas-effects',
+						'power-management',
+						'jamming'
+					]
+				},
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -904,7 +937,15 @@ export const checklistStruct = [
 				name: 'SAS',
 				file: 'sas-effects',
 				for: 'global',
-				related: { global: ['noise-effects', 'drfm-effects', 'power-management', 'jamming'] },
+				related: {
+					global: [
+						'alq-245-employment',
+						'noise-effects',
+						'drfm-effects',
+						'power-management',
+						'jamming'
+					]
+				},
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -913,7 +954,31 @@ export const checklistStruct = [
 				name: 'Power Management',
 				file: 'power-management',
 				for: 'global',
-				related: { global: ['noise-effects', 'drfm-effects', 'sas-effects', 'jamming'] },
+				related: {
+					global: ['alq-245-employment', 'noise-effects', 'drfm-effects', 'sas-effects', 'jamming']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'ADM-160J',
+				file: 'adm-160j',
+				for: 'global',
+				related: {
+					global: ['adm-160j-deployment']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Employment',
+				file: 'adm-160j-deployment',
+				for: 'global',
+				related: {
+					global: ['jamming']
+				},
 				showGlobal: false,
 				showEmergencies: false
 			},
