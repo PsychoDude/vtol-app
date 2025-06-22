@@ -803,7 +803,7 @@ export const checklistStruct = [
 				name: 'Countermeasures',
 				file: 'cm',
 				for: 'global',
-				related: { global: ['chaff'] },
+				related: { global: ['chaff', 'flaring', 'pre-flaring'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -812,7 +812,25 @@ export const checklistStruct = [
 				name: 'Chaff',
 				file: 'chaff',
 				for: 'global',
-				related: { global: ['cm'] },
+				related: { global: ['flaring', 'pre-flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Flaring',
+				file: 'flaring',
+				for: 'global',
+				related: { global: ['chaff', 'pre-flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Pre-Flaring',
+				file: 'pre-flaring',
+				for: 'global',
+				related: { global: ['chaff', 'flaring'] },
 				showGlobal: false,
 				showEmergencies: false
 			},

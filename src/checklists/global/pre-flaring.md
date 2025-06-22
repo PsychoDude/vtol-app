@@ -1,0 +1,3 @@
+# Pre-Flaring
+
+Pre-flaring is an extremely effective maneuver used anytime you believe a bandit could fire a missile towards you. Pre-flaring causes their missile seekers to be defeated before they even target you, as the seeker cannot acquire and maintain an adequate track on your heat signature amongst all the flares. You can use this to make the enemy waste missiles from long range or to avoid getting hit right at the merge by a heater. Make sure to always follow through with your pre-flares, and never assume that the enemy can't fire one at you. Skilled players are always looking for openings and chances to get a quick kill, and the lack of pre-flaring is an extremely prominent one. Below is an example of me finding an opening in a pre-flaring opponent.
