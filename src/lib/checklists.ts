@@ -839,7 +839,7 @@ export const checklistStruct = [
 				name: 'Jamming',
 				file: 'jamming',
 				for: 'global',
-				related: { global: ['ea', 'alq-245', 'adm-160j'] },
+				related: { global: ['ea', 'alq-245', 'adm-160j', 'fraz', 'xmit'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -966,7 +966,7 @@ export const checklistStruct = [
 				file: 'adm-160j',
 				for: 'global',
 				related: {
-					global: ['adm-160j-deployment']
+					global: ['adm-160j-deployment', 'adm-160j-decoy', 'adm-160j-noise']
 				},
 				showGlobal: false,
 				showEmergencies: false
@@ -977,7 +977,51 @@ export const checklistStruct = [
 				file: 'adm-160j-deployment',
 				for: 'global',
 				related: {
-					global: ['jamming']
+					global: ['adm-160j-decoy', 'adm-160j-noise']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Decoy Mode',
+				file: 'adm-160j-decoy',
+				for: 'global',
+				related: {
+					global: ['adm-160j-noise', 'adm-160j-deployment']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Noise Mode',
+				file: 'adm-160j-noise',
+				for: 'global',
+				related: {
+					global: ['adm-160j-decoy', 'adm-160j-deployment']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'FRAZ',
+				file: 'fraz',
+				for: 'global',
+				related: {
+					global: ['xmit', 'alq-245', 'adm-160j', 'jamming']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'XMIT',
+				file: 'xmit',
+				for: 'global',
+				related: {
+					global: ['fraz', 'alq-245', 'adm-160j', 'jamming']
 				},
 				showGlobal: false,
 				showEmergencies: false
