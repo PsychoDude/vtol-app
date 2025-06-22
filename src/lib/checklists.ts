@@ -577,14 +577,7 @@ export const checklistStruct = [
 				file: 'case-1',
 				for: 'carrier',
 				related: {
-					carrier: [
-						'reference-card',
-						'1-departure',
-						'1-marshal',
-						'1-final',
-						'1-waveoff',
-						'1-touchdown'
-					]
+					carrier: ['1-departure', '1-marshal', '1-final', '1-waveoff', '1-touchdown']
 				},
 				showGlobal: true,
 				showEmergencies: false
