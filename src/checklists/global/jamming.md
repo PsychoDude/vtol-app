@@ -1,0 +1,3 @@
+# Principles of Electronic Attack
+
+The purpose of electronic attack (EA) is to degrade the abilities of an enemy to operate within the electromagnetic spectrum, with one of the key targets being radars. Modern Radars work by sending out a pulse of radio energy on a specific frequency and listening for a return. By using properties such as the delay between the radar's transmission and return, as well as the Doppler effect, a target's range, speed, altitude, and direction can be determined. While some radars may use these properties differently, they all are open to exploitation through Electronic Attack.
