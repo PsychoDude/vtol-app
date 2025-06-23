@@ -8,4 +8,4 @@ On Wave Off/Bolter Callout:
 4. Once Airspeed 250KIAS, Power Back and Hold Airspeed.
 5. Turn Onto Downwind.
 
-After Checklist Complete, See Landing (CASE 1) Checklist.
+After Checklist Complete, See Related Landing Checklists.

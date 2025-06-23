@@ -4,7 +4,7 @@
 
 _Last Updated: 6/14/2025_
 
-## [BahamutoD The Great (Solo Dev)](https://vtolvr.bdynamicsstudio.com/)
+## [BahamutoD (Solo VTOL VR Dev)](https://vtolvr.bdynamicsstudio.com/)
 
 ## [F-45A Manual](https://docs.google.com/document/d/1Zrw58fDb3uGjZQlJF0dpX-7Z8UbnXHhvI87TuKZNT7s/edit?usp=sharing)
 

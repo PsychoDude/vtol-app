@@ -537,15 +537,6 @@ export const checklistStruct = [
 			},
 			{
 				type: 'global',
-				name: 'Wave Off',
-				file: 'waveoff',
-				for: 'carrier',
-				related: { carrier: ['reference-card', 'case-1', 'case-3'] },
-				showGlobal: true,
-				showEmergencies: true
-			},
-			{
-				type: 'global',
 				name: 'LSO Guidance',
 				file: 'lso-guidance',
 				for: 'carrier',
@@ -564,6 +555,15 @@ export const checklistStruct = [
 			},
 			{
 				type: 'global',
+				name: 'Wave Off',
+				file: 'waveoff',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-1', 'case-3'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'global',
 				name: 'Carrier Ops Reference Card',
 				file: 'reference-card',
 				for: 'carrier',
@@ -576,14 +576,16 @@ export const checklistStruct = [
 				name: 'CASE 1 Ops',
 				file: 'case-1',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'departure', 'marshal', 'final'] },
+				related: {
+					carrier: ['1-departure', '1-marshal', '1-final', '1-waveoff', '1-touchdown']
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'case-1',
 				name: 'Departure',
-				file: 'departure',
+				file: '1-departure',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: false,
@@ -592,16 +594,34 @@ export const checklistStruct = [
 			{
 				type: 'case-1',
 				name: 'Marshal Stack Pattern',
-				file: 'marshal',
+				file: '1-marshal',
 				for: 'carrier',
-				related: { carrier: ['reference-card', 'final', 'case-1'] },
+				related: { carrier: ['reference-card', '1-final', 'case-1'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
 			{
 				type: 'case-1',
 				name: 'Final Approach',
-				file: 'final',
+				file: '1-final',
+				for: 'carrier',
+				related: { carrier: ['reference-card', '1-waveoff', '1-touchdown', 'case-1'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-1',
+				name: 'Wave Off',
+				file: '1-waveoff',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'waveoff', 'case-1'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-1',
+				name: 'Touchdown',
+				file: '1-touchdown',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-1'] },
 				showGlobal: false,
@@ -612,14 +632,88 @@ export const checklistStruct = [
 				name: 'CASE 3 Ops',
 				file: 'case-3',
 				for: 'carrier',
-				related: { carrier: ['kneeboard'] },
+				related: {
+					carrier: [
+						'3-kneeboard',
+						'3-marshal',
+						'3-final-standard',
+						'3-final-bullseye',
+						'3-final',
+						'3-waveoff',
+						'3-touchdown'
+					]
+				},
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'case-3',
-				name: 'CASE 3 Kneeboard',
-				file: 'kneeboard',
+				name: 'Kneeboard',
+				file: '3-kneeboard',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Marshal Stack Pattern',
+				file: '3-marshal',
+				for: 'carrier',
+				related: {
+					carrier: [
+						'reference-card',
+						'3-final-standard',
+						'3-final-bullseye',
+						'3-final',
+						'3-waveoff',
+						'3-touchdown',
+						'case-3'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Needles/ICLS Approach',
+				file: '3-final-standard',
+				for: 'carrier',
+				related: { carrier: ['reference-card', '3-waveoff', '3-final', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'No HSI/ICLS Fail Approach',
+				file: '3-final-bullseye',
+				for: 'carrier',
+				related: { carrier: ['reference-card', '3-waveoff', '3-final', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Final Approach',
+				file: '3-final',
+				for: 'carrier',
+				related: { carrier: ['reference-card', '3-waveoff', '3-touchdown', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Wave Off',
+				file: '3-waveoff',
+				for: 'carrier',
+				related: { carrier: ['reference-card', 'waveoff', 'case-3'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'case-3',
+				name: 'Touchdown',
+				file: '3-touchdown',
 				for: 'carrier',
 				related: { carrier: ['reference-card', 'case-3'] },
 				showGlobal: false,
@@ -652,6 +746,42 @@ export const checklistStruct = [
 			},
 			{
 				type: 'page',
+				name: 'Countermeasures',
+				file: 'cm',
+				for: 'global',
+				related: { global: ['chaff', 'flaring', 'pre-flaring'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Chaff',
+				file: 'chaff',
+				for: 'global',
+				related: { global: ['flaring', 'pre-flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Flaring',
+				file: 'flaring',
+				for: 'global',
+				related: { global: ['chaff', 'pre-flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Pre-Flaring',
+				file: 'pre-flaring',
+				for: 'global',
+				related: { global: ['chaff', 'flaring'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
 				name: 'Bombing',
 				file: 'bombing',
 				for: 'global',
@@ -664,7 +794,7 @@ export const checklistStruct = [
 				name: 'Unguided Bombs',
 				file: 'unguided-bombs',
 				for: 'global',
-				related: { global: ['gps-guided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				related: { global: ['gps-guided-bombs', 'laser-guided-bombs', 'gbu-53'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -673,7 +803,7 @@ export const checklistStruct = [
 				name: 'GPS Guided Bombs',
 				file: 'gps-guided-bombs',
 				for: 'global',
-				related: { global: ['unguided-bombs', 'laser-guided-bombs', 'gbu-53', 'bombing'] },
+				related: { global: ['unguided-bombs', 'laser-guided-bombs', 'gbu-53'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -682,7 +812,7 @@ export const checklistStruct = [
 				name: 'Laser Guided Bombs',
 				file: 'laser-guided-bombs',
 				for: 'global',
-				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'gbu-53', 'bombing'] },
+				related: { global: ['unguided-bombs', 'gps-guided-bombs', 'gbu-53'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -692,27 +822,411 @@ export const checklistStruct = [
 				file: 'gbu-53',
 				for: 'global',
 				related: {
-					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs', 'bombing']
+					global: ['unguided-bombs', 'gps-guided-bombs', 'laser-guided-bombs']
 				},
 				showGlobal: false,
 				showEmergencies: false
 			},
 			{
 				type: 'page',
-				name: 'Countermeasures',
-				file: 'cm',
+				name: 'Missiles',
+				file: 'missiles',
 				for: 'global',
-				related: { global: ['chaff'] },
+				related: { global: ['dynamic-launch-zone', 'aim-missiles', 'ag-missiles'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Dynamic Launch Zone',
+				file: 'dynamic-launch-zone',
+				for: 'global',
+				related: { global: ['aim-missiles', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'AIM Missiles (AA)',
+				file: 'aim-missiles',
+				for: 'global',
+				related: { global: ['sarh', 'irh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Semi-Active Radar Homing',
+				file: 'sarh',
+				for: 'global',
+				related: { global: ['irh', 'arh', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Infrared Homing',
+				file: 'irh',
+				for: 'global',
+				related: { global: ['aim-9x', 'airs-t', 'sarh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIM-9 Missiles',
+				file: 'aim-9x',
+				for: 'global',
+				related: { global: ['airs-t', 'sarh', 'arh', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIRS-T',
+				file: 'airs-t',
+				for: 'global',
+				related: { global: ['aim-9x', 'sarh', 'arh', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Active Radar Homing',
+				file: 'arh',
+				for: 'global',
+				related: { global: ['aim-120x', 'aim-54', 'sarh', 'irh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIM-120 Missiles',
+				file: 'aim-120x',
+				for: 'global',
+				related: { global: ['aim-54', 'sarh', 'irh', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIM-54',
+				file: 'aim-54',
+				for: 'global',
+				related: { global: ['aim-120x', 'sarh', 'irh', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Air-to-Ground Missiles (AG)',
+				file: 'ag-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'unguided-missiles',
+						'anti-rad-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'GPS Guided Missiles',
+				file: 'gps-guided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'unguided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Optically Guided Missiles',
+				file: 'optically-guided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'laser-guided-missles',
+						'unguided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Laser Guided Missiles',
+				file: 'laser-guided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'unguided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Unguided Missiles',
+				file: 'unguided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Anti-Radiation',
+				file: 'anti-rad-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'unguided-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Jamming',
+				file: 'jamming',
+				for: 'global',
+				related: { global: ['ea', 'alq-245', 'adm-160j', 'fraz', 'xmit'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Electronic Attack',
+				file: 'ea',
+				for: 'global',
+				related: { global: ['noise', 'deception'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Noise',
+				file: 'noise',
+				for: 'global',
+				related: { global: ['deception', 'jamming'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Deception',
+				file: 'deception',
+				for: 'global',
+				related: { global: ['noise', 'jamming'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'AN/ALQ-245',
+				file: 'alq-245',
+				for: 'global',
+				related: {
+					global: [
+						'noise-effects',
+						'drfm-effects',
+						'sas-effects',
+						'power-management',
+						'alq-245-employment'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Employment',
+				file: 'alq-245-employment',
+				for: 'global',
+				related: {
+					global: ['noise-effects', 'drfm-effects', 'sas-effects', 'power-management', 'jamming']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Noise',
+				file: 'noise-effects',
+				for: 'global',
+				related: {
+					global: [
+						'alq-245-employment',
+						'drfm-effects',
+						'sas-effects',
+						'power-management',
+						'jamming'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'DRFM',
+				file: 'drfm-effects',
+				for: 'global',
+				related: {
+					global: [
+						'alq-245-employment',
+						'noise-effects',
+						'sas-effects',
+						'power-management',
+						'jamming'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'SAS',
+				file: 'sas-effects',
+				for: 'global',
+				related: {
+					global: [
+						'alq-245-employment',
+						'noise-effects',
+						'drfm-effects',
+						'power-management',
+						'jamming'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Power Management',
+				file: 'power-management',
+				for: 'global',
+				related: {
+					global: ['alq-245-employment', 'noise-effects', 'drfm-effects', 'sas-effects', 'jamming']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'ADM-160J',
+				file: 'adm-160j',
+				for: 'global',
+				related: {
+					global: ['adm-160j-deployment', 'adm-160j-decoy', 'adm-160j-noise']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Employment',
+				file: 'adm-160j-deployment',
+				for: 'global',
+				related: {
+					global: ['adm-160j-decoy', 'adm-160j-noise']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Decoy Mode',
+				file: 'adm-160j-decoy',
+				for: 'global',
+				related: {
+					global: ['adm-160j-noise', 'adm-160j-deployment']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Noise Mode',
+				file: 'adm-160j-noise',
+				for: 'global',
+				related: {
+					global: ['adm-160j-decoy', 'adm-160j-deployment']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'FRAZ',
+				file: 'fraz',
+				for: 'global',
+				related: {
+					global: ['xmit', 'alq-245', 'adm-160j', 'jamming']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'XMIT',
+				file: 'xmit',
+				for: 'global',
+				related: {
+					global: ['fraz', 'alq-245', 'adm-160j', 'jamming']
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Basic Terminology',
+				file: 'terminology',
+				for: 'global',
+				related: { global: ['advanced-terminology'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
 			{
 				type: 'info',
-				name: 'Chaff',
-				file: 'chaff',
+				name: 'Advanced Terminology',
+				file: 'advanced-terminology',
 				for: 'global',
-				related: { global: ['cm'] },
-				showGlobal: false,
+				related: { global: ['terminology'] },
+				showGlobal: true,
 				showEmergencies: false
 			}
 		]
@@ -847,7 +1361,7 @@ export const checklistStruct = [
 				name: 'Startup (PIC)',
 				file: 'startup-pic',
 				for: 'AH-6',
-				related: { ah6: ['startup-cpg', 'takeoff-vert', 'takeoff-hov'] },
+				related: { ah6: ['startup-cpg', 'takeoff-vert', 'takeoff-hov', 'basic-resp'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -856,7 +1370,7 @@ export const checklistStruct = [
 				name: 'Startup (CPG)',
 				file: 'startup-cpg',
 				for: 'AH-6',
-				related: { ah6: ['startup-pic', 'takeoff-vert', 'takeoff-hov'] },
+				related: { ah6: ['startup-pic', 'takeoff-vert', 'takeoff-hov', 'basic-resp'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -899,8 +1413,18 @@ export const checklistStruct = [
 				name: 'Weapons',
 				file: 'weapons',
 				for: 'AH-6',
+				related: { ah6: ['basic-resp'] },
 				showGlobal: true,
 				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Reponsabilities',
+				file: 'basic-resp',
+				for: 'AH-6',
+				related: { ah6: ['weapons'] },
+				showGlobal: true,
+				showEmergencies: false
 			}
 		]
 	}
