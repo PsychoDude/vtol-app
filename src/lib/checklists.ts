@@ -829,6 +829,87 @@ export const checklistStruct = [
 			},
 			{
 				type: 'page',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'global',
+				related: { global: ['aim-missiles'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'AIM Missiles (AA)',
+				file: 'aim-missiles',
+				for: 'global',
+				related: { global: ['sarh', 'irh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Semi-Active Radar Homing',
+				file: 'sarh',
+				for: 'global',
+				related: { global: ['irh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Infrared Homing',
+				file: 'irh',
+				for: 'global',
+				related: { global: ['aim-9x', 'airs-t', 'sarh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIM-9 Missiles',
+				file: 'aim-9x',
+				for: 'global',
+				related: { global: ['airs-t', 'sarh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIRS-T',
+				file: 'airs-t',
+				for: 'global',
+				related: { global: ['aim-9x', 'sarh', 'arh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Active Radar Homing',
+				file: 'arh',
+				for: 'global',
+				related: { global: ['aim-120x', 'aim-54', 'sarh', 'irh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIM-120 Missiles',
+				file: 'aim-120x',
+				for: 'global',
+				related: { global: ['aim-54', 'sarh', 'irh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'AIM-54',
+				file: 'aim-54',
+				for: 'global',
+				related: { global: ['aim-120x', 'sarh', 'irh'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
 				name: 'Jamming',
 				file: 'jamming',
 				for: 'global',
