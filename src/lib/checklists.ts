@@ -832,8 +832,17 @@ export const checklistStruct = [
 				name: 'Missiles',
 				file: 'missiles',
 				for: 'global',
-				related: { global: ['aim-missiles', 'ag-missiles'] },
+				related: { global: ['dynamic-launch-zone', 'aim-missiles', 'ag-missiles'] },
 				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Dynamic Launch Zone',
+				file: 'dynamic-launch-zone',
+				for: 'global',
+				related: { global: ['aim-missiles', 'ag-missiles'] },
+				showGlobal: false,
 				showEmergencies: false
 			},
 			{
