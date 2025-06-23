@@ -832,7 +832,7 @@ export const checklistStruct = [
 				name: 'Missiles',
 				file: 'missiles',
 				for: 'global',
-				related: { global: ['aim-missiles'] },
+				related: { global: ['aim-missiles', 'ag-missiles'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -850,7 +850,7 @@ export const checklistStruct = [
 				name: 'Semi-Active Radar Homing',
 				file: 'sarh',
 				for: 'global',
-				related: { global: ['irh', 'arh'] },
+				related: { global: ['irh', 'arh', 'ag-missiles'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -868,7 +868,7 @@ export const checklistStruct = [
 				name: 'AIM-9 Missiles',
 				file: 'aim-9x',
 				for: 'global',
-				related: { global: ['airs-t', 'sarh', 'arh'] },
+				related: { global: ['airs-t', 'sarh', 'arh', 'ag-missiles'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -877,7 +877,7 @@ export const checklistStruct = [
 				name: 'AIRS-T',
 				file: 'airs-t',
 				for: 'global',
-				related: { global: ['aim-9x', 'sarh', 'arh'] },
+				related: { global: ['aim-9x', 'sarh', 'arh', 'ag-missiles'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -895,7 +895,7 @@ export const checklistStruct = [
 				name: 'AIM-120 Missiles',
 				file: 'aim-120x',
 				for: 'global',
-				related: { global: ['aim-54', 'sarh', 'irh'] },
+				related: { global: ['aim-54', 'sarh', 'irh', 'ag-missiles'] },
 				showGlobal: false,
 				showEmergencies: false
 			},
@@ -904,7 +904,109 @@ export const checklistStruct = [
 				name: 'AIM-54',
 				file: 'aim-54',
 				for: 'global',
-				related: { global: ['aim-120x', 'sarh', 'irh'] },
+				related: { global: ['aim-120x', 'sarh', 'irh', 'ag-missiles'] },
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'page',
+				name: 'Air-to-Ground Missiles (AG)',
+				file: 'ag-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'unguided-missiles',
+						'anti-rad-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'GPS Guided Missiles',
+				file: 'gps-guided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'unguided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Optically Guided Missiles',
+				file: 'optically-guided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'laser-guided-missles',
+						'unguided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Laser Guided Missiles',
+				file: 'laser-guided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'unguided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Unguided Missiles',
+				file: 'unguided-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'anti-rad-missiles',
+						'aim-missiles'
+					]
+				},
+				showGlobal: false,
+				showEmergencies: false
+			},
+			{
+				type: 'info',
+				name: 'Anti-Radiation',
+				file: 'anti-rad-missiles',
+				for: 'global',
+				related: {
+					global: [
+						'gps-guided-missiles',
+						'optically-guided-missiles',
+						'laser-guided-missiles',
+						'unguided-missiles',
+						'aim-missiles'
+					]
+				},
 				showGlobal: false,
 				showEmergencies: false
 			},
