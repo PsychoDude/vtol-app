@@ -8,7 +8,6 @@
 5.  Power HSI ON
 6.  Power RWR ON
 7.  Set MPDs AS REQUIRED
-
     - Set Navigation AS REQUIRED
     - Set Vehicle Options AS REQUIRED
 

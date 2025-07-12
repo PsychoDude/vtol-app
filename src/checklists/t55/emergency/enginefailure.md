@@ -4,7 +4,6 @@
 2. Jettison ALL
 3. Power OFF Engine
 4. If altitude below 5000ft AGL:
-
    1. Survey for nearby roads, airfields and ditch locations within range:
       1. Perform Emergency Landing (Related Checklists)
    2. If no road or airfield available, assess ditch locations:
