@@ -9,7 +9,8 @@
 **BFM:** Basic Fighter Maneuvers refers to the set of maneuvers and actions one commits within a dogfight. While it is an incorrect usage of the term itself, BFM is often used as the term for the act of dogfighting itself. BFM is used within ACM.
 
 **BVR:** Beyond Visual Range is when two (or more) forces engage each other with missiles without direct visual contact.
-WVR: Within Visual Range is when two (or more) forces engage with direct visual contact.
+
+**WVR:** Within Visual Range is when two (or more) forces engage with direct visual contact.
 
 **CAP:** Combat Air Patrol refers to the patrol for and engagement of hostile aircraft within a given area.
 
