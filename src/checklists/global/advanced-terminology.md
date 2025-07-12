@@ -17,7 +17,8 @@
 **Fence In/Out:** To set one’s cockpit as appropriate when entering (in) or exiting (out) a combat area
 
 **Grandslam:** All targets destroyed
-Hostile: An aircraft that is actively engaging you or a friendly
+
+**Hostile:** An aircraft that is actively engaging you or a friendly
 
 **Merged:** Callout given when one enters a merge with an enemy aircraft.
 

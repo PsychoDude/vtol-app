@@ -12,19 +12,16 @@
        3. Set aircraft on crash course that minimizes airframe damage
        4. Eject
 5.  If altitude above 5000ft AGL:
-
     1. Start APU immediately
     2. Pitch to approximately -2.5 degrees
     3. Confirm APU RPM NOMINAL
     4. Switch malfunctioning engine(s) ON one at a time
 
-      <br />
+       > **CRITICAL:**
 
-    > **CRITICAL:**
-
-      <div class="border-s-4 border-red-700 ps-4 my-5">
-        If critical damage has been inflicted to the engine(s), restart may not be successful. Keep the APU on and attempt to land the aircraft or see &lt; 5000ft procedures (Step 4) or ENGINE/APU FIRE in Related Checklists.
-      </div>
+        <div class="border-s-4 border-red-700 ps-4 my-5">
+          If critical damage has been inflicted to the engine(s), restart may not be successful. Keep the APU on and attempt to land the aircraft or see &lt; 5000ft procedures (Step 4) or ENGINE/APU FIRE in Related Checklists.
+        </div>
 
     5. Confirm engine(s) RPM NOMINAL (If engine(s) RPM NOT NOMINAL, Consult BELOW 5000ft AGL procedures. (Step 4))
     6. Climb to 10000ft

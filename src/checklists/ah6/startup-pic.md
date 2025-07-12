@@ -8,15 +8,13 @@
 5.  Power HSI ON
 6.  Power RWR ON
 7.  Set MPDs AS REQUIRED
-
     - Set Navigation AS REQUIRED
     - Set Vehicle Options AS REQUIRED
 
 8.  Set Communications Panel
+    - MIC Check
 
-- MIC Check
-
-9. Set SAS AS REQUIRED
+9.  Set SAS AS REQUIRED
 10. Set Rotor Brake OFF
 11. Set Ext. Lighting AS REQUIRED
 12. Confirm Collective Input is 0%

@@ -8,6 +8,10 @@
 
 <div class="p-4">
 	<p class="mt-8 flex justify-center text-sm">
+		VTOLVR.app is not affiliated or endorsed by Boundless Dynamics
+	</p>
+
+	<p class="mt-3 flex justify-center text-sm">
 		This app is licensed under &nbsp;
 		<a
 			href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
