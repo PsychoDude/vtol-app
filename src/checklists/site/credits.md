@@ -83,10 +83,18 @@ _Last Updated: 6/14/2025_
 - CASE 3 Kneeboard Image - CAW
 - Chaff Images - Smol
 
+## Modded Aircraft
+
+- [SU-47M Berkut](https://steamcommunity.com/sharedfiles/filedetails/?id=3460136508)
+- [F-16C Viper](https://steamcommunity.com/sharedfiles/filedetails/?id=3346173029)
+- [A-10D Warthog](https://steamcommunity.com/sharedfiles/filedetails/?id=3421380376)
+- [AH-6 Little Bird](https://steamcommunity.com/sharedfiles/filedetails/?id=3448085888)
+
 ## [PsychoDude](https://liparistudios.com)
 
 - Missing EF-24G Emergency Checklists
 - Weapons Pages for All Aircraft
+- SU-47M Checklists
 - F-16C Checklists
 - A-10D Checklists
 - AH-6 Checklists
