@@ -1,2 +1,2 @@
 [phases.setup]
-nixPkgs = [  'nodejs_24', 'curl', 'wget' ]
+nixPkgs = [  'nodejs_23', 'curl', 'wget' ]
