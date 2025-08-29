@@ -1261,6 +1261,68 @@ export const checklistStruct = [
 				for: 'SU-47M',
 				showGlobal: true,
 				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (CARRIER)',
+				file: 'takeoff-CATOBAR',
+				for: 'SU-47M',
+				related: {
+					carrier: ['reference-card', 'departure', 'flightdeck-overview', 'case-1', 'case-3'],
+					su47m: ['landing-runway', 'landing-CATOBAR-preface']
+				},
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'page',
+				name: 'Landing (CARRIER)',
+				file: 'landing-CATOBAR-preface',
+				for: 'SU-47M',
+				related: {
+					su47m: ['landing-CATOBAR'],
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1', 'case-3']
+				},
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Carrier Landing',
+				file: 'landing-CATOBAR',
+				for: 'SU-47M',
+				related: {
+					carrier: ['reference-card', 'waveoff', 'lso-guidance', 'symbology', 'case-1', 'case-3']
+				},
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'page',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'SU-47M',
+				related: { su47m: ['missiles', 'bombs'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'SU-47M',
+				related: { su47m: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'SU-47M',
+				related: { su47m: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
+				showEmergencies: true
 			}
 		]
 	},
@@ -1611,6 +1673,32 @@ export const emergencyChecklistsStruct = [
 				file: 'flightcontrolfailure',
 				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
+			}
+		]
+	},
+	{
+		aircraft: 'su47m',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'SU-47M',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'SU-47M',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'SU-47M',
+				related: ['landing-runway']
 			}
 		]
 	},

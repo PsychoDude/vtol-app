@@ -16,8 +16,8 @@
 
 **Middle Panels - Bottom Left Side:**
 
-1. Set Flaps 0 (Red Handle)
-2. Set Landing Gear UP (White Knob)
+7. Set Flaps 0 (Red Handle)
+8. Set Landing Gear UP (White Knob)
 
 > **NOTE:**
 
