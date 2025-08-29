@@ -1232,6 +1232,39 @@ export const checklistStruct = [
 		]
 	},
 	{
+		aircraft: 'su47m',
+		name: 'SU-47M Berkut',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'SU-47M',
+				related: { su47m: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'SU-47M',
+				related: { su47m: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'SU-47M',
+				showGlobal: true,
+				showEmergencies: true
+			}
+		]
+	},
+	{
 		aircraft: 'f16c',
 		name: 'F-16C',
 		type: 'moddedac',
