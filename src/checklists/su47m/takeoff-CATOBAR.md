@@ -6,6 +6,9 @@
 
 2. Check Launch Bar DOWN
 3. Check CATO Trim ON
+
+>
+
 4. Taxi To, and Attach to Catapult (USE NOSE GEAR CAMERA FOR ASSISTANCE)
 
 **Right-side Panels:**
