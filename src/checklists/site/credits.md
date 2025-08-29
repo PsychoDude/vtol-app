@@ -2,7 +2,7 @@
 
 <p class="text-balance">The information found in this app was gathered from multiple sources</p>
 
-_Last Updated: 6/14/2025_
+_Last Updated: 8/29/2025_
 
 ## [BahamutoD (Solo VTOL VR Dev)](https://vtolvr.bdynamicsstudio.com/)
 
