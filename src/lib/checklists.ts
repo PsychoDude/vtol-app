@@ -1241,7 +1241,7 @@ export const checklistStruct = [
 				name: 'Startup',
 				file: 'startup',
 				for: 'SU-47M',
-				related: { su47m: ['takeoff-runway'] },
+				related: { su47m: ['takeoff-runway', 'takeoff-CATOBAR'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -1250,7 +1250,7 @@ export const checklistStruct = [
 				name: 'Takeoff (RWY)',
 				file: 'takeoff-runway',
 				for: 'SU-47M',
-				related: { su47m: ['landing-runway'] },
+				related: { su47m: ['landing-runway', 'landing-CATOBAR-preface'] },
 				showGlobal: true,
 				showEmergencies: true
 			},
