@@ -1615,6 +1615,32 @@ export const emergencyChecklistsStruct = [
 		]
 	},
 	{
+		aircraft: 'su47m',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'SU-47M',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'SU-47M',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'SU-47M',
+				related: ['landing-runway']
+			}
+		]
+	},
+	{
 		aircraft: 'f16c',
 		checklists: [
 			{
