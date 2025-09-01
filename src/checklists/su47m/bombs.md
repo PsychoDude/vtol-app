@@ -18,7 +18,6 @@ _LOAL: Lock-on-After-Launch_
 
 - KAB-500S - 1000lb
 - GBU-38 - 500lb
-- GBU-39 - 206lb
 
 ## **Cluster Bombs**
 
