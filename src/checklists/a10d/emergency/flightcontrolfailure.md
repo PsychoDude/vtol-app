@@ -1,4 +1,4 @@
-# A-10D Emergency Flight Controls Failure Checklist
+# A-10D Warthog Emergency Flight Controls Failure Checklist
 
 ## **Alternate Control Methods:**
 

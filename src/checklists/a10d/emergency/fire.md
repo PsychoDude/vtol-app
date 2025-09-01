@@ -1,4 +1,4 @@
-# A-10D Emergency Fire Checklist
+# A-10D Warthog Emergency Fire Checklist
 
 1. If engine fire, complete ENGINE FAILURE checklist before
 2. PULL appropriate FIRE < engine/apu > PULL handle

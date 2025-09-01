@@ -1,4 +1,4 @@
-# A-10D Emergency Engine Failure Checklist
+# A-10D Warthog Emergency Engine Failure Checklist
 
 1.  Start APU
 2.  Jettison ALL

@@ -1,4 +1,4 @@
-# A-10D Startup Checklist
+# A-10D Warthog Startup Checklist
 
 1. Start BATTERY
 2. Close CANOPY

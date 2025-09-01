@@ -1,4 +1,4 @@
-# A-10D Emergency Missile Impact Checklist
+# A-10D Warthog Emergency Missile Impact Checklist
 
 1. Turn cold from bandit(s)
 2. Confirm both engines RPM nominal
