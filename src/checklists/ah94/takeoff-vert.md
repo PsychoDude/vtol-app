@@ -1,4 +1,4 @@
-# AH-94 Vertical Takeoff Checklist
+# AH-94 Dragonfly Vertical Takeoff Checklist
 
 1. Pre-Trim Aircraft
 2. Contact Tower for Vertical T/O Clearance

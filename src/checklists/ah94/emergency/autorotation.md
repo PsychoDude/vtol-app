@@ -1,4 +1,4 @@
-# AH-94 Emergency Auto-Rotation Checklist
+# AH-94 Dragonfly Emergency Auto-Rotation Checklist
 
 1. Immediately reduce Collective Input
 2. Apply Left Pedal

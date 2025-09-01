@@ -1,4 +1,4 @@
-# AH-94 Vertical Landing Checklist
+# AH-94 Dragonfly Vertical Landing Checklist
 
 1. Contact Tower for Vertical Landing Clearance
 2. Contact Tower for Final
