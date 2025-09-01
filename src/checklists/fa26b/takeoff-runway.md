@@ -1,4 +1,4 @@
-# F/A-26B Runway Takeoff Checklist
+# F/A-26B Wasp Runway Takeoff Checklist
 
 1. Set Flaps 1
 2. Set Parking Brake ON

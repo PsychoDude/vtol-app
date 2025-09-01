@@ -1,4 +1,4 @@
-# F/A-26B Emergency Missile Impact Checklist
+# F/A-26B Wasp Emergency Missile Impact Checklist
 
 1. Turn cold from bandit(s)
 2. Confirm both engines RPM nominal

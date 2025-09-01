@@ -1,4 +1,4 @@
-# F/A-26B Emergency Engine Failure Checklist
+# F/A-26B Wasp Emergency Engine Failure Checklist
 
 1.  Start APU
 2.  Jettison ALL

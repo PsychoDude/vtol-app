@@ -1,4 +1,4 @@
-# F/A-26B Carrier Landing Checklist
+# F/A-26B Wasp Carrier Landing Checklist
 
 1. At 800ft, Set Tailhook DOWN
 2. Turn left for the break (aka crosswind)

@@ -1,4 +1,4 @@
-# F/A-26B Startup Checklist
+# F/A-26B Wasp Startup Checklist
 
 1. Start BATTERY
 2. Close CANOPY

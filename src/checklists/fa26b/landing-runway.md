@@ -1,4 +1,4 @@
-# F/A-26B Runway Landing Checklist
+# F/A-26B Wasp Runway Landing Checklist
 
 1. Contact Tower For Permission to Land
 2. Line Up with Runway (Note: Runway Number Indicates its Heading in Tens of Degrees)

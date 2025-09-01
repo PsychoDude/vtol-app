@@ -1,4 +1,4 @@
-# F/A-26B Missiles
+# F/A-26B Wasp Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  
