@@ -1,4 +1,4 @@
-# EF-24G Emergency Missile Impact Checklist
+# EF-24G Mischief Emergency Missile Impact Checklist
 
 1. Turn cold from bandit(s)
 2. Confirm both engines RPM nominal

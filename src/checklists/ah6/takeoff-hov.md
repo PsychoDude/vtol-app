@@ -1,4 +1,4 @@
-# AH-6 Hover Takeoff Checklist
+# AH-6 Little Bird Hover Takeoff Checklist
 
 1. Contact Tower for Hover Taxi Clearance
 2. Pre-Trim Aircraft

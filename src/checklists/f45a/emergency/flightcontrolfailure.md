@@ -1,4 +1,4 @@
-# F-45A Emergency Flight Controls Failure Checklist
+# F-45A Ghost Emergency Flight Controls Failure Checklist
 
 ## **Alternate Control Methods:**
 

@@ -1,4 +1,4 @@
-# EF-24G Runway Landing Checklist
+# EF-24G Mischief Runway Landing Checklist
 
 1. Contact Tower For Permission to Land
 2. Line Up with Runway (Note: Runway Number Indicates its Heading in Tens of Degrees)

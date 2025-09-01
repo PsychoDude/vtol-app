@@ -1,4 +1,4 @@
-# T-55 Basic Ops Controls Checklist
+# T-55 Tyro Basic Ops Controls Checklist
 
 1. Confirm all hands off HOTAS
 2. Adjust Control Modes Dial

@@ -1,4 +1,4 @@
-# T-55 Bombs
+# T-55 Tyro Bombs
 
 _LOAL: Lock-on-After-Launch_
 

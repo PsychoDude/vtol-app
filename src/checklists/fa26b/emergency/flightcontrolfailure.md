@@ -1,4 +1,4 @@
-# F/A-26B Emergency Flight Controls Failure Checklist
+# F/A-26B Wasp Emergency Flight Controls Failure Checklist
 
 ## **Alternate Control Methods:**
 

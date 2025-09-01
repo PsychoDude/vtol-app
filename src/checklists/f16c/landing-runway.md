@@ -1,4 +1,4 @@
-# F-16C Runway Landing Checklist
+# F-16C Viper Runway Landing Checklist
 
 1. Contact Tower For Permission to Land
 2. Line Up with Runway (Note: Runway Number Indicates its Heading in Tens of Degrees)

@@ -1,4 +1,4 @@
-# F-45A Runway Takeoff Checklist
+# F-45A Ghost Runway Takeoff Checklist
 
 1. Hold BRAKES.
 2. Advance throttle to AFTERBURNER.

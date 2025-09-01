@@ -1,4 +1,4 @@
-# T-55 Basic Responsability Checklist
+# T-55 Tyro Basic Responsability Checklist
 
 > **PIC:**
 

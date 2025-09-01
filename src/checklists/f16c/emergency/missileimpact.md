@@ -1,4 +1,4 @@
-# F-16C Emergency Missile Impact Checklist
+# F-16C Viper Emergency Missile Impact Checklist
 
 1. Turn cold from bandit(s).
 2. Confirm engine RPM nominal.

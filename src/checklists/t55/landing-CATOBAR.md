@@ -1,4 +1,4 @@
-# T-55 Carrier Landing Checklist
+# T-55 Tyro Carrier Landing Checklist
 
 1. On Upwind Leg; 800ft ASL @250kn, Set Tailhook DOWN, Flaps 2
 2. Perform Break

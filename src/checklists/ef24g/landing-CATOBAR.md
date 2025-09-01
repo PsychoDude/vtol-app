@@ -1,4 +1,4 @@
-# EF-24G Carrier Landing Checklist
+# EF-24G Mischief Carrier Landing Checklist
 
 1. At 800ft, Set Tailhook DOWN
 2. Engage Speedbrake

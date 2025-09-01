@@ -1,4 +1,4 @@
-# F-16C Runway Takeoff Checklist
+# F-16C Viper Runway Takeoff Checklist
 
 1. Set Parking Brake ON
 2. If TWR is under 0.8:

@@ -1,4 +1,4 @@
-# F-45A Missiles
+# F-45A Ghost Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  
@@ -29,4 +29,4 @@ LOAL: Lock-on-After-Launch_
 
 ### **Cruise Missile:**
 
-- AGM-161: 40-60nm - Fire & Forget + GPS Guidance
+- AGM-161 (Land): 40-60nm - Limited Terrain Avoidance + GPS Guidance

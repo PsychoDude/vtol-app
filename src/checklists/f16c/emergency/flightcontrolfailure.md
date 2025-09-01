@@ -1,4 +1,4 @@
-# F-16C Emergency Flight Controls Failure Checklist
+# F-16C Viper Emergency Flight Controls Failure Checklist
 
 ## **Alternate Control Methods:**
 

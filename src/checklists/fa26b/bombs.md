@@ -1,4 +1,4 @@
-# F/A-26B Bombs
+# F/A-26B Wasp Bombs
 
 _LOAL: Lock-on-After-Launch_
 

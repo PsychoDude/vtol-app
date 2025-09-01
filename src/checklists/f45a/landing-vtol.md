@@ -1,4 +1,4 @@
-# F-45 Vertical Landing Checklist
+# F-45 Ghost Vertical Landing Checklist
 
 1. At 5NM, set engine TILT to 90 degrees.
 2. Reduce speed to 120kts by 3-4NM.

@@ -1,4 +1,4 @@
-# AH-6 Emergency Engine Failure Checklist
+# AH-6 Little Bird Emergency Engine Failure Checklist
 
 1. Jettison Stores
 2. Start APU

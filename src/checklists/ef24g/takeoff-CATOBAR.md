@@ -1,4 +1,4 @@
-# EF-24G CATOBAR Takeoff Checklist
+# EF-24G Mischief CATOBAR Takeoff Checklist
 
 1. Contact Tower For Taxi To Catapult
 2. Check Launch Bar DOWN

@@ -1,4 +1,4 @@
-# T-55 Flight Controls Failure Checklist
+# T-55 Tyro Flight Controls Failure Checklist
 
 ## **Alternate Control Methods:**
 

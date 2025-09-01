@@ -1,4 +1,4 @@
-# A-10D Runway Takeoff Checklist
+# A-10D Warthog Runway Takeoff Checklist
 
 1. Set Parking Brake ON
 2. If TWR is under 0.6:

@@ -1,4 +1,4 @@
-# AH-6 Startup Checklist (PIC)
+# AH-6 Little Bird Startup Checklist (PIC)
 
 1.  Start BATTERY
 2.  Start APU

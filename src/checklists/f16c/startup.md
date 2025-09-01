@@ -1,4 +1,4 @@
-# F-16C Startup Checklist
+# F-16C Viper Startup Checklist
 
 1. Start BATTERY
 2. Set Lights AS REQUIRED

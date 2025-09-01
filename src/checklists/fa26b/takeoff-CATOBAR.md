@@ -1,4 +1,4 @@
-# F/A-26B CATOBAR Takeoff Checklist
+# F/A-26B Wasp CATOBAR Takeoff Checklist
 
 1. Contact Tower For Taxi To Catapult
 2. Check Launch Bar DOWN

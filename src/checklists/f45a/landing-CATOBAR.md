@@ -1,4 +1,4 @@
-# F-45A Carrier Landing Checklist
+# F-45A Ghost Carrier Landing Checklist
 
 1. At 800ft, set tailhook DOWN.
 2. Once under 250KT, set landing gear DOWN.

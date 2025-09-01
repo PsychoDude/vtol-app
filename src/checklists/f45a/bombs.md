@@ -1,4 +1,4 @@
-# F-45A Bombs
+# F-45A Ghost Bombs
 
 _LOAL: Lock-on-After-Launch  
 I: Internal_

@@ -1,9 +1,9 @@
-# T-55 Missiles
+# T-55 Tyro Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  
 ARH: Active Radar Homing  
-SARH: Semi-Active Radar Homing  
+SARH: Semi-Active Radar Homing - Lock Until Impact  
 B/B: Blue-on-Blue (Friendly Fire)_
 
 ## **Targeting Pod (TGP)**
@@ -39,5 +39,5 @@ B/B: Blue-on-Blue (Friendly Fire)_
 
 ### **Cruise Missile:**
 
-- AGM-89: 15-50nm - Fire & Forget + GPS Guidance
-- AGM-161: 40-60nm - Fire & Forget + GPS Guidance
+- AGM-89 (Naval): 15-50nm - Custom Attack Modes + GPS Guidance
+- AGM-161 (Land): 40-60nm - Limited Terrain Avoidance + GPS Guidance

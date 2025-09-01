@@ -1,4 +1,4 @@
-# AH-94 Startup Checklist (CPG)
+# AH-94 Dragonfly Startup Checklist (CPG)
 
 1. Close Cockpit Door
 2. Wait for APU RPM Nominal

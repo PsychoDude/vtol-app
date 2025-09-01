@@ -1,4 +1,4 @@
-# F-45A VCAP Checklist
+# F-45A Ghost VCAP Checklist
 
 > **NOTE:**
 

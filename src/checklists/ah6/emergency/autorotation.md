@@ -1,4 +1,4 @@
-# AH-6 Emergency Auto-Rotation Checklist
+# AH-6 Little Bird Emergency Auto-Rotation Checklist
 
 1. Immediately reduce Collective Input
 2. Apply Left Pedal

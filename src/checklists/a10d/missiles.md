@@ -1,4 +1,4 @@
-# A-10D Missiles
+# A-10D Warthog Missiles
 
 _HOJ: Home-on-jam_
 

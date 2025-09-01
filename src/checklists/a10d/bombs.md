@@ -1,4 +1,4 @@
-# A-10D Bombs
+# A-10D Warthog Bombs
 
 _LOAL: Lock-on-After-Launch_
 

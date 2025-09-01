@@ -1,4 +1,4 @@
-# EF24 Variable Geometry Wings
+# EF-24G Mischief Variable Geometry Wings
 
 **Description:**
 
