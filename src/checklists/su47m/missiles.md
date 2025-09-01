@@ -25,6 +25,7 @@ AT: Anti-Tank_
 ### **Anti-Radar:**
 
 - R-27EP: Medium-Long - Fire & Forget
+- KH-31PK: Very-Long - Fire & Forget
 - KH-58U: Medium - Fire & Forget
 - AGM-88: 6-45nm - Fire & Forget + HOJ
 - AGM-126: 2-8nm - Fire & Forget + HOJ
@@ -39,6 +40,7 @@ AT: Anti-Tank_
 - R-77: Medium - ARH + MADDOG
 - R-77M: Medium-Long - Advanced ARH + MADDOG
 - R-77-PD: Medium-Long - ARH + exRange
+- KH-31AD (Naval): Long - ARH + Fire & Forget
 - KH-38MA (AT): Medium - ARH + Fire & Forget
 - AIM-7: Medium - SARH (B/B Safe) + HOJ
 - AIM-120C: 5-25nm - ARH + HOJ + MADDOG
