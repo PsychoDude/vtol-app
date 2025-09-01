@@ -1,7 +1,7 @@
 export const checklistStruct = [
 	{
 		aircraft: 'f45a',
-		name: 'F-45A',
+		name: 'F-45A Ghost',
 		type: 'aircraft',
 		checklists: [
 			{
@@ -131,7 +131,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'fa26b',
-		name: 'F/A-26B',
+		name: 'F/A-26B Wasp',
 		type: 'aircraft',
 		checklists: [
 			{
@@ -226,7 +226,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'ef24g',
-		name: 'EF-24G',
+		name: 'EF-24G Mischief',
 		type: 'aircraft',
 		checklists: [
 			{
@@ -334,7 +334,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'ah94',
-		name: 'AH-94',
+		name: 'AH-94 Dragonfly',
 		type: 'aircraft',
 		checklists: [
 			{
@@ -401,7 +401,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 't55',
-		name: 'T-55',
+		name: 'T-55 Tyro',
 		type: 'aircraft',
 		checklists: [
 			{
@@ -1328,7 +1328,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'f16c',
-		name: 'F-16C',
+		name: 'F-16C Viper',
 		type: 'moddedac',
 		checklists: [
 			{
@@ -1388,7 +1388,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'a10d',
-		name: 'A-10D',
+		name: 'A-10D Warthog',
 		type: 'moddedac',
 		checklists: [
 			{
@@ -1448,7 +1448,7 @@ export const checklistStruct = [
 	},
 	{
 		aircraft: 'ah6',
-		name: 'AH-6',
+		name: 'AH-6 Little Bird',
 		type: 'moddedac',
 		checklists: [
 			{
