@@ -1,4 +1,4 @@
-# F-45A Missiles
+# F-45A Ghost Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  

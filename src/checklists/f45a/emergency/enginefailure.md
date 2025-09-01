@@ -1,4 +1,4 @@
-# F-45A Emergency Engine Failure Checklist
+# F-45A Ghost Emergency Engine Failure Checklist
 
 1. Start APU.
 2. Jettison ALL

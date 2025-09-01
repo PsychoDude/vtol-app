@@ -1,4 +1,4 @@
-# F-45A Startup Checklist
+# F-45A Ghost Startup Checklist
 
 1. Start BATTERY.
 2. Close CANOPY.

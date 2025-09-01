@@ -1,4 +1,4 @@
-# F-45A Emergency Missile Impact Checklist
+# F-45A Ghost Emergency Missile Impact Checklist
 
 1. Turn cold from bandit(s).
 2. Confirm engine RPM nominal.
