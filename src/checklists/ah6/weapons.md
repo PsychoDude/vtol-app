@@ -1,8 +1,8 @@
 # AH-6 Little Bird Weapons
 
 _LOAL: Lock-on-After-Launch  
-SACLOS: Semi-Automatic Command to Line Of Sight (wired)
-AT: Anti-Tank
+SACLOS: Semi-Automatic Command to Line Of Sight (wired)  
+AT: Anti-Tank  
 AE: Anti-Emplacement_
 
 ## **Targeting Pod (TGP)**

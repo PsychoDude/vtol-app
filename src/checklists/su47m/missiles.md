@@ -3,9 +3,9 @@
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  
 ARH: Active Radar Homing  
-SARH: Semi-Active Radar Homing - Lock Until Impact
-B/B: Blue-on-Blue (Friendly Fire)
-exRange: Extended Range - Ramjet Propulsion
+SARH: Semi-Active Radar Homing - Lock Until Impact  
+B/B: Blue-on-Blue (Friendly Fire)  
+exRange: Extended Range - Ramjet Propulsion  
 AT: Anti-Tank_
 
 ## **Targeting Pod (TGP)**
