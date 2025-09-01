@@ -1,4 +1,4 @@
-# AH-6 Hover Landing Checklist
+# AH-6 Hover Little Bird Landing Checklist
 
 1. Contact Tower for Hover Landing Clearance
 2. Contact Tower for Final

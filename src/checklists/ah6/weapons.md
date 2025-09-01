@@ -1,4 +1,4 @@
-# AH-6 Weapons
+# AH-6 Little Bird Weapons
 
 _LOAL: Lock-on-After-Launch  
 SACLOS: Semi-Automatic Command to Line Of Sight (wired)

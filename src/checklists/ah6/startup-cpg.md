@@ -1,4 +1,4 @@
-# AH-6 Startup Checklist (CPG)
+# AH-6 Little Bird Startup Checklist (CPG)
 
 1. Wait for APU RPM Nominal
 2. Set Int. Lighting AS REQUIRED
