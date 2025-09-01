@@ -1,4 +1,4 @@
-# EF-24G Bombs
+# EF-24G Mischief Bombs
 
 _LOAL: Lock-on-After-Launch_
 

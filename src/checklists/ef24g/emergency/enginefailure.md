@@ -1,4 +1,4 @@
-# EF-24G Emergency Engine Failure Checklist
+# EF-24G Mischief Emergency Engine Failure Checklist
 
 1.  Start APU
 2.  Jettison ALL

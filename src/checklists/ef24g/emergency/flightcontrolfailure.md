@@ -1,4 +1,4 @@
-# EF-24G Emergency Flight Controls Failure Checklist
+# EF-24G Mischief Emergency Flight Controls Failure Checklist
 
 ## **Alternate Control Methods:**
 

@@ -1,4 +1,4 @@
-# EF-24G Missiles
+# EF-24G Mischief Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  
