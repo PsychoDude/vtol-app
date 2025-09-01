@@ -1,4 +1,4 @@
-# T-55 Startup Checklist
+# T-55 Tyro Startup Checklist
 
 1. Start BATTERY
 2. Lower CANOPY

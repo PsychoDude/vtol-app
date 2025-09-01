@@ -1,4 +1,4 @@
-# T-55 Runway Takeoff Checklist
+# T-55 Tyro Runway Takeoff Checklist
 
 1. Set Flaps 1
 2. Engage Wheel Brake

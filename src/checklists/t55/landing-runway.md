@@ -1,4 +1,4 @@
-# T-55 Runway Landing Checklist
+# T-55 Tyro Runway Landing Checklist
 
 1. Tower - Contact For Permission to Land
 2. Flaps - Set for NOTCH 2

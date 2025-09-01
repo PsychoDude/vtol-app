@@ -1,4 +1,4 @@
-# T-55 Missiles
+# T-55 Tyro Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  

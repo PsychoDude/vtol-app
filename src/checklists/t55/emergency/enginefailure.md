@@ -1,4 +1,4 @@
-# T-55 Emergency Engine Failure Checklist
+# T-55 Tyro Emergency Engine Failure Checklist
 
 1. Start APU
 2. Jettison ALL

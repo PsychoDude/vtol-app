@@ -1,4 +1,4 @@
-# T-55 Carrier Takeoff Checklist
+# T-55 Tyro Carrier Takeoff Checklist
 
 1. Contact Tower for taxi to Catapult
 2. Extend Launch Bar
