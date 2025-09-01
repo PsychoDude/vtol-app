@@ -1684,21 +1684,21 @@ export const emergencyChecklistsStruct = [
 				name: 'Engine Failure',
 				file: 'enginefailure',
 				for: 'SU-47M',
-				related: ['landing-runway']
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Missile Impact',
 				file: 'missileimpact',
 				for: 'SU-47M',
-				related: ['landing-runway']
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			},
 			{
 				type: 'emergency',
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
 				for: 'SU-47M',
-				related: ['landing-runway']
+				related: ['landing-runway', 'landing-CATOBAR-preface']
 			}
 		]
 	},
