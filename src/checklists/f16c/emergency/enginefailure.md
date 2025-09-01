@@ -1,4 +1,4 @@
-# F-16C Emergency Engine Failure Checklist
+# F-16C Viper Emergency Engine Failure Checklist
 
 1. Start APU.
 2. Jettison ALL
