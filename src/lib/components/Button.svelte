@@ -5,6 +5,9 @@
 	let { type, name, file, aircraft, showCurac, siteBtn, sitePage, homeBtn, curac }: BtnData =
 		$props();
 
+	let buttonType = () => type;
+	let homeButton = () => homeBtn;
+
 	const colorForTypes: Record<string, string> = {
 		aircraft: 'blue',
 		global: 'green',
@@ -23,7 +26,7 @@
 		moddedac: 'yellow'
 	};
 
-	const color: string = colorForTypes[type];
+	const color: string = colorForTypes[buttonType()];
 
 	const colorVariants: Record<string, string> = {
 		green: 'bg-green-500 hover:bg-green-700 px-4 py-2 text-white',
@@ -35,7 +38,7 @@
 		home: 'bg-amber-500 hover:bg-amber-700 px-4 py-2 text-black'
 	};
 
-	const mainBtns = homeBtn ? 'rounded h-70' : '';
+	const mainBtns = homeButton() ? 'rounded h-70' : '';
 
 	function aircraftRedirect(plane: string) {
 		goto(`/${plane}?curac=${plane}`);
