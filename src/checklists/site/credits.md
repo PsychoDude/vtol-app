@@ -2,7 +2,7 @@
 
 <p class="text-balance">The information found in this app was gathered from multiple sources</p>
 
-_Last Updated: 8/29/2025_
+_Last Updated: 2/3/2026_
 
 ## [BahamutoD (Solo VTOL VR Dev)](https://vtolvr.bdynamicsstudio.com/)
 
@@ -85,6 +85,7 @@ _Last Updated: 8/29/2025_
 
 ## Modded Aircraft
 
+- [F-22A Raptor](https://steamcommunity.com/sharedfiles/filedetails/?id=3496539010)
 - [SU-47M Berkut](https://steamcommunity.com/sharedfiles/filedetails/?id=3460136508)
 - [F-16C Viper](https://steamcommunity.com/sharedfiles/filedetails/?id=3346173029)
 - [A-10D Warthog](https://steamcommunity.com/sharedfiles/filedetails/?id=3421380376)
@@ -94,6 +95,7 @@ _Last Updated: 8/29/2025_
 
 - Missing EF-24G Emergency Checklists
 - Weapons Pages for All Aircraft
+- F-22A Checklists
 - SU-47M Checklists
 - F-16C Checklists
 - A-10D Checklists
