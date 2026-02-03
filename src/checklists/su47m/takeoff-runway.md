@@ -1,23 +1,18 @@
 # SU-47M Berkut Runway Takeoff Checklist
 
-**Middle Panels - Bottom Left Side:**
-
-1. Set Flaps 1 (Red Handle)
-
 **Right Panels:**
 
-2. Set Parking Brake ON
-3. If TWR is under 0.8:
+1. Set Parking Brake ON
+2. If TWR is under 0.8:
    1. Advance throttle to AFTERBURNER
-4. If TWR is above 0.8:
+3. If TWR is above 0.8:
    1. Advance throttle to MIL POWER (Maximum dry thrust)
-5. Disengage Parking Brake
-6. Rotate to 5 degrees at 180KIAS
+4. Disengage Parking Brake
+5. Rotate to 5 degrees at 180KIAS
 
 **Middle Panels - Bottom Left Side:**
 
-7. Set Flaps 0 (Red Handle)
-8. Set Landing Gear UP (White Knob)
+6. Set Landing Gear UP (White Knob)
 
 > **NOTE:**
 
