@@ -10,7 +10,7 @@
       1. Confirm Master Arm OFF
       2. Confirm no civilian settlement within 2NM
       3. Set aircraft on crash course that minimizes airframe damage
-      4. Eject at 3000ft AGL
+      4. **EJECT** at 3000ft AGL
 
 5. If altitude above 5000ft AGL:
    1. Start APU
