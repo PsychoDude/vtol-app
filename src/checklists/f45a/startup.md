@@ -1,16 +1,16 @@
 # F-45A Ghost Startup Checklist
 
-1. Start BATTERY.
-2. Close CANOPY.
-3. Set Lights AS REQUIRED.
-4. Start APU and confirm RPM NOMINAL.
-5. Start ENGINE and confirm RPM NOMINAL.
-6. Start HMD and ATMFCD.
-7. Set ATMFCD AS REQUIRED.
-8. Shut down APU.
-9. Check Microphone ON.
-10. Check Wings DOWN.
-11. Check Master Arm OFF.
+1. Start BATTERY
+2. Close CANOPY
+3. Set Lights AS REQUIRED
+4. Start APU and confirm RPM NOMINAL
+5. Start ENGINE and confirm RPM NOMINAL
+6. Start HMD and ATMFCD
+7. Set ATMFCD AS REQUIRED
+8. Shut down APU
+9. Check Microphone ON
+10. Check Wings DOWN
+11. Check Master Arm OFF
 
 > **CAUTION:**
 
