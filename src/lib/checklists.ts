@@ -1232,6 +1232,39 @@ export const checklistStruct = [
 		]
 	},
 	{
+		aircraft: 'f22a',
+		name: 'F-22A Raptor',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'F-22A',
+				related: { f22a: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'F-22A',
+				related: { f22a: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'F-22A',
+				showGlobal: true,
+				showEmergencies: true
+			}
+		]
+	},
+	{
 		aircraft: 'su47m',
 		name: 'SU-47M Berkut',
 		type: 'moddedac',
@@ -1673,6 +1706,32 @@ export const emergencyChecklistsStruct = [
 				file: 'flightcontrolfailure',
 				for: 'T-55',
 				related: ['landing-runway', 'landing-CATOBAR-preface']
+			}
+		]
+	},
+	{
+		aircraft: 'f22a',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'F-22A',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'F-22A',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'F-22A',
+				related: ['landing-runway']
 			}
 		]
 	},

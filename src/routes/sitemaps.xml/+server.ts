@@ -36,7 +36,7 @@ export async function GET() {
 			xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 		>
             ${urlTags}
-            
+
 		</urlset>`.trim(),
 		{
 			headers: {

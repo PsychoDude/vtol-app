@@ -6,12 +6,12 @@
 The VCAP button on the left is only enabled with a <u>TWR of 1.04</u> or higher. VCAP is a mode that allows the pilot to easily match the speed of a moving ship for landing. The control system changes the inputs of the plane
 </div>
 
-1. Throttle increases forward/back movement.
-2. Throttle should be CENTERED after pressing the VCAP button.
-3. Pushing the stick forward decreases altitude.
-4. Pulling the stick backward increases altitude.
-5. Moving the stick left or right moves the plane laterally, like a helicopter.
-6. Rudder rotates the orientation of the plane.
+1. Throttle increases forward/back movement
+2. Throttle should be CENTERED after pressing the VCAP button
+3. Pushing the stick forward decreases altitude
+4. Pulling the stick backward increases altitude
+5. Moving the stick left or right moves the plane laterally, like a helicopter
+6. Rudder rotates the orientation of the plane
 
 > **CAUTION:**
 

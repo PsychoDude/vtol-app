@@ -6,7 +6,7 @@
 4. Taxi To, and Attach to Catapult (USE HUD SYMBOLOGY FOR ASSISTANCE)
 5. Set Wings AUTO
 6. Set Flaps 2
-7. Wait Until Shield Raised. Set Launch Bar UP.
+7. Wait Until Shield Raised. Set Launch Bar UP
 8. Salute Catapult Shooter, Grip Right Handlebar
 9. Advance throttle to Afterburner
 10. After Launch, Wait 3 Seconds, Then Take Control

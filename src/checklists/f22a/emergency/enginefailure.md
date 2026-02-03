@@ -1,11 +1,8 @@
-# SU-47M Berkut Emergency Engine Failure Checklist
+# F-22A Raptor Emergency Engine Failure Checklist
 
 **Left-side Panels:**
 
 1.  Start APU
-
-**Right-side Panels:**
-
 2.  Jettison ALL
 
 **Middle Panels:**

@@ -4,7 +4,9 @@
 	import Nav from './Nav.svelte';
 
 	let { data }: { data: ChecklistData } = $props();
-	const relatedParams = data.relatedParams || null;
+	let goodData = () => data;
+
+	const relatedParams = goodData().relatedParams || null;
 	const showEmergencies = relatedParams ? relatedParams.showEmergencies : false;
 </script>
 
