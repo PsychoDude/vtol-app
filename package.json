@@ -1,11 +1,12 @@
 {
 	"name": "vtolvr-companion-app",
 	"private": true,
-	"version": "1.8.1",
+	"version": "1.9.0",
 	"type": "module",
 	"engines": {
-		"node": ">=23.0.0"
+		"node": ">=24.22.1"
 	},
+	"packageManager": "npm@11.19.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -48,5 +49,9 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": ">=5.2.12",
 		"@sveltejs/adapter-static": ">=3.0.8"
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
 	}
 }
