@@ -1,4 +1,4 @@
-import { getAllAircraftNames } from '$lib/checklists';
+import { getAllAircraftNames } from '#lib/checklists.ts';
 import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = () => {

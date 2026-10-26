@@ -6,9 +6,9 @@ import {
 	getChecklistParams,
 	emergencyChecklistsStruct,
 	getEmergencySlugs
-} from '$lib/checklists.js';
-import { getMarkdown } from '$lib/markdown';
-import type { ChecklistItem, Related } from '$lib/types';
+} from '#lib/checklists.js';
+import { getMarkdown } from '#lib/markdown.ts';
+import type { ChecklistItem, Related } from '#lib/types.ts';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
 

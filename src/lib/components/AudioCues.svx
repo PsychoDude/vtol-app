@@ -1,6 +1,6 @@
 <script lang="ts">
-	// @ts-ignore: $lib does indeed get imported
-	import type { ChecklistData } from '$lib/types';
+	// @ts-ignore: #lib does indeed get imported
+	import type { ChecklistData } from '#lib/types.ts';
 	import AudioBtn from './AudioBtn.svelte'
 	import Nav from './Nav.svelte';
 	import Button from './Button.svelte';

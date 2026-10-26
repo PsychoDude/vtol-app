@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Checklist from '$lib/components/Checklist.svelte';
+	import Checklist from '#lib/components/Checklist.svelte';
 	// @ts-expect-error: .svx files not recognized
-	import AudioCues from '$lib/components/AudioCues.svx';
-	import type { ChecklistData } from '$lib/types';
+	import AudioCues from '#lib/components/AudioCues.svx';
+	import type { ChecklistData } from '#lib/types.ts';
 
 	let { data }: { data: ChecklistData } = $props();
 </script>

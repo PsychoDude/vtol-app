@@ -5,10 +5,10 @@ import {
 	emergencyChecklistsStruct,
 	getChecklistParams,
 	checklistStruct
-} from '$lib/checklists';
-import { getMarkdown } from '$lib/markdown';
-import { getAircraftSlugs } from '$lib/checklists';
-import type { ChecklistItem, Related } from '$lib/types';
+} from '#lib/checklists.ts';
+import { getMarkdown } from '#lib/markdown.ts';
+import { getAircraftSlugs } from '#lib/checklists.ts';
+import type { ChecklistItem, Related } from '#lib/types.ts';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';
 

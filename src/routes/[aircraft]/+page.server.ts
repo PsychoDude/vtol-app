@@ -3,8 +3,8 @@ import {
 	checklistStruct,
 	emergencyChecklistsStruct,
 	getAircraftOnlySlugs
-} from '$lib/checklists';
-import type { AircraftChecklists, EmergencyChecklists } from '$lib/types';
+} from '#lib/checklists.ts';
+import type { AircraftChecklists, EmergencyChecklists } from '#lib/types.ts';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
 

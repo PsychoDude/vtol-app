@@ -1,5 +1,5 @@
-import { checklistStruct } from '$lib/checklists';
-import type { Page } from '$lib/types';
+import { checklistStruct } from '#lib/checklists.ts';
+import type { Page } from '#lib/types.ts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
