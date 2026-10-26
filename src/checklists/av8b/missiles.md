@@ -1,4 +1,4 @@
-# F-16C Viper Missiles
+# AV-8B Harrier II Missiles
 
 _HOJ: Home-on-jam  
 MADDOG: Free-for-all  
