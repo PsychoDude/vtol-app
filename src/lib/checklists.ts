@@ -1555,6 +1555,66 @@ export const checklistStruct = [
 				showEmergencies: false
 			}
 		]
+	},
+	{
+		aircraft: 'f5e',
+		name: 'F-5E Tiger III',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'F-5E',
+				related: { f16c: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'F-5E',
+				related: { f16c: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'F-5E',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'F-5E',
+				showGlobal: true,
+				related: { f16c: ['missiles', 'bombs'] },
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'F-5E',
+				related: { f16c: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'F-5E',
+				related: { f16c: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
+				showEmergencies: true
+			}
+		]
 	}
 ];
 
@@ -1843,6 +1903,32 @@ export const emergencyChecklistsStruct = [
 				file: 'autorotation',
 				for: 'AH-6',
 				related: ['landing-vert', 'landing-hov']
+			}
+		]
+	},
+	{
+		aircraft: 'f5e',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'F-5E',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'F-5E',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'F-5E',
+				related: ['landing-runway']
 			}
 		]
 	}

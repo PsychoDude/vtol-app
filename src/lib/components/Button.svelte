@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import type { BtnData } from '$lib/types';
+	import type { BtnData } from '#lib/types.ts';
 
 	let { type, name, file, aircraft, showCurac, siteBtn, sitePage, homeBtn, curac }: BtnData =
 		$props();

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import Nav from '$lib/components/Nav.svelte';
-	import type { ChecklistData, BtnData } from '$lib/types';
+	import Nav from '#lib/components/Nav.svelte';
+	import type { ChecklistData, BtnData } from '#lib/types.ts';
 
 	let { data }: { data: ChecklistData | BtnData } = $props();
 </script>

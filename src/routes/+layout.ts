@@ -1,5 +1,5 @@
-import { siteChecklistStruct } from '$lib/checklists';
-import type { Curac } from '$lib/types.js';
+import { siteChecklistStruct } from '#lib/checklists.ts';
+import type { Curac } from '#lib/types.js';
 import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = ({ url, data }) => {

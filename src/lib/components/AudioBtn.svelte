@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { playAudio, stopAudio, setVolume, volume, playingFile } from '$lib/stores/audio';
+	import { playAudio, stopAudio, setVolume, volume, playingFile } from '#lib/stores/audio.ts';
 	import { onDestroy } from 'svelte';
 
 	let { file } = $props();

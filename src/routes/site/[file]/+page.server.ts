@@ -3,11 +3,11 @@ import {
 	getRelatedChecklistsByFile,
 	siteChecklistStruct,
 	getSiteSlugs
-} from '$lib/checklists';
-import type { SiteItem } from '$lib/types';
+} from '#lib/checklists.ts';
+import type { SiteItem } from '#lib/types.ts';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
-import { getMarkdown } from '$lib/markdown';
+import { getMarkdown } from '#lib/markdown.ts';
 
 export const entries: EntryGenerator = () => {
 	const list = getSiteSlugs();

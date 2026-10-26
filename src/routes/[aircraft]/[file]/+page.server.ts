@@ -5,10 +5,10 @@ import {
 	getRelatedChecklistsByAircraftAndFile,
 	getAircraftName,
 	getPageName
-} from '$lib/checklists';
-import type { ChecklistItem, Related } from '$lib/types';
-import { getMarkdown } from '$lib/markdown';
-import { getAircraftSlugs } from '$lib/checklists';
+} from '#lib/checklists.ts';
+import type { ChecklistItem, Related } from '#lib/types.ts';
+import { getMarkdown } from '#lib/markdown.ts';
+import { getAircraftSlugs } from '#lib/checklists.ts';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types.js';
 

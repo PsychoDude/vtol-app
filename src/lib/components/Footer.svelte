@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Curac } from '$lib/types';
+	import type { Curac } from '#lib/types.ts';
 	import Button from './Button.svelte';
 
 	let { sitePages, curac }: { sitePages: Array<{ name: string; file: string }>; curac: Curac } =

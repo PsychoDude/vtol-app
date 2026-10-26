@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
-	import type { ChecklistData } from '$lib/types';
+	import Button from '#lib/components/Button.svelte';
+	import type { ChecklistData } from '#lib/types.ts';
 	import Nav from './Nav.svelte';
 
 	let { data }: { data: ChecklistData } = $props();
