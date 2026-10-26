@@ -7,21 +7,23 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => ({
-	plugins: [sveltekit(), tailwindcss()],
-	preprocess: [vitePreprocess(), mdsvex({ extensions: ['.svx'] })],
+	plugins: [
+		sveltekit({
+			adapter: adapter({
+				// default options are shown. On some platforms
+				// these options are set automatically — see below
+				pages: 'build',
+				assets: 'build',
+				fallback: '404.html',
+				precompress: false,
+				strict: false
+			}),
+			extensions: ['.svelte', '.svx'],
+			preprocess: [mdsvex({ extensions: ['.svx'] }), vitePreprocess()]
+		}),
+		tailwindcss()
+	],
 
-	kit: {
-		adapter: adapter({
-			// default options are shown. On some platforms
-			// these options are set automatically — see below
-			pages: 'build',
-			assets: 'build',
-			fallback: '404.html',
-			precompress: false,
-			strict: false
-		})
-	},
-	extensions: ['.svelte', '.svx'],
 	test: {
 		workspace: [
 			{
