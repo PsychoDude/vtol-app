@@ -2,7 +2,7 @@
 
 <p class="text-balance">The information found in this app was gathered from multiple sources</p>
 
-_Last Updated: 2/3/2026_
+_Last Updated: 10/26/2026_
 
 ## [BahamutoD (Solo VTOL VR Dev)](https://vtolvr.bdynamicsstudio.com/)
 
@@ -56,6 +56,21 @@ _Last Updated: 2/3/2026_
 - ArsenyZvonar (OverSavior)- Visuals
 - C-137 - HSI Section
 
+## [F-5E Tiger III manual](https://docs.google.com/document/d/156-V7DrkpNKPHHVUNGmLj-89ExPntEAkYf0f5bfWwKQ/edit?pli=1&tab=t.0)
+
+- MaleWalk - Project CSAR
+- Cougar - Texture Artist / Modeling Wisdom
+- CoolHand - Corporate Weapon / Chief Advisor
+- Raccoon - Custom Scripts
+- Tony - Test Pilot / Militaria Expert
+- Boris (Microsoft Word) - 3d Wizard
+- Danku - Code Wizard
+- Cobra - Campaign
+- Aviation Aiden - Trailer
+- Fable - Crack Head
+- Atlantis - Resident Researcher
+- Sonar
+
 ## [VTOL VR Info Dump Manual](https://docs.google.com/document/d/1aO7MfnVKifu18cYt-qD8ITu_RMSCAhm8rvYi-YfAgDM/edit)
 
 - Twix: Creator and Writer
@@ -90,6 +105,7 @@ _Last Updated: 2/3/2026_
 - [F-16C Viper](https://steamcommunity.com/sharedfiles/filedetails/?id=3346173029)
 - [A-10D Warthog](https://steamcommunity.com/sharedfiles/filedetails/?id=3421380376)
 - [AH-6 Little Bird](https://steamcommunity.com/sharedfiles/filedetails/?id=3448085888)
+- [F-5E Tiger III](https://steamcommunity.com/sharedfiles/filedetails/?id=3502356083)
 
 ## [PsychoDude](https://liparistudios.com)
 
@@ -100,3 +116,4 @@ _Last Updated: 2/3/2026_
 - F-16C Checklists
 - A-10D Checklists
 - AH-6 Checklists
+- Missing F-5E Checklists
