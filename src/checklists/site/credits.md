@@ -106,6 +106,7 @@ _Last Updated: 10/26/2026_
 - [A-10D Warthog](https://steamcommunity.com/sharedfiles/filedetails/?id=3421380376)
 - [AH-6 Little Bird](https://steamcommunity.com/sharedfiles/filedetails/?id=3448085888)
 - [F-5E Tiger III](https://steamcommunity.com/sharedfiles/filedetails/?id=3502356083)
+- [AV-8B Harrier II](https://steamcommunity.com/sharedfiles/filedetails/?id=3702163088)
 
 ## [PsychoDude](https://liparistudios.com)
 
@@ -117,3 +118,4 @@ _Last Updated: 10/26/2026_
 - A-10D Checklists
 - AH-6 Checklists
 - Missing F-5E Checklists
+- AV-8B Checklists
