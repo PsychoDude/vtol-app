@@ -28,10 +28,8 @@
 > **NOTE**
 
 <div class="border-s-4 border-blue-700 ps-4 my-5 flex flex-col gap-5">
-<ul>
-<li>Takoff speed and full aft stick should be reached before aborting for non-rotation.</li>
-<li>During takeoff with a heavyweight CL store, a noticeable hesitation may occur between nose strut extension and takeoff.<li>
-</ul>
+<p>Takoff speed and full aft stick should be reached before aborting for non-rotation.</p>
+<p>During takeoff with a heavyweight CL store, a noticeable hesitation may occur between nose strut extension and takeoff.</p>
 </div>
 
 **AFTER TAKEOFF**
@@ -43,9 +41,7 @@
 > **NOTE**
 
 <div class="border-s-4 border-blue-700 ps-4 my-5 flex flex-col gap-5">
-<ul>
-<li>A high-pitched whine may occur as the nose gear starts up.</li>
-</ul>
+<p>A high-pitched whine may occur as the nose gear starts up.</p>
 </div>
 
 **CLIMB**

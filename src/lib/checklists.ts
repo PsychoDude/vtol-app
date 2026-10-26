@@ -1566,7 +1566,7 @@ export const checklistStruct = [
 				name: 'Startup',
 				file: 'startup',
 				for: 'F-5E',
-				related: { f16c: ['takeoff-runway'] },
+				related: { f5e: ['takeoff-runway'] },
 				showGlobal: true,
 				showEmergencies: false
 			},
@@ -1575,7 +1575,7 @@ export const checklistStruct = [
 				name: 'Takeoff (RWY)',
 				file: 'takeoff-runway',
 				for: 'F-5E',
-				related: { f16c: ['landing-runway'] },
+				related: { f5e: ['landing-runway'] },
 				showGlobal: true,
 				showEmergencies: true
 			},
@@ -1593,7 +1593,7 @@ export const checklistStruct = [
 				file: 'weapons',
 				for: 'F-5E',
 				showGlobal: true,
-				related: { f16c: ['missiles', 'bombs'] },
+				related: { f5e: ['missiles', 'bombs'] },
 				showEmergencies: true
 			},
 			{
@@ -1601,7 +1601,7 @@ export const checklistStruct = [
 				name: 'Missiles',
 				file: 'missiles',
 				for: 'F-5E',
-				related: { f16c: ['bombs', 'weapons'] },
+				related: { f5e: ['bombs', 'weapons'] },
 				showGlobal: false,
 				showEmergencies: true
 			},
@@ -1610,7 +1610,67 @@ export const checklistStruct = [
 				name: 'Bombs',
 				file: 'bombs',
 				for: 'F-5E',
-				related: { f16c: ['missiles', 'weapons'], global: ['bombing'] },
+				related: { f5e: ['missiles', 'weapons'], global: ['bombing'] },
+				showGlobal: false,
+				showEmergencies: true
+			}
+		]
+	},
+	{
+		aircraft: 'av8b',
+		name: 'AV-8B Harrier II',
+		type: 'moddedac',
+		checklists: [
+			{
+				type: 'aircraft',
+				name: 'Startup',
+				file: 'startup',
+				for: 'AV-8B',
+				related: { av8b: ['takeoff-runway'] },
+				showGlobal: true,
+				showEmergencies: false
+			},
+			{
+				type: 'aircraft',
+				name: 'Takeoff (RWY)',
+				file: 'takeoff-runway',
+				for: 'AV-8B',
+				related: { av8b: ['landing-runway'] },
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Landing (RWY)',
+				file: 'landing-runway',
+				for: 'AV-8B',
+				showGlobal: true,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Weapons',
+				file: 'weapons',
+				for: 'AV-8B',
+				showGlobal: true,
+				related: { av8b: ['missiles', 'bombs'] },
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Missiles',
+				file: 'missiles',
+				for: 'AV-8B',
+				related: { av8b: ['bombs', 'weapons'] },
+				showGlobal: false,
+				showEmergencies: true
+			},
+			{
+				type: 'aircraft',
+				name: 'Bombs',
+				file: 'bombs',
+				for: 'AV-8B',
+				related: { av8b: ['missiles', 'weapons'], global: ['bombing'] },
 				showGlobal: false,
 				showEmergencies: true
 			}
@@ -1928,6 +1988,32 @@ export const emergencyChecklistsStruct = [
 				name: 'Flight Controls Failure',
 				file: 'flightcontrolfailure',
 				for: 'F-5E',
+				related: ['landing-runway']
+			}
+		]
+	},
+	{
+		aircraft: 'av8b',
+		checklists: [
+			{
+				type: 'emergency',
+				name: 'Engine Failure',
+				file: 'enginefailure',
+				for: 'AV-8B',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Missile Impact',
+				file: 'missileimpact',
+				for: 'AV-8B',
+				related: ['landing-runway']
+			},
+			{
+				type: 'emergency',
+				name: 'Flight Controls Failure',
+				file: 'flightcontrolfailure',
+				for: 'AV-8B',
 				related: ['landing-runway']
 			}
 		]
