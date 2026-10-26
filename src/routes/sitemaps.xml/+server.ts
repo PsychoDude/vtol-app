@@ -1,5 +1,5 @@
 import { getSitemapInfo } from '#lib/checklists.ts';
-import SITE_URL from '$app/env/private';
+import SITE_URL from '$app/env/public';
 
 export const prerender = true;
 
